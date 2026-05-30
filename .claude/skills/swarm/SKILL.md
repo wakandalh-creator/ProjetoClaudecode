@@ -12,6 +12,19 @@ metadata:
 
 # Swarm
 
+## Defaults de Segurança Obrigatórios (este projeto)
+
+Antes de qualquer uso, aplicar sempre:
+- `concurrency: 3` — nunca mais sem aprovação explícita
+- `additionalProperties: false` no `responseSchema`
+- `context` com instrução anti-alucinação: _"Responda apenas com base nos dados fornecidos. Não invente informações."_
+- `batchSize: 5` — nunca acima de 10
+- Retry obrigatório após cada `run`: reprocessar linhas com campo ausente
+- Validar com `rows()` antes de encerrar
+- Omitir `subagentType` salvo quando o sub-agente precisar de ferramentas
+
+---
+
 Process many independent items in parallel. `create` builds a table handle;
 `run` fans work out across rows and merges results back. One row = one unit
 of work — swarm handles batching automatically.
