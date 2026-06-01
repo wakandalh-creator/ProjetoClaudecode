@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "owner": "Lucas",
+  "positioning": "Em definição — especialista em IA, automação e crescimento digital",
+  "possible_niches": [
+    "automação com IA",
+    "Claude Code e agentes IA",
+    "marketing digital com IA",
+    "growth hacking",
+    "SaaS",
+    "produtividade e workflows"
+  ],
+  "target_audience": "Empreendedores digitais, criadores de conteúdo e agências que querem escalar com IA",
+  "content_goal": "Descobrir posicionamento + construir autoridade + aquisição de clientes",
+  "tone": "Direto, prático, orientado a resultados, sem jargão técnico desnecessário",
+  "offers": [],
+  "avoid_topics": [],
+  "notes": "Preencha 'offers' com seus produtos/serviços atuais e 'avoid_topics' com temas que não quer abordar. Isso melhora a qualidade das sugestões do Módulo 6."
+}
