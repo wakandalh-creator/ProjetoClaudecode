@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "last_updated": "2026-06-01",
+  "profiles": [],
+  "categories": [
+    "ia",
+    "marketing",
+    "automacao",
+    "creator",
+    "agencia",
+    "founder",
+    "negocio-digital"
+  ],
+  "notes": "Adicione perfis aqui ou diga ao Claude: 'Adicione @handle em config/profiles.json na categoria X'. Na primeira execução com lista vazia, o sistema sugerirá perfis relevantes do nicho automaticamente."
+}
