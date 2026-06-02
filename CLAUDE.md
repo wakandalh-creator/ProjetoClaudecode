@@ -93,11 +93,14 @@ O projeto possui uma rotina completa de inteligência de mercado em `monitor/`.
 | Só tendências | `Execute apenas o Módulo 1 — leia monitor/modules/01-trends.md` |
 | Só Instagram | `Execute apenas o Instagram — leia monitor/modules/02-instagram.md` |
 | Benchmark de conteúdo | `Execute apenas o Módulo 3 — leia monitor/modules/03-benchmark.md` |
+| Só exportar para Obsidian | `Execute apenas o Módulo 7 — leia monitor/modules/07-obsidian-export.md` |
 | Ver último relatório | `Abra o relatório mais recente em reports/` |
 | Adicionar perfil Instagram | `Adicione @handle em config/profiles.json na categoria X` |
 | Atualizar posicionamento | `Atualize config/business.json com meu foco atual` |
+| Mudar caminho do vault | `Atualize vault_path em config/obsidian.json` |
 | Gerar imagens dos posts | `Gere as imagens para os posts do relatório de hoje usando instagram-content-cloner` |
 | Agendar rotina semanal | `/schedule Toda segunda-feira às 8h: execute o monitor — leia monitor/run.md` |
+| Descobrir conexões no vault | `/daydream` (instalar: `npx skills add git@github.com:glebis/claude-skills.git@daydream -g -y`) |
 
 ### Estrutura de arquivos
 
@@ -106,21 +109,40 @@ config/
   business.json      ← posicionamento, nicho, tom, ofertas
   sources.json       ← fontes de tendências e search queries
   profiles.json      ← perfis Instagram monitorados (edite aqui)
+  obsidian.json      ← caminho do vault e configuração de exportação
   README.md          ← instruções de uso
 
 monitor/
   run.md             ← orquestrador principal (ponto de entrada)
-  modules/           ← instruções de cada módulo (01 a 06)
+  modules/           ← instruções de cada módulo (01 a 07)
   templates/         ← templates dos relatórios
 
 reports/
   YYYY-MM-DD/        ← relatórios gerados por data
     RESUMO.md        ← highlights consolidados (leia primeiro)
     06-aplicacao-negocio.md ← posts prontos para produção
+
+[vault Obsidian]/Monitor/
+  Daily/             ← índice diário (MOC) de cada execução
+  Tendencias/        ← uma nota por tendência identificada
+  Ideias/            ← uma nota por ideia de conteúdo gerada
+  Insights/          ← uma nota por insight estratégico
+  Perfis/            ← uma nota por perfil Instagram (histórico acumulado)
 ```
 
-### Skill integrada
+### Skills integradas
 
-O sistema usa a skill `instagram-content-cloner` no Módulo 2 (Fase 1 — análise de padrões) e no Módulo 6 (Fase 2 — geração de posts + Fases 3-4 — geração de imagens via Gemini).
+O sistema usa:
+- `instagram-content-cloner` — Módulo 2 (Fase 1) e Módulo 6 (Fases 2-4)
+- `daydream` — roda manualmente com `/daydream` após acumular ~50 notas no vault
 
 Para geração de imagens, é necessário `GOOGLE_API_KEY` (gratuita em https://aistudio.google.com/apikey).
+
+### Fluxo Obsidian + Daydream
+
+```
+Monitor semanal (run.md)
+  └── Módulo 7 exporta notas atômicas para o vault
+        └── Após ~4 semanas: /daydream descobre conexões entre notas
+              └── Insights não-óbvios → novos ângulos de conteúdo
+```
