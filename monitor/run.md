@@ -96,6 +96,26 @@ Entregáveis:
 
 ---
 
+### Módulo 7 — Exportação para Obsidian
+
+Leia `monitor/modules/07-obsidian-export.md` e execute todas as instruções.
+
+Depende do Módulo 1 (obrigatório) e do Módulo 6 (opcional, enriquece a exportação).
+
+Este módulo converte os relatórios em **notas atômicas** no vault Obsidian, alimentando
+o banco de conhecimento que a skill `daydream` usará no futuro.
+
+Leia `config/obsidian.json` antes de iniciar — se `enabled` for `false`, pule este módulo.
+
+Entregáveis (no vault Obsidian):
+- `Monitor/Tendencias/YYYYMMDD-*.md` (N notas de tendências) ✓
+- `Monitor/Ideias/YYYYMMDD-*.md` (5 notas de ideias de conteúdo) ✓
+- `Monitor/Insights/YYYYMMDD-*.md` (N notas de insights) ✓
+- `Monitor/Perfis/@handle.md` (atualizado ou criado) ✓
+- `Monitor/Daily/YYYY-MM-DD-monitor.md` (índice do dia) ✓
+
+---
+
 ## Ao finalizar
 
 Confirme ao usuário:
@@ -111,6 +131,10 @@ Relatórios gerados em reports/{DATA}/:
 • 05-modelos-conteudo.md
 • 06-aplicacao-negocio.md
 • RESUMO.md
+
+📓 Obsidian atualizado:
+• {N} tendências, {N} ideias, {N} insights exportados
+• Índice: Monitor/Daily/{DATA}-monitor.md
 
 Próxima ação recomendada: leia o RESUMO.md para os highlights
 ou 06-aplicacao-negocio.md para os posts prontos para produção.
