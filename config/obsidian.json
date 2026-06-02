@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "vault_path": "C:/Users/lucas/Documents/ObsidianVault",
+  "enabled": true,
+  "folders": {
+    "trends": "Monitor/Tendencias",
+    "content_ideas": "Monitor/Ideias",
+    "insights": "Monitor/Insights",
+    "profiles": "Monitor/Perfis",
+    "daily_moc": "Monitor/Daily"
+  },
+  "tags": {
+    "base": ["monitor", "ia"],
+    "trends": ["tendencia"],
+    "content_ideas": ["ideia-conteudo", "instagram"],
+    "insights": ["insight", "estrategia"],
+    "profiles": ["perfil", "instagram"]
+  },
+  "min_relevance_to_export": "medio",
+  "notes": "Altere 'vault_path' para o caminho real do seu vault Obsidian. O sistema criará as subpastas automaticamente se não existirem."
+}
