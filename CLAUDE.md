@@ -78,3 +78,49 @@ await run(table.id, {
 ### 7. Nunca escrever em `.swarm/` diretamente — sempre usar `create()`
 ### 8. `batchSize` padrão: 5 (nunca acima de 10 sem aprovação)
 ### 9. Validar resultado com `rows()` antes de considerar a tarefa concluída
+
+---
+
+## Sistema de Monitoramento de Tendências + Instagram
+
+O projeto possui uma rotina completa de inteligência de mercado em `monitor/`.
+
+### Comandos rápidos
+
+| O que fazer | Comando para o Claude |
+|-------------|----------------------|
+| Rodar o monitor completo | `Execute o monitor — leia monitor/run.md` |
+| Só tendências | `Execute apenas o Módulo 1 — leia monitor/modules/01-trends.md` |
+| Só Instagram | `Execute apenas o Instagram — leia monitor/modules/02-instagram.md` |
+| Benchmark de conteúdo | `Execute apenas o Módulo 3 — leia monitor/modules/03-benchmark.md` |
+| Ver último relatório | `Abra o relatório mais recente em reports/` |
+| Adicionar perfil Instagram | `Adicione @handle em config/profiles.json na categoria X` |
+| Atualizar posicionamento | `Atualize config/business.json com meu foco atual` |
+| Gerar imagens dos posts | `Gere as imagens para os posts do relatório de hoje usando instagram-content-cloner` |
+| Agendar rotina semanal | `/schedule Toda segunda-feira às 8h: execute o monitor — leia monitor/run.md` |
+
+### Estrutura de arquivos
+
+```
+config/
+  business.json      ← posicionamento, nicho, tom, ofertas
+  sources.json       ← fontes de tendências e search queries
+  profiles.json      ← perfis Instagram monitorados (edite aqui)
+  README.md          ← instruções de uso
+
+monitor/
+  run.md             ← orquestrador principal (ponto de entrada)
+  modules/           ← instruções de cada módulo (01 a 06)
+  templates/         ← templates dos relatórios
+
+reports/
+  YYYY-MM-DD/        ← relatórios gerados por data
+    RESUMO.md        ← highlights consolidados (leia primeiro)
+    06-aplicacao-negocio.md ← posts prontos para produção
+```
+
+### Skill integrada
+
+O sistema usa a skill `instagram-content-cloner` no Módulo 2 (Fase 1 — análise de padrões) e no Módulo 6 (Fase 2 — geração de posts + Fases 3-4 — geração de imagens via Gemini).
+
+Para geração de imagens, é necessário `GOOGLE_API_KEY` (gratuita em https://aistudio.google.com/apikey).
