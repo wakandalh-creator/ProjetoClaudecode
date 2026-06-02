@@ -1,7 +1,456 @@
 {
   "version": 1,
-  "last_updated": "2026-06-01",
-  "profiles": [],
+  "last_updated": "2026-06-02",
+  "profiles": [
+    {
+      "handle": "charliehills",
+      "url": "https://www.instagram.com/charliehills/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "yikC",
+      "url": "https://www.instagram.com/yikC/",
+      "category": "creator",
+      "tags": ["ia", "tech"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "eujoaotorresz",
+      "url": "https://www.instagram.com/eujoaotorresz/",
+      "category": "creator",
+      "tags": ["negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "fabianocarvalhojr",
+      "url": "https://www.instagram.com/fabianocarvalhojr/",
+      "category": "founder",
+      "tags": ["negocio-digital", "marketing"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "rafa.grandi",
+      "url": "https://www.instagram.com/rafa.grandi/",
+      "category": "marketing",
+      "tags": ["marketing", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "brusantanna.ai",
+      "url": "https://www.instagram.com/brusantanna.ai/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ai — criador de conteúdo sobre IA"
+    },
+    {
+      "handle": "vendedorglobal",
+      "url": "https://www.instagram.com/vendedorglobal/",
+      "category": "negocio-digital",
+      "tags": ["negocio-digital", "marketing", "vendas"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "oluizmain",
+      "url": "https://www.instagram.com/oluizmain/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "nick_saraev",
+      "url": "https://www.instagram.com/nick_saraev/",
+      "category": "automacao",
+      "tags": ["ia", "automacao", "agencia"],
+      "active": true,
+      "notes": "Referência internacional em AI automation e AI agency"
+    },
+    {
+      "handle": "nathanhodgson",
+      "url": "https://www.instagram.com/nathanhodgson/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "ai",
+      "url": "https://www.instagram.com/ai/",
+      "category": "ia",
+      "tags": ["ia"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "ana.gsoares",
+      "url": "https://www.instagram.com/ana.gsoares/",
+      "category": "marketing",
+      "tags": ["marketing", "ia"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "chase.h.ai",
+      "url": "https://www.instagram.com/chase.h.ai/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ai"
+    },
+    {
+      "handle": "leosoares.ia",
+      "url": "https://www.instagram.com/leosoares.ia/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ia — criador BR sobre IA"
+    },
+    {
+      "handle": "gabriel.adamuchi",
+      "url": "https://www.instagram.com/gabriel.adamuchi/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "viverdeia",
+      "url": "https://www.instagram.com/viverdeia/",
+      "category": "ia",
+      "tags": ["ia", "negocio-digital", "automacao"],
+      "active": true,
+      "notes": "Viver de IA — referência BR em monetização com IA"
+    },
+    {
+      "handle": "ninja.automacoes",
+      "url": "https://www.instagram.com/ninja.automacoes/",
+      "category": "automacao",
+      "tags": ["automacao", "ia", "workflows"],
+      "active": true,
+      "notes": "Foco em automações — referência do nicho BR"
+    },
+    {
+      "handle": "nikolassfaria",
+      "url": "https://www.instagram.com/nikolassfaria/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "eduardocavalcanti",
+      "url": "https://www.instagram.com/eduardocavalcanti/",
+      "category": "founder",
+      "tags": ["negocio-digital", "marketing", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "jonylan",
+      "url": "https://www.instagram.com/jonylan/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "allesinisgalli",
+      "url": "https://www.instagram.com/allesinisgalli/",
+      "category": "founder",
+      "tags": ["negocio-digital", "saas"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "lonamkt",
+      "url": "https://www.instagram.com/lonamkt/",
+      "category": "marketing",
+      "tags": ["marketing", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "gabrielbarbosa.oficial",
+      "url": "https://www.instagram.com/gabrielbarbosa.oficial/",
+      "category": "creator",
+      "tags": ["negocio-digital", "marketing"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "opensession.co",
+      "url": "https://www.instagram.com/opensession.co/",
+      "category": "agencia",
+      "tags": ["agencia", "ia", "negocio-digital"],
+      "active": true,
+      "notes": "Agência / empresa no nicho de IA"
+    },
+    {
+      "handle": "leandroladeiran",
+      "url": "https://www.instagram.com/leandroladeiran/",
+      "category": "marketing",
+      "tags": ["marketing", "growth", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "christiantriad",
+      "url": "https://www.instagram.com/christiantriad/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "oneyaraujo",
+      "url": "https://www.instagram.com/oneyaraujo/",
+      "category": "creator",
+      "tags": ["negocio-digital", "marketing"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "geracaotechs",
+      "url": "https://www.instagram.com/geracaotechs/",
+      "category": "ia",
+      "tags": ["ia", "tech", "negocio-digital"],
+      "active": true,
+      "notes": "Geração de tecnologia — foco em IA e tech BR"
+    },
+    {
+      "handle": "amandadinizmkt",
+      "url": "https://www.instagram.com/amandadinizmkt/",
+      "category": "marketing",
+      "tags": ["marketing", "ia"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "humam__academy",
+      "url": "https://www.instagram.com/humam__academy/",
+      "category": "ia",
+      "tags": ["ia", "educacao", "automacao"],
+      "active": true,
+      "notes": "Academy — provavelmente educação em IA"
+    },
+    {
+      "handle": "geiss11",
+      "url": "https://www.instagram.com/geiss11/",
+      "category": "creator",
+      "tags": ["negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "nelmoricalde",
+      "url": "https://www.instagram.com/nelmoricalde/",
+      "category": "creator",
+      "tags": ["negocio-digital", "marketing"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "rodrigotadewald",
+      "url": "https://www.instagram.com/rodrigotadewald/",
+      "category": "marketing",
+      "tags": ["marketing", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "sujeitoprogramador",
+      "url": "https://www.instagram.com/sujeitoprogramador/",
+      "category": "ia",
+      "tags": ["tech", "ia", "programacao"],
+      "active": true,
+      "notes": "Referência em programação BR — grande audiência"
+    },
+    {
+      "handle": "jonathan_kamargo",
+      "url": "https://www.instagram.com/jonathan_kamargo/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "marianatorre.s",
+      "url": "https://www.instagram.com/marianatorre.s/",
+      "category": "marketing",
+      "tags": ["marketing", "ia"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "marketerhub.ai",
+      "url": "https://www.instagram.com/marketerhub.ai/",
+      "category": "marketing",
+      "tags": ["marketing", "ia", "growth"],
+      "active": true,
+      "notes": "Handle com .ai — foco em marketing com IA"
+    },
+    {
+      "handle": "marcelaluzzio",
+      "url": "https://www.instagram.com/marcelaluzzio/",
+      "category": "marketing",
+      "tags": ["marketing", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "gestordeaudiencia",
+      "url": "https://www.instagram.com/gestordeaudiencia/",
+      "category": "marketing",
+      "tags": ["marketing", "growth", "audiencia"],
+      "active": true,
+      "notes": "Foco em gestão de audiência e crescimento"
+    },
+    {
+      "handle": "sebintel",
+      "url": "https://www.instagram.com/sebintel/",
+      "category": "ia",
+      "tags": ["ia", "tech"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "avora.ai",
+      "url": "https://www.instagram.com/avora.ai/",
+      "category": "agencia",
+      "tags": ["ia", "agencia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ai — agência ou produto de IA"
+    },
+    {
+      "handle": "ogabrieeldias",
+      "url": "https://www.instagram.com/ogabrieeldias/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "rodrigobindes",
+      "url": "https://www.instagram.com/rodrigobindes/",
+      "category": "founder",
+      "tags": ["negocio-digital", "saas", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "franklim.gui",
+      "url": "https://www.instagram.com/franklim.gui/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "gabrielsamp.ai",
+      "url": "https://www.instagram.com/gabrielsamp.ai/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ai"
+    },
+    {
+      "handle": "maestrosdaia",
+      "url": "https://www.instagram.com/maestrosdaia/",
+      "category": "ia",
+      "tags": ["ia", "educacao", "automacao"],
+      "active": true,
+      "notes": "Mestres de IA — educação e conteúdo sobre IA"
+    },
+    {
+      "handle": "brandsdecoded",
+      "url": "https://www.instagram.com/brandsdecoded/",
+      "category": "marketing",
+      "tags": ["marketing", "branding", "negocio-digital"],
+      "active": true,
+      "notes": "Foco em branding e estratégia de marca"
+    },
+    {
+      "handle": "anatex",
+      "url": "https://www.instagram.com/anatex/",
+      "category": "creator",
+      "tags": ["negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "larissagomes.ia",
+      "url": "https://www.instagram.com/larissagomes.ia/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ia — criadora BR sobre IA"
+    },
+    {
+      "handle": "thiagozaao",
+      "url": "https://www.instagram.com/thiagozaao/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "neuwebstudio",
+      "url": "https://www.instagram.com/neuwebstudio/",
+      "category": "agencia",
+      "tags": ["agencia", "ia", "negocio-digital"],
+      "active": true,
+      "notes": "Estúdio/agência digital"
+    },
+    {
+      "handle": "laschuk",
+      "url": "https://www.instagram.com/laschuk/",
+      "category": "founder",
+      "tags": ["negocio-digital", "saas", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "maestroptompts",
+      "url": "https://www.instagram.com/maestroptompts/",
+      "category": "ia",
+      "tags": ["ia", "prompts", "automacao"],
+      "active": true,
+      "notes": "Maestro de Prompts — foco em engenharia de prompts"
+    },
+    {
+      "handle": "faladantasmkt",
+      "url": "https://www.instagram.com/faladantasmkt/",
+      "category": "marketing",
+      "tags": ["marketing", "growth"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "lindsay.ia",
+      "url": "https://www.instagram.com/lindsay.ia/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ia — criadora sobre IA"
+    },
+    {
+      "handle": "andrevictor.m",
+      "url": "https://www.instagram.com/andrevictor.m/",
+      "category": "marketing",
+      "tags": ["marketing", "ia"],
+      "active": true,
+      "notes": ""
+    }
+  ],
   "categories": [
     "ia",
     "marketing",
@@ -10,6 +459,5 @@
     "agencia",
     "founder",
     "negocio-digital"
-  ],
-  "notes": "Adicione perfis aqui ou diga ao Claude: 'Adicione @handle em config/profiles.json na categoria X'. Na primeira execução com lista vazia, o sistema sugerirá perfis relevantes do nicho automaticamente."
+  ]
 }
