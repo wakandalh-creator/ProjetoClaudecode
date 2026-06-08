@@ -1,0 +1,4 @@
+notion-client==2.2.1
+anthropic
+requests
+python-dotenv
