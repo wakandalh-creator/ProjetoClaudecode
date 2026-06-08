@@ -451,6 +451,39 @@
       "notes": ""
     }
   ],
+    {
+      "handle": "drisiano",
+      "url": "https://www.instagram.com/drisiano/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
+      "handle": "brun0gpt",
+      "url": "https://www.instagram.com/brun0gpt/",
+      "category": "ia",
+      "tags": ["ia", "automacao", "gpt"],
+      "active": true,
+      "notes": "Handle com referência a GPT — foco em IA"
+    },
+    {
+      "handle": "maxcarrau.ia",
+      "url": "https://www.instagram.com/maxcarrau.ia/",
+      "category": "ia",
+      "tags": ["ia", "automacao"],
+      "active": true,
+      "notes": "Handle com .ia — criador sobre IA"
+    },
+    {
+      "handle": "yikchan",
+      "url": "https://www.instagram.com/yikchan/",
+      "category": "creator",
+      "tags": ["ia", "tech"],
+      "active": true,
+      "notes": "Yik Chan — verificar se é diferente de @yikC"
+    }
+  ],
   "categories": [
     "ia",
     "marketing",
