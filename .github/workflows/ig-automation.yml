@@ -1,0 +1,48 @@
+name: Instagram Automation
+
+on:
+  schedule:
+    - cron: '0 11 * * *'  # 8h BRT (UTC-3)
+  workflow_dispatch:       # permite rodar manualmente pelo GitHub
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: pip install -r ig-saves-engine/requirements.txt
+
+      - name: Sincronizar posts do Instagram
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_SAVES: ${{ secrets.NOTION_DB_SAVES }}
+          NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
+          INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
+          INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
+          INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
+          IG_USERNAME: ${{ secrets.IG_USERNAME }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python ig-saves-engine/instagram_saves_sync.py
+
+      - name: Aguardar 60 segundos
+        run: sleep 60
+
+      - name: Gerar ideias com Claude
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DB_SAVES: ${{ secrets.NOTION_DB_SAVES }}
+          NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
+          INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
+          INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
+          INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
+          IG_USERNAME: ${{ secrets.IG_USERNAME }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python ig-saves-engine/generate_ideas.py
