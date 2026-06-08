@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($scripts = \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\"; & \"$scripts\\\\notebooklm.exe\" login)",
+      "PowerShell($scripts = \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\"; & \"$scripts\\\\notebooklm.exe\" --help 2>&1)",
+      "PowerShell($scripts = \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\"; & \"$scripts\\\\notebooklm.exe\" login --help 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\\\\notebooklm.exe\" login --browser-cookies chrome 2>&1)",
+      "PowerShell(python -m pip install rookiepy 2>&1)",
+      "PowerShell(python -m pip install rookiepy)",
+      "PowerShell(& \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\\\\notebooklm.exe\" login --browser chrome 2>&1)",
+      "PowerShell(& \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Python\\\\pythoncore-3.14-64\\\\Scripts\\\\notebooklm.exe\" list 2>&1)",
+      "PowerShell(Start-Process \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Programs\\\\obsidian\\\\Obsidian.exe\")"
+    ]
+  }
+}
