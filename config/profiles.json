@@ -476,6 +476,14 @@
       "notes": "Handle com .ia — criador sobre IA"
     },
     {
+      "handle": "noevarner",
+      "url": "https://www.instagram.com/noevarner/",
+      "category": "creator",
+      "tags": ["ia", "negocio-digital"],
+      "active": true,
+      "notes": ""
+    },
+    {
       "handle": "yikchan",
       "url": "https://www.instagram.com/yikchan/",
       "category": "creator",
