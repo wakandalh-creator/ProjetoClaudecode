@@ -116,6 +116,20 @@ Entregáveis (no vault Obsidian):
 
 ---
 
+### Módulo 8 — Exportação para Notion
+
+Leia `monitor/modules/08-notion-export.md` e execute todas as instruções.
+
+Depende dos Módulos 1, 5 e 6 — só inicie após confirmar que os três relatórios existem.
+
+Entregáveis (no Notion):
+- N registros em **Monitor — Tendências** ✓
+- N registros em **Monitor — Ideias de Conteúdo** ✓
+- N registros em **Monitor — Insights** ✓
+- 1 registro em **Monitor — Resumo Diário** ✓
+
+---
+
 ## Ao finalizar
 
 Confirme ao usuário:
