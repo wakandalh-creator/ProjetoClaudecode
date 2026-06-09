@@ -46,3 +46,19 @@ jobs:
           IG_USERNAME: ${{ secrets.IG_USERNAME }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ig-saves-engine/generate_ideas.py
+
+      # ─────────────────────────────────────────────────────────────
+      # POSTAGEM AUTOMÁTICA — descomente quando quiser ativar
+      # Pré-requisito: mude o status da ideia no Notion para "aprovado"
+      # ─────────────────────────────────────────────────────────────
+      # - name: Instalar Pillow para geração de imagem
+      #   run: pip install Pillow
+      #
+      # - name: Postar no Instagram
+      #   env:
+      #     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      #     NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
+      #     INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
+      #     INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
+      #     INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
+      #   run: python ig-saves-engine/post_to_instagram.py
