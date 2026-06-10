@@ -1519,11 +1519,17 @@
       "skillPath": "markdown-html/skills/markdown-html-orchestrator/SKILL.md",
       "computedHash": "87ff1d198d5e98c4c2987e0825f5f1b59800557eecb1f948594fbcc60ca323d9"
     },
-    "market-research": {
+    "hormozi-market-research": {
       "source": "alexsmedile/hormozi-skills",
       "sourceType": "github",
       "skillPath": "skills/market-research/SKILL.md",
       "computedHash": "49c65a1b4f46611cfac63d9bd8f4afdea0b1c8c96161929db09859d49e577b74"
+    },
+    "market-research": {
+      "source": "alirezarezvani/claude-skills",
+      "sourceType": "github",
+      "skillPath": "research-ops/skills/market-research/SKILL.md",
+      "computedHash": "48299527fab5cbae7c48efebdfc06f70b76a57464894a00fafcec811d38f821f"
     },
     "marketing-context": {
       "source": "alirezarezvani/claude-skills",
