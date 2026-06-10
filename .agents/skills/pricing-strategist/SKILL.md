@@ -1,197 +1,130 @@
 ---
 name: pricing-strategist
-description: Builds comprehensive pricing strategies by reading business context and asking targeted questions interactively. Use when user needs pricing plans, tier structures, price points, pricing model recommendations, or any pricing-related strategy for their product or service.
+description: "Use when designing or revisiting product pricing — selecting a pricing model (subscription seat-based, usage-based, value-based, freemium, or hybrid), running Van Westendorp Price Sensitivity Meter analysis on WTP survey data, or designing Good/Better/Best packaging tiers. Recommends a model and a price range with trade-offs, never a single number. For Commercial leads, Product Marketing, and CMOs at the pricing-design moment — not deal-by-deal discounting, not brand positioning."
+version: 2.8.0
+author: claude-code-skills
+license: MIT
+tags: [commercial, pricing, packaging, wtp, van-westendorp, value-based-pricing, saas-pricing]
+compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
-# Pricing Strategist
+# pricing-strategist
 
 ## Purpose
-Build a comprehensive, justified pricing strategy — tier structures, price points, positioning, and revenue optimization — tailored to the business through context and conversation.
 
----
+Help Commercial, Product Marketing, and CMO functions answer three questions at the pricing-design moment:
 
-## Execution Logic
+1. **Which pricing model fits this product + customer + market?** (subscription seat-based, usage-based, value-based, freemium, hybrid)
+2. **What does the customer actually pay before it feels too expensive?** (Van Westendorp PSM on WTP survey responses)
+3. **How should we package this into tiers?** (Good / Better / Best — with anti-pattern detection)
 
-**Check $ARGUMENTS first to determine execution mode:**
+The skill recommends **a model and a range**. The human picks the number, owns the trade-offs, and runs the GTM.
 
-### If $ARGUMENTS is empty or not provided:
-Respond with:
-"pricing-strategist loaded, ready to build your pricing strategy"
+## When to use
 
-Then wait for the user to provide context in the next message.
+- Launching a new SaaS / API / AI tool and choosing the first pricing model
+- Revisiting pricing after 18+ months of GTM data (model shift, not just price increase)
+- Designing or redesigning tier packaging (Good/Better/Best, Bronze/Silver/Gold)
+- You have Van Westendorp survey data and want the optimal price range
+- A board / exec is asking "what should we charge?" and you need the structured answer
+- You suspect your packaging has anti-patterns (decoy tier, feature dump, no upgrade trigger)
 
-### If $ARGUMENTS contains content:
-Proceed immediately to Task Execution (skip the "loaded" message).
+**Do not use for:**
+- Per-deal discount approval → `deal-desk`
+- Strategic CMO positioning, brand, category creation → `c-level-advisor/cmo-advisor`
+- Whole-company revenue strategy → `c-level-advisor/cro-advisor`
+- Technical-sale enablement → `business-growth/sales-engineer`
 
----
+## Workflow
 
-## Task Execution
+### Step 1 — Assess customer context
 
-### 1. MANDATORY: Read FOUNDER_CONTEXT.md
-**BLOCKING REQUIREMENT — DO NOT SKIP THIS STEP**
+Fill `assets/pricing_brief_template.md` (≈ 20 min). Capture: industry, deal size avg, customer count, value drivers, adoption curve, consumption pattern (seat / usage / value / hybrid), competitor models.
 
-Before doing ANYTHING else, read `FOUNDER_CONTEXT.md` from the project root. Extract everything relevant to pricing:
-- Company name, industry, product/service type
-- Target audience (demographics, pain points, budget signals)
-- Existing pricing model (if any)
-- Competitors and their pricing (if mentioned)
-- Value proposition and key features/benefits
-- Business stage and revenue goals
+### Step 2 — Pick the pricing model
 
-**DO NOT PROCEED** to Step 2 until this file has been read.
+Run `scripts/pricing_model_picker.py --input brief.json --profile saas --output markdown`. Output ranks 5 models by fit-score 0-100 with trade-offs. Decision logic is deterministic: low usage variance + high seat-attach → subscription wins; power-law usage + variable customer value → usage-based wins.
 
-### 2. Determine Which Questions to Ask
-Cross-reference what FOUNDER_CONTEXT.md already provides against the Question Bank below. **Only ask questions where the answer is genuinely missing or unclear.** Never ask something the context already answers.
+### Step 3 — Validate WTP with Van Westendorp PSM
 
-**Question Bank (priority order):**
+If you have survey data (≥ 4 questions per respondent: too cheap / bargain / getting expensive / too expensive), run `scripts/wtp_analyzer.py --input survey.json --output markdown`. Output: 4 intersection points (OPP, IDP, PMC, PME) and the Range of Acceptable Prices.
 
-| # | Question | Why it matters | Skip if... |
-|---|----------|----------------|------------|
-| 1 | B2B or B2C? | Changes deal size, tier logic, sales cycle, everything | Target audience section makes it obvious |
-| 2 | What pricing model do you prefer or want to avoid? (subscription, one-time, usage-based, freemium, hybrid) | Determines the entire structure | Pricing model already stated in context |
-| 3 | What's the primary value metric that scales with usage? (seats, API calls, storage, projects, transactions, etc.) | Drives tier differentiation and upgrade logic | Product type + features make it obvious |
-| 4 | Target gross margin range? (60-70%, 70-80%, 80%+, not sure) | Sets the floor for every price point | A number or range is already given |
-| 5 | How price-sensitive is your target customer? (very sensitive, moderate, willing to pay premium) | Calibrates price positioning and tier gaps | Audience detail + industry norms make it clear |
-| 6 | Who are your closest competitors and how do they price? | Market anchoring — prevents under or over pricing | Competitors section is filled |
-| 7 | What's your current stage or revenue target? (pre-revenue, <$10K MRR, $10-50K MRR, $50K+ MRR) | Calibrates ambition and tier complexity | Business goals mention revenue or stage |
+PSM gives a **range**, not the price. See `references/van_westendorp_methodology.md` for common misinterpretations.
 
-**Use AskUserQuestion to ask up to 4 questions per batch.** Ask the highest-priority unanswered questions first. If the first batch gives you enough to build a confident strategy, stop. Maximum 7 questions total, but fewer is better — stop as soon as you can build a strong strategy with what you have.
+### Step 4 — Design packaging
 
-### 3. Determine Strategy Type
-Based on all collected inputs, decide the structure. **Make this decision yourself — do not ask the user.** Explain why in the output.
+Run `scripts/packaging_designer.py --input features.json --profile saas --output markdown`. Output: 3-tier Good/Better/Best assignment with anti-pattern flags (decoy tier, feature dump, no upgrade trigger, Bronze loss leader, Enterprise no-anchor).
 
-| Condition | Strategy Type |
-|-----------|--------------|
-| Subscription + B2B | **SaaS Tiered** — Starter / Pro / Business / Enterprise |
-| Subscription + B2C | **Consumer Tiered** — Free / Basic / Premium |
-| Usage-based primary | **Usage Tiers** — base fee + usage bands with overage pricing |
-| One-time purchase | **Package Pricing** — Good / Better / Best bundles |
-| Freemium preferred | **Freemium** — generous free tier + 2-3 paid tiers |
-| Mixed signals | **Hybrid** — combine structures as the inputs warrant |
+### Step 5 — Decide
 
-### 4. Build the Pricing Strategy
-For each tier, define:
-- **Plan name** — descriptive, not generic. "Starter" beats "Plan A". "Growth" beats "Mid".
-- **Price point** — monthly AND annual (annual ≈ 20% off monthly). Use specific numbers.
-- **Price justification** — why this number. Anchor to: competitor benchmarks, value delivered, margin targets, or customer willingness to pay. Never leave a price unjustified.
-- **Feature set** — what's in, and critically, what's deliberately left out to drive upgrades.
-- **Target segment** — the specific customer who buys this tier and why.
+Take model + range + packaging into the pricing committee. Skill does not commit the number — you do.
 
-### 5. Add the Strategic Layer
-Beyond the tiers:
-- **Positioning** — where this sits vs. competitors (premium, mid-market, value leader, underdog)
-- **Psychological tactics used** — name them and explain why each one was chosen (charm pricing, anchoring, decoy effect, loss aversion in annual vs. monthly, etc.)
-- **Upgrade triggers** — what specifically moves a customer from tier N to tier N+1
-- **Revenue optimization** — annual discount incentives, add-ons, usage overages, upsell moments
-- **Biggest pricing risk** — one specific risk for this business and how to mitigate it
+## Scripts
 
-### 6. Format and Verify
-- Structure output per **Output Format** below
-- Run through **Quality Checklist** before presenting
+- `scripts/pricing_model_picker.py` — 5-model fit scorer (subscription / usage / value / freemium / hybrid)
+- `scripts/wtp_analyzer.py` — Van Westendorp PSM implementation
+- `scripts/packaging_designer.py` — Good/Better/Best tier designer with anti-pattern detection
 
----
+All scripts: stdlib only. `--help` and `--sample` work on all three.
 
-## Pricing Principles
-Hard constraints. These exist because bad pricing destroys margins or kills growth.
+## References
 
-- Price on value delivered. Never on cost to build.
-- Every tier must have a clear reason to exist. If no real customer would buy it, cut it.
-- The middle tier is the hero. Design the strategy so most customers land there.
-- Annual pricing should feel like a no-brainer — 20-25% off. Monthly is the convenience premium.
-- Never show more than 4 tiers. Paradox of choice kills conversion at the pricing page.
-- Enterprise = "contact sales" unless the business is pre-revenue. Pre-revenue can skip Enterprise or price it transparently.
-- Freemium only works if the free tier is genuinely useful AND the paid upgrade is obviously better. A crippled free tier is worse than no free tier.
-- Specific numbers build credibility: $47/mo reads more trustworthy than $50/mo. Use this deliberately — not on every price point, but on the hero tier.
-- B2B + deal size above $200/mo → seat-based pricing is almost always correct.
-- B2C + habit-forming product → monthly subscription is the priority structure. Annual is secondary.
-- Price anchoring matters. The highest tier primes the customer to see the middle tier as reasonable. Design for that.
+- `references/saas_pricing_canon.md` — Skok, Tunguz, Campbell, Ramanujam, BVP, Shevlin, Stanford GSB
+- `references/van_westendorp_methodology.md` — original 1976 paper, NMS refinement, Conjoint.ly, Sawtooth, ESOMAR, Lipovetsky, Decision Analyst
+- `references/packaging_anti_patterns.md` — ProfitWell, OpenView, BVP vertical SaaS, Ramanujam, Poyar, SaaS Capital
 
----
+## Assumptions
 
-## Output Format
+- Pricing decisions are joint: Commercial owns the model + tier shape, Product owns the features-per-tier, Finance owns the discount envelope, Legal owns the contract.
+- Van Westendorp PSM is a **directional** tool. N ≥ 30 minimum, N ≥ 100 preferred. Below 30, the script emits a sample-size warning.
+- "Value-based pricing" requires a measurable customer value driver (revenue lift, cost saved, time recovered). If you can't measure it, don't pick value-based.
+- Industry profiles tune defaults — they don't override your data.
+- This is a decision-support skill, not a price oracle. Output is a model + range, never the number.
 
-```markdown
-## Pricing Strategy for [Company Name]
+## Anti-patterns
 
-**Strategy type:** [SaaS Tiered / Consumer Tiered / Usage Tiers / Package / Freemium / Hybrid]
-**Why this structure:** [2-3 sentences. Why this model, not another.]
+- **Recommending a specific number.** This skill emits a model and a range. Final price is a human commercial decision involving deal-desk policy, competitive intel, and strategic intent that this skill cannot know.
+- **Using PSM with N < 30.** Statistical noise dominates. The script warns; respect the warning.
+- **Treating PSM as "the price."** PSM gives a Range of Acceptable Prices (RAP) and an Optimal Price Point (OPP). Test the range in market, don't anchor on a single intersection.
+- **Picking value-based pricing without a measurable value metric.** Without instrumentation to show customer ROI, value-based collapses into "whatever they'll pay" — which is just bad usage-based pricing.
+- **Designing tiers before picking a model.** Tier structure depends on the model. Run pricing_model_picker first.
+- **Packaging "feature dumps" into the Best tier.** If Best has 3x the features for 2x the price, customers buy Better and never upgrade. See `packaging_anti_patterns.md`.
+- **Hidden usage-based pricing inside subscription tiers.** "Up to 100k API calls/mo, then $X per 1k" disguised as a "Pro tier" is two pricing models in one. Customers notice. Pick one.
+- **Confusing this skill with deal-desk.** Pricing strategy = the menu. Deal-desk = approving discounts off the menu. Different decision, different cadence, different owner.
 
----
+## Distinct from
 
-### [Tier 1 Name]
-- **Price:** $X/mo | $Y/yr (save Z%)
-- **Who it's for:** [Specific customer segment — not "small businesses"]
-- **What's included:** [Concrete feature list]
-- **Price justification:** [Why this number. Anchored to what.]
+- **deal-desk** — per-deal discount approval, MEDDIC, deal scoring. Operates daily on existing pricing.
+- **c-level-advisor/cmo-advisor** — strategic positioning, brand, category. Pricing strategist consumes positioning as input, doesn't generate it.
+- **c-level-advisor/cro-advisor** — full-funnel revenue strategy, comp plans, territory design. Pricing strategist is one input to CRO.
+- **business-growth/sales-engineer** — technical sale, POC scoping. Sales engineering operates after pricing is set.
 
-### [Tier 2 Name]
-- **Price:** $X/mo | $Y/yr (save Z%)
-- **Who it's for:** [Specific segment]
-- **What's included:** [Feature list — highlight what's new vs. Tier 1]
-- **Price justification:** [Why this number]
+## Forcing-question library (Matt Pocock grill discipline)
 
-### [Tier 3 Name]
-[same structure]
+Walked one at a time by `/cs:grill-commercial` or the orchestrator. Recommended answer + canon citation per question. Never bundled.
 
----
+1. **"Is your customer paying for outcomes, seats, or usage?"**
+   Recommended: outcomes (value-based) if you can measure them; usage if marginal cost is variable; seats only if usage is roughly flat per user.
+   Canon: Ramanujam 2016 (*Monetizing Innovation*) — Mistake #1 of 9: seat-based pricing on a usage-variable product caps TAM at ~20% of WTP.
 
-### Positioning & Psychology
-- **Market position:** [Where you sit vs. named competitors]
-- **Psychological tactics:** [List each one used and the specific reason]
-- **Upgrade triggers:** [What moves customers between tiers — specific, behavioral]
+2. **"Do you have a measurable value metric, or are you guessing?"**
+   Recommended: instrument the value metric BEFORE going to market with value-based pricing.
+   Canon: Patrick Campbell / ProfitWell research — value-based without instrumentation collapses into bad usage-based pricing.
 
-### Revenue Optimization
-- [Specific recommendation 1]
-- [Specific recommendation 2]
-- [Specific recommendation 3]
+3. **"What's the variance in customer usage across your top decile vs. median?"**
+   Recommended: variance > 10x → usage-based wins; variance < 3x → subscription wins; in between → hybrid with usage overage.
+   Canon: Kyle Poyar (*Growth Unhinged*) — high-variance products lose 60%+ of revenue on flat-rate plans.
 
-### Biggest Pricing Risk
-[One specific risk for this business. Not generic. How to see it coming and what to do.]
-```
+4. **"What's your competitor's pricing model, and why are you choosing the same or different?"**
+   Recommended: surface the differentiation hypothesis explicitly. Identical pricing = identical value claim.
+   Canon: David Skok (*For Entrepreneurs*) — pricing is a positioning signal.
 
----
+5. **"What sample size do you have for WTP analysis, and is it segmented?"**
+   Recommended: N≥30 per segment for PSM, N≥100 for conjoint.
+   Canon: van Westendorp 1976 / Sawtooth Software methodology — sub-30 PSM is statistical noise.
 
-## Quality Checklist (Self-Verification)
+6. **"What's the ONE feature that forces a tier upgrade?"**
+   Recommended: every Better and Best tier needs a single non-negotiable upgrade trigger.
+   Canon: Ramanujam (*Monetizing Innovation*) — Mistake #4: tiers with no clear differentiator make 70% of customers pick the cheapest.
 
-### Pre-Execution Check
-- [ ] I read FOUNDER_CONTEXT.md before asking any questions
-- [ ] I only asked questions the context didn't already answer
-- [ ] Total questions asked: 7 or fewer
-
-### Strategy Check
-- [ ] Strategy type is justified (not a generic default)
-- [ ] Each tier has a clear reason to exist
-- [ ] Middle tier is the obvious "best value" — the hero
-- [ ] Price points are anchored to competitors, value, or willingness to pay — not guessed
-- [ ] Annual pricing is 20-25% below monthly
-- [ ] 4 tiers or fewer
-
-### Pricing Principles Compliance
-- [ ] All prices are value-based
-- [ ] Freemium tier (if present) is genuinely useful, not crippled
-- [ ] B2B high-value products use seat-based logic where appropriate
-- [ ] Psychological tactics are named and justified
-
-### Output Check
-- [ ] Every tier has a price justification — none are bare numbers
-- [ ] Positioning is specific to this business and its competitors
-- [ ] Revenue optimization is actionable, not generic
-- [ ] The "biggest risk" is specific to this business — not boilerplate
-
-**If ANY check fails → revise before presenting.**
-
----
-
-## Defaults & Assumptions
-
-Use these unless the user overrides:
-
-- **Pricing model:** Subscription (most common for modern products)
-- **Tiers:** 3 for most businesses. 4 only if B2B with a clear Enterprise segment.
-- **Annual discount:** 20%
-- **Target gross margin:** 75-80% (SaaS baseline; adjust for non-software)
-- **Price sensitivity:** Moderate (mid-market default)
-- **Currency:** USD
-- **Billing cycle:** Monthly with annual option
-
-Document any assumptions made in the output.
+Walk depth-first. Lock 1-3 before opening 4-6. After all 6 are answered, invoke `pricing_model_picker.py` → `wtp_analyzer.py` → `packaging_designer.py` in sequence.
