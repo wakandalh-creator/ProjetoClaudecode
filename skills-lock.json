@@ -1891,11 +1891,17 @@
       "skillPath": "commercial/skills/pricing-strategist/SKILL.md",
       "computedHash": "646e56d269ce6e0c129fb22adebda4cf2d5c5de5e5dc6f37f4ca6aecd9f11746"
     },
-    "pricing-strategy": {
+    "hormozi-pricing-strategy": {
       "source": "alexsmedile/hormozi-skills",
       "sourceType": "github",
       "skillPath": "skills/pricing-strategy/SKILL.md",
       "computedHash": "172a07663db48acb1c78cd62691e8dbd75df708e18cd6edad5b8a5446caab397"
+    },
+    "pricing-strategy": {
+      "source": "alirezarezvani/claude-skills",
+      "sourceType": "github",
+      "skillPath": "marketing-skill/skills/pricing-strategy/SKILL.md",
+      "computedHash": "a0f983405e96b57b7bf9384d7f16e5cd2c2b35a3350b7f343d4a833e7c43657d"
     },
     "prioritization-advisor": {
       "source": "deanpeters/product-manager-skills",
