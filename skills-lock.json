@@ -271,6 +271,12 @@
       "skillPath": "engineering-team/playwright-pro/skills/browserstack/SKILL.md",
       "computedHash": "54f405ae6307f8e8f9cee0d7b56e18aff570b539b07d5d5ee8438a310de38087"
     },
+    "business-analyst": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "skillPath": "skills/business-analyst/SKILL.md",
+      "computedHash": "0b973834355fd5d0c387f977f9d5c9745b4e70c235716c154ffcecad58cdbd9a"
+    },
     "business-growth-skills": {
       "source": "alirezarezvani/claude-skills",
       "sourceType": "github",
@@ -1231,6 +1237,12 @@
       "skillPath": "skills/hormozi-hooks/SKILL.md",
       "computedHash": "aab1f316c5629feafc5e3037eb02c40156ba814d1f0c4eb3f9149017064d3e9a"
     },
+    "hormozi-market-research": {
+      "source": "alexsmedile/hormozi-skills",
+      "sourceType": "github",
+      "skillPath": "skills/market-research/SKILL.md",
+      "computedHash": "49c65a1b4f46611cfac63d9bd8f4afdea0b1c8c96161929db09859d49e577b74"
+    },
     "hormozi-offer": {
       "source": "alexsmedile/hormozi-skills",
       "sourceType": "github",
@@ -1242,6 +1254,12 @@
       "sourceType": "github",
       "skillPath": "skills/hormozi-pitch/SKILL.md",
       "computedHash": "d60017f24486068c0bfef8cf71e9dbb1a2319cf7b837e30d160a044905fab896"
+    },
+    "hormozi-pricing-strategy": {
+      "source": "alexsmedile/hormozi-skills",
+      "sourceType": "github",
+      "skillPath": "skills/pricing-strategy/SKILL.md",
+      "computedHash": "172a07663db48acb1c78cd62691e8dbd75df708e18cd6edad5b8a5446caab397"
     },
     "idea-to-product": {
       "source": "alexsmedile/hormozi-skills",
@@ -1518,12 +1536,6 @@
       "sourceType": "github",
       "skillPath": "markdown-html/skills/markdown-html-orchestrator/SKILL.md",
       "computedHash": "87ff1d198d5e98c4c2987e0825f5f1b59800557eecb1f948594fbcc60ca323d9"
-    },
-    "hormozi-market-research": {
-      "source": "alexsmedile/hormozi-skills",
-      "sourceType": "github",
-      "skillPath": "skills/market-research/SKILL.md",
-      "computedHash": "49c65a1b4f46611cfac63d9bd8f4afdea0b1c8c96161929db09859d49e577b74"
     },
     "market-research": {
       "source": "alirezarezvani/claude-skills",
@@ -1890,12 +1902,6 @@
       "sourceType": "github",
       "skillPath": "commercial/skills/pricing-strategist/SKILL.md",
       "computedHash": "646e56d269ce6e0c129fb22adebda4cf2d5c5de5e5dc6f37f4ca6aecd9f11746"
-    },
-    "hormozi-pricing-strategy": {
-      "source": "alexsmedile/hormozi-skills",
-      "sourceType": "github",
-      "skillPath": "skills/pricing-strategy/SKILL.md",
-      "computedHash": "172a07663db48acb1c78cd62691e8dbd75df708e18cd6edad5b8a5446caab397"
     },
     "pricing-strategy": {
       "source": "alirezarezvani/claude-skills",
