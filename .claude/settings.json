@@ -44,7 +44,13 @@
       "Bash(tasklist /FI \"PID eq 4388\")",
       "Bash(tasklist //FI \"PID eq 4388\")",
       "Bash(npm view *)",
-      "Bash(gh issue *)"
+      "Bash(gh issue *)",
+      "Bash(bun worker-cli.js --help)",
+      "Bash(bun worker-cli.js restart)",
+      "Bash(tasklist //FI \"IMAGENAME eq bun.exe\")",
+      "Bash(netstat -ano)",
+      "Bash(findstr 37777)",
+      "Bash(bun worker-cli.js start)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem"
