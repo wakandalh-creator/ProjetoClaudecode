@@ -63,10 +63,9 @@
       "WebFetch(domain:developers.openai.com)",
       "Bash(npm -v)",
       "Bash(command -v codex)",
-      "WebFetch(domain:www.perplexity.ai)"
+      "WebFetch(domain:www.perplexity.ai)",
+      "Bash(gh api *)"
     ],
     "additionalDirectories": [
-      "C:\\Users\\lucas\\.claude-mem"
-    ]
-  }
-}
+      "C:\\Users\\lucas\\.claude-mem",
+      "\\tm
