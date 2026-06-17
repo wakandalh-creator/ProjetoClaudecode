@@ -62,7 +62,8 @@
       "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-with-docs-codex/SKILL.md)",
       "WebFetch(domain:developers.openai.com)",
       "Bash(npm -v)",
-      "Bash(command -v codex)"
+      "Bash(command -v codex)",
+      "WebFetch(domain:www.perplexity.ai)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem"
