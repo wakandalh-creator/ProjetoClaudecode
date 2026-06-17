@@ -59,7 +59,10 @@
       "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/README.md)",
       "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-me-codex/SKILL.md)",
       "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/codex-review/SKILL.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-with-docs-codex/SKILL.md)"
+      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-with-docs-codex/SKILL.md)",
+      "WebFetch(domain:developers.openai.com)",
+      "Bash(npm -v)",
+      "Bash(command -v codex)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem"
