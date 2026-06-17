@@ -64,8 +64,12 @@
       "Bash(npm -v)",
       "Bash(command -v codex)",
       "WebFetch(domain:www.perplexity.ai)",
-      "Bash(gh api *)"
+      "Bash(gh api *)",
+      "Bash(cygpath -w /tmp/taste-readme.md)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
-      "\\tm
+      "\\tmp"
+    ]
+  }
+}
