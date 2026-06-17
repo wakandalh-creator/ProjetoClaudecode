@@ -50,7 +50,12 @@
       "Bash(tasklist //FI \"IMAGENAME eq bun.exe\")",
       "Bash(netstat -ano)",
       "Bash(findstr 37777)",
-      "Bash(bun worker-cli.js start)"
+      "Bash(bun worker-cli.js start)",
+      "Bash(bun worker-cli.js status)",
+      "Bash(findstr 37778)",
+      "Bash(python3 -c \"import uuid; print\\(str\\(uuid.uuid4\\(\\)\\)\\)\")",
+      "Bash(powershell -c \"[guid]::NewGuid\\(\\).ToString\\(\\)\")",
+      "Bash(findstr \"37777 37778\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem"

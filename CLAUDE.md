@@ -2,6 +2,39 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
+## Memória Ativa (Hot Cache)
+
+### Quem sou
+Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automação, monitoramento de tendências e conteúdo Instagram.
+
+### Termos frequentes
+| Termo | Significado |
+|-------|-------------|
+| **monitor** | Sistema de Monitoramento de Tendências + Instagram em `monitor/` |
+| **relatório** | Saída do monitor em `reports/YYYY-MM-DD/` |
+| **vault** | Vault Obsidian integrado ao monitor |
+| **swarm** | Skill de processamento paralelo com sub-agentes |
+| **claude mem** | Plugin claude-mem — desinstalado, quebrado no Windows/Node v24 |
+| **pw** | Plugin playwright-pro (MCPs pw-testrail e pw-browserstack desativados) |
+| **gpt maker** | MCP gptmaker (conectado) |
+| **auto-sync** | Hook que commita/push automático a cada Write/Edit |
+
+### Setup rápido
+- Windows + Node v24.15.0 + Claude Code 2.1.179
+- MCPs ativos: Cloudflare, gptmaker | Google Drive: pendente autenticar
+- Backup claude-mem: `OneDrive\Documentos\claude-mem-backup.db`
+
+→ Glossário completo: `memory/glossary.md`
+→ Setup detalhado: `memory/context/setup.md`
+
+### Preferências
+- Antes de encerrar qualquer sessão, lembrar: **"Quer que eu atualize a memória com o que fizemos hoje?"**
+
+---
+
+
 ## GitHub Repository
 
 **URL:** https://github.com/wakandalh-creator/ProjetoClaudecode
