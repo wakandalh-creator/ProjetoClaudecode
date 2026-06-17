@@ -55,7 +55,11 @@
       "Bash(findstr 37778)",
       "Bash(python3 -c \"import uuid; print\\(str\\(uuid.uuid4\\(\\)\\)\\)\")",
       "Bash(powershell -c \"[guid]::NewGuid\\(\\).ToString\\(\\)\")",
-      "Bash(findstr \"37777 37778\")"
+      "Bash(findstr \"37777 37778\")",
+      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/README.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-me-codex/SKILL.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/codex-review/SKILL.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/chaseai-yt/grill-me-codex/main/skills/grill-with-docs-codex/SKILL.md)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem"
