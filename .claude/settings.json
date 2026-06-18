@@ -92,7 +92,10 @@
       "Bash(uv tool *)",
       "Bash(graphify --version)",
       "Bash(graphify install *)",
-      "Bash(graphify --help)"
+      "Bash(graphify --help)",
+      "PowerShell(Invoke-WebRequest -Uri \"https://github.com/nexu-io/open-design/releases/download/open-design-v0.11.0/open-design-0.11.0-win-x64-portable.zip\" -OutFile \"C:\\\\open-design-sandbox\\\\open-design-portable.zip\" -UseBasicParsing)",
+      "PowerShell($ProgressPreference = 'SilentlyContinue')",
+      "Bash(curl -s \"https://raw.githubusercontent.com/safishamsi/graphify/v8/graphify/llm.py\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
