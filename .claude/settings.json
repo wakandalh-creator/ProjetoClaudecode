@@ -95,12 +95,20 @@
       "Bash(graphify --help)",
       "PowerShell(Invoke-WebRequest -Uri \"https://github.com/nexu-io/open-design/releases/download/open-design-v0.11.0/open-design-0.11.0-win-x64-portable.zip\" -OutFile \"C:\\\\open-design-sandbox\\\\open-design-portable.zip\" -UseBasicParsing)",
       "PowerShell($ProgressPreference = 'SilentlyContinue')",
-      "Bash(curl -s \"https://raw.githubusercontent.com/safishamsi/graphify/v8/graphify/llm.py\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/safishamsi/graphify/v8/graphify/llm.py\")",
+      "PowerShell(Start-Process \"C:\\\\open-design-sandbox\\\\app\\\\Open Design.exe\")",
+      "mcp__claude_ai_Notion__notion-fetch",
+      "mcp__claude_ai_Notion__notion-search",
+      "mcp__claude_ai_Notion__notion-create-database",
+      "PowerShell(Unregister-ScheduledTask -TaskName \"Graphify-ProjetoClaudecode-WeeklyUpdate\" -Confirm:$false)",
+      "PowerShell(Get-ScheduledTask -TaskName \"Graphify-ProjetoClaudecode-WeeklyUpdate\" -ErrorAction SilentlyContinue)",
+      "Bash(rm -f \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.ps1\" \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.log\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
       "\\tmp",
-      "C:\\"
+      "C:\\",
+      "c:\\Users\\lucas\\OneDrive\\Documentos\\ProjetoClaudecode\\.claude\\scripts"
     ]
   },
   "hooks": {
