@@ -108,7 +108,9 @@
       "WebFetch(domain:scrapecreators.com)",
       "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/packages/create-video/README.md)",
       "WebFetch(domain:remotion.dev)",
-      "Bash(graphify export *)"
+      "Bash(graphify export *)",
+      "Bash(rm -f \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-obsidian-sync.log\")",
+      "Bash(npx --yes create-video@latest . --template=tiktok)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",

@@ -15,24 +15,24 @@ $LogFile     = Join-Path $ProjectRoot ".claude\scripts\graphify-obsidian-sync.lo
 function Invoke-Logged {
     param([string]$Cmd, [string[]]$CmdArgs)
     $output = & $Cmd @CmdArgs 2>&1 | Out-String
-    $output.TrimEnd() | Add-Content -Path $LogFile
+    $output.TrimEnd() | Add-Content -Path $LogFile -Encoding utf8
     return $LASTEXITCODE
 }
 
 Set-Location $ProjectRoot
-"[$(Get-Date -Format o)] Starting Obsidian sync" | Add-Content -Path $LogFile
+"[$(Get-Date -Format o)] Starting Obsidian sync" | Add-Content -Path $LogFile -Encoding utf8
 
 $exit = Invoke-Logged "git" @("pull", "--ff-only")
 if ($exit -ne 0) {
-    "[$(Get-Date -Format o)] WARN: git pull exited $exit - continuing with whatever is on disk" | Add-Content -Path $LogFile
+    "[$(Get-Date -Format o)] WARN: git pull exited $exit - continuing with whatever is on disk" | Add-Content -Path $LogFile -Encoding utf8
 }
 
 if (-not (Test-Path "graphify-out\graph.json")) {
-    "[$(Get-Date -Format o)] SKIP: no graphify-out/graph.json yet (cloud routine hasn't run)" | Add-Content -Path $LogFile
+    "[$(Get-Date -Format o)] SKIP: no graphify-out/graph.json yet (cloud routine hasn't run)" | Add-Content -Path $LogFile -Encoding utf8
     exit 0
 }
 
 Invoke-Logged "graphify" @("export", "obsidian", "--dir", $VaultDir) | Out-Null
 Invoke-Logged "graphify" @("export", "html") | Out-Null
 
-"[$(Get-Date -Format o)] Done" | Add-Content -Path $LogFile
+"[$(Get-Date -Format o)] Done" | Add-Content -Path $LogFile -Encoding utf8
