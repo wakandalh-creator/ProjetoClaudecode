@@ -68,7 +68,8 @@
       "Bash(cygpath -w /tmp/taste-readme.md)",
       "Bash(curl -s https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md)",
       "Bash(curl -s https://raw.githubusercontent.com/openai/codex-plugin-cc/main/README.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/nexu-io/open-design/main/README.md)"
+      "Bash(curl -s https://raw.githubusercontent.com/nexu-io/open-design/main/README.md)",
+      "Bash(curl -s https://raw.githubusercontent.com/openai/codex-plugin-cc/main/package.json)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
