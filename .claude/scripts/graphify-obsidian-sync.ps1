@@ -13,6 +13,7 @@ $LogFile     = Join-Path $ProjectRoot ".claude\scripts\graphify-obsidian-sync.lo
 # mangling accented characters before Out-String ever sees them - re-encoding
 # that already-mangled text as UTF-8 afterwards just compounds the corruption.
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$OutputEncoding = [System.Text.Encoding]::UTF8
 $env:PYTHONUTF8 = "1"
 $env:PYTHONIOENCODING = "utf-8"
 
