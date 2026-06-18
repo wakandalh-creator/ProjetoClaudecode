@@ -4,6 +4,7 @@
 - Windows (OneDrive sync ativo)
 - Node.js v24.15.0
 - Bun instalado (mas com problema de compatibilidade com claude-mem)
+- **RAM: 7,7GB totais, frequentemente <1GB livre.** Limita modelos de IA local — sempre usar variantes `tiny`/`base`/`small` (nunca `medium`/`large`, ex: Whisper.cpp) e fechar apps pesados antes de rodar algo que precise de memória
 
 ## Claude Code
 - Versão: 2.1.179
