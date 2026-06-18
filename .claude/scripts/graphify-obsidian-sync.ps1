@@ -8,12 +8,6 @@ $ProjectRoot = "C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode"
 $VaultDir    = "C:\Users\lucas\OneDrive\Área de Trabalho\Cerebro Claude\Codigo"
 $LogFile     = Join-Path $ProjectRoot ".claude\scripts\graphify-obsidian-sync.log"
 
-# graphify (Python) writes UTF-8 to stdout/stderr. Without this, PowerShell
-# decodes native-process output using the console's legacy codepage (cp1252),
-# mangling accented characters before Out-String ever sees them - re-encoding
-# that already-mangled text as UTF-8 afterwards just compounds the corruption.
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-$OutputEncoding = [System.Text.Encoding]::UTF8
 $env:PYTHONUTF8 = "1"
 $env:PYTHONIOENCODING = "utf-8"
 
@@ -21,10 +15,18 @@ $env:PYTHONIOENCODING = "utf-8"
 # it with 2>&1 makes PowerShell 5.1 wrap each line as a NativeCommandError and
 # flip $? to false even on success - so each call is logged via Out-String
 # instead, and only $LASTEXITCODE decides success/failure.
+#
+# PowerShell 5.1 decodes a non-interactive native process's output using the
+# console's legacy codepage, mangling any accented character (e.g. paths
+# under "Área de Trabalho") regardless of $OutputEncoding/[Console]::OutputEncoding
+# settings. Rather than fight that, strip to ASCII before logging - the log is
+# for a pass/fail glance, not for reading file paths (those are verified by
+# checking the vault folder directly, not the log).
 function Invoke-Logged {
     param([string]$Cmd, [string[]]$CmdArgs)
     $output = & $Cmd @CmdArgs 2>&1 | Out-String
-    $output.TrimEnd() | Add-Content -Path $LogFile -Encoding utf8
+    $ascii = [System.Text.Encoding]::ASCII.GetString([System.Text.Encoding]::ASCII.GetBytes($output))
+    $ascii.TrimEnd() | Add-Content -Path $LogFile -Encoding utf8
     return $LASTEXITCODE
 }
 
