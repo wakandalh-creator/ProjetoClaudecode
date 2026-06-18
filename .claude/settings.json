@@ -118,7 +118,9 @@
       "Bash(npx --yes create-video@latest meu-teste --tiktok --yes)",
       "Bash(python /c/Users/lucas/.claude/plugins/cache/claude-video/watch/0.1.3/scripts/setup.py --json)",
       "Bash(python /c/Users/lucas/.claude/plugins/cache/claude-video/watch/0.1.3/scripts/setup.py)",
-      "Bash(python -m pip install --user yt-dlp)"
+      "Bash(python -m pip install --user yt-dlp)",
+      "Bash(npm run *)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
