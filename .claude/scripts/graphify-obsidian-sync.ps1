@@ -8,6 +8,14 @@ $ProjectRoot = "C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode"
 $VaultDir    = "C:\Users\lucas\OneDrive\Área de Trabalho\Cerebro Claude\Codigo"
 $LogFile     = Join-Path $ProjectRoot ".claude\scripts\graphify-obsidian-sync.log"
 
+# graphify (Python) writes UTF-8 to stdout/stderr. Without this, PowerShell
+# decodes native-process output using the console's legacy codepage (cp1252),
+# mangling accented characters before Out-String ever sees them - re-encoding
+# that already-mangled text as UTF-8 afterwards just compounds the corruption.
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+$env:PYTHONUTF8 = "1"
+$env:PYTHONIOENCODING = "utf-8"
+
 # Native exes (git, graphify) write normal progress info to stderr. Redirecting
 # it with 2>&1 makes PowerShell 5.1 wrap each line as a NativeCommandError and
 # flip $? to false even on success - so each call is logged via Out-String

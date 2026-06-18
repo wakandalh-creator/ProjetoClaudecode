@@ -110,7 +110,14 @@
       "WebFetch(domain:remotion.dev)",
       "Bash(graphify export *)",
       "Bash(rm -f \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-obsidian-sync.log\")",
-      "Bash(npx --yes create-video@latest . --template=tiktok)"
+      "Bash(npx --yes create-video@latest . --template=tiktok)",
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/packages/create-video/src/init.ts)",
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/packages/create-video/src/select-template.ts)",
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/packages/create-video/src/templates.ts)",
+      "Bash(rm -rf ./*)",
+      "Bash(npx --yes create-video@latest meu-teste --tiktok --yes)",
+      "Bash(python /c/Users/lucas/.claude/plugins/cache/claude-video/watch/0.1.3/scripts/setup.py --json)",
+      "Bash(python /c/Users/lucas/.claude/plugins/cache/claude-video/watch/0.1.3/scripts/setup.py)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
