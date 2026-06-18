@@ -13,8 +13,8 @@ $LogFile     = Join-Path $ProjectRoot ".claude\scripts\graphify-obsidian-sync.lo
 # flip $? to false even on success - so each call is logged via Out-String
 # instead, and only $LASTEXITCODE decides success/failure.
 function Invoke-Logged {
-    param([string]$Cmd, [string[]]$Args)
-    $output = & $Cmd @Args 2>&1 | Out-String
+    param([string]$Cmd, [string[]]$CmdArgs)
+    $output = & $Cmd @CmdArgs 2>&1 | Out-String
     $output.TrimEnd() | Add-Content -Path $LogFile
     return $LASTEXITCODE
 }

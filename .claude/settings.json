@@ -104,7 +104,11 @@
       "PowerShell(Get-ScheduledTask -TaskName \"Graphify-ProjetoClaudecode-WeeklyUpdate\" -ErrorAction SilentlyContinue)",
       "Bash(rm -f \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.ps1\" \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.log\")",
       "Bash(powershell -NoProfile -Command \"[guid]::NewGuid\\(\\).ToString\\(\\)\")",
-      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/LICENSE.md)"
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/LICENSE.md)",
+      "WebFetch(domain:scrapecreators.com)",
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/packages/create-video/README.md)",
+      "WebFetch(domain:remotion.dev)",
+      "Bash(graphify export *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
