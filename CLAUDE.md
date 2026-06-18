@@ -20,6 +20,7 @@ Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automaçã
 | **pw** | Plugin playwright-pro (MCPs pw-testrail e pw-browserstack desativados) |
 | **gpt maker** | MCP gptmaker (conectado) |
 | **auto-sync** | Hook que commita/push automático a cada Write/Edit |
+| **graphify** | Skill de knowledge graph (escopo: monitor/config/reports/CLAUDE.md). Atualização diária automática: nuvem (8h BRT, commita grafo + posta no Notion) → local (8h30 BRT, sincroniza vault Obsidian) |
 
 ### Setup rápido
 - Windows + Node v24.15.0 + Claude Code 2.1.179
