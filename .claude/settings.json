@@ -69,7 +69,22 @@
       "Bash(curl -s https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md)",
       "Bash(curl -s https://raw.githubusercontent.com/openai/codex-plugin-cc/main/README.md)",
       "Bash(curl -s https://raw.githubusercontent.com/nexu-io/open-design/main/README.md)",
-      "Bash(curl -s https://raw.githubusercontent.com/openai/codex-plugin-cc/main/package.json)"
+      "Bash(curl -s https://raw.githubusercontent.com/openai/codex-plugin-cc/main/package.json)",
+      "Bash(claude --version)",
+      "Bash(curl -s https://raw.githubusercontent.com/nexu-io/open-design/main/.claude-plugin/marketplace.json)",
+      "Bash(cd \"/c/Users/lucas/OneDrive/Documentos/ProjetoClaudecode\" && grep -il \"context7\\\\|sequential-thinking\\\\|deep-research\\\\|autoresearch\" .claude/settings.json .claude/settings.local.json .mcp.json 2>/dev/null)",
+      "Read(//c/c/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/**)",
+      "Bash(curl -s https://raw.githubusercontent.com/nexu-io/open-design/main/QUICKSTART.md)",
+      "Bash(docker --version)",
+      "Bash(docker compose *)",
+      "Bash(npx --version)",
+      "Bash(uv --version)",
+      "Bash(npx ctx7 *)",
+      "Bash(gh release *)",
+      "Bash(mkdir -p ~/Downloads)",
+      "Bash(curl -L -o open-design-0.11.0-win-x64-setup.exe \"https://github.com/nexu-io/open-design/releases/download/open-design-v0.11.0/open-design-0.11.0-win-x64-setup.exe\" --progress-bar)",
+      "Bash(sleep 8 && cat /dev/null)",
+      "Read(//dev/**)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
