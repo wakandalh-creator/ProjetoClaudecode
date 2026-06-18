@@ -24,6 +24,10 @@ Atalhos, siglas e linguagem interna do Lucas.
 | graphify | Skill que transforma código/docs em knowledge graph (PyPI `graphifyy`) — escopo: `monitor/`+`config/`+`reports/`+`CLAUDE.md`, output em `graphify-out/` |
 | rotina em nuvem / /schedule | Agente cloud isolado (CCR) da Anthropic — roda em ambiente próprio, sem acesso ao PC local, mas alcança MCPs conectados (ex: Notion) |
 | Monitor — Grafo de Código | Database Notion criada para receber o resumo diário do graphify (God Nodes, Surprising Connections, pergunta sugerida) |
+| codex-plugin-cc | Plugin oficial OpenAI pra usar Codex dentro do Claude Code (`/codex:review`, `/codex:adversarial-review`) — instalado, grátis com conta ChatGPT Free |
+| open-design / `od` | App de design agêntico (`nexu-io/open-design`) — instalado em versão portátil isolada em `C:\open-design-sandbox\app\`, sem instalador no sistema |
+| Remotion / create-video | Framework de vídeo programático em React — testado em `Documentos\teste-remotion\meu-teste\`, template TikTok (legendas via Whisper.cpp local) |
+| Whisper.cpp | Transcrição de áudio local usada pelo template Remotion-TikTok — na máquina do Lucas, só os modelos `tiny`/`base`/`small` cabem na RAM disponível |
 
 ## Comandos frequentes
 
