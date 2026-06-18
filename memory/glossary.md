@@ -18,9 +18,12 @@ Atalhos, siglas e linguagem interna do Lucas.
 |-------|-------------|
 | monitor | Sistema de Monitoramento de Tendências + Instagram em `monitor/` |
 | relatório | Saída do monitor em `reports/YYYY-MM-DD/` |
-| vault | Vault Obsidian integrado ao monitor |
+| vault | Vault Obsidian integrado ao monitor (`Cerebro Claude`) |
 | swarm | Skill de processamento paralelo com sub-agentes |
 | auto-sync | Hook que commita e push automático a cada Write/Edit no Claude Code |
+| graphify | Skill que transforma código/docs em knowledge graph (PyPI `graphifyy`) — escopo: `monitor/`+`config/`+`reports/`+`CLAUDE.md`, output em `graphify-out/` |
+| rotina em nuvem / /schedule | Agente cloud isolado (CCR) da Anthropic — roda em ambiente próprio, sem acesso ao PC local, mas alcança MCPs conectados (ex: Notion) |
+| Monitor — Grafo de Código | Database Notion criada para receber o resumo diário do graphify (God Nodes, Surprising Connections, pergunta sugerida) |
 
 ## Comandos frequentes
 
@@ -29,3 +32,5 @@ Atalhos, siglas e linguagem interna do Lucas.
 | rodar monitor | `Execute o monitor — leia monitor/run.md` |
 | ver relatório | `Abra o relatório mais recente em reports/` |
 | exportar obsidian | `Execute apenas o Módulo 7 — leia monitor/modules/07-obsidian-export.md` |
+| atualizar grafo manualmente | `/graphify monitor config reports CLAUDE.md --update --obsidian` |
+| ver grafo no navegador | Abrir `graphify-out/graph.html` |
