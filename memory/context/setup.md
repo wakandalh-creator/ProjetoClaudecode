@@ -28,6 +28,14 @@
 | claude-mem (thedotmack) | Desinstalado — quebrado no Windows/Node v24 |
 | playwright-pro | Instalado — MCPs desativados |
 | graphify (`graphifyy` via uv tool) | Instalado, escopo de projeto. Skill em `.claude/skills/graphify/` |
+| codex@openai-codex | Instalado (escopo user) — `/codex:review`, `/codex:adversarial-review`, `/codex:rescue` |
+| open-design@open-design | Instalado (escopo user) — app real em `C:\open-design-sandbox\app\` (versão portátil, não pelo plugin/instalador) |
+
+## Projetos de teste (fora do repo principal)
+| Pasta | O que é |
+|-------|---------|
+| `C:\open-design-sandbox\app\` | Open Design versão portátil — `Open Design.exe`, sem instalação no sistema |
+| `Documentos\teste-remotion\meu-teste\` | Scaffold Remotion template TikTok (legendas), testado e funcionando, modelo Whisper `base`/`pt` |
 
 ## Automação graphify (configurada em 2026-06-18)
 | Peça | Onde | Frequência |
