@@ -103,7 +103,8 @@
       "PowerShell(Unregister-ScheduledTask -TaskName \"Graphify-ProjetoClaudecode-WeeklyUpdate\" -Confirm:$false)",
       "PowerShell(Get-ScheduledTask -TaskName \"Graphify-ProjetoClaudecode-WeeklyUpdate\" -ErrorAction SilentlyContinue)",
       "Bash(rm -f \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.ps1\" \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Documentos\\\\ProjetoClaudecode\\\\.claude\\\\scripts\\\\graphify-weekly-update.log\")",
-      "Bash(powershell -NoProfile -Command \"[guid]::NewGuid\\(\\).ToString\\(\\)\")"
+      "Bash(powershell -NoProfile -Command \"[guid]::NewGuid\\(\\).ToString\\(\\)\")",
+      "Bash(curl -s https://raw.githubusercontent.com/remotion-dev/remotion/main/LICENSE.md)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
