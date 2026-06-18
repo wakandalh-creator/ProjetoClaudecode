@@ -26,6 +26,15 @@
 |--------|--------|
 | claude-mem (thedotmack) | Desinstalado — quebrado no Windows/Node v24 |
 | playwright-pro | Instalado — MCPs desativados |
+| graphify (`graphifyy` via uv tool) | Instalado, escopo de projeto. Skill em `.claude/skills/graphify/` |
+
+## Automação graphify (configurada em 2026-06-18)
+| Peça | Onde | Frequência |
+|------|------|-----------|
+| Rotina em nuvem `graphify-daily-update` | `trig_017yfMuS3SAxeLEPwsqWGwxX` (claude.ai/code/routines) | Diária, 11h00 UTC (8h BRT) |
+| Tarefa Windows `Graphify-ProjetoClaudecode-ObsidianSync` | `.claude/scripts/graphify-obsidian-sync.ps1` | Diária, 8h30 BRT |
+| Database Notion | "Monitor — Grafo de Código" (data source `d78c3c4c-8972-4161-b0c3-31a5b952d977`) | Atualizada pela rotina em nuvem |
+| Log local | `.claude/scripts/graphify-obsidian-sync.log` | Checar ocasionalmente |
 
 ## Backup claude-mem
 - Localização: `C:\Users\lucas\OneDrive\Documentos\claude-mem-backup.db`
