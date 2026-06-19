@@ -1,122 +1,127 @@
 {
-  "/home/user/ProjetoClaudecode/config/business.json": {
-    "mtime": 1781817228.4809282,
+  "config/business.json": {
+    "mtime": 1781817229.480527,
     "ast_hash": "8f7abf94e5ffa1e72de92fc791dd11ec",
     "semantic_hash": "8f7abf94e5ffa1e72de92fc791dd11ec"
   },
-  "/home/user/ProjetoClaudecode/config/obsidian.json": {
-    "mtime": 1781817228.4809282,
+  "config/obsidian.json": {
+    "mtime": 1781817229.480527,
     "ast_hash": "81e7c71a6e08eadc8843a6ac063a664e",
     "semantic_hash": "81e7c71a6e08eadc8843a6ac063a664e"
   },
-  "/home/user/ProjetoClaudecode/config/profiles.json": {
-    "mtime": 1781817228.4809282,
+  "config/profiles.json": {
+    "mtime": 1781817229.480527,
     "ast_hash": "8672d57089b63288578d9547e0eb16a8",
     "semantic_hash": "8672d57089b63288578d9547e0eb16a8"
   },
-  "/home/user/ProjetoClaudecode/config/sources.json": {
-    "mtime": 1781817228.4809282,
+  "config/sources.json": {
+    "mtime": 1781817229.480527,
     "ast_hash": "28fc40fdabab64e6eea2db6b9408c6bb",
     "semantic_hash": "28fc40fdabab64e6eea2db6b9408c6bb"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/01-trends.md": {
-    "mtime": 1781817228.4881659,
+  "monitor/modules/01-trends.md": {
+    "mtime": 1781817229.4867816,
     "ast_hash": "2e9a9dded6da86d707efae3a14483a9f",
     "semantic_hash": "2e9a9dded6da86d707efae3a14483a9f"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/02-instagram.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/02-instagram.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "756398972628b5fb5be398da82ad2955",
     "semantic_hash": "756398972628b5fb5be398da82ad2955"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/03-benchmark.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/03-benchmark.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "91105c100ef6f563dc20d9d0138f25f7",
     "semantic_hash": "91105c100ef6f563dc20d9d0138f25f7"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/04-top10-analysis.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/04-top10-analysis.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "7e1337d3d8053ad73897e9c32dce95d8",
     "semantic_hash": "7e1337d3d8053ad73897e9c32dce95d8"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/05-content-models.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/05-content-models.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "58815ac9df006273fb58f1ea22f97f49",
     "semantic_hash": "58815ac9df006273fb58f1ea22f97f49"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/06-business-apply.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/06-business-apply.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "964a5548f0bd912fbb358affbed62064",
     "semantic_hash": "964a5548f0bd912fbb358affbed62064"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/07-obsidian-export.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/07-obsidian-export.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "9c4fa9e30784a1ea7547bbb98f15a8c2",
     "semantic_hash": "9c4fa9e30784a1ea7547bbb98f15a8c2"
   },
-  "/home/user/ProjetoClaudecode/monitor/modules/08-notion-export.md": {
-    "mtime": 1781817228.488397,
+  "monitor/modules/08-notion-export.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "10abb6daf10da7fd1601aef4337d1107",
     "semantic_hash": "10abb6daf10da7fd1601aef4337d1107"
   },
-  "/home/user/ProjetoClaudecode/monitor/run.md": {
-    "mtime": 1781817228.488397,
+  "monitor/run.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "cd4fcb08b35d5e164d926d70c833a654",
     "semantic_hash": "cd4fcb08b35d5e164d926d70c833a654"
   },
-  "/home/user/ProjetoClaudecode/monitor/templates/report-insights.md": {
-    "mtime": 1781817228.488397,
+  "monitor/templates/report-insights.md": {
+    "mtime": 1781817229.4868603,
     "ast_hash": "22ef2b80cfbc48c962f9401889822d5b",
     "semantic_hash": "22ef2b80cfbc48c962f9401889822d5b"
   },
-  "/home/user/ProjetoClaudecode/monitor/templates/report-instagram.md": {
-    "mtime": 1781817228.489917,
+  "monitor/templates/report-instagram.md": {
+    "mtime": 1781817229.4882162,
     "ast_hash": "192554115756bfceaed1d578b3e42ac3",
     "semantic_hash": "192554115756bfceaed1d578b3e42ac3"
   },
-  "/home/user/ProjetoClaudecode/monitor/templates/report-trends.md": {
-    "mtime": 1781817228.489917,
+  "monitor/templates/report-trends.md": {
+    "mtime": 1781817229.4882162,
     "ast_hash": "91d210068deddf552ca45b89dfc62a79",
     "semantic_hash": "91d210068deddf552ca45b89dfc62a79"
   },
-  "/home/user/ProjetoClaudecode/config/README.md": {
-    "mtime": 1781817228.4801133,
+  "config/README.md": {
+    "mtime": 1781817229.479738,
     "ast_hash": "1a538dbd66495ec3751a29d28bb167a8",
     "semantic_hash": "1a538dbd66495ec3751a29d28bb167a8"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/01-tendencias.md": {
-    "mtime": 1781817228.4901752,
+  "reports/2026-06-17/01-tendencias.md": {
+    "mtime": 1781817229.4885964,
     "ast_hash": "e19abf371ca4fb074ca8ac689df5ed72",
     "semantic_hash": "e19abf371ca4fb074ca8ac689df5ed72"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/02-perfis-instagram.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/02-perfis-instagram.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "e503863d103815ab11b85a64f24c9a49",
     "semantic_hash": "e503863d103815ab11b85a64f24c9a49"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/03-benchmark.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/03-benchmark.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "ff8ddd2d6d591824af7e0fd4ef3c2296",
     "semantic_hash": "ff8ddd2d6d591824af7e0fd4ef3c2296"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/04-top10-analise.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/04-top10-analise.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "b12a75b809f5a397716403dfbaf61a29",
     "semantic_hash": "b12a75b809f5a397716403dfbaf61a29"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/05-modelos-conteudo.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/05-modelos-conteudo.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "7fa4ea82b1ce9d0d8051a593d78f25e6",
     "semantic_hash": "7fa4ea82b1ce9d0d8051a593d78f25e6"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/06-aplicacao-negocio.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/06-aplicacao-negocio.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "f711d902307af25ce6458813d24d4e0e",
     "semantic_hash": "f711d902307af25ce6458813d24d4e0e"
   },
-  "/home/user/ProjetoClaudecode/reports/2026-06-17/RESUMO.md": {
-    "mtime": 1781817228.490369,
+  "reports/2026-06-17/RESUMO.md": {
+    "mtime": 1781817229.4889157,
     "ast_hash": "29b6a23b2ba12d3703cab9396571261c",
     "semantic_hash": "29b6a23b2ba12d3703cab9396571261c"
+  },
+  "CLAUDE.md": {
+    "mtime": 1781867009.2988849,
+    "ast_hash": "a5ab32808ee9a0e0f6c8849354459511",
+    "semantic_hash": "a5ab32808ee9a0e0f6c8849354459511"
   }
 }

@@ -57,6 +57,580 @@
   },
   "nodes": [
     {
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_claude_md",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "Lucas",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 10",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_lucas",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": "lucas"
+    },
+    {
+      "label": "ProjetoClaudecode",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 10",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_projetoclaudecode",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": "projetoclaudecode"
+    },
+    {
+      "label": "monitor",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 15",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_monitor",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor"
+    },
+    {
+      "label": "relat\u00f3rio",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_relatorio",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "relatorio"
+    },
+    {
+      "label": "vault (Obsidian)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 17",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_vault",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "vault (obsidian)"
+    },
+    {
+      "label": "swarm",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_swarm",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "swarm"
+    },
+    {
+      "label": "claude mem",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 19",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_claude_mem",
+      "community": 8,
+      "community_name": "Plugins Desativados (claude mem, pw)",
+      "norm_label": "claude mem"
+    },
+    {
+      "label": "pw (playwright-pro plugin)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 20",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_pw",
+      "community": 8,
+      "community_name": "Plugins Desativados (claude mem, pw)",
+      "norm_label": "pw (playwright-pro plugin)"
+    },
+    {
+      "label": "gpt maker (MCP gptmaker)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 21",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_gpt_maker",
+      "community": 9,
+      "community_name": "MCP GPT Maker",
+      "norm_label": "gpt maker (mcp gptmaker)"
+    },
+    {
+      "label": "auto-sync",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 22",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_auto_sync",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": "auto-sync"
+    },
+    {
+      "label": "graphify",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 23",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graphify",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "graphify"
+    },
+    {
+      "label": "memory/glossary.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 30",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_glossario",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "memory/glossary.md"
+    },
+    {
+      "label": "memory/context/setup.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_setup_md",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "memory/context/setup.md"
+    },
+    {
+      "label": "GitHub Repository (wakandalh-creator/ProjetoClaudecode)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 41",
+      "source_url": "https://github.com/wakandalh-creator/ProjetoClaudecode",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_github_repo",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": "github repository (wakandalh-creator/projetoclaudecode)"
+    },
+    {
+      "label": ".claude/auto-sync.ps1",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 47",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_auto_sync_ps1",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": ".claude/auto-sync.ps1"
+    },
+    {
+      "label": ".claude/settings.local.json",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 45",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_settings_local_json",
+      "community": 6,
+      "community_name": "Auto-sync e Identidade do Reposit\u00f3rio",
+      "norm_label": ".claude/settings.local.json"
+    },
+    {
+      "label": "Swarm Skill \u2014 Regras Obrigat\u00f3rias de Seguran\u00e7a",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 67",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_swarm_rules",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "swarm skill \u2014 regras obrigatorias de seguranca"
+    },
+    {
+      "label": "responseSchema (estrito)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 71",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_response_schema",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "responseschema (estrito)"
+    },
+    {
+      "label": "concurrency: 3",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 89",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_concurrency_limit",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "concurrency: 3"
+    },
+    {
+      "label": "subagentType (uso restrito)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 94",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_subagent_type",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "subagenttype (uso restrito)"
+    },
+    {
+      "label": "context (ancoragem do modelo)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 98",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_context_anchor",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "context (ancoragem do modelo)"
+    },
+    {
+      "label": "retry ap\u00f3s run inicial",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 103",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_retry_rule",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "retry apos run inicial"
+    },
+    {
+      "label": "batchSize padr\u00e3o 5",
+      "file_type": "rationale",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 113",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_batch_size",
+      "community": 5,
+      "community_name": "Regras de Seguran\u00e7a do Swarm",
+      "norm_label": "batchsize padrao 5"
+    },
+    {
+      "label": "monitor/run.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 126",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_monitor_run_md",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor/run.md"
+    },
+    {
+      "label": "monitor/modules/01-trends.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 127",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_modulo1_trends",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor/modules/01-trends.md"
+    },
+    {
+      "label": "monitor/modules/02-instagram.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 128",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_modulo2_instagram",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor/modules/02-instagram.md"
+    },
+    {
+      "label": "monitor/modules/03-benchmark.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 129",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_modulo3_benchmark",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor/modules/03-benchmark.md"
+    },
+    {
+      "label": "monitor/modules/07-obsidian-export.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 130",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_modulo7_obsidian_export",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "monitor/modules/07-obsidian-export.md"
+    },
+    {
+      "label": "config/business.json",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 143",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_config_business_json",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "config/business.json"
+    },
+    {
+      "label": "config/sources.json",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 144",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_config_sources_json",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "config/sources.json"
+    },
+    {
+      "label": "config/profiles.json",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 145",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_config_profiles_json",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "config/profiles.json"
+    },
+    {
+      "label": "config/obsidian.json",
+      "file_type": "code",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 146",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_config_obsidian_json",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "config/obsidian.json"
+    },
+    {
+      "label": "reports/YYYY-MM-DD/RESUMO.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 156",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_reports_resumo_md",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "reports/yyyy-mm-dd/resumo.md"
+    },
+    {
+      "label": "reports/YYYY-MM-DD/06-aplicacao-negocio.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 157",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_reports_aplicacao_negocio",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "reports/yyyy-mm-dd/06-aplicacao-negocio.md"
+    },
+    {
+      "label": "instagram-content-cloner (skill)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 170",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_instagram_content_cloner",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "instagram-content-cloner (skill)"
+    },
+    {
+      "label": "daydream (skill)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 171",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_daydream",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "daydream (skill)"
+    },
+    {
+      "label": "GOOGLE_API_KEY",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 173",
+      "source_url": "https://aistudio.google.com/apikey",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_google_api_key",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "google_api_key"
+    },
+    {
+      "label": "graphify-out/ (knowledge graph)",
+      "file_type": "concept",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 186",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graphify_out",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "graphify-out/ (knowledge graph)"
+    },
+    {
+      "label": "graphify-out/GRAPH_REPORT.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "line 191",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "claudemd_graph_report_md",
+      "community": 0,
+      "community_name": "Documenta\u00e7\u00e3o e Gloss\u00e1rio do Projeto",
+      "norm_label": "graphify-out/graph_report.md"
+    },
+    {
+      "label": "config/README.md",
+      "file_type": "document",
+      "source_file": "config/README.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "config_readme",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
+      "norm_label": "config/readme.md"
+    },
+    {
       "label": "M\u00f3dulo 1 \u2014 Monitoramento de Tend\u00eancias",
       "file_type": "document",
       "source_file": "monitor/modules/01-trends.md",
@@ -66,8 +640,8 @@
       "author": null,
       "contributor": null,
       "id": "01_trends_modulo1",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "modulo 1 \u2014 monitoramento de tendencias"
     },
     {
@@ -80,8 +654,8 @@
       "author": null,
       "contributor": null,
       "id": "02_instagram_modulo2",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "modulo 2 \u2014 monitoramento de perfis instagram"
     },
     {
@@ -94,8 +668,8 @@
       "author": null,
       "contributor": null,
       "id": "monitor_modo_descoberta",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "modo descoberta (perfis vazios)"
     },
     {
@@ -108,8 +682,8 @@
       "author": null,
       "contributor": null,
       "id": "monitor_modo_analise",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "modo analise (perfis ativos)"
     },
     {
@@ -122,8 +696,8 @@
       "author": null,
       "contributor": null,
       "id": "03_benchmark_modulo3",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "modulo 3 \u2014 benchmark de conteudo"
     },
     {
@@ -137,7 +711,7 @@
       "contributor": null,
       "id": "04_top10_analysis_modulo4",
       "community": 4,
-      "community_name": "Benchmark Top 10",
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "modulo 4 \u2014 analise profunda dos top 10 conteudos"
     },
     {
@@ -150,8 +724,8 @@
       "author": null,
       "contributor": null,
       "id": "05_content_models_modulo5",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "modulo 5 \u2014 modelos de conteudo"
     },
     {
@@ -164,8 +738,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_opiniao_forte",
-      "community": 5,
-      "community_name": "Discurso Anti-Automa\u00e7\u00e3o",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "modelo de conteudo: opiniao_forte"
     },
     {
@@ -178,8 +752,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_case_real",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "modelo de conteudo: case_real"
     },
     {
@@ -192,8 +766,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_pov",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 4,
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "modelo de conteudo: pov"
     },
     {
@@ -206,8 +780,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_lista_checklist",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "modelo de conteudo: lista_checklist"
     },
     {
@@ -220,8 +794,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_erro_comum",
-      "community": 6,
-      "community_name": "Risco de Agentes IA",
+      "community": 7,
+      "community_name": "Framework de Risco Oculto",
       "norm_label": "modelo de conteudo: erro_comum"
     },
     {
@@ -234,8 +808,8 @@
       "author": null,
       "contributor": null,
       "id": "modelos_tutorial_rapido",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "modelo de conteudo: tutorial_rapido"
     },
     {
@@ -248,8 +822,8 @@
       "author": null,
       "contributor": null,
       "id": "06_business_apply_modulo6",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "modulo 6 \u2014 aplicacao ao negocio"
     },
     {
@@ -262,8 +836,8 @@
       "author": null,
       "contributor": null,
       "id": "07_obsidian_export_modulo7",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "modulo 7 \u2014 exportacao para obsidian"
     },
     {
@@ -276,8 +850,8 @@
       "author": null,
       "contributor": null,
       "id": "08_notion_export_modulo8",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "modulo 8 \u2014 exportacao para notion"
     },
     {
@@ -290,8 +864,8 @@
       "author": null,
       "contributor": null,
       "id": "run_orquestrador",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "monitor/run.md \u2014 orquestrador principal"
     },
     {
@@ -304,8 +878,8 @@
       "author": null,
       "contributor": null,
       "id": "monitor_swarm_skill",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "skill swarm (processamento paralelo)"
     },
     {
@@ -318,8 +892,8 @@
       "author": null,
       "contributor": null,
       "id": "monitor_instagram_content_cloner_skill",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "skill instagram-content-cloner"
     },
     {
@@ -332,8 +906,8 @@
       "author": null,
       "contributor": null,
       "id": "monitor_daydream_skill",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "skill daydream"
     },
     {
@@ -347,7 +921,7 @@
       "contributor": null,
       "id": "templates_report_insights",
       "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "template \u2014 report-insights.md"
     },
     {
@@ -360,8 +934,8 @@
       "author": null,
       "contributor": null,
       "id": "templates_report_instagram",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "template \u2014 report-instagram.md"
     },
     {
@@ -374,23 +948,9 @@
       "author": null,
       "contributor": null,
       "id": "templates_report_trends",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "template \u2014 report-trends.md"
-    },
-    {
-      "label": "config/README.md",
-      "file_type": "document",
-      "source_file": "config/README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "config_readme",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
-      "norm_label": "config/readme.md"
     },
     {
       "label": "Relat\u00f3rio 01-tendencias.md (2026-06-17)",
@@ -402,8 +962,8 @@
       "author": null,
       "contributor": null,
       "id": "2026_06_17_01_tendencias",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "relatorio 01-tendencias.md (2026-06-17)"
     },
     {
@@ -416,8 +976,8 @@
       "author": null,
       "contributor": null,
       "id": "insight_ai_agency_orquestracao",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "insight: ai agency via orquestracao agentica e tendencia forte"
     },
     {
@@ -430,8 +990,8 @@
       "author": null,
       "contributor": null,
       "id": "tendencia_claude_managed_agents",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "tendencia: claude managed agents (sandbox + mcp privado)"
     },
     {
@@ -444,8 +1004,8 @@
       "author": null,
       "contributor": null,
       "id": "tendencia_instagram_penaliza_ai_spun",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "tendencia: instagram penaliza conteudo 'ai-spun'"
     },
     {
@@ -458,8 +1018,8 @@
       "author": null,
       "contributor": null,
       "id": "tendencia_fim_pricing_assento",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "tendencia: fim do pricing por assento (saas) ate 2028"
     },
     {
@@ -472,8 +1032,8 @@
       "author": null,
       "contributor": null,
       "id": "2026_06_17_02_perfis_instagram",
-      "community": 1,
-      "community_name": "Monitoramento Instagram",
+      "community": 3,
+      "community_name": "Monitoramento Instagram e Benchmark",
       "norm_label": "relatorio 02-perfis-instagram.md (2026-06-17)"
     },
     {
@@ -487,7 +1047,7 @@
       "contributor": null,
       "id": "2026_06_17_03_benchmark",
       "community": 4,
-      "community_name": "Benchmark Top 10",
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "relatorio 03-benchmark.md (2026-06-17)"
     },
     {
@@ -501,7 +1061,7 @@
       "contributor": null,
       "id": "top10_smma_to_ai_agencies",
       "community": 4,
-      "community_name": "Benchmark Top 10",
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "conteudo: 'smma to ai agencies - the new gold rush!'"
     },
     {
@@ -514,8 +1074,8 @@
       "author": null,
       "contributor": null,
       "id": "top10_n8n_parasite_system",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "conteudo: 'the n8n instagram parasite system'"
     },
     {
@@ -528,8 +1088,8 @@
       "author": null,
       "contributor": null,
       "id": "top10_ia_nao_vende",
-      "community": 5,
-      "community_name": "Discurso Anti-Automa\u00e7\u00e3o",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "conteudo: 'a verdade e que a ia nao vai vender por voce...'"
     },
     {
@@ -542,8 +1102,8 @@
       "author": null,
       "contributor": null,
       "id": "top10_agente_vende_dormindo",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 4,
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "conteudo: 'quer fazer seu agente de ia vender enquanto voce dorme?'"
     },
     {
@@ -556,8 +1116,8 @@
       "author": null,
       "contributor": null,
       "id": "top10_agentes_filtran",
-      "community": 6,
-      "community_name": "Risco de Agentes IA",
+      "community": 7,
+      "community_name": "Framework de Risco Oculto",
       "norm_label": "conteudo: 'tus agentes de ia son poderosos... hasta que se filtran'"
     },
     {
@@ -571,7 +1131,7 @@
       "contributor": null,
       "id": "2026_06_17_04_top10_analise",
       "community": 4,
-      "community_name": "Benchmark Top 10",
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "relatorio 04-top10-analise.md (2026-06-17)"
     },
     {
@@ -585,7 +1145,7 @@
       "contributor": null,
       "id": "framework_nomeacao_fenomeno",
       "community": 4,
-      "community_name": "Benchmark Top 10",
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "framework: nomeacao de fenomeno + transicao de x para y"
     },
     {
@@ -598,8 +1158,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_nome_sistema_resultado",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "framework: nome de sistema/metodo + resultado numerico + prazo"
     },
     {
@@ -612,8 +1172,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_cta_baixo_atrito",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "framework: cta de baixo atrito (comentar palavra-chave \u2192 dm)"
     },
     {
@@ -626,8 +1186,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_contraste_crenca",
-      "community": 5,
-      "community_name": "Discurso Anti-Automa\u00e7\u00e3o",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "framework: contraste/negacao de crenca popular"
     },
     {
@@ -640,8 +1200,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_pergunta_retorica_escala",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 4,
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "framework: pergunta retorica ligada a desejo de escala"
     },
     {
@@ -654,8 +1214,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_poder_ate_que",
-      "community": 6,
-      "community_name": "Risco de Agentes IA",
+      "community": 7,
+      "community_name": "Framework de Risco Oculto",
       "norm_label": "framework: 'poder... ate que...' (alerta de risco oculto)"
     },
     {
@@ -668,8 +1228,8 @@
       "author": null,
       "contributor": null,
       "id": "framework_minimo_viavel",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "framework: minimo viavel (reducao de complexidade)"
     },
     {
@@ -682,8 +1242,8 @@
       "author": null,
       "contributor": null,
       "id": "2026_06_17_05_modelos_conteudo",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "relatorio 05-modelos-conteudo.md (2026-06-17)"
     },
     {
@@ -696,8 +1256,8 @@
       "author": null,
       "contributor": null,
       "id": "2026_06_17_06_aplicacao_negocio",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "relatorio 06-aplicacao-negocio.md (2026-06-17)"
     },
     {
@@ -710,8 +1270,8 @@
       "author": null,
       "contributor": null,
       "id": "ideia_verdade_sobre_automacao",
-      "community": 5,
-      "community_name": "Discurso Anti-Automa\u00e7\u00e3o",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "ideia de conteudo: a verdade sobre automacao"
     },
     {
@@ -724,8 +1284,8 @@
       "author": null,
       "contributor": null,
       "id": "ideia_sistema_monitora_50_perfis",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "ideia de conteudo: o sistema que monitora 50 perfis de ia por mim"
     },
     {
@@ -738,8 +1298,8 @@
       "author": null,
       "contributor": null,
       "id": "ideia_prompt_para_criar_agentes",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "ideia de conteudo: o prompt que eu uso pra criar agentes"
     },
     {
@@ -752,8 +1312,8 @@
       "author": null,
       "contributor": null,
       "id": "ideia_conteudo_pronto_dormindo",
-      "community": 2,
-      "community_name": "Modelos de Conte\u00fado",
+      "community": 4,
+      "community_name": "An\u00e1lise Top10 e Frameworks",
       "norm_label": "ideia de conteudo: conteudo pronto enquanto voce dorme"
     },
     {
@@ -766,8 +1326,8 @@
       "author": null,
       "contributor": null,
       "id": "ideia_risco_agentes_ia",
-      "community": 6,
-      "community_name": "Risco de Agentes IA",
+      "community": 7,
+      "community_name": "Framework de Risco Oculto",
       "norm_label": "ideia de conteudo: o risco que ninguem fala sobre agentes de ia"
     },
     {
@@ -780,8 +1340,8 @@
       "author": null,
       "contributor": null,
       "id": "insight_seguranca_mcp_lacuna",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "insight: seguranca de agentes/mcp privados em pt e lacuna de mercado"
     },
     {
@@ -794,8 +1354,8 @@
       "author": null,
       "contributor": null,
       "id": "insight_monitor_como_case_real",
-      "community": 3,
-      "community_name": "Aplica\u00e7\u00e3o ao Neg\u00f3cio",
+      "community": 1,
+      "community_name": "Modelos e Frameworks de Conte\u00fado",
       "norm_label": "insight: sistema monitor/ como prova social (case_real)"
     },
     {
@@ -808,12 +1368,432 @@
       "author": null,
       "contributor": null,
       "id": "2026_06_17_resumo",
-      "community": 0,
-      "community_name": "Tend\u00eancias e Exporta\u00e7\u00e3o",
+      "community": 2,
+      "community_name": "Monitoramento de Tend\u00eancias e Exporta\u00e7\u00e3o",
       "norm_label": "resumo.md (2026-06-17)"
     }
   ],
   "links": [
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 30",
+      "weight": 1.0,
+      "source": "claudemd_claude_md",
+      "target": "claudemd_glossario"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 31",
+      "weight": 1.0,
+      "source": "claudemd_claude_md",
+      "target": "claudemd_setup_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 10",
+      "weight": 1.0,
+      "source": "claudemd_lucas",
+      "target": "claudemd_monitor"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 10",
+      "weight": 1.0,
+      "source": "claudemd_lucas",
+      "target": "claudemd_projetoclaudecode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 41",
+      "weight": 1.0,
+      "source": "claudemd_projetoclaudecode",
+      "target": "claudemd_github_repo"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 143",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_config_business_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 146",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_config_obsidian_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 145",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_config_profiles_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 144",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_config_sources_json"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 126",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_monitor_run_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 16",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_relatorio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 17",
+      "weight": 1.0,
+      "source": "claudemd_monitor",
+      "target": "claudemd_vault"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 157",
+      "weight": 1.0,
+      "source": "claudemd_relatorio",
+      "target": "claudemd_reports_aplicacao_negocio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 156",
+      "weight": 1.0,
+      "source": "claudemd_relatorio",
+      "target": "claudemd_reports_resumo_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "lines 137,171,180",
+      "weight": 1.0,
+      "source": "claudemd_vault",
+      "target": "claudemd_daydream"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 67",
+      "weight": 1.0,
+      "source": "claudemd_swarm",
+      "target": "claudemd_swarm_rules"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "AMBIGUOUS",
+      "confidence_score": 0.2,
+      "source_file": "CLAUDE.md",
+      "source_location": "lines 19-20",
+      "weight": 0.5,
+      "source": "claudemd_pw",
+      "target": "claudemd_claude_mem"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 47",
+      "weight": 1.0,
+      "source": "claudemd_auto_sync",
+      "target": "claudemd_auto_sync_ps1"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 45",
+      "weight": 1.0,
+      "source": "claudemd_auto_sync",
+      "target": "claudemd_settings_local_json"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 23",
+      "weight": 1.0,
+      "source": "claudemd_graphify",
+      "target": "claudemd_claude_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 23",
+      "weight": 1.0,
+      "source": "claudemd_graphify",
+      "target": "claudemd_config_business_json"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 186",
+      "weight": 1.0,
+      "source": "claudemd_graphify",
+      "target": "claudemd_graphify_out"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 23",
+      "weight": 1.0,
+      "source": "claudemd_graphify",
+      "target": "claudemd_monitor"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 23",
+      "weight": 1.0,
+      "source": "claudemd_graphify",
+      "target": "claudemd_relatorio"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "lines 47-51",
+      "weight": 1.0,
+      "source": "claudemd_auto_sync_ps1",
+      "target": "claudemd_github_repo"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 113",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_batch_size"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 89",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_concurrency_limit"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 98",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_context_anchor"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 71",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_response_schema"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 103",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_retry_rule"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 94",
+      "weight": 1.0,
+      "source": "claudemd_swarm_rules",
+      "target": "claudemd_subagent_type"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 127",
+      "weight": 1.0,
+      "source": "claudemd_monitor_run_md",
+      "target": "claudemd_modulo1_trends"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 128",
+      "weight": 1.0,
+      "source": "claudemd_monitor_run_md",
+      "target": "claudemd_modulo2_instagram"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 129",
+      "weight": 1.0,
+      "source": "claudemd_monitor_run_md",
+      "target": "claudemd_modulo3_benchmark"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 130",
+      "weight": 1.0,
+      "source": "claudemd_monitor_run_md",
+      "target": "claudemd_modulo7_obsidian_export"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 170",
+      "weight": 1.0,
+      "source": "claudemd_modulo2_instagram",
+      "target": "claudemd_instagram_content_cloner"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "lines 178-182",
+      "weight": 1.0,
+      "source": "claudemd_modulo7_obsidian_export",
+      "target": "claudemd_vault"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 170",
+      "weight": 1.0,
+      "source": "claudemd_reports_aplicacao_negocio",
+      "target": "claudemd_instagram_content_cloner"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 173",
+      "weight": 1.0,
+      "source": "claudemd_instagram_content_cloner",
+      "target": "claudemd_google_api_key"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "CLAUDE.md",
+      "source_location": "line 191",
+      "weight": 1.0,
+      "source": "claudemd_graphify_out",
+      "target": "claudemd_graph_report_md"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "config_readme",
+      "target": "monitor_instagram_content_cloner_skill"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "config/README.md",
+      "source_location": null,
+      "weight": 1.0,
+      "source": "config_readme",
+      "target": "run_orquestrador"
+    },
     {
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -1233,26 +2213,6 @@
       "weight": 1.0,
       "source": "run_orquestrador",
       "target": "08_notion_export_modulo8"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "config_readme",
-      "target": "monitor_instagram_content_cloner_skill"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "config/README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "config_readme",
-      "target": "run_orquestrador"
     },
     {
       "relation": "references",
@@ -1847,5 +2807,5 @@
       "source_file": "/home/user/ProjetoClaudecode/reports/2026-06-17/06-aplicacao-negocio.md"
     }
   ],
-  "built_at_commit": "74c5758b7ef6440b9f4db35aa2f511d0dd53f4ed"
+  "built_at_commit": "34442281a38f74b343f4323d6bafb9009110531c"
 }
