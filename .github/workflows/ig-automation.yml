@@ -47,11 +47,14 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ig-saves-engine/generate_ideas.py
 
-      - name: Postar ideias aprovadas no Instagram
-        env:
-          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-          NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
-          INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
-          INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
-          INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
-        run: python ig-saves-engine/post_to_instagram.py
+      # Etapa de postagem automática desativada a pedido do usuário (2026-06-22).
+      # Ideias continuam sendo geradas e salvas no Notion com status pendente de aprovação;
+      # a postagem real fica manual até reativação explícita.
+      # - name: Postar ideias aprovadas no Instagram
+      #   env:
+      #     NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      #     NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
+      #     INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
+      #     INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
+      #     INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
+      #   run: python ig-saves-engine/post_to_instagram.py

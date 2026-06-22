@@ -5,3 +5,41 @@ Canvas: C:\Users\lucas\OneDrive\??rea de Trabalho\Cerebro Claude\Codigo/graph.ca
 Open C:\Users\lucas\OneDrive\??rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-06-18T19:23:02.4622143-03:00] Done
+[2026-06-21T15:05:57.0450705-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   3444228..cf752ff  master     -> origin/master
+Updating 3444228..cf752ff
+Fast-forward
+ graphify-out/GRAPH_REPORT.md                       |  111 +-
+ ...7920b75e27f161670afbdab5cd6f358fc1ceb03854.json |    0
+ ...69b14dcdee09bcb508098ef8fdf997fe2746f17762.json |    0
+ ...e87fd5d712b3b44654e51727cb6e964b69ff69e8c7.json |    0
+ ...bcbaeadcdf8c9cd99417d67005befaba778d234ca0.json |    0
+ ...c27739b4025a2f44ae562736b2342ce38815a20d6e.json |    1 +
+ graphify-out/cache/stat-index.json                 |    2 +-
+ graphify-out/graph.json                            | 1192 ++++++++++++++++++--
+ graphify-out/manifest.json                         |  178 ++-
+ 9 files changed, 1297 insertions(+), 187 deletions(-)
+ rename graphify-out/cache/ast/{v0.8.42 => v0.8.44}/9983bd562abbfbff501e367920b75e27f161670afbdab5cd6f358fc1ceb03854.json (100%)
+ rename graphify-out/cache/ast/{v0.8.42 => v0.8.44}/ded4b13cf548af6d6bb82069b14dcdee09bcb508098ef8fdf997fe2746f17762.json (100%)
+ rename graphify-out/cache/ast/{v0.8.42 => v0.8.44}/fc4f96eed37d4320ed7a22e87fd5d712b3b44654e51727cb6e964b69ff69e8c7.json (100%)
+ rename graphify-out/cache/ast/{v0.8.42 => v0.8.44}/fd2b2366d3173cc6c50d0dbcbaeadcdf8c9cd99417d67005befaba778d234ca0.json (100%)
+ create mode 100644 graphify-out/cache/semantic/04550cb4292bb34c53b5b7c27739b4025a2f44ae562736b2342ce38815a20d6e.json
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-21T15:07:18.2284289-03:00] Done
+[2026-06-21T15:08:58.1154901-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-21T15:09:06.1240256-03:00] Done
