@@ -160,6 +160,7 @@ Quer que eu gere as imagens para os posts via Gemini? (precisa de GOOGLE_API_KEY
 
 ## Regras gerais para todos os módulos
 
+- **Idioma: todo o conteúdo final (relatórios, notas no Obsidian, registros no Notion) deve estar em português brasileiro.** Fontes, perfis ou trechos em inglês (ou outro idioma) devem ser traduzidos antes de entrar em qualquer entregável — nunca cole trecho original em inglês sem tradução. Nomes próprios, handles e termos técnicos sem tradução natural (ex: "growth", "SaaS") podem ser mantidos no original.
 - Nunca invente dados — se não encontrar, documente a limitação
 - Salve cada relatório antes de avançar
 - Siga as regras do Swarm: `concurrency: 3`, `batchSize: 5`, retry obrigatório, `additionalProperties: false`
