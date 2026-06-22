@@ -21,6 +21,7 @@ Post de @{author} no Instagram:
 {caption}
 
 Baseado neste post, crie uma ideia de Reel para criadores brasileiros que querem usar IA no dia a dia.
+Responda sempre em português do Brasil, mesmo que o post original esteja em outro idioma (traduza qualquer trecho relevante).
 Responda EXATAMENTE neste formato (sem texto extra antes ou depois):
 
 TITULO: [título curto e chamativo, máximo 60 caracteres]
