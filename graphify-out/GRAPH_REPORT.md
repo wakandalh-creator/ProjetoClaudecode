@@ -1,4 +1,4 @@
-# Graph Report - /home/user/ProjetoClaudecode  (2026-06-22)
+# Graph Report - .  (2026-06-23)
 
 ## Corpus Check
 - 25 files · ~18,291 words
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `cf752ff`
+- Built from commit: `ab66865a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

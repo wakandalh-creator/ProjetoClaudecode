@@ -19,7 +19,7 @@
         "relation": "participate_in",
         "confidence": "EXTRACTED",
         "confidence_score": 0.95,
-        "source_file": "/home/user/ProjetoClaudecode/monitor/run.md"
+        "source_file": "monitor/run.md"
       },
       {
         "id": "frameworks_replicaveis_top10",
@@ -36,7 +36,7 @@
         "relation": "form",
         "confidence": "EXTRACTED",
         "confidence_score": 0.9,
-        "source_file": "/home/user/ProjetoClaudecode/reports/2026-06-17/04-top10-analise.md"
+        "source_file": "reports/2026-06-17/04-top10-analise.md"
       },
       {
         "id": "top5_ideias_producao_2026_06_17",
@@ -51,7 +51,7 @@
         "relation": "participate_in",
         "confidence": "EXTRACTED",
         "confidence_score": 0.95,
-        "source_file": "/home/user/ProjetoClaudecode/reports/2026-06-17/06-aplicacao-negocio.md"
+        "source_file": "reports/2026-06-17/06-aplicacao-negocio.md"
       }
     ]
   },
@@ -2772,7 +2772,7 @@
       "relation": "participate_in",
       "confidence": "EXTRACTED",
       "confidence_score": 0.95,
-      "source_file": "/home/user/ProjetoClaudecode/monitor/run.md"
+      "source_file": "monitor/run.md"
     },
     {
       "id": "frameworks_replicaveis_top10",
@@ -2789,7 +2789,7 @@
       "relation": "form",
       "confidence": "EXTRACTED",
       "confidence_score": 0.9,
-      "source_file": "/home/user/ProjetoClaudecode/reports/2026-06-17/04-top10-analise.md"
+      "source_file": "reports/2026-06-17/04-top10-analise.md"
     },
     {
       "id": "top5_ideias_producao_2026_06_17",
@@ -2804,8 +2804,8 @@
       "relation": "participate_in",
       "confidence": "EXTRACTED",
       "confidence_score": 0.95,
-      "source_file": "/home/user/ProjetoClaudecode/reports/2026-06-17/06-aplicacao-negocio.md"
+      "source_file": "reports/2026-06-17/06-aplicacao-negocio.md"
     }
   ],
-  "built_at_commit": "cf752ff9f57b9c87a2a445ca152721ac1577f6a5"
+  "built_at_commit": "ab66865a9e6d83481f17f7d4a8375efca4045291"
 }
