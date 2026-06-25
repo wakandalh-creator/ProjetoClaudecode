@@ -123,5 +123,50 @@
     "mtime": 1782299005.1153352,
     "ast_hash": "a5ab32808ee9a0e0f6c8849354459511",
     "semantic_hash": "a5ab32808ee9a0e0f6c8849354459511"
+  },
+  "reports/2026-06-24/01-tendencias.md": {
+    "mtime": 1782385490.316815,
+    "ast_hash": "56a97a43d199759f5a6af94a2c4eaec5",
+    "semantic_hash": "56a97a43d199759f5a6af94a2c4eaec5"
+  },
+  "reports/2026-06-24/02-perfis-instagram.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "bf53b91030ebcad4671c39dd6f730806",
+    "semantic_hash": "bf53b91030ebcad4671c39dd6f730806"
+  },
+  "reports/2026-06-24/03-benchmark.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "bd9a73d14615995e45b6b49772a81648",
+    "semantic_hash": "bd9a73d14615995e45b6b49772a81648"
+  },
+  "reports/2026-06-24/04-top10-analise.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "3569895f90bbc51147e9ac3bd720d337",
+    "semantic_hash": "3569895f90bbc51147e9ac3bd720d337"
+  },
+  "reports/2026-06-24/05-modelos-conteudo.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "a105cb35350e271da2c75c919957cc20",
+    "semantic_hash": "a105cb35350e271da2c75c919957cc20"
+  },
+  "reports/2026-06-24/06-aplicacao-negocio.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "1eb5b3767ea3c4ccacc806ed7f72fb1d",
+    "semantic_hash": "1eb5b3767ea3c4ccacc806ed7f72fb1d"
+  },
+  "reports/2026-06-24/07-obsidian-export.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "f4a2fd0f948da697f1c6252b20f1eac1",
+    "semantic_hash": "f4a2fd0f948da697f1c6252b20f1eac1"
+  },
+  "reports/2026-06-24/08-notion-export.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "6eca6855bf12c552d423e5555993bfa9",
+    "semantic_hash": "6eca6855bf12c552d423e5555993bfa9"
+  },
+  "reports/2026-06-24/RESUMO.md": {
+    "mtime": 1782385490.3184924,
+    "ast_hash": "88022d0369f9a21a88431816e6e8ee9f",
+    "semantic_hash": "88022d0369f9a21a88431816e6e8ee9f"
   }
 }
