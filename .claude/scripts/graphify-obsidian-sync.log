@@ -43,3 +43,79 @@ Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.
 Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-06-21T15:09:06.1240256-03:00] Done
+[2026-06-22T16:11:57.1460158-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   cf752ff..ab66865  master     -> origin/master
+hint: Diverging branches can't be fast-forwarded, you need to either:
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-22T16:12:01.2063605-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-22T16:12:13.5971971-03:00] Done
+[2026-06-23T19:48:39.5574921-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   ab66865..d469473  master     -> origin/master
+ * [new branch]      claude/monitor-2026-06-23 -> origin/claude/monitor-2026-06-23
+hint: Diverging branches can't be fast-forwarded, you need to either:
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-23T19:50:19.1817071-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-23T19:51:05.6204813-03:00] Done
+[2026-06-25T16:59:44.2982492-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   d469473..681cd7d  master     -> origin/master
+hint: Diverging branches can't be fast-forwarded, you need to either:
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-25T16:59:58.9581920-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-25T17:00:13.3513456-03:00] Done
