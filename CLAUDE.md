@@ -32,6 +32,7 @@ Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automaçã
 
 ### Preferências
 - Antes de encerrar qualquer sessão, lembrar: **"Quer que eu atualize a memória com o que fizemos hoje?"**
+- **Acompanhar uso de tokens:** monitorar o consumo da sessão e avisar proativamente o Lucas quando houver uso elevado (ex: muitas subagentes em paralelo, leitura de arquivos grandes, operações repetidas/pesadas, sessão muito longa). Obs: não há acesso a uma API de telemetria de tokens em tempo real — o acompanhamento é por estimativa/heurística com base nas ações tomadas na sessão, não um contador exato.
 
 ---
 
