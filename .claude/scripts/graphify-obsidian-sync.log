@@ -119,3 +119,210 @@ Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.
 Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-06-25T17:00:13.3513456-03:00] Done
+[2026-06-26T16:12:40.7491433-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-26T16:13:57.6014389-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-26T16:14:30.6126745-03:00] Done
+[2026-06-28T16:16:56.7960761-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-28T16:17:18.4644188-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-28T16:18:01.4594455-03:00] Done
+[2026-06-29T16:18:11.2953892-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-29T16:18:47.5310044-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-29T16:19:48.8368672-03:00] Done
+[2026-06-30T15:54:57.8665467-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-06-30T15:56:35.1018011-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-06-30T15:57:11.7286347-03:00] Done
+[2026-07-02T18:48:45.8366567-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-07-02T18:49:15.9983792-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-02T18:50:07.7931435-03:00] Done
+[2026-07-03T19:20:05.6868345-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-07-03T19:20:19.1241173-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-03T19:20:47.9397439-03:00] Done
+[2026-07-04T18:13:17.1156082-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-07-04T18:14:03.4966181-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-04T18:14:27.7596608-03:00] Done
+[2026-07-06T16:59:21.0275802-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-07-06T17:01:37.6827426-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-06T17:02:06.9646224-03:00] Done
+[2026-07-07T10:16:25.8726406-03:00] Starting Obsidian sync
+git.exe : hint: Diverging branches can't be fast-forwarded, you need to either:
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (hint: Diverging...need to either::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+hint:
+hint: 	git merge --no-ff
+hint:
+hint: or:
+hint:
+hint: 	git rebase
+hint:
+hint: Disable this message with "git config set advice.diverging false"
+fatal: Not possible to fast-forward, aborting.
+[2026-07-07T10:17:30.6998562-03:00] WARN: git pull exited 128 - continuing with whatever is on disk
+Obsidian vault: 104 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-07T10:18:22.0462643-03:00] Done
