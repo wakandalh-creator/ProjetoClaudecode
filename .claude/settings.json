@@ -142,7 +142,9 @@
       "PowerShell(Get-NetTCPConnection -State Listen -ErrorAction SilentlyContinue | Where-Object { $_.LocalPort -eq 37777 -or $_.LocalPort -eq 37778 }; Write-Host \"---processes---\"; Get-Process | Where-Object { $_.ProcessName -match \"bun|node\" } | Select-Object ProcessName, Id, StartTime)",
       "PowerShell(Get-Command powershell -ErrorAction SilentlyContinue | Select-Object Source; Write-Host \"---try manual start---\"; try { Start-Process -FilePath 'C:\\\\Users\\\\lucas\\\\.bun\\\\bin\\\\bun.exe' -ArgumentList @\\('C:\\\\Users\\\\lucas\\\\.claude\\\\plugins\\\\marketplaces\\\\thedotmack\\\\plugin\\\\scripts\\\\worker-service.cjs','--daemon'\\) -WindowStyle Hidden -ErrorAction Stop; Write-Host \"Start-Process succeeded\" } catch { Write-Host \"ERROR: $\\($_.Exception.Message\\)\" })",
       "Bash(curl -s -o - -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" http://127.0.0.1:37778/health)",
-      "PowerShell($env:PATH -split ';')"
+      "PowerShell($env:PATH -split ';')",
+      "PowerShell(try { & ipconfig.exe /all | Select-Object -First 1 } catch { Write-Host \"FALHOU: $\\($_.Exception.Message\\)\" }; Write-Host \"---\"; Get-Content \"C:\\\\Users\\\\lucas\\\\.claude\\\\settings.json\" -Raw | Select-String -Pattern '\"PATH\"')",
+      "Bash(cp \"C:/Users/lucas/.claude/settings.json\" \"C:/Users/lucas/.claude/settings.json.bak-checkup\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
@@ -151,7 +153,8 @@
       "c:\\Users\\lucas\\OneDrive\\Documentos\\ProjetoClaudecode\\.claude\\scripts",
       "C:\\Users\\lucas\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup",
       "C:\\Users\\lucas\\OneDrive\\Documentos\\ProjetoClaudecode\\.claude\\skills\\book-to-skill",
-      "C:\\Users\\lucas\\AppData\\Roaming\\Code\\User"
+      "C:\\Users\\lucas\\AppData\\Roaming\\Code\\User",
+      "C:\\Users\\lucas\\.claude"
     ]
   },
   "hooks": {
