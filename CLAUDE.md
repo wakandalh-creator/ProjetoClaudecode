@@ -23,7 +23,7 @@ Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automaçã
 | **graphify** | Skill de knowledge graph (escopo: monitor/config/reports/CLAUDE.md). Atualização diária automática: nuvem (8h BRT, commita grafo + posta no Notion) → local (8h30 BRT, sincroniza vault Obsidian) |
 
 ### Setup rápido
-- Windows + Node v24.15.0 + Claude Code **2.1.204**
+- Windows + Node v24.15.0 + Claude Code **2.1.209**
 - MCPs ativos: Cloudflare, gptmaker, sequential-thinking, context7 | Google Drive: pendente autenticar
 - Backup claude-mem: `OneDrive\Documentos\claude-mem-backup.db`
 
