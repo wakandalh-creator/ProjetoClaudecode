@@ -16,7 +16,7 @@ Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automaçã
 | **relatório** | Saída do monitor em `reports/YYYY-MM-DD/` |
 | **vault** | Vault Obsidian integrado ao monitor |
 | **swarm** | Skill de processamento paralelo com sub-agentes |
-| **claude mem** | Plugin claude-mem — reinstalado e validado em 2026-07-13 (v13.11.0). Causa raiz do crash (conflito de PATH entre shims npm do Bun e o binário real) corrigida; worker rodando saudável na porta 37778, backup de memórias restaurado |
+| **claude mem** | Plugin claude-mem — reinstalado e validado em 2026-07-13 (v13.11.0). Causa raiz do crash (conflito de PATH entre shims npm do Bun e o binário real) corrigida; worker rodando saudável na porta 37778, backup de memórias restaurado. Segunda causa raiz de crash do worker encontrada e corrigida em 2026-07-14 (ver abaixo) |
 | **pw** | Plugin playwright-pro (MCPs pw-testrail e pw-browserstack desativados) |
 | **gpt maker** | MCP gptmaker (conectado) |
 | **auto-sync** | Hook que commita/push automático a cada Write/Edit |
