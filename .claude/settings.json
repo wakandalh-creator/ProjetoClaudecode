@@ -147,7 +147,9 @@
       "Bash(cp \"C:/Users/lucas/.claude/settings.json\" \"C:/Users/lucas/.claude/settings.json.bak-checkup\")",
       "PowerShell(try { $null = Get-Content \"C:\\\\Users\\\\lucas\\\\.claude\\\\settings.json\" -Raw | ConvertFrom-Json; Write-Host \"JSON valido\" } catch { Write-Host \"JSON INVALIDO: $\\($_.Exception.Message\\)\" })",
       "Bash(awk '{print $2}')",
-      "Bash(awk -F/ '{print $1\"/\"$2\"/\"$3}')"
+      "Bash(awk -F/ '{print $1\"/\"$2\"/\"$3}')",
+      "Bash(git check-ignore *)",
+      "Bash(echo \"exit:$?\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
