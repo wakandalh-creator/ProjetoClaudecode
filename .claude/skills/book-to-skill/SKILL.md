@@ -24,15 +24,18 @@ usar o que esse livro ensina depois, como uma ferramenta", use esta.
 
 ## Intake — onde soltar o livro
 
-Pasta dedicada no Google Drive: `livros-inbox`. Nunca solte o arquivo
-bruto do livro dentro do repositório `ProjetoClaudecode` — o hook
-`auto-sync` (`.claude/auto-sync.ps1`, disparado por `PostToolUse` em
-`Write|Edit`) commita e dá push em tudo que for escrito no repo, e
-arquivos de livro costumam ser protegidos por direitos autorais.
+Pasta dedicada no Google Drive: `livros-inbox`
+(`id: 1lhamvLUgP1mRmJqgiMBSlxGh0dLQa9kk`, criada em 2026-07-14), com
+subpasta `processados` (`id: 1MXgDg7NTeoGmI8cLbprPlxFaRfYdQPcK`). Nunca
+solte o arquivo bruto do livro dentro do repositório `ProjetoClaudecode`
+— o hook `auto-sync` (`.claude/auto-sync.ps1`, disparado por
+`PostToolUse` em `Write|Edit`) commita e dá push em tudo que for escrito
+no repo, e arquivos de livro costumam ser protegidos por direitos
+autorais.
 
-Pré-requisito: conector `claude.ai Google Drive` autorizado (ver
-`CLAUDE.md` — hoje listado como pendente). Sem isso, peça ao usuário pra
-autorizar via configurações de conector do claude.ai antes de continuar.
+Conector `claude.ai Google Drive` já está autorizado (confirmado em
+2026-07-14) — `search_files`/`list_recent_files`/`download_file_content`
+disponíveis normalmente.
 
 Acionamento:
 - Com nome explícito: "transforma 'Traction.epub' (no Drive) em skill,
