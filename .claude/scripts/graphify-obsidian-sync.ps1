@@ -33,9 +33,14 @@ function Invoke-Logged {
 Set-Location $ProjectRoot
 "[$(Get-Date -Format o)] Starting Obsidian sync" | Add-Content -Path $LogFile -Encoding utf8
 
-$exit = Invoke-Logged "git" @("pull", "--ff-only")
+# Local (auto-sync hook) and remote (cloud graph routine) both commit, so the
+# branches diverge and --ff-only can never succeed. Rebase local commits on top
+# of the remote graph; --autostash tucks away the working-tree changes first.
+# On conflict, abort so a headless run never leaves the repo mid-rebase.
+$exit = Invoke-Logged "git" @("pull", "--rebase", "--autostash")
 if ($exit -ne 0) {
-    "[$(Get-Date -Format o)] WARN: git pull exited $exit - continuing with whatever is on disk" | Add-Content -Path $LogFile -Encoding utf8
+    Invoke-Logged "git" @("rebase", "--abort") | Out-Null
+    "[$(Get-Date -Format o)] WARN: git pull exited $exit (rebase aborted) - continuing with whatever is on disk" | Add-Content -Path $LogFile -Encoding utf8
 }
 
 if (-not (Test-Path "graphify-out\graph.json")) {

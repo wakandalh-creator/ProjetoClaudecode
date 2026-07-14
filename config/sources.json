@@ -38,30 +38,6 @@
       "type": "news",
       "focus": "Lançamentos e atualizações OpenAI"
     },
-    {
-      "name": "Reddit r/ClaudeAI",
-      "url": "https://www.reddit.com/r/ClaudeAI/",
-      "type": "community",
-      "focus": "Discussões e casos de uso do Claude"
-    },
-    {
-      "name": "Reddit r/AIAgents",
-      "url": "https://www.reddit.com/r/AIAgents/",
-      "type": "community",
-      "focus": "Agentes de IA e automação"
-    },
-    {
-      "name": "Reddit r/SaaS",
-      "url": "https://www.reddit.com/r/SaaS/",
-      "type": "community",
-      "focus": "Tendências e cases SaaS"
-    },
-    {
-      "name": "Reddit r/artificial",
-      "url": "https://www.reddit.com/r/artificial/",
-      "type": "community",
-      "focus": "IA em geral, novidades e debates"
-    }
   ],
   "search_queries": [
     "Claude Code novidades junho 2026",
@@ -72,6 +48,10 @@
     "SaaS crescimento estratégias IA",
     "workflows produtividade IA novas ferramentas",
     "instagram reels IA marketing viral 2026",
-    "creator economy IA automação Brasil"
+    "creator economy IA automação Brasil",
+    "site:reddit.com r/ClaudeAI discussões casos de uso",
+    "site:reddit.com r/AIAgents agentes IA automação",
+    "site:reddit.com r/SaaS tendências cases",
+    "site:reddit.com r/artificial IA novidades debates"
   ]
 }

@@ -1,0 +1,11 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - generic [ref=f3e3]:
+      - generic [ref=f3e4]: "N"
+      - generic [ref=f3e5]: NossoCRM
+    - generic [ref=f3e6]:
+      - button "Botão primário (bg-primary-500)" [ref=f3e7]
+      - generic [ref=f3e8]: Badge/destaque (primary-500/400)
+      - generic [ref=f3e9]: "null"
+  - button "Open Next.js Dev Tools" [ref=f3e15] [cursor=pointer]:
+    - img [ref=f3e16]
