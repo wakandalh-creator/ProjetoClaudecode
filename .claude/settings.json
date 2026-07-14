@@ -144,7 +144,10 @@
       "Bash(curl -s -o - -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" http://127.0.0.1:37778/health)",
       "PowerShell($env:PATH -split ';')",
       "PowerShell(try { & ipconfig.exe /all | Select-Object -First 1 } catch { Write-Host \"FALHOU: $\\($_.Exception.Message\\)\" }; Write-Host \"---\"; Get-Content \"C:\\\\Users\\\\lucas\\\\.claude\\\\settings.json\" -Raw | Select-String -Pattern '\"PATH\"')",
-      "Bash(cp \"C:/Users/lucas/.claude/settings.json\" \"C:/Users/lucas/.claude/settings.json.bak-checkup\")"
+      "Bash(cp \"C:/Users/lucas/.claude/settings.json\" \"C:/Users/lucas/.claude/settings.json.bak-checkup\")",
+      "PowerShell(try { $null = Get-Content \"C:\\\\Users\\\\lucas\\\\.claude\\\\settings.json\" -Raw | ConvertFrom-Json; Write-Host \"JSON valido\" } catch { Write-Host \"JSON INVALIDO: $\\($_.Exception.Message\\)\" })",
+      "Bash(awk '{print $2}')",
+      "Bash(awk -F/ '{print $1\"/\"$2\"/\"$3}')"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
