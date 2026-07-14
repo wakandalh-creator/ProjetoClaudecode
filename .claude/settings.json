@@ -149,7 +149,8 @@
       "Bash(awk '{print $2}')",
       "Bash(awk -F/ '{print $1\"/\"$2\"/\"$3}')",
       "Bash(git check-ignore *)",
-      "Bash(echo \"exit:$?\")"
+      "Bash(echo \"exit:$?\")",
+      "Bash(git ls-tree *)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
