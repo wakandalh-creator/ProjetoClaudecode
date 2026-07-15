@@ -153,7 +153,9 @@
       "Bash(git ls-tree *)",
       "Bash(git diff *)",
       "mcp__claude_ai_Google_Drive__search_files",
-      "mcp__claude_ai_Google_Drive__create_file"
+      "mcp__claude_ai_Google_Drive__create_file",
+      "WebFetch(domain:21st.dev)",
+      "Bash(jobs)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",

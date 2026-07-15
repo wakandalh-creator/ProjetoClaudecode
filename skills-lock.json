@@ -127,6 +127,12 @@
       "skillPath": "productivity/andreessen/skills/andreessen/SKILL.md",
       "computedHash": "587e5242a659c1f0495ec43fdcd6428f6b8c379d0ba04cd9756f40199d299595"
     },
+    "animation-vocabulary": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/animation-vocabulary/SKILL.md",
+      "computedHash": "280c6688ef2568ad92f40c4dc638f0cc5cde0f49bdd6debd097410aa9945f44f"
+    },
     "api-design-reviewer": {
       "source": "alirezarezvani/claude-skills",
       "sourceType": "github",
@@ -150,6 +156,12 @@
       "sourceType": "github",
       "skillPath": "marketing-skill/skills/app-store-optimization/SKILL.md",
       "computedHash": "848168125045edb774bd2d31df9e3b11ba4bd0f586c9cf39aaaf33705d317556"
+    },
+    "apple-design": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/apple-design/SKILL.md",
+      "computedHash": "0d19303902efa64eace10e6b183eb29ef3220d424c1a7fd1eafc52adde216932"
     },
     "apple-hig-expert": {
       "source": "alirezarezvani/claude-skills",
@@ -1033,6 +1045,12 @@
       "skillPath": "skills/emails/SKILL.md",
       "computedHash": "24be312d773945dda1d21b52fa172a523e9cb005cb3b700fe81f787980d5381c"
     },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "ac3fc5b4e206488ffc408a2806f829bb2e5eaf518fded09be34790685c2b3a0d"
+    },
     "engineering-advanced-skills": {
       "source": "alirezarezvani/claude-skills",
       "sourceType": "github",
@@ -1170,6 +1188,12 @@
       "sourceType": "github",
       "skillPath": "finance/skills/financial-analyst/SKILL.md",
       "computedHash": "ac8c55a44b90d077549b484a67c278d07323047153c3c21349ceebb1fdccd90a"
+    },
+    "find-animation-opportunities": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/find-animation-opportunities/SKILL.md",
+      "computedHash": "5c3ea721da792383aac5c10927548ad0d2ab56706ff553109ecf6f743091b01b"
     },
     "finishing-a-development-branch": {
       "source": "obra/superpowers",
@@ -1428,6 +1452,12 @@
       "sourceType": "github",
       "skillPath": "skills/engineering/implement/SKILL.md",
       "computedHash": "21d7160a81a70def69c3b2b6394943ea978f60b5b4658a4ac4a5b79799ae5597"
+    },
+    "improve-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/improve-animations/SKILL.md",
+      "computedHash": "ff9991a8d6dabb24411daaf6de570e3b6826323459d514d90d7f6371bbdbdbe1"
     },
     "improve-codebase-architecture": {
       "source": "mattpocock/skills",
@@ -2430,6 +2460,12 @@
       "sourceType": "github",
       "skillPath": "engineering-team/playwright-pro/skills/review/SKILL.md",
       "computedHash": "09b14fddf7d5f2279ddc6e6954f894f0435ddb9b91195e68a24b2c0f1bfdb1d7"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skills",
+      "sourceType": "github",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "computedHash": "26bec85a9bfe7cfbfd500ff1ffebc7819ac0cef75cf068c4a97b5af865ccccf7"
     },
     "revops": {
       "source": "coreyhaines31/marketingskills",
