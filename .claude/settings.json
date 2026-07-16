@@ -160,7 +160,9 @@
       "PowerShell(Get-Command hermes -ErrorAction SilentlyContinue | Select-Object Source; echo \"---\"; Test-Path \"$env:LOCALAPPDATA\\\\hermes\\\\hermes-agent\"; echo \"---env PATH check---\"; $env:PATH -split ';' | Select-String -Pattern \"hermes\")",
       "Bash(n8n start *)",
       "Bash(echo \"started, pid: $!\")",
-      "Bash(ps -W)"
+      "Bash(ps -W)",
+      "Skill(update-config)",
+      "Skill(update-config:*)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
