@@ -159,7 +159,8 @@
       "PowerShell(iex \\(irm https://hermes-agent.nousresearch.com/install.ps1\\))",
       "PowerShell(Get-Command hermes -ErrorAction SilentlyContinue | Select-Object Source; echo \"---\"; Test-Path \"$env:LOCALAPPDATA\\\\hermes\\\\hermes-agent\"; echo \"---env PATH check---\"; $env:PATH -split ';' | Select-String -Pattern \"hermes\")",
       "Bash(n8n start *)",
-      "Bash(echo \"started, pid: $!\")"
+      "Bash(echo \"started, pid: $!\")",
+      "Bash(ps -W)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
