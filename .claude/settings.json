@@ -163,7 +163,8 @@
       "Bash(ps -W)",
       "Skill(update-config)",
       "Skill(update-config:*)",
-      "Bash(python3 -c \"import json; json.load\\(open\\('/c/Users/lucas/.claude/settings.json', encoding='utf-8'\\)\\); print\\('valid JSON'\\)\")"
+      "Bash(python3 -c \"import json; json.load\\(open\\('/c/Users/lucas/.claude/settings.json', encoding='utf-8'\\)\\); print\\('valid JSON'\\)\")",
+      "WebFetch(domain:elevenlabs.io)"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
