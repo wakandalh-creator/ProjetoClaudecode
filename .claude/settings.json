@@ -164,7 +164,11 @@
       "Skill(update-config)",
       "Skill(update-config:*)",
       "Bash(python3 -c \"import json; json.load\\(open\\('/c/Users/lucas/.claude/settings.json', encoding='utf-8'\\)\\); print\\('valid JSON'\\)\")",
-      "WebFetch(domain:elevenlabs.io)"
+      "WebFetch(domain:elevenlabs.io)",
+      "Bash(pnpm -v)",
+      "Bash(pnpm create *)",
+      "Bash(pnpm add *)",
+      "Bash(mkdir -p \"/c/Users/lucas/OneDrive/Documentos/assistente-pessoal/supabase/migrations\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
@@ -175,7 +179,8 @@
       "C:\\Users\\lucas\\OneDrive\\Documentos\\ProjetoClaudecode\\.claude\\skills\\book-to-skill",
       "C:\\Users\\lucas\\AppData\\Roaming\\Code\\User",
       "C:\\Users\\lucas\\.claude",
-      "C:\\Users\\lucas\\OneDrive\\Documentos\\Obsidian Vault\\Estruturação\\00 — Fundação\\00.1 — Documentos Fundadores"
+      "C:\\Users\\lucas\\OneDrive\\Documentos\\Obsidian Vault\\Estruturação\\00 — Fundação\\00.1 — Documentos Fundadores",
+      "C:\\Users\\lucas\\OneDrive\\Documentos\\assistente-pessoal\\supabase"
     ]
   },
   "hooks": {
