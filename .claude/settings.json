@@ -162,7 +162,8 @@
       "Bash(echo \"started, pid: $!\")",
       "Bash(ps -W)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "Bash(python3 -c \"import json; json.load\\(open\\('/c/Users/lucas/.claude/settings.json', encoding='utf-8'\\)\\); print\\('valid JSON'\\)\")"
     ],
     "additionalDirectories": [
       "C:\\Users\\lucas\\.claude-mem",
