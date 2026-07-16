@@ -90,6 +90,11 @@ Lucas — criador do ProjetoClaudecode. Trabalha com Claude Code para automaçã
 - **Lição**: `git add -A` no `auto-sync.ps1` é "tudo ou nada" — qualquer Write/Edit em qualquer arquivo, mesmo fora do projeto, pode empurrar mudanças não relacionadas e não revisadas para o GitHub. Se isso for um problema, considerar trocar por `git add -A -- ':!node_modules' ':!.playwright-mcp'` ou revisar o hook para não rodar em sessões cujo Write/Edit alvo está fora do diretório do projeto.
 - **Submódulo `llm-council`** (`karpathy/llm-council.git`) tem scaffold de testes Playwright (`.github/workflows/`, `frontend/e2e/`, `playwright.config.js`, `bun.lock`) local, não commitado dentro do submódulo — decisão do Lucas: manter como está. Submódulo em si está 100% atualizado com o upstream (commit `92e1fcc`, sem divergência).
 
+### Instalações (2026-07-16)
+- **Hermes Agent** (`nousresearch/hermes-agent`) — analisado a pedido do Lucas: **não é uma skill do Claude Code** (sem `SKILL.md`), é um framework de agente autônomo standalone com runtime próprio (gateway multi-plataforma Telegram/Discord/Slack/WhatsApp/Signal, cron scheduler, subagentes, suporte a 300+ modelos). Instalado via instalador oficial (`iex (irm https://hermes-agent.nousresearch.com/install.ps1)`) em `C:\Users\lucas\AppData\Local\hermes\hermes-agent`.
+- Já havia uma instalação anterior de 2026-07-13 não documentada na memória, **15.839 commits desatualizada** — o instalador fez fast-forward até `dc7a20cb0`. PATH do usuário atualizado permanentemente (`hermes-agent\venv\Scripts`, `hermes\bin`, `hermes\node`). Validado: `hermes --version` → **v0.18.2**.
+- Instalador retornou exit code 1 na primeira tentativa: falha ao reaplicar o `git stash` automático que guarda mudanças locais antes do update (conflito em `website/i18n/zh-Hans/.../model-catalog.md`). Investigado antes de mexer: as 401 diffs eram só do site de documentação (Docusaurus) do próprio Hermes — nada em `agent/`, `tools/`, `providers/`, `gateway/` ou no `venv`. Resolvido com `git stash drop` (2x) + `git reset --hard HEAD` dentro do clone do Hermes, sem impacto na funcionalidade do CLI (confirmado antes e depois com `hermes --version`).
+
 → Glossário completo: `memory/glossary.md`
 → Setup detalhado: `memory/context/setup.md`
 
