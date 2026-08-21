@@ -268,8 +268,9 @@ Sistema de marketing da Neovertix em `Social mídia IA/` (orquestrador: `Social 
 | **posta** | Gerente de Publicação | Haiku | kanban Notion, gate de aprovação, auditoria de copy |
 | **mede** | Analista de Métricas | Sonnet | resultados, OPR, realimenta tom de voz e bancos |
 | **genese** | Engenheiro de Prompt / Fundação | Opus | funda marca/criador de conteúdo nova (hoje: `Criador UGC/`) — entrevista de posicionamento, não participa da produção do dia a dia |
+| **lapida** | Engenheiro de Prompt / Qualidade | Opus | refina pedido vago do Lucas em briefing executável ANTES de rotear; audita ambiguidade/ineficiência no squad DEPOIS de mudança grande — não produz conteúdo final |
 
-**Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos.
+**Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos. Pedido vago/informal sem agente óbvio → **lapida** primeiro, refina, só depois roteia. Mudança grande no squad/módulos → **lapida** audita depois.
 
 **Gate inegociável:** nada é publicado sem status `aprovado` marcado pelo Lucas (ver `Social mídia IA/_sop/aprovacao.md`).
 
