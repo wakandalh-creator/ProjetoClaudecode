@@ -35,7 +35,7 @@
 **Potencial para o negócio:** Alto — Lucas já produz esse "bastidor" naturalmente ao construir com Claude Code; é o modelo de menor custo de produção e maior alinhamento ao `content_goal` ("build in public").
 
 **Hook de exemplo:**
-> "Isso aqui é o comando que acabou de criar um vendedor que nunca dorme."
+> "Isso aqui é o comando que acabou de colocar o comercial pra responder em 30 segundos."
 
 **Estrutura:**
 1. Mostrar a tela/comando real → 2. Explicar o que está sendo construído → 3. Resultado imediato visível → 4. CTA de curiosidade/DM.
