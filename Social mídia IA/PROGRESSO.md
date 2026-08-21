@@ -117,14 +117,18 @@ O Instagram bloqueia indexação de texto de post/reel via WebSearch para os 61 
 
 ---
 
-## Sprint 6 — Migração de publicação
+## Sprint 6 — Publicação multirede
 
 **Status: ⬜ Não iniciado**
 
-- [ ] Conta Metricool criada
-- [ ] M15 — migração de publicação p/ Metricool (dual com ig-saves-engine)
+**Decisão registrada (2026-08-21):** o sistema precisa publicar em **todas as redes sociais**, não só Instagram. Prioridade de conexão: **Instagram + TikTok primeiro**, resto (YouTube, LinkedIn, X, Facebook, Pinterest, Threads) conforme fizer sentido.
+
+- [ ] Conta Metricool criada — **confirmar no plano escolhido que Instagram + TikTok estão cobertos antes de assinar**
+- [ ] M15 — migração de publicação p/ Metricool (dual com ig-saves-engine até estabilizar)
+- [ ] **Decisão técnica em aberto:** TikTok tem Content Posting API oficial própria (mais robusta que a API não-oficial que usamos pro Instagram) — avaliar na hora se vale integrar TikTok direto por ali em vez de só via Metricool, ou se Metricool cobre bem o suficiente
+- [ ] **Formato nativo por rede** — hoje o roteiro só modela Instagram (Reel/Carrossel/Post); campo `rede` já adicionado no template (`_templates/roteiro.md`) pra não travar isso depois, mas as regras de formato/tom por rede (LinkedIn mais texto, YouTube mais longo, TikTok com convenção própria) ainda precisam ser definidas quando chegar a hora — não construir isso especulativamente agora
 - [ ] M14 — avatar de IA (Higgsfield/HeyGen reconectados) — só quando as contas estiverem prontas
-- [ ] **Marco:** 1 post publicado via Metricool com fallback intacto
+- [ ] **Marco:** 1 post publicado em Instagram E TikTok via Metricool, com fallback intacto
 
 ---
 
