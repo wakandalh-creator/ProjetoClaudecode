@@ -8,9 +8,11 @@ from PIL import Image, ImageDraw, ImageFont
 
 LARGURA  = 1080
 ALTURA   = 1080
-BG_COLOR = (15, 15, 15)       # fundo preto
-TX_COLOR = (255, 255, 255)    # texto branco
-AC_COLOR = (99, 102, 241)     # roxo (destaque)
+# ponytail: paleta puxada de branding/neovertix/tokens.json (color.bg.canvas /
+# color.text.primary / color.accent.default) — atualizar aqui se os tokens mudarem
+BG_COLOR = (10, 14, 26)       # #0A0E1A — bg.canvas (navy quase-preto, nunca preto puro)
+TX_COLOR = (245, 247, 250)    # #F5F7FA — text.primary (off-white, nunca branco puro)
+AC_COLOR = (67, 160, 71)      # #43A047 — accent.default (verde da marca)
 
 def criar_imagem(hook: str, titulo: str, output_path: str = "post.jpg") -> str:
     img  = Image.new("RGB", (LARGURA, ALTURA), BG_COLOR)
