@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neovertix — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-canvas: #0A0E1A;
+    --surface-base: #121A2E;
+    --surface-raised: #1A2440;
+    --surface-overlay: #232F52;
+    --text-primary: #F5F7FA;
+    --text-secondary: #AAB4C2;
+    --text-muted: #7A8699;
+    --accent: #43A047;
+    --accent-hover: #66BB6A;
+    --accent-light: #8BC34A;
+    --accent-dim: #2E7D32;
+    --accent-contrast: #121A2E;
+    --border-subtle: #18213A;
+    --border-strong: #5A6780;
+    --font-display: 'Chakra Petch', ui-sans-serif, 'Segoe UI', sans-serif;
+    --font-text: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: var(--font-text);
+    line-height: 1.6;
+  }
+
+  body {
+    background-image:
+      radial-gradient(ellipse 800px 500px at 15% -10%, rgba(67,160,71,.10), transparent 60%),
+      radial-gradient(ellipse 900px 600px at 85% 0%, rgba(170,180,194,.06), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 1.5rem 6rem; }
+
+  section { padding: 4rem 0; border-bottom: 1px solid var(--border-subtle); }
+  section:last-of-type { border-bottom: none; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+    color: var(--text-primary);
+  }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.3rem; color: var(--accent-light); font-weight: 600; }
+  h4 { font-size: 1.05rem; font-weight: 600; }
+
+  p { color: var(--text-secondary); margin: 0 0 1rem; }
+  strong { color: var(--text-primary); }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-bottom: 0.75rem;
+    display: block;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    text-align: center;
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .hero img {
+    max-width: 420px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2rem;
+  }
+  .hero .tagline {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .hero .subtagline {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* ---------- CARDS ---------- */
+  .card {
+    background: var(--surface-base);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.03);
+  }
+
+  .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .pillars .card h4 { color: var(--accent-light); }
+  .pillars .card p { font-size: 0.9rem; margin: 0; }
+
+  table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.92rem; }
+  th, td { text-align: left; padding: 0.7rem 0.9rem; border-bottom: 1px solid var(--border-subtle); }
+  th { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-light); font-weight: 500; }
+  td { color: var(--text-secondary); }
+  td strong { color: var(--text-primary); }
+  tr:last-child td { border-bottom: none; }
+
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem 1.5rem; margin-top: 1rem; }
+  .voice-grid .yes { color: var(--accent-light); font-family: var(--font-mono); font-size: 0.85rem; }
+  .voice-grid .no { color: var(--text-muted); font-family: var(--font-mono); font-size: 0.85rem; text-decoration: line-through; text-decoration-color: rgba(240,98,95,.5); }
+
+  .lexico { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag { font-family: var(--font-mono); font-size: 0.8rem; padding: 0.3rem 0.7rem; border-radius: 999px; }
+  .tag.ok { background: rgba(67,160,71,.15); color: var(--accent-light); border: 1px solid rgba(67,160,71,.35); }
+  .tag.no { background: rgba(240,98,95,.10); color: #F0625F; border: 1px solid rgba(240,98,95,.25); text-decoration: line-through; }
+
+  .slogan-institutional {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    background: var(--surface-base);
+    border: 1px solid var(--border-strong);
+    border-radius: 14px;
+  }
+  .slogan-institutional .quote {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  .slogan-institutional .label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-light);
+    margin-top: 0.75rem;
+    display: block;
+  }
+
+  .candidates-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ---------- OFERTA ---------- */
+  .oferta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .oferta-card { text-align: center; }
+  .oferta-card.core { border-color: var(--accent); box-shadow: 0 0 0 1px rgba(67,160,71,.35), 0 0 24px rgba(67,160,71,.12); }
+  .oferta-card .stage { font-family: var(--font-display); font-weight: 600; color: var(--text-primary); font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .oferta-card .price { font-family: var(--font-mono); color: var(--accent-light); font-size: 1.3rem; margin-bottom: 0.25rem; }
+  .oferta-card .price-sub { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem; }
+  .oferta-card .desc { font-size: 0.85rem; color: var(--text-secondary); }
+
+  .garantia { margin-top: 1.5rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
+
+  /* ---------- LOGO ---------- */
+  .logo-showcase {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    background: var(--bg-canvas);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    margin-bottom: 1.5rem;
+  }
+  .logo-showcase img { max-width: 320px; width: 100%; height: auto; }
+  .dont-list { list-style: none; padding: 0; margin: 1rem 0 0; }
+  .dont-list li { padding: 0.4rem 0; color: var(--text-secondary); font-size: 0.9rem; display: flex; gap: 0.6rem; }
+  .dont-list li::before { content: "✕"; color: #F0625F; font-family: var(--font-mono); flex-shrink: 0; }
+  .warning-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(245,185,66,.08);
+    border: 1px solid rgba(245,185,66,.3);
+    border-radius: 10px;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+  }
+  .warning-box strong { color: #F5B942; }
+
+  /* ---------- PALETA ---------- */
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+  .swatch { border-radius: 12px; overflow: hidden; border: 1px solid var(--border-subtle); }
+  .swatch-color { height: 70px; }
+  .swatch-info { padding: 0.6rem 0.8rem; background: var(--surface-base); }
+  .swatch-info .name { font-size: 0.8rem; color: var(--text-primary); font-weight: 600; }
+  .swatch-info .hex { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+
+  /* ---------- TIPOGRAFIA ---------- */
+  .type-sample { padding: 1.5rem 0; border-bottom: 1px solid var(--border-subtle); }
+  .type-sample:last-child { border-bottom: none; }
+  .type-sample .display-sample { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem; }
+  .type-sample .text-sample { font-family: var(--font-text); font-size: 1rem; color: var(--text-secondary); max-width: 60ch; }
+  .type-sample .meta { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-light); margin-bottom: 0.5rem; display: block; }
+
+  /* ---------- APLICAÇÃO ---------- */
+  .app-list { display: grid; gap: 1rem; margin-top: 1.5rem; }
+  .app-list .card h4 { color: var(--text-primary); margin-bottom: 0.5rem; }
+  .app-list .card p { font-size: 0.9rem; margin: 0; }
+
+  footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+  }
+
+  @media (max-width: 640px) {
+    .voice-grid { grid-template-columns: 1fr; }
+    h2 { font-size: 1.6rem; }
+    .hero .tagline { font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img src="logo/final/logo-neovertix.png" alt="Logo Neovertix — símbolo N em gradiente prata com seta verde ascendente, wordmark NEOVERTIX abaixo">
+  <div class="tagline">"A gente constrói, não promete."</div>
+  <div class="subtagline">Agência brasileira de operações com IA — atendimento, SDR, CRM e sites para PMEs</div>
+</div>
+
+<main>
+
+  <section id="essencia">
+    <span class="eyebrow">01 — Essência</span>
+    <h2>Neo + Vértice</h2>
+    <p>Todo negócio tem um vértice: o ponto onde atendimento, vendas e operação se cruzam. Durante anos, esse ponto foi sustentado por gente fazendo malabarismo manual — planilha, WhatsApp, CRM meio vazio. A Neovertix nasce pra mover esse ponto: colocar IA no centro da operação, não como enfeite — como estrutura.</p>
+    <p><strong>A Neovertix constrói esse novo vértice pra quem tá cansado de operar do jeito antigo.</strong></p>
+  </section>
+
+  <section id="posicionamento">
+    <span class="eyebrow">02 — Posicionamento</span>
+    <h2>Pra quem e contra o quê</h2>
+    <p>Para <strong>PMEs e empreendedores digitais brasileiros</strong> que perdem vendas por atendimento lento e processos manuais, a Neovertix é a <strong>agência de operações com IA</strong> que implementa atendimento, SDR e CRM automatizados em semanas — não trimestres. Diferente de agências de marketing tradicionais e consultorias de IA genéricas, colocamos o sistema rodando antes de fechar contrato.</p>
+    <p style="color:var(--accent-light); font-family:var(--font-mono); font-size:0.95rem;">"Colocamos IA para atender e vender por você — rápido, sem parecer robô."</p>
+
+    <div class="pillars">
+      <div class="card">
+        <h4>Rápido de verdade</h4>
+        <p>Semanas, não trimestres — quem constrói é quem vende. Prova: demo ao vivo com dados reais do prospect.</p>
+      </div>
+      <div class="card">
+        <h4>Engenharia, não slide</h4>
+        <p>Stack de ponta de verdade (agentes IA, n8n, MCPs). Prova: walkthrough técnico transparente.</p>
+      </div>
+      <div class="card">
+        <h4>Você não paga pra descobrir</h4>
+        <p>O risco inicial é da Neovertix. Prova: piloto com métrica combinada e garantia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="voz">
+    <span class="eyebrow">03 — Voz</span>
+    <h2>Como a marca fala</h2>
+    <div class="voice-grid">
+      <div><span class="yes">✓ "Seu comercial responde em 30 segundos"</span></div>
+      <div><span class="no">"Podemos ajudar a otimizar seu tempo de resposta"</span></div>
+      <div><span class="yes">✓ "O agente lê a mensagem, consulta o CRM e responde"</span></div>
+      <div><span class="no">"Solução omnichannel com IA generativa integrada"</span></div>
+      <div><span class="yes">✓ "Somos novos nisso — construímos junto com você"</span></div>
+      <div><span class="no">"Referência nacional em transformação digital"</span></div>
+      <div><span class="yes">✓ "De 4h de triagem manual pra 15 minutos"</span></div>
+      <div><span class="no">"Potencialize a jornada do seu cliente"</span></div>
+    </div>
+
+    <h4 style="margin-top:2rem;">Léxico da marca</h4>
+    <div class="lexico">
+      <span class="tag ok">vértice</span>
+      <span class="tag ok">construímos</span>
+      <span class="tag ok">roda sozinho</span>
+      <span class="tag ok">mecanismo</span>
+      <span class="tag ok">fluxo</span>
+      <span class="tag ok">testado, não prometido</span>
+    </div>
+    <div class="lexico">
+      <span class="tag no">revolucionar</span>
+      <span class="tag no">turbinar</span>
+      <span class="tag no">disruptivo</span>
+      <span class="tag no">sinergia</span>
+      <span class="tag no">ecossistema</span>
+      <span class="tag no">vale por N humanos</span>
+    </div>
+  </section>
+
+  <section id="slogans">
+    <span class="eyebrow">04 — Slogans</span>
+    <h2>Institucional e candidatos comerciais</h2>
+
+    <div class="slogan-institutional">
+      <div class="quote">"A gente constrói, não promete."</div>
+      <span class="label">Institucional — definido</span>
+    </div>
+
+    <p class="candidates-note">O slogan comercial ainda está em definição. Estes são os favoritos — nenhum foi escolhido.</p>
+    <table>
+      <tr><th>Candidato</th><th>Direção</th></tr>
+      <tr><td><strong>"Construímos o ápice, não o enfeite."</strong></td><td>Ambição big tech</td></tr>
+      <tr><td><strong>"Roda sozinho."</strong></td><td>Ultra-curto</td></tr>
+      <tr><td><strong>"Todo lead vira faturamento."</strong></td><td>Resultado bruto</td></tr>
+      <tr><td><strong>"Demora não é sua cultura. É sua falta de sistema."</strong></td><td>Provocação</td></tr>
+      <tr><td><strong>"O negócio roda. Você decide."</strong></td><td>Modo automático</td></tr>
+    </table>
+  </section>
+
+  <section id="oferta">
+    <span class="eyebrow">05 — Oferta</span>
+    <h2>Piloto, Operação, Full</h2>
+    <div class="oferta-grid">
+      <div class="card oferta-card">
+        <div class="stage">Piloto Vértice</div>
+        <div class="price">R$ 1.900</div>
+        <div class="price-sub">Programa Fundador: R$ 900 · único</div>
+        <div class="desc">Testar o mecanismo num canal antes de comprometer mais</div>
+      </div>
+      <div class="card oferta-card core">
+        <div class="stage">Operação Vértice</div>
+        <div class="price">R$ 4.500 + R$ 1.200/mês</div>
+        <div class="price-sub">setup + mensalidade</div>
+        <div class="desc">PME que já validou e quer o sistema rodando de verdade</div>
+      </div>
+      <div class="card oferta-card">
+        <div class="stage">Vértice Full</div>
+        <div class="price">a partir de R$ 9.000</div>
+        <div class="price-sub">+ R$ 2.800/mês</div>
+        <div class="desc">Operação com volume/canais múltiplos e prioridade</div>
+      </div>
+    </div>
+    <div class="garantia">
+      <p><strong>Garantia Vértice:</strong> métrica combinada por escrito antes de começar. Se não melhorar pelo menos 30% em 2–4 semanas, o piloto não é cobrado — devolução total, sem letra miúda.</p>
+    </div>
+  </section>
+
+  <section id="logo">
+    <span class="eyebrow">06 — Logo</span>
+    <h2>Construção e uso</h2>
+    <div class="logo-showcase">
+      <img src="logo/final/logo-neovertix.png" alt="Logo Neovertix completo">
+    </div>
+    <p>Símbolo <strong>N</strong> em gradiente metálico prata/branco, com terminais em flare, sobreposto por uma <strong>seta ascendente verde</strong> que nasce do próprio traço do N — crescimento saindo de dentro da estrutura da marca. Wordmark <strong>NEOVERTIX</strong> no mesmo gradiente prata/branco, caixa alta condensada, sobre fundo navy quase-preto.</p>
+
+    <h4>Área de proteção e tamanho mínimo</h4>
+    <p>Margem livre ao redor do logo equivalente à altura do símbolo N. Tamanho mínimo de 120px de largura para o conjunto completo; abaixo disso, usar só o símbolo N+seta.</p>
+
+    <h4>O que não fazer</h4>
+    <ul class="dont-list">
+      <li>Recolorir o símbolo ou o wordmark</li>
+      <li>Distorcer, esticar ou rotacionar</li>
+      <li>Usar sobre fundo claro sem uma versão adaptada</li>
+      <li>Adicionar sombra, contorno ou efeito fora do arquivo original</li>
+    </ul>
+    <div class="warning-box"><strong>Pendente:</strong> ainda não existe versão mono / fundo claro do logo — necessária antes de aplicar em papel timbrado claro ou assinatura de e-mail sobre fundo branco.</div>
+  </section>
+
+  <section id="paleta">
+    <span class="eyebrow">07 — Paleta</span>
+    <h2>Cores extraídas do logo</h2>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#0A0E1A;"></div><div class="swatch-info"><div class="name">bg-canvas</div><div class="hex">#0A0E1A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#121A2E;"></div><div class="swatch-info"><div class="name">surface-base</div><div class="hex">#121A2E</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1A2440;"></div><div class="swatch-info"><div class="name">surface-raised</div><div class="hex">#1A2440</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#232F52;"></div><div class="swatch-info"><div class="name">surface-overlay</div><div class="hex">#232F52</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F5F7FA;"></div><div class="swatch-info"><div class="name">text-primary</div><div class="hex">#F5F7FA</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#AAB4C2;"></div><div class="swatch-info"><div class="name">text-secondary</div><div class="hex">#AAB4C2</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#7A8699;"></div><div class="swatch-info"><div class="name">text-muted</div><div class="hex">#7A8699</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#43A047;"></div><div class="swatch-info"><div class="name">accent</div><div class="hex">#43A047</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#66BB6A;"></div><div class="swatch-info"><div class="name">accent-hover</div><div class="hex">#66BB6A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#8BC34A;"></div><div class="swatch-info"><div class="name">accent-light</div><div class="hex">#8BC34A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#2E7D32;"></div><div class="swatch-info"><div class="name">accent-dim</div><div class="hex">#2E7D32</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#5A6780;"></div><div class="swatch-info"><div class="name">border-strong</div><div class="hex">#5A6780</div></div></div>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.85rem;">Contraste validado (WCAG AA): texto primário 17.9:1 sobre o fundo (AAA), texto secundário 9.2:1 (AAA). Botões de acento usam texto navy escuro (<code style="color:var(--text-primary)">#121A2E</code>), nunca branco — branco sobre o verde reprova (3.3:1).</p>
+  </section>
+
+  <section id="tipografia">
+    <span class="eyebrow">08 — Tipografia</span>
+    <h2>Par tipográfico</h2>
+
+    <div class="type-sample">
+      <span class="meta">Display / Headlines — Chakra Petch 700</span>
+      <div class="display-sample">Operação no ápice</div>
+      <p class="text-sample" style="font-family: var(--font-mono); font-size:0.85rem;">Sans condensado e geométrico — cortes angulares que harmonizam com os terminais em flare do N e a geometria da seta do logo.</p>
+    </div>
+    <div class="type-sample">
+      <span class="meta">Corpo de texto — Manrope 400 / 600</span>
+      <p class="text-sample">O agente lê a mensagem, consulta o CRM e responde no WhatsApp, Instagram ou site em segundos. Sans neutro, alta legibilidade — mantido da base de tokens anterior por já cumprir bem esse papel.</p>
+    </div>
+    <div class="type-sample">
+      <span class="meta">Técnico / anotações — JetBrains Mono 400</span>
+      <p class="text-sample" style="font-family: var(--font-mono); font-size:0.85rem;">status: piloto ativo · métrica: tempo de resposta -73%</p>
+    </div>
+  </section>
+
+  <section id="aplicacao">
+    <span class="eyebrow">09 — Aplicação</span>
+    <h2>Diretrizes práticas</h2>
+    <div class="app-list">
+      <div class="card">
+        <h4>Bio Instagram</h4>
+        <p>Símbolo N+seta como foto de perfil (recorte quadrado, fundo navy preservado). Assinatura institucional "A gente constrói, não promete." — não usar candidato de slogan comercial até fechar a decisão.</p>
+      </div>
+      <div class="card">
+        <h4>Assinatura de e-mail</h4>
+        <p>A maioria dos clientes de e-mail tem fundo branco. Até existir a versão mono/fundo-claro do logo, preferir o nome "Neovertix" em texto (Manrope 700) + tagline institucional, sem forçar o PNG sobre branco.</p>
+      </div>
+      <div class="card">
+        <h4>Proposta comercial</h4>
+        <p>Capa em fundo navy com o logo centralizado, títulos em Chakra Petch, corpo em Manrope. Tabela de oferta usa surface-base para os cards e o verde só no estágio recomendado — uma cor de destaque por tela.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>neovertix — brand book v1 — 2026-08-05</footer>
+
+</body>
+</html>

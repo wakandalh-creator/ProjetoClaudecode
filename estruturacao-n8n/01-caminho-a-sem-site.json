@@ -1,0 +1,163 @@
+{
+  "name": "01-caminho-a-sem-site",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "nome"
+            },
+            {
+              "name": "telefone"
+            },
+            {
+              "name": "instagram_handle"
+            },
+            {
+              "name": "nota_google"
+            },
+            {
+              "name": "score_triagem"
+            }
+          ]
+        }
+      },
+      "id": "a2222222-1111-4111-8111-111111111201",
+      "name": "Recebe do orquestrador",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nSubstituir os dois nodes de coleta abaixo por HTTP Request reais pro ator Apify escolhido (Instagram: posts/bio/engajamento; Google: até 50 avaliações). Ver `prospecting/references/compliance.md` antes de industrializar volume — scraping de Instagram/Google tem risco real de ToS.",
+        "height": 200,
+        "width": 340
+      },
+      "id": "a2222222-1111-4111-8111-111111111202",
+      "name": "Sticky - coleta",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: HTTP Request real pro actor Apify de Instagram (bio, últimos posts, engajamento).\nconst item = $input.item.json;\nitem.instagram_posts = [];\nitem.instagram_bio = '';\nreturn { json: item };"
+      },
+      "id": "a2222222-1111-4111-8111-111111111203",
+      "name": "Coletar Instagram (Apify) [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: HTTP Request real pro actor Apify de avaliações do Google (até 50, texto completo, não só nota).\nconst item = $input.item.json;\nitem.avaliacoes_texto = []; // array de strings — texto bruto de cada avaliação\nreturn { json: item };"
+      },
+      "id": "a2222222-1111-4111-8111-111111111204",
+      "name": "Coletar avaliações Google [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nitem.caminho = 'A';\nitem.tem_site_existente = false;\nreturn { json: item };"
+      },
+      "id": "a2222222-1111-4111-8111-111111111205",
+      "name": "Marcar Caminho A",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-03",
+          "mode": "list",
+          "cachedResultName": "03-briefing-claude-api"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a2222222-1111-4111-8111-111111111206",
+      "name": "Gerar briefing",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -20,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe do orquestrador": {
+      "main": [
+        [
+          {
+            "node": "Coletar Instagram (Apify) [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coletar Instagram (Apify) [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Coletar avaliações Google [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coletar avaliações Google [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Marcar Caminho A",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marcar Caminho A": {
+      "main": [
+        [
+          {
+            "node": "Gerar briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

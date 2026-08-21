@@ -1,0 +1,200 @@
+{
+  "name": "04-checkpoint-1-triagem",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a5555555-1111-4111-8111-111111111501",
+      "name": "Recebe briefing pronto",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## ponytail: simplificação deliberada\nO rascunho original pede aprovar um LOTE de ~20 prospects de uma vez. Aqui cada prospect gera sua própria mensagem de aprovação (mais simples de implementar e testar primeiro). Se o volume real incomodar, trocar por: acumular o dia inteiro numa Data Table e checkpointar uma vez só no fim do lote.\n\n## TODO\nVerificar disponibilidade de domínio antes de aprovar — nenhuma API de registrador foi escolhida ainda. Substituir o Code node abaixo por uma chamada real.",
+        "height": 260,
+        "width": 340
+      },
+      "id": "a5555555-1111-4111-8111-111111111502",
+      "name": "Sticky - simplificação e TODO",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: checar disponibilidade de domínio de verdade (API de registrador ainda não escolhida).\nconst item = $input.item.json;\nconst b = item.briefing || {};\nitem.dominio_sugerido = (item.nome || 'negocio').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g, '').replace(/[^a-z0-9]+/g, '') + '.com.br';\nitem.dominio_disponivel = null; // placeholder até existir checagem real\nitem._resumo_telegram = `*Novo prospect triado*\\n\\n*Nome:* ${item.nome}\\n*Score:* ${item.score_triagem}\\n*Caminho:* ${item.caminho}\\n*Proposta de valor:* ${b.proposta_de_valor || '(sem briefing)'}\\n*Padrão de dor:* ${b.padrao_de_dor || '(sem briefing)'}\\n*Domínio sugerido:* ${item.dominio_sugerido} (checar disponibilidade manualmente por enquanto)`;\nreturn { json: item };"
+      },
+      "id": "a5555555-1111-4111-8111-111111111503",
+      "name": "Montar resumo + domínio [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendAndWait",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "message": "={{ $json._resumo_telegram }}",
+        "responseType": "approval",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Aprovar",
+            "disapproveLabel": "Rejeitar"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "limitType": "afterTimeInterval",
+              "resumeAmount": 24,
+              "resumeUnit": "hours"
+            }
+          }
+        }
+      },
+      "id": "a5555555-1111-4111-8111-111111111504",
+      "name": "Telegram - aprovar prospect (Wait)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -460,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR",
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-aprovado",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a5555555-1111-4111-8111-111111111505",
+      "name": "Aprovado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Aprovado — a partir daqui, Etapa 5 (construção do site) é MANUAL, fora do n8n (Claude Code + skill \"landing\").\n// Este workflow termina aqui; o output fica disponível na execução do n8n pra quem for construir o site manualmente.\nreturn $input.item;"
+      },
+      "id": "a5555555-1111-4111-8111-111111111506",
+      "name": "Aprovado — segue manual pra Etapa 5",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "return $input.item;"
+      },
+      "id": "a5555555-1111-4111-8111-111111111507",
+      "name": "Rejeitado",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe briefing pronto": {
+      "main": [
+        [
+          {
+            "node": "Montar resumo + domínio [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar resumo + domínio [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Telegram - aprovar prospect (Wait)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - aprovar prospect (Wait)": {
+      "main": [
+        [
+          {
+            "node": "Aprovado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aprovado?": {
+      "main": [
+        [
+          {
+            "node": "Aprovado — segue manual pra Etapa 5",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Rejeitado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

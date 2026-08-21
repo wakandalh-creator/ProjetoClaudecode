@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo K "Blueprint" (rodada 2 — o contraponto: stroke fino,
+    não sólido, geometria de desenho técnico)
+    Conceito: mesma família construtiva do bloco G/H (pico Λ + haste
+    separada por um canal), mas nenhuma das 3 formas é preenchida — todas
+    são contorno puro (fill:none, stroke fino e preciso). Dá amplitude ao
+    tabuleiro: ao lado de 4 candidatos sólidos e pesados, este é o único que
+    respira, funciona como a "planta baixa" do conceito de todos os outros.
+    Sem decoração de régua/cotas/crosshair — nada que lembre template de
+    desenho técnico de banco de imagens; a precisão vem só da técnica
+    (stroke fino, ângulos exatos), não de ornamento.
+    Geometria própria — nenhum ponto copiado de asset de estoque.
+    Grid: quadrado 100x100, base 10. Altura ativa 16–86, largura ativa 12–94.
+    Construção (3 contornos independentes, stroke-width 8 — bem mais fino
+    que os ~16–22 das massas sólidas dos outros candidatos, dando o
+    contraste "fino vs. grosso" que é a proposta do candidato):
+      - Perna esquerda do pico (contorno): 12,86 -> 34,86 -> 48,16 -> Z.
+      - Perna direita do pico (contorno, ápice compartilhado com a
+        esquerda em 48,16 — a única fenda em V "clássica" do bloco G–K,
+        aqui vazada por ser outline): 56,86 -> 74,86 -> 48,16 -> Z.
+      - Haste (contorno, deslocada pra a direita com folga generosa —
+        ~30 unidades de vão no topo — reforçando a leitura "aberta,
+        técnica" em vez de "compacta, maciça"): 84,30 -> 94,30 -> 94,86 ->
+        80,86 -> Z.
+    Uso: stroke="currentColor" fill="none" — herda a cor do contêiner.
+    Pico (as 2 pernas) = elegível para destaque verde no hero bicolor;
+    haste = off-white.
+  -->
+  <path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+  <path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+  <path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+</svg>

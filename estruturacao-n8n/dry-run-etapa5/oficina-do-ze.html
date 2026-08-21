@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina do Zé — Orçamento claro, prazo real</title>
+<meta name="description" content="Você sabe quanto vai pagar e quando leva o carro de volta, antes de qualquer serviço começar. Orçamento claro, sem susto no preço, na Oficina do Zé.">
+<meta property="og:title" content="Oficina do Zé — Orçamento claro, prazo real">
+<meta property="og:description" content="Você sabe quanto vai pagar e quando leva o carro de volta, antes de qualquer serviço começar.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
+<style>
+  :root {
+    /* Paleta vinda do briefing da Etapa 3 (schema-briefing-etapa3.md) — override parcial: primary + accent */
+    --navy:       #1A2B3C;
+    --navy-mid:   #0D1F38;
+    --teal:       #F2A900;
+    --teal-glow:  rgba(242, 169, 0, 0.14);
+    --amber:      #F2A900;
+    --off-white:  #F7F7F2;
+    --text-muted: rgba(247, 247, 242, 0.68);
+    --card-bg:    rgba(242, 169, 0, 0.06);
+    --card-border:rgba(242, 169, 0, 0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--off-white); overflow-x: hidden; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow { font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); }
+
+  /* Hero */
+  .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; }
+  .hero-shapes-back, .hero-shapes-mid { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+  .hero-shapes-back .shape { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.18; background: var(--teal); }
+  .shape-a { width: 380px; height: 380px; top: 8%; left: 6%; animation: floatA 12s ease-in-out infinite; }
+  .shape-b { width: 260px; height: 260px; bottom: 10%; right: 10%; animation: floatB 15s ease-in-out infinite; }
+  .hero-shapes-mid .shape { position: absolute; border-radius: 50%; opacity: 0.3; background: var(--teal); }
+  .shape-c { width: 90px; height: 90px; top: 25%; right: 20%; animation: floatC 9s ease-in-out infinite; }
+  @keyframes floatA { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(20px,-30px) rotate(8deg); } }
+  @keyframes floatB { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-25px,20px) rotate(-6deg); } }
+  @keyframes floatC { 0%,100% { transform: translate(0,0); } 50% { transform: translate(15px,15px); } }
+  .hero .container { position: relative; z-index: 1; max-width: 780px; }
+  .hero h1 { font-size: 74px; font-weight: 800; line-height: 1.08; margin: 20px 0 24px; }
+  .hero .subtitle { font-size: 19px; color: var(--text-muted); margin-bottom: 36px; }
+  .btn-primary {
+    display: inline-block; background: var(--teal); color: var(--navy); font-weight: 500; font-size: 18px;
+    padding: 16px 36px; border-radius: 8px; text-decoration: none; transition: 0.3s ease; border: none; cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-3px); filter: brightness(1.08); }
+  .scroll-down { margin-top: 56px; font-size: 13px; color: var(--text-muted); animation: bounce 2s ease-in-out infinite; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-shapes-back .shape, .hero-shapes-mid .shape, .scroll-down { animation: none; }
+  }
+
+  /* Features */
+  .features { padding: 120px 24px; }
+  .features h2 { font-size: 56px; font-weight: 800; text-align: center; margin-bottom: 16px; }
+  .features .section-sub { text-align: center; color: var(--text-muted); font-size: 18px; margin-bottom: 64px; }
+  .feature-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .feature-card {
+    background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; padding: 32px 24px; transition: 0.3s ease;
+  }
+  .feature-card:hover { transform: translateY(-6px); border-color: var(--teal); }
+  .feature-card svg { width: 28px; height: 28px; stroke: var(--teal); fill: none; margin-bottom: 16px; }
+  .feature-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 10px; }
+  .feature-card p { font-size: 15px; color: var(--text-muted); line-height: 1.5; }
+  @media (max-width: 900px) { .feature-grid { grid-template-columns: repeat(2, 1fr); } .hero h1 { font-size: 52px; } }
+  @media (max-width: 580px) { .feature-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 40px; } .features h2 { font-size: 36px; } }
+
+  /* Closing CTA */
+  .closing-cta { background: var(--navy-mid); padding: 120px 24px; text-align: center; position: relative; }
+  .closing-cta::before {
+    content: ""; position: absolute; inset: 0; margin: auto; width: 500px; height: 500px;
+    background: radial-gradient(circle, var(--teal-glow) 0%, transparent 70%); pointer-events: none;
+  }
+  .closing-cta h2 { font-size: 52px; font-weight: 800; margin-bottom: 20px; position: relative; }
+  .closing-cta .subtitle { font-size: 18px; color: var(--text-muted); margin-bottom: 40px; position: relative; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .closing-cta .btn-primary { position: relative; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-shapes-back">
+    <div class="shape shape-a"></div>
+    <div class="shape shape-b"></div>
+  </div>
+  <div class="hero-shapes-mid">
+    <div class="shape shape-c"></div>
+  </div>
+  <div class="container">
+    <div class="eyebrow">Oficina do Zé — Uberlândia-MG</div>
+    <h1>Orçamento claro, prazo real: seu carro em mãos de confiança</h1>
+    <p class="subtitle">Você sabe quanto vai pagar e quando leva o carro de volta, antes de qualquer serviço começar. Sem susto no preço no meio do caminho.</p>
+    <a href="#contato" class="btn-primary">Peça seu orçamento sem compromisso</a>
+    <div class="scroll-down">↓ role pra ver mais</div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <h2>Por que os clientes confiam na gente</h2>
+    <p class="section-sub">15 anos de oficina, nota 4.6 no Google, e um jeito diferente de tratar orçamento.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        <h3>Orçamento por escrito</h3>
+        <p>Você aprova o valor antes da gente tocar no carro. Sem surpresa depois.</p>
+      </div>
+      <div class="feature-card">
+        <svg viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <h3>Prazo real de entrega</h3>
+        <p>Combinamos uma data e cumprimos. Sem "mais um dia" se repetindo.</p>
+      </div>
+      <div class="feature-card">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        <h3>Comunicação direta</h3>
+        <p>Explicamos o problema em português claro, sem jargão técnico pra confundir.</p>
+      </div>
+      <div class="feature-card">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
+        <h3>15 anos de confiança</h3>
+        <p>Nota 4.6 em avaliações reais na região de Uberlândia-MG.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing-cta" id="contato">
+  <div class="container">
+    <h2>Seu carro merece transparência, não surpresa</h2>
+    <p class="subtitle">Fale com a Oficina do Zé e receba um orçamento claro antes de qualquer coisa.</p>
+    <a href="https://wa.me/5534999990000" class="btn-primary">Peça seu orçamento sem compromisso</a>
+  </div>
+</section>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    gsap.set([".hero .eyebrow", ".hero h1", ".hero .subtitle", ".hero .btn-primary", ".hero .scroll-down"], { opacity: 0, y: 30 });
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.to(".hero .eyebrow", { opacity: 1, y: 0, duration: 0.6 })
+      .to(".hero h1", { opacity: 1, y: 0, duration: 0.8 }, "-=0.3")
+      .to(".hero .subtitle", { opacity: 1, y: 0, duration: 0.6 }, "-=0.5")
+      .to(".hero .btn-primary", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+      .to(".hero .scroll-down", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
+
+    if (window.matchMedia("(pointer: fine)").matches) {
+      const hero = document.querySelector(".hero");
+      hero.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        gsap.to(".hero-shapes-back", { x: x * 45, y: y * 22, duration: 0.8 });
+        gsap.to(".hero-shapes-mid",  { x: x * 22, y: y * 11, duration: 0.8 });
+        gsap.to(".hero .container",  { x: x * 8,  y: y * 5,  duration: 0.8 });
+      });
+    }
+
+    gsap.set(".feature-card", { opacity: 0, y: 55, rotateX: 18 });
+    ScrollTrigger.batch(".feature-card", {
+      start: "top 80%",
+      onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, rotateX: 0, duration: 0.8, stagger: 0.11, ease: "power2.out" })
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+{
+  "name": "00-orquestrador-principal",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "id": "a1111111-1111-4111-8111-111111111101",
+      "name": "Trigger diário 8h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nSubstituir este node por uma chamada real ao Apify (ator escolhido pra prospecção local: Instagram + Google Maps/avaliações do nicho e região configurados). Ver README > \"Placeholders que exigem decisão\".\n\nEnquanto isso, este Code node só devolve um array vazio — o workflow não quebra, mas também não faz nada até isso ser substituído.",
+        "height": 220,
+        "width": 320
+      },
+      "id": "a1111111-1111-4111-8111-111111111102",
+      "name": "Sticky - prospecção",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1200,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: substituir por HTTP Request pro ator Apify escolhido.\n// Cada item deve ter, no mínimo: nome, telefone/whatsapp, instagram_handle,\n// site_atual (string vazia se não tiver), avaliacoes_google (array de texto), nota_google.\nreturn [];"
+      },
+      "id": "a1111111-1111-4111-8111-111111111103",
+      "name": "Prospecção (Apify) [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -980,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "a1111111-1111-4111-8111-111111111104",
+      "name": "Loop por prospect",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -760,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Score 0-10 em 5 critérios (2 pontos cada) — ver \"Piloto — Salões e Barbearias JF\" no vault.\n// Critérios sugeridos (ajustar com dados reais depois do piloto):\n// 1. Nota Google >= 4.0\n// 2. Tem >= 20 avaliações no Google\n// 3. Instagram com >= 500 seguidores OU postagem nos últimos 30 dias\n// 4. Telefone/WhatsApp válido e verificável\n// 5. Domínio de marca disponível (checado só no Checkpoint 1, não aqui)\nconst item = $input.item.json;\nlet score = 0;\nif ((item.nota_google || 0) >= 4.0) score += 2;\nif ((item.avaliacoes_google || []).length >= 20) score += 2;\nif (item.instagram_ativo) score += 2;\nif (item.telefone_valido) score += 2;\nscore += 2; // placeholder pro critério 5 até existir checagem real de domínio aqui\nitem.score_triagem = score;\nitem.caminho = item.site_atual && item.site_atual.trim() !== '' ? 'B' : 'A';\nreturn { json: item };"
+      },
+      "id": "a1111111-1111-4111-8111-111111111105",
+      "name": "Calcular score de triagem",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -540,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-score",
+              "leftValue": "={{ $json.score_triagem }}",
+              "rightValue": 6,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a1111111-1111-4111-8111-111111111106",
+      "name": "Score >= 6?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -320,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Descartado — não passou no corte de triagem. Registrar em log/planilha se quiser rastrear volume descartado.\nreturn $input.item;"
+      },
+      "id": "a1111111-1111-4111-8111-111111111107",
+      "name": "Descartado (score < 6)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -100,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "cond-caminho-a",
+                    "leftValue": "={{ $json.caminho }}",
+                    "rightValue": "A",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "outputKey": "Caminho A (sem site)"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict"
+                },
+                "conditions": [
+                  {
+                    "id": "cond-caminho-b",
+                    "leftValue": "={{ $json.caminho }}",
+                    "rightValue": "B",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "outputKey": "Caminho B (site fraco)"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1111111-1111-4111-8111-111111111108",
+      "name": "Caminho A ou B?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -100,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-01",
+          "mode": "list",
+          "cachedResultName": "01-caminho-a-sem-site"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a1111111-1111-4111-8111-111111111109",
+      "name": "Executar Caminho A",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-02",
+          "mode": "list",
+          "cachedResultName": "02-caminho-b-com-site"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a1111111-1111-4111-8111-111111111110",
+      "name": "Executar Caminho B",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Trigger diário 8h": {
+      "main": [
+        [
+          {
+            "node": "Prospecção (Apify) [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prospecção (Apify) [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Loop por prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop por prospect": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Calcular score de triagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calcular score de triagem": {
+      "main": [
+        [
+          {
+            "node": "Score >= 6?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Score >= 6?": {
+      "main": [
+        [
+          {
+            "node": "Caminho A ou B?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Descartado (score < 6)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Caminho A ou B?": {
+      "main": [
+        [
+          {
+            "node": "Executar Caminho A",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Executar Caminho B",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Executar Caminho A": {
+      "main": [
+        [
+          {
+            "node": "Loop por prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Executar Caminho B": {
+      "main": [
+        [
+          {
+            "node": "Loop por prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100">
+  <!-- NEOVERTIX — Lockup K "Blueprint". Símbolo (grid 100x100, escala .82) + wordmark caps Manrope 600, tracking largo. -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+    <path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+  </g>
+  <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+</svg>

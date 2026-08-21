@@ -17,6 +17,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Cache do fingerprint do instagrapi
+        # ponytail: sem isso, toda execução pareceria um "login do zero" pro Instagram —
+        # o cache guarda o mesmo dispositivo virtual entre execuções.
+        uses: actions/cache@v4
+        with:
+          path: ig-saves-engine/.instagrapi_settings.json
+          key: instagrapi-settings-v1
+
       - name: Instalar dependências
         run: pip install -r ig-saves-engine/requirements.txt
 
@@ -24,27 +32,15 @@ jobs:
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_SAVES: ${{ secrets.NOTION_DB_SAVES }}
-          NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
           INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
-          INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
-          INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
-          IG_USERNAME: ${{ secrets.IG_USERNAME }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python ig-saves-engine/instagram_saves_sync.py
 
-      - name: Aguardar 60 segundos
-        run: sleep 60
-
-      - name: Gerar ideias com Claude
+      - name: Gerar roteiros no tom Neovertix (Gemini)
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           NOTION_DB_SAVES: ${{ secrets.NOTION_DB_SAVES }}
           NOTION_DB_IDEAS: ${{ secrets.NOTION_DB_IDEAS }}
-          INSTAGRAM_SESSIONID: ${{ secrets.INSTAGRAM_SESSIONID }}
-          INSTAGRAM_CSRFTOKEN: ${{ secrets.INSTAGRAM_CSRFTOKEN }}
-          INSTAGRAM_DS_USER_ID: ${{ secrets.INSTAGRAM_DS_USER_ID }}
-          IG_USERNAME: ${{ secrets.IG_USERNAME }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
         run: python ig-saves-engine/generate_ideas.py
 
       # Etapa de postagem automática desativada a pedido do usuário (2026-06-22).

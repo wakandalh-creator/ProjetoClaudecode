@@ -1,0 +1,441 @@
+{
+  "name": "07-agente-vendas-ana",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## TODO — maior risco de import deste arquivo\nO node AI Agent (LangChain) muda de parâmetros entre versões do n8n. Se o import reclamar, abra o node na UI do n8n e reconfigure manualmente: System Message = o texto que já está no campo `text`/`options.systemMessage` abaixo, Chat Model = conectar ao node Anthropic ao lado.\n\n## Modo assistido (decisão já tomada no plano)\nEnquanto não validar qualidade com leads reais, o node \"Enviar resposta ao WhatsApp\" está desligado (`disabled: true`) e substituído por um Telegram avisando o Lucas pra revisar a resposta da Ana antes de enviar manualmente. Reative só depois de validar.",
+        "height": 280,
+        "width": 380
+      },
+      "id": "a8888888-1111-4111-8111-111111111801",
+      "name": "Sticky - riscos e modo assistido",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-inbound",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111802",
+      "name": "Webhook - mensagem inbound do prospect",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1400,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: o formato exato do payload depende do provedor de WhatsApp escolhido (Meta Cloud API vs BSP).\n// Ajustar o parsing abaixo conforme a documentação do provedor real.\nconst body = $input.item.json.body || {};\nconst entry = (body.entry && body.entry[0]) || {};\nconst change = (entry.changes && entry.changes[0] && entry.changes[0].value) || {};\nconst msg = (change.messages && change.messages[0]) || {};\nreturn {\n  json: {\n    telefone: msg.from || 'DESCONHECIDO',\n    mensagem_recebida: (msg.text && msg.text.body) || '',\n    // TODO: cruzar com o lead_id salvo na etapa de outreach (Data Table ou CRM), não está disponível só com o webhook.\n    lead_id: null\n  }\n};"
+      },
+      "id": "a8888888-1111-4111-8111-111111111803",
+      "name": "Parsear mensagem recebida [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "text": "={{ $json.mensagem_recebida }}",
+        "options": {
+          "systemMessage": "Você é a Ana, do Estruturação. Tom: humano, acolhedor, consultivo — nunca robótico, nunca pressão.\n\nREGRAS DE USO (nunca quebrar):\n- Nunca expor nome de concorrentes ao cliente\n- Nunca falar preço antes de mostrar valor\n- Máximo de 3 follow-ups — depois respeitar o silêncio\n- Sempre perguntar se quer acrescentar algo após a demonstração\n\nESCALE PARA O FUNDADOR (pare de responder e sinalize escalonamento) quando:\n- Cliente faz pergunta técnica complexa\n- Cliente quer falar com alguém da empresa\n- Cliente tem objeção forte não resolvida\n- Cliente pede proposta customizada\n\nFLUXO DE VENDA (5 camadas, nesta ordem):\n1. Diagnóstico e custo do não fazer (Business AI Score comparado à concorrência da região)\n2. Demonstração + prova social + PERGUNTA DE AJUSTE (\"tem algo que gostaria de acrescentar ou ajustar?\") — só depois de aprovado sem mais ajustes, siga pra camada 3\n3. Proposta (Estrutura Digital Starter: setup + manutenção mensal, ver dados do lead)\n4. Urgência genuína (domínio disponível, sem pressão falsa)\n5. Fechamento (confirmar domínio, iniciar desenvolvimento, prazo 24-48h)\n\nSempre termine sua resposta com um campo JSON ao final, em uma linha separada, no formato: {\"escalar\": true|false, \"motivo\": \"...\"} — isso é lido por outro sistema, não é visível ao cliente."
+        }
+      },
+      "id": "a8888888-1111-4111-8111-111111111804",
+      "name": "Agente Ana",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.9,
+      "position": [
+        -960,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "model": "claude-sonnet-5",
+        "options": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111805",
+      "name": "Anthropic Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "typeVersion": 1.3,
+      "position": [
+        -960,
+        480
+      ],
+      "credentials": {
+        "anthropicApi": {
+          "id": "PLACEHOLDER",
+          "name": "anthropic-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrai o campo {\"escalar\": ..., \"motivo\": ...} do fim da resposta da Ana e separa do texto visível ao cliente.\nconst item = $input.item.json;\nconst raw = item.output || item.text || '';\nconst match = raw.match(/\\{\\s*\"escalar\"[\\s\\S]*\\}\\s*$/);\nlet escalar = false, motivo = '';\ntry {\n  if (match) {\n    const parsed = JSON.parse(match[0]);\n    escalar = !!parsed.escalar;\n    motivo = parsed.motivo || '';\n  }\n} catch (e) {}\nconst textoVisivel = match ? raw.slice(0, match.index).trim() : raw.trim();\nreturn { json: { ...item, resposta_ana: textoVisivel, escalar, motivo_escalonamento: motivo } };"
+      },
+      "id": "a8888888-1111-4111-8111-111111111806",
+      "name": "Separar resposta e sinal de escalonamento",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -740,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-escalar",
+              "leftValue": "={{ $json.escalar }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111807",
+      "name": "Precisa escalar?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ 'Ana precisa da sua ajuda com ' + ($json.telefone || 'um prospect') + '.\\n\\nMotivo: ' + $json.motivo_escalonamento + '\\n\\nÚltima mensagem do prospect: ' + $json.mensagem_recebida }}",
+        "additionalFields": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111808",
+      "name": "Telegram - avisar Fundador",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -300,
+        220
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sinal de pedido de ajuste (Camada 2) reconhecido no motivo — aciona o loop de ajuste pré-pagamento.\n// TODO: refinar a detecção (hoje é um match de texto simples no motivo/mensagem — trocar por um campo\n// estruturado explícito da Ana se a taxa de falso positivo/negativo for alta).\nconst item = $input.item.json;\nitem.pediu_ajuste = /ajust|alterar|mudar|trocar/i.test(item.mensagem_recebida || '');\nreturn { json: item };"
+      },
+      "id": "a8888888-1111-4111-8111-111111111809",
+      "name": "Detectar pedido de ajuste [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -300,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-pediu-ajuste",
+              "leftValue": "={{ $json.pediu_ajuste }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111810",
+      "name": "Pediu ajuste antes de pagar?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -80,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-07b",
+          "mode": "list",
+          "cachedResultName": "07b-loop-ajuste-pre-pagamento"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a8888888-1111-4111-8111-111111111811",
+      "name": "Acionar loop de ajuste",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ '[REVISAR ANTES DE ENVIAR — modo assistido]\\nPra: ' + $json.telefone + '\\n\\n' + $json.resposta_ana }}",
+        "additionalFields": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111812",
+      "name": "Telegram - revisar resposta (modo assistido)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        340
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json.resposta_ana } }) }}",
+        "options": {},
+        "disabled": true
+      },
+      "id": "a8888888-1111-4111-8111-111111111813",
+      "name": "Enviar resposta ao WhatsApp [desligado — modo assistido]",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        360,
+        340
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'recebido' } }}",
+        "options": {}
+      },
+      "id": "a8888888-1111-4111-8111-111111111814",
+      "name": "Responder webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        580,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook - mensagem inbound do prospect": {
+      "main": [
+        [
+          {
+            "node": "Parsear mensagem recebida [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parsear mensagem recebida [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Agente Ana",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Anthropic Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Agente Ana",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Agente Ana": {
+      "main": [
+        [
+          {
+            "node": "Separar resposta e sinal de escalonamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Separar resposta e sinal de escalonamento": {
+      "main": [
+        [
+          {
+            "node": "Precisa escalar?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Precisa escalar?": {
+      "main": [
+        [
+          {
+            "node": "Telegram - avisar Fundador",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Detectar pedido de ajuste [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detectar pedido de ajuste [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Pediu ajuste antes de pagar?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pediu ajuste antes de pagar?": {
+      "main": [
+        [
+          {
+            "node": "Acionar loop de ajuste",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram - revisar resposta (modo assistido)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - revisar resposta (modo assistido)": {
+      "main": [
+        [
+          {
+            "node": "Enviar resposta ao WhatsApp [desligado — modo assistido]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar resposta ao WhatsApp [desligado — modo assistido]": {
+      "main": [
+        [
+          {
+            "node": "Responder webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Acionar loop de ajuste": {
+      "main": [
+        [
+          {
+            "node": "Responder webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - avisar Fundador": {
+      "main": [
+        [
+          {
+            "node": "Responder webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

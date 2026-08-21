@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Neovertix — Rodada 2 · símbolo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, p, figure { margin: 0; }
+  svg { display: block; }
+  a { color: inherit; }
+
+  :root {
+    --bg-0: #0b0f0d;
+    --bg-1: #121815;
+    --bg-2: #1a211c;
+    --bg-3: #232b24;
+    --deep-blue: #0a0e1a;
+    --deep-blue-border: #1a2338;
+    --text: #f2f5f0;
+    --text-dim: #93a099;
+    --accent: #b4e33d;
+    --accent-hi: #cbff5e;
+    --accent-dim: #6e8a24;
+    --border: #2c352d;
+    --on-accent: #121815;
+    --paper: #f4f1ea;
+    --ink: #121815;
+    --ink-dim: #6b6f66;
+    --warn: #e3b23d;
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Manrope', sans-serif;
+  }
+
+  body {
+    background: var(--bg-0);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .symbol { width: 1em; height: 1em; color: inherit; }
+
+  /* ---- masthead ---- */
+  .masthead { padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 7vw, 4rem); max-width: 1180px; margin: 0 auto; }
+  .masthead-eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--font-display); font-size: .72rem; letter-spacing: .1em; color: var(--accent);
+    border: 1px solid var(--border); border-radius: 999px; padding: .4rem .9rem; margin-bottom: 1.75rem;
+  }
+  .masthead-eyebrow::before { content: '>'; }
+  .masthead h1 { font-family: var(--font-display); font-size: clamp(1.9rem, 4.6vw, 3.1rem); font-weight: 700; letter-spacing: -0.01em; max-width: 26ch; }
+  .masthead p { margin-top: 1.25rem; max-width: 72ch; font-size: clamp(1rem, 1.5vw, 1.12rem); color: var(--text-dim); }
+  .masthead p strong { color: var(--text); }
+
+  .brief-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2.25rem; }
+  .brief-card { background: var(--bg-1); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.4rem; }
+  .brief-card h3 { font-family: var(--font-display); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem; }
+  .brief-card.keep h3 { color: var(--accent); }
+  .brief-card.avoid h3 { color: var(--warn); }
+  .brief-card ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; color: var(--text-dim); display: grid; gap: .3rem; }
+
+  .masthead-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.25rem; }
+  .masthead-nav a {
+    text-decoration: none; font-size: .85rem; font-weight: 600; color: var(--text); background: var(--bg-1);
+    border: 1px solid var(--border); border-radius: 999px; padding: .55rem 1.1rem;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .masthead-nav a:hover { border-color: var(--accent-dim); transform: translateY(-1px); }
+
+  /* ---- candidate / generic section ---- */
+  .candidate { max-width: 1180px; margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); border-top: 1px solid var(--border); }
+  .c-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(1rem, 4vw, 2rem); align-items: end; margin-bottom: 2.5rem; }
+  .c-letter { font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 6rem); font-weight: 700; line-height: .8; color: var(--accent); }
+  .c-name { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.01em; }
+  .c-desc { color: var(--text-dim); margin-top: .4rem; max-width: 64ch; font-size: 1rem; }
+
+  .section-label {
+    font-family: var(--font-display); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--text-dim); display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .block { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+  .block:last-child { margin-bottom: 0; }
+
+  .hero-tile { background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px; display: flex; align-items: center; justify-content: center; padding: clamp(2.5rem, 8vw, 4rem); }
+  .hero-tile .symbol { width: clamp(180px, 28vw, 320px); height: clamp(180px, 28vw, 320px); color: var(--accent); }
+
+  .scale-row {
+    display: flex; align-items: flex-end; gap: clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem clamp(1.5rem, 4vw, 2.5rem); flex-wrap: wrap;
+  }
+  .scale-item { display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+  .scale-item .symbol { color: var(--text); }
+  .scale-item span { font-family: var(--font-display); font-size: .68rem; color: var(--text-dim); }
+  .s-16 { width: 16px; height: 16px; }
+  .s-32 { width: 32px; height: 32px; }
+  .s-64 { width: 64px; height: 64px; }
+  .s-128 { width: 128px; height: 128px; }
+
+  .mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .mode-card {
+    border-radius: 14px; border: 1px solid var(--border); padding: 1.75rem 1.25rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem; min-height: 176px;
+  }
+  .mode-card .symbol { width: 60px; height: 60px; }
+  .mode-card figcaption { font-family: var(--font-display); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; }
+  .mode-dark   { background: var(--bg-1); }
+  .mode-dark   .symbol { color: var(--accent); }
+  .mode-dark   figcaption { color: var(--text-dim); }
+  .mode-dark2  { background: var(--bg-2); }
+  .mode-dark2  .symbol { color: var(--text); }
+  .mode-dark2  figcaption { color: var(--text-dim); }
+  .mode-paper  { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper  .symbol { color: var(--ink); }
+  .mode-paper  figcaption { color: var(--ink-dim); }
+  .mode-paper2 { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper2 .symbol { color: var(--accent-dim); }
+  .mode-paper2 figcaption { color: var(--ink-dim); }
+
+  /* bicolor hero tiles */
+  .bi-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .bi-tile { min-height: 240px; }
+  .bi-tile .symbol { width: 130px; height: 130px; color: var(--text); }
+
+  .lockup-tile { background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px; padding: clamp(2rem, 6vw, 3rem); display: flex; align-items: center; justify-content: center; }
+  .lockup-tile svg { width: clamp(220px, 40vw, 340px); height: auto; color: var(--text); }
+
+  .icon-row { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .icon-mock { width: 112px; height: 112px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .icon-mock.acc { background: var(--accent); }
+  .icon-mock.acc .symbol { width: 58%; height: 58%; color: var(--on-accent); }
+  .icon-mock.drk { background: var(--bg-2); border: 1px solid var(--border); }
+  .icon-mock.drk .symbol { width: 58%; height: 58%; color: var(--accent); }
+
+  .rationale { list-style: none; display: grid; gap: .9rem; padding: 0; }
+  .rationale li { display: grid; grid-template-columns: auto 1fr; gap: .8rem; font-size: .98rem; color: var(--text); }
+  .rationale li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-top: .5rem; }
+  .rationale li.risk::before { background: var(--warn); }
+  .rationale li.risk span strong { color: var(--warn); }
+
+  /* wordmark comparison */
+  .wordmark-row { display: grid; gap: 1rem; }
+  .wordmark-tile { background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px; padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 2.75rem); display: flex; flex-direction: column; gap: 1.1rem; }
+  .wordmark-tile.pick { border-color: var(--accent-dim); }
+  .wm-row { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; }
+  .wm-symbol { width: 52px; height: 52px; color: var(--accent); flex-shrink: 0; }
+  .wm-text { font-family: var(--font-body); color: var(--text); font-size: clamp(1.6rem, 4.6vw, 2.7rem); }
+  .wm-caps { font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }
+  .wm-lower { font-weight: 600; letter-spacing: .005em; }
+  .wm-caption { font-family: var(--font-display); font-size: .7rem; letter-spacing: .06em; color: var(--text-dim); text-transform: uppercase; }
+  .wm-caption b { color: var(--accent); font-weight: 700; }
+
+  /* background comparison */
+  .bg-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .bg-panel { border-radius: 18px; border: 1px solid var(--border); padding: clamp(2.5rem, 6vw, 3.5rem) 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem; }
+  .bg-panel .symbol { width: clamp(120px, 20vw, 170px); height: clamp(120px, 20vw, 170px); }
+  .bg-panel-black { background: var(--bg-1); }
+  .bg-panel-blue { background: var(--deep-blue); border-color: var(--deep-blue-border); }
+  .bg-panel span { font-family: var(--font-display); font-size: .72rem; letter-spacing: .08em; color: var(--text-dim); }
+
+  .site-footer { max-width: 1180px; margin: 0 auto; padding: 3rem clamp(1.25rem, 5vw, 3rem) 4rem; color: var(--text-dim); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 1rem; }
+
+  @media (min-width: 720px) {
+    .wordmark-row { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .c-head { grid-template-columns: 1fr; }
+    .scale-row { justify-content: space-between; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SPRITE ============ -->
+<svg class="sprite" aria-hidden="true">
+  <defs>
+    <clipPath id="f-clip">
+      <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z"/>
+    </clipPath>
+    <linearGradient id="grad-green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cbff5e"/>
+      <stop offset="100%" stop-color="#6e8a24"/>
+    </linearGradient>
+
+    <symbol id="sym-d" viewBox="0 0 100 100">
+      <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z M58,20 L74,20 L88,86 L72,86 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-e" viewBox="0 0 100 100">
+      <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z M74,20 L90,20 L96,86 L80,86 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-f" viewBox="0 0 100 100">
+      <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z" fill="currentColor"/>
+      <path d="M0,10 L100,78 L100,100 L0,100 Z" fill="currentColor" fill-opacity="0.55" clip-path="url(#f-clip)"/>
+    </symbol>
+
+    <!-- lockups: Manrope 600 minúsculo, tracking modesto (decisão da rodada 2 — ver seção Wordmark) -->
+    <symbol id="lockup-d" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z M58,20 L74,20 L88,86 L72,86 Z" fill="currentColor"/>
+      </g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-e" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z M74,20 L90,20 L96,86 L80,86 Z" fill="currentColor"/>
+      </g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-f" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z" fill="currentColor"/>
+        <path d="M0,10 L100,78 L100,100 L0,100 Z" fill="currentColor" fill-opacity="0.55" clip-path="url(#f-clip)"/>
+      </g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Direção criativa · Neovertix — símbolo, rodada 2</div>
+  <h1>3 novos candidatos, tratamento bicolor N/V, wordmark revisado.</h1>
+  <p>
+    A rodada 1 (Cunha, Vetor, Fusão) foi rejeitada. O dono trouxe duas referências: um painel do
+    Pinterest de monogramas <strong>N em diagonais afiadas</strong> estilo big tech, e depois um
+    exemplo de estoque específico — um <strong>ápice sólido que vira N</strong> (a perna esquerda
+    sobe até um pico afiado, desce como diagonal, uma haste semi-vertical fecha à direita; fendas
+    finas separam os traços; lê como N, Λ e V ao mesmo tempo). D e E interpretam essa referência
+    com geometria própria — nada copiado do asset de estoque. F mantém um caminho alternativo
+    (facetado, 2 planos) que já estava forte. Depois de ver os três, o dono pediu mais três coisas:
+    um tratamento hero bicolor (branco + verde destacando o V), um teste de fundo azul-escuro, e um
+    wordmark mais minimalista — Manrope substitui JetBrains Mono como fonte da marca.
+  </p>
+  <div class="brief-grid">
+    <div class="brief-card keep">
+      <h3>Mantido</h3>
+      <ul>
+        <li>Monograma N dominante</li>
+        <li>Diagonais cortantes, massa sólida</li>
+        <li>Sensação de ascensão/movimento</li>
+        <li>Vértice embutido na geometria, não decorado</li>
+      </ul>
+    </div>
+    <div class="brief-card avoid">
+      <h3>Evitado</h3>
+      <ul>
+        <li>Gradiente metálico / efeito 3D</li>
+        <li>Seta literal colada no traço</li>
+        <li>Contorno hexágono ou escudo</li>
+        <li>Ribbon entrelaçado</li>
+      </ul>
+    </div>
+  </div>
+  <nav class="masthead-nav">
+    <a href="#wordmark">Wordmark</a>
+    <a href="#cand-d">D — Fenda</a>
+    <a href="#cand-e">E — Pico</a>
+    <a href="#cand-f">F — Corte</a>
+    <a href="#fundo">Teste de fundo</a>
+  </nav>
+</header>
+
+<!-- ============================================================ WORDMARK ============================================================ -->
+<section class="candidate" id="wordmark">
+  <div class="c-head">
+    <div class="c-letter">Aa</div>
+    <div>
+      <div class="c-name">Wordmark — Manrope no lugar de JetBrains Mono</div>
+      <div class="c-desc">JetBrains Mono vira fonte de apoio (rótulos, dados, chrome de UI) — não mais o logotipo. Manrope, que já é a fonte de texto da marca, assume o wordmark em peso 600 com tracking generoso. Duas leituras testadas lado a lado, símbolo F como referência neutra.</div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="section-label">Caixa alta, tracking largo · vs · minúsculas, tracking contido</div>
+    <div class="wordmark-row">
+      <figure class="wordmark-tile">
+        <div class="wm-row">
+          <svg class="wm-symbol" viewBox="0 0 100 100"><use href="#sym-f"/></svg>
+          <span class="wm-text wm-caps">NEOVERTIX</span>
+        </div>
+        <figcaption class="wm-caption">Manrope 600 · caixa alta · tracking 0.16em</figcaption>
+      </figure>
+      <figure class="wordmark-tile pick">
+        <div class="wm-row">
+          <svg class="wm-symbol" viewBox="0 0 100 100"><use href="#sym-f"/></svg>
+          <span class="wm-text wm-lower">neovertix</span>
+        </div>
+        <figcaption class="wm-caption"><b>Recomendado</b> · Manrope 600 · minúsculas · tracking 0.005em</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="block">
+    <div class="section-label">Por que minúsculas</div>
+    <ul class="rationale">
+      <li><span>Caixa alta com tracking largo lê como institucional/agência tradicional — o oposto do "sóbrio, não gritado" que já é regra de voz da marca. É a mesma energia visual de "REVOLUCIONE seu atendimento HOJE", só que na tipografia.</span></li>
+      <li><span>Minúsculas em peso 600 é o registro que Vercel, Linear, Notion e Figma usam — big tech recente lê como confiante o bastante pra não precisar gritar em caixa alta.</span></li>
+      <li><span>JetBrains Mono não morre: continua carregando os rótulos técnicos (eyebrows, legendas, dados) — o contraste serifado/mono vs. Manrope no corpo do wordmark é o mesmo par tipográfico já aprovado no território Malha, só invertendo qual dos dois é o logotipo.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO D ============================================================ -->
+<section class="candidate" id="cand-d">
+  <div class="c-head">
+    <div class="c-letter">D</div>
+    <div>
+      <div class="c-name">Fenda</div>
+      <div class="c-desc">Ápice central sólido — duas pernas caem dele em V, uma terceira haste quase vertical fecha o N à direita, com uma costura final de só 2 unidades.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-d"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Tratamento hero — N/V em destaque (branco + verde)</div>
+    <div class="mode-grid bi-grid">
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z" fill="var(--accent)"/>
+          <path d="M58,20 L74,20 L88,86 L72,86 Z" fill="var(--text)"/>
+        </svg>
+        <figcaption>V em verde sólido</figcaption>
+      </figure>
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z" fill="url(#grad-green)"/>
+          <path d="M58,20 L74,20 L88,86 L72,86 Z" fill="var(--text)"/>
+        </svg>
+        <figcaption>V em gradiente verde contido</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-d"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-d"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-d"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-d"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-d"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-d"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-d"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-d"/></svg><figcaption>Acento-dim · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-d"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-d"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-d"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Três cunhas independentes, sem sobreposição — o ápice é um único ponto compartilhado por duas delas, então a fenda entre elas nasce em zero e abre pra 24 unidades na base: o V não é aplicado, é a folga natural do próprio Λ.</span></li>
+      <li><span>A haste de fechamento agora nasce logo abaixo do garfo (não na metade da altura) e segue uma inclinação mais suave que a diagonal — corrige o problema da v1, que lia como "AI" em vez de "N".</span></li>
+      <li><span>O tratamento bicolor reforça a leitura dupla de graça: colorir só o garfo do ápice em verde deixa o "V escondido" óbvio mesmo pra quem nunca leu o racional.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> a construção ápice+N é a mesma família do exemplo de estoque que o dono mandou — o ângulo do V e a proporção das 3 cunhas são nossos, mas vale um teste de busca reversa de imagem antes de registrar.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO E ============================================================ -->
+<section class="candidate" id="cand-e">
+  <div class="c-head">
+    <div class="c-letter">E</div>
+    <div>
+      <div class="c-name">Pico</div>
+      <div class="c-desc">Mesma família do D, mas com o ápice deslocado à esquerda, pernas de espessura assimétrica e a haste de fechamento inclinada na direção oposta — mais tensão, mais dramático.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-e"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Tratamento hero — N/V em destaque (branco + verde)</div>
+    <div class="mode-grid bi-grid">
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z" fill="var(--accent)"/>
+          <path d="M74,20 L90,20 L96,86 L80,86 Z" fill="var(--text)"/>
+        </svg>
+        <figcaption>V em verde sólido</figcaption>
+      </figure>
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z" fill="url(#grad-green)"/>
+          <path d="M74,20 L90,20 L96,86 L80,86 Z" fill="var(--text)"/>
+        </svg>
+        <figcaption>V em gradiente verde contido</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-e"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-e"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-e"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-e"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-e"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-e"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-e"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-e"/></svg><figcaption>Acento-dim · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-e"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-e"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-e"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Ápice fora do centro (x=34, não x=50) e pernas com pesos diferentes (12 vs. 22 unidades de base) — mesma ideia estrutural do D, silhueta claramente distinta: mais puxado, menos simétrico.</span></li>
+      <li><span>A haste de fechamento inclina pro lado oposto da diagonal principal — cria tensão visual (duas direções competindo) que dá mais energia/movimento do que uma haste reta.</span></li>
+      <li><span>O V aqui é mais aberto (28 unidades na base, contra 24 do D) — mais dramático, mais fácil de notar num relance; o tratamento bicolor deixa isso ainda mais evidente porque o garfo assimétrico em verde chama o olho primeiro.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> mesma família de risco do D (herda a estrutura ápice-vira-N da referência de estoque) — e a assimetria forte pode ler como "quebrado" pra quem só bate o olho rápido, em vez de "dinâmico". Testar ao lado do D com alguém de fora antes de decidir.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO F ============================================================ -->
+<section class="candidate" id="cand-f">
+  <div class="c-head">
+    <div class="c-letter">F</div>
+    <div>
+      <div class="c-name">Corte</div>
+      <div class="c-desc">N espesso, sólido, cortado por uma única costura diagonal em 2 planos de tom — plano 2 é o plano 1 em opacidade reduzida, então os 2 tons se adaptam sozinhos aos 4 modos de cor.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-f"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Tratamento hero — N/V em destaque (branco + verde)</div>
+    <div class="mode-grid bi-grid">
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z" fill="var(--text)"/>
+          <path d="M66,14 L86,14 L54,86 L34,86 Z" fill="var(--accent)"/>
+        </svg>
+        <figcaption>Diagonal em verde sólido</figcaption>
+      </figure>
+      <figure class="mode-card mode-dark bi-tile">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z" fill="var(--text)"/>
+          <path d="M66,14 L86,14 L54,86 L34,86 Z" fill="url(#grad-green)"/>
+        </svg>
+        <figcaption>Diagonal em gradiente verde contido</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-f"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-f"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-f"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-f"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-f"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-f"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-f"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-f"/></svg><figcaption>Acento-dim · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-f"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-f"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-f"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Único candidato sem parentesco com a referência de estoque do ápice — N clássico de 3 traços. Pro tratamento bicolor, a diagonal central (o traço que conecta as duas hastes, o equivalente ao "V" de conexão) ganha o verde; as duas hastes ficam brancas.</span></li>
+      <li><span>O plano 2 do modo facetado original é sempre "o plano 1 em 55% de opacidade" — funciona nos 4 modos automaticamente, sem precisar de um SVG por modo.</span></li>
+      <li><span>É o candidato mais "ícone de app" dos três: massa mais grossa (20 unidades de haste, contra 12–16 do D/E), sem fendas finas que sumem em superfícies pequenas — e o mais legível em 16px dos três, de longe.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> por não vir da referência que o dono aprovou por último, pode parecer "voltar pra trás" — vale posicionar como opção de reserva/plano B explícito, não como concorrente direto de D e E.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ TESTE DE FUNDO ============================================================ -->
+<section class="candidate" id="fundo">
+  <div class="c-head">
+    <div class="c-letter">bg</div>
+    <div>
+      <div class="c-name">Teste de fundo — off-black vs. azul-escuro</div>
+      <div class="c-desc">Favorito desta rodada: <strong>D "Fenda"</strong>, tratamento gradiente — é o que melhor equilibra a referência que o dono aprovou (ápice vira N) com legibilidade corrigida e a leitura N/V mais clara dos três. Comparado nos dois fundos pedidos.</div>
+    </div>
+  </div>
+  <div class="block">
+    <div class="section-label">Off-black #0B0F0D · vs · azul-escuro #0A0E1A</div>
+    <div class="bg-compare">
+      <figure class="bg-panel bg-panel-black">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z" fill="url(#grad-green)"/>
+          <path d="M58,20 L74,20 L88,86 L72,86 Z" fill="var(--text)"/>
+        </svg>
+        <span>Off-black · #0B0F0D</span>
+      </figure>
+      <figure class="bg-panel bg-panel-blue">
+        <svg class="symbol" viewBox="0 0 100 100">
+          <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z" fill="url(#grad-green)"/>
+          <path d="M58,20 L74,20 L88,86 L72,86 Z" fill="var(--text)"/>
+        </svg>
+        <span>Azul-escuro · #0A0E1A</span>
+      </figure>
+    </div>
+  </div>
+  <div class="block">
+    <div class="section-label">Recomendação</div>
+    <ul class="rationale">
+      <li><span>Manter o off-black oficial (#0B0F0D/#121815) como fundo primário — é território já aprovado (Malha) e some no picture social/app-icon de qualquer plataforma que force fundo escuro puro. O azul-escuro funciona, mas introduz uma segunda cor de fundo pra manter consistente em todo material — custo de manutenção sem ganho claro.</span></li>
+      <li><span>Se o motivo do azul é diferenciar de concorrentes que já usam preto+verde, a resposta mais barata é manter o off-black e deixar o acento fazer esse trabalho — nenhum concorrente mapeado na pesquisa usa esse verde-limão específico.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  Neovertix — símbolo, rodada 2, agosto de 2026. D e E interpretam o painel "ápice vira N" (referência de estoque) com geometria própria; F mantém o caminho facetado como reserva. Wordmark migrado de JetBrains Mono para Manrope 600 minúsculo.
+</footer>
+
+</body>
+</html>

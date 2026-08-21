@@ -1,0 +1,756 @@
+<title>SOP — Otimização Multi-Mecanismo</title>
+<style>
+  :root {
+    --paper: #F4F5F3;
+    --paper-raised: #FFFFFF;
+    --ink: #14181D;
+    --ink-soft: #4B535D;
+    --ink-faint: #7B828B;
+    --line: #DADCD6;
+    --accent: #2C7A76;
+    --accent-strong: #1F5B58;
+    --accent-soft: #DCEDEA;
+    --good: #3F7A46;
+    --good-soft: #E1EFE2;
+    --warn: #A9761F;
+    --warn-soft: #F3E7CD;
+    --crit: #A8402F;
+    --shadow: 0 1px 2px rgba(20,24,29,0.06), 0 10px 28px rgba(20,24,29,0.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14181D;
+      --paper-raised: #1B2027;
+      --ink: #EDEEEA;
+      --ink-soft: #AFB5BC;
+      --ink-faint: #7E858D;
+      --line: #2B313A;
+      --accent: #57ABA5;
+      --accent-strong: #7FC5BF;
+      --accent-soft: #1C3230;
+      --good: #7CBE83;
+      --good-soft: #1E2F22;
+      --warn: #D9A94F;
+      --warn-soft: #332A18;
+      --crit: #E0897C;
+      --shadow: 0 1px 2px rgba(0,0,0,0.5), 0 10px 28px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181D; --paper-raised: #1B2027; --ink: #EDEEEA; --ink-soft: #AFB5BC;
+    --ink-faint: #7E858D; --line: #2B313A; --accent: #57ABA5; --accent-strong: #7FC5BF;
+    --accent-soft: #1C3230; --good: #7CBE83; --good-soft: #1E2F22; --warn: #D9A94F;
+    --warn-soft: #332A18; --crit: #E0897C; --shadow: 0 1px 2px rgba(0,0,0,0.5), 0 10px 28px rgba(0,0,0,0.4);
+  }
+  :root[data-theme="light"] {
+    --paper: #F4F5F3; --paper-raised: #FFFFFF; --ink: #14181D; --ink-soft: #4B535D;
+    --ink-faint: #7B828B; --line: #DADCD6; --accent: #2C7A76; --accent-strong: #1F5B58;
+    --accent-soft: #DCEDEA; --good: #3F7A46; --good-soft: #E1EFE2; --warn: #A9761F;
+    --warn-soft: #F3E7CD; --crit: #A8402F; --shadow: 0 1px 2px rgba(20,24,29,0.06), 0 10px 28px rgba(20,24,29,0.06);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Charter, Georgia, "Iowan Old Style", serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-strong); }
+
+  .display {
+    font-family: Bahnschrift, "Yu Gothic UI", "Segoe UI Semibold", system-ui, sans-serif;
+    font-stretch: condensed;
+  }
+  .mono {
+    font-family: "Cascadia Code", Consolas, "SF Mono", ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .eyebrow {
+    font-family: Bahnschrift, system-ui, sans-serif;
+    font-stretch: condensed;
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  a { color: var(--accent-strong); }
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1.75rem);
+    align-items: center;
+    padding: 0.85rem clamp(1.25rem, 4vw, 3rem);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .topbar .mark { font-size: 1.15rem; flex-shrink: 0; }
+  .topbar nav { display: flex; gap: clamp(0.9rem, 2vw, 1.6rem); flex-shrink: 0; }
+  .topbar nav a {
+    font-family: Bahnschrift, system-ui, sans-serif;
+    font-stretch: condensed;
+    font-size: 0.85rem;
+    text-decoration: none;
+    color: var(--ink-soft);
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+  }
+  .topbar nav a:hover { color: var(--accent-strong); border-color: var(--accent); }
+
+  .wrap { max-width: 840px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 3rem); }
+  .wrap.wide { max-width: 960px; }
+
+  header.hero {
+    padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+    border-bottom: 1px solid var(--line);
+  }
+  header.hero h1 {
+    font-size: clamp(2rem, 1.55rem + 1.6vw, 2.7rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0.5rem 0 0.65rem;
+    text-wrap: balance;
+  }
+  header.hero p.lede {
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 62ch;
+    margin: 0;
+  }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+  .service-tags span {
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.78rem;
+    padding: 0.28rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    color: var(--ink-soft);
+  }
+
+  .stage-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    padding: 0.22rem 0.65rem;
+    border-radius: 999px;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+  }
+  .stage-badge.once { background: var(--good-soft); color: var(--good); }
+  .stage-badge.recurring { background: var(--accent-soft); color: var(--accent-strong); }
+  .stage-badge::before { content: ""; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: currentColor; }
+
+  .commercial-map {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
+    gap: 1rem;
+    margin-top: 1.75rem;
+  }
+  .commercial-map .stage {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.2rem 1.35rem;
+    background: var(--paper-raised);
+    box-shadow: var(--shadow);
+  }
+  .commercial-map .stage h4 { margin: 0.35rem 0 0.5rem; font-size: 1.05rem; }
+  .commercial-map .stage p { margin: 0; font-size: 0.87rem; color: var(--ink-soft); }
+  .commercial-map .arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-faint);
+    font-size: 1.3rem;
+  }
+  @media (max-width: 640px) {
+    .commercial-map { grid-template-columns: 1fr; }
+    .commercial-map .arrow { transform: rotate(90deg); padding: 0.1rem 0; }
+  }
+
+  section { padding: clamp(2.25rem, 5vw, 3.25rem) 0; }
+  section + section { border-top: 1px solid var(--line); }
+  section > .eyebrow { display: block; margin-bottom: 0.5rem; }
+  section h2 {
+    font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.85rem);
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    text-wrap: balance;
+  }
+  section > p.intro { color: var(--ink-soft); max-width: 66ch; margin: 0 0 1.75rem; }
+
+  .cycle { display: flex; flex-direction: column; gap: 1.1rem; }
+  .week {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 0 1.25rem;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.4rem 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .week .num {
+    font-family: Bahnschrift, system-ui, sans-serif;
+    font-stretch: condensed;
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .week .num small {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-top: 0.3rem;
+    font-weight: 600;
+  }
+  .week h3 { margin: 0 0 0.2rem; font-size: 1.12rem; }
+  .week .role { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 0.85rem; }
+  .checklist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+  .checklist li {
+    display: flex;
+    gap: 0.65rem;
+    align-items: baseline;
+    font-size: 0.95rem;
+  }
+  .checklist li::before {
+    content: "";
+    flex-shrink: 0;
+    width: 0.62rem;
+    height: 0.62rem;
+    margin-top: 0.3rem;
+    border: 1.5px solid var(--accent);
+    border-radius: 2px;
+  }
+  .checklist .tool {
+    font-family: "Cascadia Code", Consolas, monospace;
+    font-size: 0.78rem;
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    padding: 0.05rem 0.4rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+  .checklist .note { color: var(--ink-faint); font-size: 0.85rem; }
+
+  .monthly-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1rem;
+  }
+  .m-card {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.15rem 1.25rem;
+    background: var(--paper-raised);
+  }
+  .m-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.98rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .m-card p { margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+  .dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+
+  .fronts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+  .front {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.5rem 1.6rem;
+    background: var(--paper-raised);
+    box-shadow: var(--shadow);
+  }
+  .front .eyebrow { display: block; margin-bottom: 0.4rem; }
+  .front h3 { margin: 0 0 0.6rem; font-size: 1.2rem; }
+  .front > p { color: var(--ink-soft); font-size: 0.92rem; margin: 0 0 1rem; }
+  .front ul.plain li { font-size: 0.9rem; }
+  .front ul.plain strong { color: var(--ink); }
+
+  .callout {
+    margin-top: 1.75rem;
+    border-left: 3px solid var(--warn);
+    background: var(--warn-soft);
+    padding: 1.1rem 1.3rem;
+    border-radius: 0 6px 6px 0;
+  }
+  .callout .eyebrow { color: var(--warn); }
+  .callout p { margin: 0.4rem 0 0; font-size: 0.95rem; }
+  .callout p + p { margin-top: 0.6rem; }
+
+  /* --- report mock --- */
+  .report {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--paper-raised);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .report-head {
+    padding: 1.5rem 1.75rem;
+    background: linear-gradient(180deg, var(--accent-soft), transparent);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .report-head h3 { margin: 0.15rem 0 0; font-size: 1.3rem; }
+  .report-head .period { font-family: "Cascadia Code", Consolas, monospace; font-size: 0.85rem; color: var(--ink-soft); }
+  .report-body { padding: 1.75rem; display: flex; flex-direction: column; gap: 1.75rem; }
+  .report-body h4 {
+    font-family: Bahnschrift, system-ui, sans-serif;
+    font-stretch: condensed;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .exec-summary { font-size: 1rem; color: var(--ink); }
+
+  .metric-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; }
+  .metric {
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.85rem 1rem;
+  }
+  .metric .label { font-size: 0.78rem; color: var(--ink-faint); margin-bottom: 0.35rem; }
+  .metric .value { font-family: "Cascadia Code", Consolas, monospace; font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+  .metric .delta { font-size: 0.8rem; margin-left: 0.4rem; font-family: "Cascadia Code", Consolas, monospace; }
+  .delta.up { color: var(--good); }
+  .delta.down { color: var(--crit); }
+
+  .table-scroll { overflow-x: auto; }
+  table.data {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.92rem;
+    min-width: 480px;
+  }
+  table.data th, table.data td {
+    text-align: left;
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+  }
+  table.data th { color: var(--ink-faint); font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  table.data td.num { font-family: "Cascadia Code", Consolas, monospace; font-variant-numeric: tabular-nums; }
+  table.data tr:last-child td { border-bottom: none; }
+
+  .chart-block { display: flex; gap: 2rem; flex-wrap: wrap; align-items: flex-end; }
+  .spark-wrap { flex: 1; min-width: 220px; }
+  .spark-wrap .cap { font-size: 0.8rem; color: var(--ink-faint); margin-top: 0.4rem; }
+  .bars { display: flex; flex-direction: column; gap: 0.6rem; min-width: 220px; flex: 1; }
+  .bar-row { display: grid; grid-template-columns: 5.5rem 1fr 3rem; align-items: center; gap: 0.6rem; font-size: 0.82rem; }
+  .bar-row .track { height: 0.55rem; background: var(--accent-soft); border-radius: 3px; overflow: hidden; }
+  .bar-row .fill { height: 100%; background: var(--accent); border-radius: 3px; }
+  .bar-row .fill.before { background: var(--ink-faint); }
+  .bar-row .val { font-family: "Cascadia Code", Consolas, monospace; text-align: right; }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-family: "Cascadia Code", Consolas, monospace;
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+    background: var(--good-soft);
+    color: var(--good);
+  }
+  .pill::before { content: ""; width: 0.4rem; height: 0.4rem; border-radius: 50%; background: currentColor; }
+
+  ul.plain { margin: 0; padding-left: 1.15rem; }
+  ul.plain li { margin-bottom: 0.4rem; font-size: 0.95rem; }
+  ul.plain li:last-child { margin-bottom: 0; }
+
+  footer {
+    padding: 2.5rem clamp(1.25rem, 4vw, 3rem) 4rem;
+    max-width: 840px;
+    margin: 0 auto;
+    color: var(--ink-faint);
+    font-size: 0.85rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .week, .m-card, .report { transition: box-shadow 0.2s ease; }
+  }
+  @media (max-width: 640px) {
+    .week { grid-template-columns: 1fr; }
+    .week .num { display: flex; align-items: baseline; gap: 0.5rem; }
+    .week .num small { margin-top: 0; }
+    .report-head { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<div class="topbar">
+  <span class="mark">⚙️</span>
+  <nav>
+    <a href="#fase0">Entrega do site</a>
+    <a href="#posicionamento">Como posicionar</a>
+    <a href="#ciclo">Ciclo semanal</a>
+    <a href="#mensal">SOP mensal</a>
+    <a href="#relatorio">Relatório mensal</a>
+    <a href="#nota">Leitura operacional</a>
+  </nav>
+</div>
+
+<div class="wrap">
+  <header class="hero">
+    <span class="eyebrow">Procedimento Operacional Padrão</span>
+    <h1>Otimização Multi-Mecanismo</h1>
+    <p class="lede">Da venda do site à recorrência. A Fase 0 entrega o site já otimizado — SEO técnico, AEO e GEO de fábrica — sem custo extra. A partir da Etapa B, com contrato assinado, entra o ciclo semanal recorrente cobrado à parte.</p>
+    <div class="service-tags">
+      <span>SEO técnico</span>
+      <span>AEO</span>
+      <span>GEO</span>
+      <span>CRO</span>
+      <span>UX &amp; infra</span>
+    </div>
+    <div class="commercial-map">
+      <div class="stage">
+        <span class="stage-badge once">Etapa A</span>
+        <h4 class="display">Venda do site</h4>
+        <p>Pagamento único. O site já nasce com SEO técnico, AEO e GEO aplicados — não é upsell, é parte da entrega.</p>
+      </div>
+      <div class="arrow" aria-hidden="true">→</div>
+      <div class="stage">
+        <span class="stage-badge recurring">Etapa B</span>
+        <h4 class="display">Recorrência (contrato)</h4>
+        <p>Só começa se o cliente assinar o contrato mensal. Cobrança separada — é o ciclo semanal documentado abaixo.</p>
+      </div>
+    </div>
+  </header>
+
+  <section id="fase0">
+    <span class="eyebrow">Etapa A — incluso na venda do site</span>
+    <h2>Fase 0 — Entrega do site <span class="stage-badge once">Venda única</span></h2>
+    <p class="intro">Duas conferências, uma antes de publicar e outra depois. Nenhuma depende do cliente assinar recorrência — é o padrão de qualidade de todo site que sai daqui.</p>
+    <div class="cycle">
+      <article class="week">
+        <div class="num">A<small>sem domínio</small></div>
+        <div>
+          <h3>Na geração do site</h3>
+          <p class="role">Embutido na criação — não depende do site estar publicado.</p>
+          <ul class="checklist">
+            <li>Title tags e meta description exclusivos por página</li>
+            <li>Hierarquia de headers — H1 único, H2/H3 estruturados</li>
+            <li>URLs/slugs limpos e descritivos</li>
+            <li>Alt text em todas as imagens</li>
+            <li>Canonical tags</li>
+            <li>sitemap.xml e robots.txt gerados <span class="tool">site-architecture</span></li>
+            <li>Schema.org (JSON-LD) — Organization + FAQPage, LocalBusiness se aplicável <span class="tool">schema-markup</span></li>
+            <li>Conteúdo estruturado pra citação em IA — resposta direta, FAQ, sinais de E-E-A-T <span class="tool">aeo</span></li>
+            <li>Open Graph / Twitter Card configurados</li>
+            <li>Imagens otimizadas, lazy loading, code splitting</li>
+            <li>Acessibilidade básica — contraste, ARIA, navegação por teclado <span class="tool">a11y-audit</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="week">
+        <div class="num">B<small>com domínio</small></div>
+        <div>
+          <h3>Checklist pós-publicação</h3>
+          <p class="role">Só roda depois que o domínio está no ar — é o que fecha a entrega.</p>
+          <ul class="checklist">
+            <li>Confirmar SSL ativo e válido</li>
+            <li>Verificar propriedade no Search Console (TXT no DNS ou arquivo HTML)</li>
+            <li>Submeter sitemap.xml no Search Console</li>
+            <li>Confirmar indexação real — Google consegue rastrear a página</li>
+            <li>Core Web Vitals no ambiente de produção <span class="tool">chrome-devtools</span></li>
+            <li>Testar preview de Open Graph em rede social real</li>
+            <li>Checklist de aceite final — só aqui o site é considerado entregue</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="callout" style="border-left-color:var(--good); background:var(--good-soft);">
+      <span class="eyebrow" style="color:var(--good)">Como isso entra no contrato</span>
+      <p>Escopo fechado, embutido no preço de criação do site — não é cobrado à parte e não depende de contrato de recorrência. O <a href="#ciclo">ciclo semanal</a> abaixo só começa a rodar, e a ser cobrado, quando o cliente assina o contrato mensal.</p>
+    </div>
+  </section>
+
+  <section id="posicionamento">
+    <span class="eyebrow">Como comunicar ao cliente</span>
+    <h2>Duas frentes, uma engrenagem</h2>
+    <p class="intro">Internamente a equipe executa um ciclo único. Para o cliente, o pacote se explica melhor dividido em duas frentes complementares — uma garante a nota máxima nos buscadores, a outra transforma esse tráfego em venda.</p>
+    <div class="fronts">
+      <article class="front">
+        <span class="eyebrow">Frente 1</span>
+        <h3>SEO &amp; Performance</h3>
+        <p>A parte técnica: faz a página carregar instantaneamente, ser bem avaliada pelo Google e passar segurança total ao visitante.</p>
+        <ul class="plain">
+          <li><strong>Velocidade (PageSpeed):</strong> fator oficial de rankeamento — páginas rápidas sobem na busca orgânica e pagam mais barato no leilão do Google Ads</li>
+          <li><strong>SSL/HTTPS:</strong> requisito obrigatório — sem ele, o navegador exibe "Não seguro" e o Google penaliza</li>
+          <li><strong>Links quebrados (404):</strong> prejudicam o rastreamento dos robôs e a autoridade da página</li>
+          <li><strong>Uptime 24/7 e proteção antispam:</strong> instabilidade e bots derrubam a relevância percebida pelo buscador</li>
+        </ul>
+      </article>
+      <article class="front">
+        <span class="eyebrow">Frente 2</span>
+        <h3>CRO &amp; Conversão</h3>
+        <p>A parte estratégica: lê o comportamento do visitante e transforma esse tráfego — orgânico ou pago — em venda real.</p>
+        <ul class="plain">
+          <li><strong>Mapas de calor e scrollmaps:</strong> mostram se o usuário encontra a informação principal; menos abandono = Google interpreta que o conteúdo responde à busca</li>
+          <li><strong>CTAs e copywriting:</strong> textos ajustados aumentam a retenção e o tempo de permanência (dwell time) — sinal indireto que também pesa na busca</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="ciclo">
+    <span class="eyebrow">Etapa B — Parte 1, equipe técnica</span>
+    <h2>O ciclo semanal (4 semanas = 1 mês) <span class="stage-badge recurring">Recorrência</span></h2>
+    <p class="intro">Cada semana tem uma função fixa na engrenagem. A ordem importa: análise sem coleta é palpite, implementação sem hipótese é achismo.</p>
+
+    <div class="cycle">
+      <article class="week">
+        <div class="num">01<small>coleta</small></div>
+        <div>
+          <h3>Coleta de dados</h3>
+          <p class="role">Fotografar o estado atual antes de mexer em qualquer coisa.</p>
+          <ul class="checklist">
+            <li>Checar uptime e validade do SSL no painel Hostinger <span class="note">— sem alerta automático ainda, anotar manualmente</span></li>
+            <li>Auditoria técnica completa: meta tags, canonical, sitemap.xml, robots.txt, erros 404 <span class="tool">seo-audit</span></li>
+            <li>Auditoria de citabilidade: schema, E-E-A-T, estrutura de resposta <span class="tool">aeo</span></li>
+            <li>Core Web Vitals — LCP, CLS, INP <span class="tool">chrome-devtools</span></li>
+            <li>Snapshot do Search Console, salvo com data em <span class="tool">reports/</span></li>
+            <li>Exportar heatmap e gravações de sessão da semana <span class="tool">PostHog</span></li>
+            <li>Auditoria de fricção do formulário — nº de campos, validação, clareza do erro <span class="tool">form-cro</span></li>
+            <li>Funil de micro-conversões — scroll, vídeo, FAQ expandido <span class="tool">PostHog</span></li>
+            <li>Checar message match: o headline da página bate com o anúncio ativo? <span class="note">— se houver mídia paga</span></li>
+            <li>Segmentar os dados acima por mobile × desktop antes de consolidar</li>
+            <li>Consolidar tudo em "Baseline da Semana"</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="week">
+        <div class="num">02<small>análise</small></div>
+        <div>
+          <h3>Análise e hipótese</h3>
+          <p class="role">Transformar dado bruto em uma aposta priorizada — só uma.</p>
+          <ul class="checklist">
+            <li>Cruzar heatmap × funil → achar 1 gargalo real (ex: CTA com baixo clique, queda de scroll acima da dobra)</li>
+            <li>Ler respostas da pesquisa qualitativa com quem não converteu <span class="tool">PostHog Surveys</span></li>
+            <li>Cruzar dados do GSC → queries com impressão alta e CTR baixo (oportunidade de título/meta)</li>
+            <li>Formular 1–2 hipóteses, priorizadas por impacto × esforço</li>
+            <li>Checkpoint de 15 min com responsável técnico — aprovar a hipótese, sem burocracia</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="week">
+        <div class="num">03<small>execução</small></div>
+        <div>
+          <h3>Implementação</h3>
+          <p class="role">Só uma mudança por ciclo — testável, reversível.</p>
+          <ul class="checklist">
+            <li>Subir variante de teste A/B — copy, CTA ou layout <span class="tool">ab-testing</span></li>
+            <li>Se a hipótese tocar em conteúdo: ajustar bloco de resposta direta ou FAQ schema (AEO/GEO)</li>
+            <li>Rodar Core Web Vitals + acessibilidade pós-mudança — a mudança não pode piorar o que já funcionava <span class="tool">a11y-audit</span></li>
+            <li>Deploy</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="week">
+        <div class="num">04<small>validação</small></div>
+        <div>
+          <h3>Validação</h3>
+          <p class="role">Fechar o ciclo com leitura honesta do resultado, não com opinião.</p>
+          <ul class="checklist">
+            <li>Ler resultado do teste A/B <span class="note">— só declarar vencedor com amostra mínima definida (ex: 100 conversões/variante), nunca por prazo</span></li>
+            <li>Comparar snapshot GSC atual × snapshot do mês anterior</li>
+            <li>Preencher e enviar o Relatório Mensal</li>
+            <li>Registrar a decisão e a prioridade do próximo ciclo</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="mensal">
+    <span class="eyebrow">Etapa B — continuação</span>
+    <h2>SOP mensal (visão consolidada) <span class="stage-badge recurring">Recorrência</span></h2>
+    <p class="intro">O que não cabe no ritmo semanal, mas não pode ser esquecido.</p>
+    <div class="monthly-grid">
+      <div class="m-card">
+        <h4><span class="dot"></span>Reunião interna</h4>
+        <p>30 min revisando as 4 semanas e decidindo a prioridade do próximo ciclo.</p>
+      </div>
+      <div class="m-card">
+        <h4><span class="dot"></span>Backup do site</h4>
+        <p>Antes de qualquer mudança estrutural — não só de conteúdo.</p>
+      </div>
+      <div class="m-card">
+        <h4><span class="dot"></span>Integrações</h4>
+        <p>Teste ponta a ponta de WhatsApp e CRM — o lead não pode se perder no caminho.</p>
+      </div>
+      <div class="m-card">
+        <h4><span class="dot"></span>Segurança</h4>
+        <p>reCAPTCHA ativo e checagem de spam anormal nos formulários de lead.</p>
+      </div>
+      <div class="m-card">
+        <h4><span class="dot"></span>Alinhamento trimestral</h4>
+        <p>A cada 3 meses, call com o cliente revisando os últimos 3 relatórios juntos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="relatorio">
+    <span class="eyebrow">Etapa B — Parte 2, cliente</span>
+    <h2>Modelo de relatório mensal <span class="stage-badge recurring">Recorrência</span></h2>
+    <p class="intro">Preenchido com dados de exemplo para mostrar exatamente o que o cliente recebe todo mês.</p>
+  </section>
+</div>
+
+<div class="wrap wide">
+  <div class="report">
+    <div class="report-head">
+      <div>
+        <span class="eyebrow">Relatório de desempenho</span>
+        <h3 class="display">Landing Page — Studio Alma</h3>
+      </div>
+      <span class="period">Julho / 2026</span>
+    </div>
+
+    <div class="report-body">
+      <div>
+        <h4>Resumo executivo</h4>
+        <p class="exec-summary">O gargalo identificado no mês anterior — CTA principal com baixo engajamento — foi corrigido via teste A/B, com <strong>+38% de cliques</strong> na variante vencedora. Combinado ao ganho de performance técnica, os leads gerados subiram de 31 para 47 no mês. Prioridade de julho: reordenar a prova social acima do formulário.</p>
+      </div>
+
+      <div>
+        <h4>Saúde técnica</h4>
+        <div class="metric-row">
+          <div class="metric"><div class="label">Uptime</div><div class="value">99.98<span style="font-size:0.7rem">%</span></div></div>
+          <div class="metric"><div class="label">SSL</div><div class="value" style="font-size:1rem">Válido</div></div>
+          <div class="metric"><div class="label">Erros 404 corrigidos</div><div class="value">7</div></div>
+          <div class="metric"><div class="label">Performance score</div><div class="value">92<span class="delta up">↑ de 61</span></div></div>
+        </div>
+        <div class="chart-block" style="margin-top:1.1rem;">
+          <div class="bars">
+            <div class="bar-row"><span>LCP</span><span class="track"><span class="fill" style="width:55%"></span></span><span class="val">2.1s</span></div>
+            <div class="bar-row"><span>CLS</span><span class="track"><span class="fill" style="width:22%"></span></span><span class="val">0.04</span></div>
+            <div class="bar-row"><span>INP</span><span class="track"><span class="fill" style="width:53%"></span></span><span class="val">180ms</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>Performance de busca — SEO, AEO &amp; GEO</h4>
+        <div class="table-scroll">
+          <table class="data">
+            <thead><tr><th>Métrica (GSC)</th><th>Junho</th><th>Julho</th><th>Variação</th></tr></thead>
+            <tbody>
+              <tr><td>Cliques</td><td class="num">214</td><td class="num">356</td><td class="num" style="color:var(--good)">+66%</td></tr>
+              <tr><td>Impressões</td><td class="num">8.400</td><td class="num">11.900</td><td class="num" style="color:var(--good)">+42%</td></tr>
+              <tr><td>CTR médio</td><td class="num">2.5%</td><td class="num">3.0%</td><td class="num" style="color:var(--good)">+0.5pp</td></tr>
+              <tr><td>Posição média</td><td class="num">18.4</td><td class="num">12.1</td><td class="num" style="color:var(--good)">−6.3</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="chart-block" style="margin-top:1.1rem;">
+          <div class="spark-wrap">
+            <svg viewBox="0 0 220 64" width="100%" height="64" role="img" aria-label="Cliques por semana: 46, 58, 74, 92">
+              <line x1="0" y1="48" x2="220" y2="48" stroke="var(--line)" stroke-width="1"></line>
+              <polyline points="6,54 76,42 146,26 214,8" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline>
+              <polygon points="6,54 76,42 146,26 214,8 214,64 6,64" fill="var(--accent-soft)" opacity="0.7"></polygon>
+              <circle cx="214" cy="8" r="4" fill="var(--accent)"></circle>
+            </svg>
+            <p class="cap">Cliques por semana (GSC) — 46 → 58 → 74 → 92</p>
+          </div>
+          <span class="pill">2 citações de IA detectadas (ChatGPT, Perplexity) — baseline do mês</span>
+        </div>
+      </div>
+
+      <div>
+        <h4>Comportamento &amp; CRO</h4>
+        <div class="metric-row">
+          <div class="metric"><div class="label">Taxa de conversão</div><div class="value">3.4<span style="font-size:0.7rem">%</span><span class="delta up">↑ de 2.1%</span></div></div>
+          <div class="metric"><div class="label">Teste A/B</div><div class="value" style="font-size:1rem">Variante B</div></div>
+          <div class="metric"><div class="label">Lift do CTA</div><div class="value">+38<span style="font-size:0.7rem">%</span></div></div>
+        </div>
+        <p style="margin:1rem 0 0; font-size:0.92rem; color:var(--ink-soft)">Heatmap mostrou 68% dos cliques acima da dobra concentrados no menu — o CTA principal recebia apenas 4%. Motivou o teste: "Fale conosco" → "Agende sua avaliação gratuita", significância atingida em 9 dias.</p>
+      </div>
+
+      <div>
+        <h4>Funil e ROI</h4>
+        <div class="metric-row">
+          <div class="metric"><div class="label">Leads gerados</div><div class="value">47<span class="delta up">↑ de 31</span></div></div>
+          <div class="metric"><div class="label">Leads qualificados (CRM)</div><div class="value">29<span class="delta up">↑ de 18</span></div></div>
+          <div class="metric"><div class="label">Custo por lead</div><div class="value">R$27<span class="delta up">↓ de R$42</span></div></div>
+        </div>
+        <p style="margin:0.75rem 0 0; font-size:0.82rem; color:var(--ink-faint)">Qualificação depende de retorno do CRM do cliente — sem esse dado, reportar só "leads gerados".</p>
+      </div>
+
+      <div>
+        <h4>O que fizemos este mês</h4>
+        <ul class="plain">
+          <li>Corrigidos 7 erros 404 de links internos quebrados</li>
+          <li>Adicionado schema FAQPage com 6 perguntas</li>
+          <li>Otimizadas 4 imagens (formato + lazy loading) — LCP caiu de 3.8s para 2.1s</li>
+          <li>Teste A/B do CTA principal concluído e variante vencedora implementada</li>
+          <li>Novo bloco de prova social com dados numéricos, em formato citável por IA</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Prioridade do próximo mês</h4>
+        <ul class="plain">
+          <li>Testar reposicionamento da prova social acima do formulário</li>
+          <li>Investigar queda de CTR na query "consultoria de processos" e reescrever a meta description</li>
+          <li>Ampliar schema para incluir avaliações, se o cliente tiver depoimentos verificáveis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section id="nota" style="border-top: 1px solid var(--line);">
+    <span class="eyebrow">Leitura operacional</span>
+    <h2>O ponto que o modelo não diz em voz alta</h2>
+    <p class="intro">A pergunta não é se o ciclo funciona — funciona. É se ele fecha a conta no preço proposto.</p>
+    <div class="callout">
+      <span class="eyebrow">Matemática de régua</span>
+      <p>R$500–600/mês cobre, no máximo, 2–3h de execução humana por ciclo mensal. Rodar SEO técnico + AEO + GEO + CRO + UX toda semana — para vários clientes ao mesmo tempo — só fecha essa conta se a <strong>Semana 1 (Coleta)</strong> for automatizada: auditorias e snapshot do GSC rodando sozinhos, sem alguém abrindo painel por painel.</p>
+      <p>É exatamente essa a peça que falta hoje (monitor de uptime dedicado e o pipeline automático de Search Console). Sem ela, o modelo é sólido no papel e aperta a margem na prática assim que passa de 2–3 clientes recorrentes.</p>
+      <p>Essa conta vale só pra <strong>Etapa B</strong>. A <a href="#fase0">Fase 0</a> é escopo fechado, com preço embutido na criação do site — não entra nessa régua de margem mensal.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  SOP interno — Otimização Multi-Mecanismo (SEO + AEO + GEO + CRO). Dados do relatório são ilustrativos.
+</footer>

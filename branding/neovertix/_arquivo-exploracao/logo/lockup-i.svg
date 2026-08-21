@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 100">
+  <!-- NEOVERTIX — Lockup I "Itálico". Símbolo (grid 100x100, escala .82) + wordmark caps Manrope 600, tracking largo. -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/>
+    <path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/>
+    <path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/>
+  </g>
+  <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+</svg>

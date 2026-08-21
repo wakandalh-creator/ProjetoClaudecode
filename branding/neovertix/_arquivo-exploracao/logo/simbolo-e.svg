@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo E "Pico" (v2 — segunda interpretação do painel
+    "pico-que-vira-N", com proporções e pesos deliberadamente diferentes do
+    símbolo D pra não repetir a mesma silhueta: ápice DESLOCADO à esquerda
+    (não centralizado), pernas de espessuras assimétricas, haste de
+    fechamento com leve inclinação oposta (tensão visual). Geometria própria,
+    não copiada de asset de estoque.
+    Grid: quadrado 100x100, base 10. Altura ativa 14–86, largura ativa 16–96.
+    Construção (3 cunhas independentes, sem sobreposição, fendas finas):
+      - Traço 1 (perna curta do ápice, fina — 12 unidades de base):
+        16,86 -> 28,86 -> 34,14 -> Z. Ápice deslocado em x=34 — bem à
+        esquerda do centro do grid (50), assimetria proposital.
+      - Traço 2 (perna longa do ápice = diagonal dominante, grossa — 22
+        unidades de base, quase o dobro do traço 1): 56,86 -> 78,86 ->
+        34,14 -> Z. Nasce no mesmo ápice 34,14 — fenda em V entre traço 1 e
+        2 cresce de 0 (no ápice) a 28 unidades (56-28) na base — o vértice
+        mais aberto e mais dramático que o do símbolo D.
+      - Traço 3 (haste de fechamento, inclinação oposta à diagonal — o topo
+        pende pra ESQUERDA em vez de direita, criando tensão):
+        74,20 -> 90,20 -> 96,86 -> 80,86 -> Z. Fenda com o traço 2 estreita
+        a 2 unidades bem na base — fechamento apertado, igual ao símbolo D,
+        mas chegando lá por um ângulo oposto.
+    Uso: fill="currentColor" — herda a cor do contêiner (acento / branco / preto).
+  -->
+  <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z M74,20 L90,20 L96,86 L80,86 Z" fill="currentColor"/>
+</svg>

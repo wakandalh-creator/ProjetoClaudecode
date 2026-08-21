@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo J "Traço Único" (rodada 2 — minimalismo de um gesto
+    só)
+    Conceito: o candidato mais reduzido do tabuleiro. UM único <path>, sem
+    haste separada, sem segunda forma — uma linha grossa que sobe, quebra
+    exatamente no vértice e desce. É a leitura mais pura do painel de
+    referência do dono (o pico que "é" N, A e V ao mesmo tempo) levada ao
+    osso: não há três traços pra decodificar, há um gesto só, e a marca
+    aposta que o contexto (wordmark ao lado, uso repetido) faz o resto do
+    trabalho de leitura — no espírito de ícones que também não soletram a
+    letra literalmente (a lógica é "símbolo memorável", não "É contorno de
+    N"). Ver risco honesto no rodapé/relatório: isso troca legibilidade
+    literal de letra por força de marca gestual.
+    Grid: quadrado 100x100, base 10. Altura ativa 18–84, largura ativa 16–86.
+    Construção: <path d="M16,84 L48,18 L86,84"/> — sem fechar (Z), stroke
+    apenas. Vértice deliberadamente assimétrico: perna esquerda percorre 32
+    unidades horizontais em 66 verticais; perna direita percorre 38 em 66 —
+    a direita mais aberta que a esquerda, silhueta nunca perfeitamente
+    simétrica (checkmark genérico é sempre simétrico ou quase; este não é).
+    stroke-linejoin="bevel": no vértice, em vez de terminar em ponta-de-
+    agulha (um miter de ~54° estouraria pra fora do viewBox em 0–100), o
+    corte vira um pequeno chanfro reto — mantém a lógica de "corte angular"
+    da marca em todos os cantos do símbolo, não só nas pontas.
+    stroke-linecap="butt": como o traço é diagonal, o corte reto nas pontas
+    já sai naturalmente enviesado (não fica um corte "quadrado" comum) — o
+    mesmo vocabulário de corte angular sem precisar desenhar as pontas à
+    mão.
+  -->
+  <path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/>
+</svg>

@@ -1,0 +1,7 @@
+{
+  "pastas_ativas": [
+    {"nome": "Claude", "angulo": "tutorial-ferramenta"},
+    {"nome": "Empreendedorismo", "angulo": "storytelling"},
+    {"nome": "Marketing Digital", "angulo": "educacional"}
+  ]
+}

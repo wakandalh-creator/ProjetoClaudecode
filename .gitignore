@@ -2,3 +2,12 @@
 .mcp.json
 node_modules/
 .playwright-mcp/
+
+# Segredos — nunca commitar (ig-saves-engine usa cookies de sessão do Instagram + API keys)
+.env
+*.env
+.env.*
+ig-saves-engine/.env
+ig-saves-engine/.instagrapi_settings.json
+__pycache__/
+*.pyc

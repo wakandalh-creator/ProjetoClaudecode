@@ -21,19 +21,23 @@ The single most common landing-page bug is **FOUC** (Flash Of Unstyled Content) 
 The fix is `gsap.set()` to apply initial states **before** any timeline runs:
 
 ```js
-// CORRECT — initial states set first
-gsap.set([".eyebrow", ".hero h1", ".hero .subtitle", ".btn-primary", ".scroll-down"], {
+// CORRECT — initial states set first, ALL selectors scoped to .hero
+gsap.set([".hero .eyebrow", ".hero h1", ".hero .subtitle", ".hero .btn-primary", ".hero .scroll-down"], {
   opacity: 0,
   y: 30
 });
 
 const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-tl.to(".eyebrow",      { opacity: 1, y: 0, duration: 0.6 })
-  .to(".hero h1",      { opacity: 1, y: 0, duration: 0.8 }, "-=0.3")
-  .to(".hero .subtitle", { opacity: 1, y: 0, duration: 0.6 }, "-=0.5")
-  .to(".btn-primary",  { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
-  .to(".scroll-down",  { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
+tl.to(".hero .eyebrow",      { opacity: 1, y: 0, duration: 0.6 })
+  .to(".hero h1",            { opacity: 1, y: 0, duration: 0.8 }, "-=0.3")
+  .to(".hero .subtitle",     { opacity: 1, y: 0, duration: 0.6 }, "-=0.5")
+  .to(".hero .btn-primary",  { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+  .to(".hero .scroll-down",  { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
 ```
+
+### The second discipline: scope every selector
+
+An unscoped shared class (`.btn-primary`, `.eyebrow`) also matches copies in later sections — the closing CTA reuses `.btn-primary`. The `gsap.set()` hides ALL of them, but the timeline only reveals the hero copies, leaving the closing-CTA button permanently invisible. This only shows up in a real render (Playwright screenshot), never in code review. Scope both the `set()` and every `.to()` with the section class.
 
 ### Stagger timings
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100" fill="none">
+  <!-- NEOVERTIX — Lockup E "Pico". Símbolo (grid 100x100, escala .82) + wordmark Manrope 600 minúsculo (rodada 2: substitui JetBrains Mono, ver seção Wordmark de opcoes-2.html). -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M16,86 L28,86 L34,14 Z M56,86 L78,86 L34,14 Z M74,20 L90,20 L96,86 L80,86 Z" fill="currentColor"/>
+  </g>
+  <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+</svg>

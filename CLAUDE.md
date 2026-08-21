@@ -251,6 +251,29 @@ Monitor semanal (run.md)
               └── Insights não-óbvios → novos ângulos de conteúdo
 ```
 
+## Time de Marketing — Org Chart
+
+Sistema de marketing da Neovertix em `Social mídia IA/` (orquestrador: `Social mídia IA/run.md`). Squad de agentes em `.claude/agents/`:
+
+| Agente | Cargo | Modelo | Cuida de |
+|---|---|---|---|
+| **tese** | Estrategista de Posicionamento | Opus | marca, tom de voz, business.json |
+| **mapeia** | Planner de Campanha | Sonnet | campanhas (mensal/15d/semanal), funil de temas, sazonalidades |
+| **noticia** | Repórter de Tendências | Sonnet | notícias → 3 ângulos (polêmico/educacional/storytelling) |
+| **radar** | Analista de Concorrentes | Sonnet | outlier ≥3x, frameworks de ganchos, bancos de hooks |
+| **roteira** | Roteirista | Sonnet | roteiros no tom de voz (módulo 13) |
+| **iana** | Analista de Qualidade | Opus | score 0-10, corte ≥7, máx. 2 rodadas (módulo 14) |
+| **pixel** | Diretor de Arte | Sonnet | carrosséis, criativos de imagem, loop de edição |
+| **corta** | Editor de Vídeo | Sonnet | cortes SRT-driven, performance de vídeo |
+| **posta** | Gerente de Publicação | Haiku | kanban Notion, gate de aprovação, auditoria de copy |
+| **mede** | Analista de Métricas | Sonnet | resultados, OPR, realimenta tom de voz e bancos |
+
+**Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos.
+
+**Gate inegociável:** nada é publicado sem status `aprovado` marcado pelo Lucas (ver `Social mídia IA/_sop/aprovacao.md`).
+
+**Comandos rápidos:** `/roteiro` (Roteira+Iana encadeados) · `/concorrentes` (Radar) · `/campanha` (Mapeia) · `/opr` (Mede).
+
 ## graphify
 
 This project has a knowledge graph at graphify-out/ with god nodes, community structure, and cross-file relationships.

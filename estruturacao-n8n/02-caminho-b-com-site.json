@@ -1,0 +1,209 @@
+{
+  "name": "02-caminho-b-com-site",
+  "nodes": [
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "nome"
+            },
+            {
+              "name": "telefone"
+            },
+            {
+              "name": "email"
+            },
+            {
+              "name": "instagram_handle"
+            },
+            {
+              "name": "site_atual"
+            },
+            {
+              "name": "nota_google"
+            },
+            {
+              "name": "score_triagem"
+            }
+          ]
+        }
+      },
+      "id": "a3333333-1111-4111-8111-111111111301",
+      "name": "Recebe do orquestrador",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: HTTP Request real pro actor Apify de Instagram (bio, últimos posts, engajamento).\nconst item = $input.item.json;\nitem.instagram_posts = [];\nitem.instagram_bio = '';\nreturn { json: item };"
+      },
+      "id": "a3333333-1111-4111-8111-111111111302",
+      "name": "Coletar Instagram (Apify) [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: HTTP Request real pro actor Apify de avaliações do Google (até 50, texto completo, não só nota).\nconst item = $input.item.json;\nitem.avaliacoes_texto = [];\nreturn { json: item };"
+      },
+      "id": "a3333333-1111-4111-8111-111111111303",
+      "name": "Coletar avaliações Google [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.site_atual }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "a3333333-1111-4111-8111-111111111304",
+      "name": "Baixar HTML do site atual",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extração simples de texto/identidade do site atual — preservar, não descartar (regra do Caminho B).\n// TODO: melhorar a extração (cores dominantes, imagens, estrutura de seções) conforme necessidade real.\nconst item = $input.item.json;\nconst html = item.data || '';\nconst textOnly = html.replace(/<[^>]*>/g, ' ').replace(/\\s+/g, ' ').trim();\nitem.site_atual_copy = textOnly.slice(0, 5000); // cap defensivo\nitem.site_atual_html_bruto = html;\nreturn { json: item };"
+      },
+      "id": "a3333333-1111-4111-8111-111111111305",
+      "name": "Extrair identidade do site atual",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nitem.caminho = 'B';\nitem.tem_site_existente = true;\nreturn { json: item };"
+      },
+      "id": "a3333333-1111-4111-8111-111111111306",
+      "name": "Marcar Caminho B",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -20,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-03",
+          "mode": "list",
+          "cachedResultName": "03-briefing-claude-api"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a3333333-1111-4111-8111-111111111307",
+      "name": "Gerar briefing",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        200,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe do orquestrador": {
+      "main": [
+        [
+          {
+            "node": "Coletar Instagram (Apify) [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coletar Instagram (Apify) [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Coletar avaliações Google [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Coletar avaliações Google [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Baixar HTML do site atual",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Baixar HTML do site atual": {
+      "main": [
+        [
+          {
+            "node": "Extrair identidade do site atual",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extrair identidade do site atual": {
+      "main": [
+        [
+          {
+            "node": "Marcar Caminho B",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marcar Caminho B": {
+      "main": [
+        [
+          {
+            "node": "Gerar briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

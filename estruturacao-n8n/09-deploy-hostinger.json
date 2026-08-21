@@ -1,0 +1,260 @@
+{
+  "name": "09-deploy-hostinger",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "ab000000-1111-4111-8111-111111111a01",
+      "name": "Recebe pagamento confirmado",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO\n- O caminho local dos arquivos do site (gerados manualmente na Etapa 5, skill `landing`) precisa chegar até aqui — via campo `caminho_arquivo_local` no item, preenchido por quem rodou a Etapa 5. Este workflow não gera o site, só publica o que já foi construído.\n- FTP node precisa da credencial `hostinger-ftp` configurada (host, usuário, senha do hPanel).",
+        "height": 200,
+        "width": 340
+      },
+      "id": "ab000000-1111-4111-8111-111111111a02",
+      "name": "Sticky - dependências",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1180,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://dns.google/resolve?name={{ $json.dominio_sugerido }}&type=MX",
+        "options": {}
+      },
+      "id": "ab000000-1111-4111-8111-111111111a03",
+      "name": "Checar registros MX (Google DNS-over-HTTPS)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -960,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-tem-mx",
+              "leftValue": "={{ ($json.Answer || []).length }}",
+              "rightValue": 0,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ab000000-1111-4111-8111-111111111a04",
+      "name": "Já tem e-mail ativo (MX)?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -740,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ '⚠️ PAROU antes de mexer no DNS de ' + $json.dominio_sugerido + ' — já existe registro MX (e-mail ativo). Não seguir automaticamente. Resolver manualmente (registro só do necessário, sem sobrescrever MX) antes de publicar.' }}",
+        "additionalFields": {}
+      },
+      "id": "ab000000-1111-4111-8111-111111111a05",
+      "name": "Telegram - PARAR, e-mail já ativo",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -520,
+        220
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Confirmação de consentimento de imagem — julgamento humano, não automatizável.\n// Assume que já foi confirmado na conversa antes do Checkpoint 3 (ver plano). Este node só registra o lembrete no log de execução.\nconst item = $input.item.json;\nitem._lembrete_consentimento_imagem = 'Confirmado manualmente antes deste ponto (parte da conversa pré-pagamento) — não bloqueante aqui.';\nreturn { json: item };"
+      },
+      "id": "ab000000-1111-4111-8111-111111111a06",
+      "name": "Lembrete - consentimento de imagem",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upload",
+        "path": "=/public_html/",
+        "binaryData": true,
+        "options": {}
+      },
+      "id": "ab000000-1111-4111-8111-111111111a07",
+      "name": "FTP - publicar arquivos do site",
+      "type": "n8n-nodes-base.ftp",
+      "typeVersion": 1,
+      "position": [
+        -300,
+        380
+      ],
+      "credentials": {
+        "ftp": {
+          "id": "PLACEHOLDER",
+          "name": "hostinger-ftp"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-10",
+          "mode": "list",
+          "cachedResultName": "10-monitoramento-pos-entrega"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": false
+        }
+      },
+      "id": "ab000000-1111-4111-8111-111111111a08",
+      "name": "Ativar monitoramento pós-entrega",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ 'Publicado! ' + $json.nome + ' está no ar em ' + $json.dominio_sugerido }}",
+        "additionalFields": {}
+      },
+      "id": "ab000000-1111-4111-8111-111111111a09",
+      "name": "Telegram - confirmar publicação",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        140,
+        380
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Recebe pagamento confirmado": {
+      "main": [
+        [
+          {
+            "node": "Checar registros MX (Google DNS-over-HTTPS)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Checar registros MX (Google DNS-over-HTTPS)": {
+      "main": [
+        [
+          {
+            "node": "Já tem e-mail ativo (MX)?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Já tem e-mail ativo (MX)?": {
+      "main": [
+        [
+          {
+            "node": "Telegram - PARAR, e-mail já ativo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Lembrete - consentimento de imagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lembrete - consentimento de imagem": {
+      "main": [
+        [
+          {
+            "node": "FTP - publicar arquivos do site",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "FTP - publicar arquivos do site": {
+      "main": [
+        [
+          {
+            "node": "Ativar monitoramento pós-entrega",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ativar monitoramento pós-entrega": {
+      "main": [
+        [
+          {
+            "node": "Telegram - confirmar publicação",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100" fill="none">
+  <!-- NEOVERTIX — Lockup F "Corte". Símbolo (grid 100x100, escala .82) + wordmark Manrope 600 minúsculo (rodada 2: substitui JetBrains Mono, ver seção Wordmark de opcoes-2.html). -->
+  <defs>
+    <clipPath id="lockup-f-clip">
+      <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z"/>
+    </clipPath>
+  </defs>
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z" fill="currentColor"/>
+    <path d="M0,10 L100,78 L100,100 L0,100 Z" fill="currentColor" fill-opacity="0.55" clip-path="url(#lockup-f-clip)"/>
+  </g>
+  <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+</svg>

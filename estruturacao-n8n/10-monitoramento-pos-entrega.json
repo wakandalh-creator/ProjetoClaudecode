@@ -1,0 +1,429 @@
+{
+  "name": "10-monitoramento-pos-entrega",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Matriz de decisão (piloto — mais conservadora que o \"Guardian Agent Digital\" oficial do Portfólio v3.0, ver pendência sinalizada no plano)\n- **Site fora do ar**: tenta resolver sozinho (retry simples); só avisa o Lucas se não conseguir.\n- **Qualquer outra coisa** (SEO, performance, GMN, reputação/avaliação): SEMPRE avisa o Lucas primeiro, propõe solução, só executa depois do aval — nunca autônomo.\n\nComunicação com o CLIENTE (se algum dia for direta, hoje é só interna com o Lucas): nunca usar o termo \"Guardian Agent\" — descrever como acompanhamento/cuidado com o site.",
+        "height": 260,
+        "width": 380
+      },
+      "id": "ac000000-1111-4111-8111-111111111a01",
+      "name": "Sticky - matriz de decisão",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO — gap real de estrutura\nOs dois Schedule Trigger abaixo disparam sem nenhum item de entrada — `$json.dominio_sugerido` não existe até você adicionar, logo após cada trigger, um node que devolva a LISTA de clientes ativos (um item por domínio monitorado) pra alimentar o resto do workflow. Hoje não existe fonte de dados assim — os clientes ficam em pastas do Obsidian (`01 — Clientes`), não numa base consultável pelo n8n. Criar uma Data Table do n8n com os domínios ativos é o caminho mais direto.",
+        "height": 240,
+        "width": 380
+      },
+      "id": "ac000000-1111-4111-8111-111111111a14",
+      "name": "Sticky - falta lista de clientes ativos",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 15
+            }
+          ]
+        }
+      },
+      "id": "ac000000-1111-4111-8111-111111111a02",
+      "name": "A cada 15min - uptime",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1400,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $json.dominio_sugerido }}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "ac000000-1111-4111-8111-111111111a03",
+      "name": "Checar status do site",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1180,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-fora-do-ar",
+              "leftValue": "={{ $response.statusCode }}",
+              "rightValue": 400,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a04",
+      "name": "Site fora do ar?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -960,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "minutes"
+      },
+      "id": "ac000000-1111-4111-8111-111111111a05",
+      "name": "Aguardar 2min e tentar de novo",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -740,
+        140
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "url": "=https://{{ $json.dominio_sugerido }}",
+        "options": {
+          "response": {
+            "response": {
+              "neverError": true
+            }
+          },
+          "timeout": 10000
+        }
+      },
+      "id": "ac000000-1111-4111-8111-111111111a06",
+      "name": "Checar status de novo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -520,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-ainda-fora",
+              "leftValue": "={{ $response.statusCode }}",
+              "rightValue": 400,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a07",
+      "name": "Ainda fora do ar?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -300,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ '🔴 Site de ' + $json.dominio_sugerido + ' fora do ar há pelo menos 2 tentativas (não resolveu sozinho) — checar hospedagem/DNS.' }}",
+        "additionalFields": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a08",
+      "name": "Telegram - avisar (não resolveu sozinho)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -80,
+        60
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "days",
+              "triggerAtHour": 9
+            }
+          ]
+        }
+      },
+      "id": "ac000000-1111-4111-8111-111111111a09",
+      "name": "Diário 9h - SEO/performance/GMN",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -1400,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "url": "=https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://{{ $json.dominio_sugerido }}&strategy=mobile",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a10",
+      "name": "PageSpeed Insights",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1180,
+        420
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "PLACEHOLDER",
+          "name": "google-pagespeed-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: Search Console (indexação/erros) e Google Business Profile (avaliações novas) ainda não têm chamada real aqui —\n// ambos exigem OAuth por propriedade/negócio, não uma API key simples. Ligar quando essas contas forem criadas por cliente.\nconst item = $input.item.json;\nconst score = ((item.lighthouseResult && item.lighthouseResult.categories && item.lighthouseResult.categories.performance && item.lighthouseResult.categories.performance.score) || 0) * 100;\nitem.performance_score = score;\nitem.abaixo_da_meta = score < 90; // meta do Portfólio v3.0: Core Web Vitals 90+\nreturn { json: item };"
+      },
+      "id": "ac000000-1111-4111-8111-111111111a11",
+      "name": "Avaliar performance [parcial — TODO GMN/Search Console]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -960,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-abaixo-meta",
+              "leftValue": "={{ $json.abaixo_da_meta }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a12",
+      "name": "Abaixo da meta (90+)?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -740,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ 'Performance de ' + $json.dominio_sugerido + ' caiu pra ' + Math.round($json.performance_score) + '/100 (meta: 90+). Quer que eu proponha uma otimização antes de mexer em qualquer coisa?' }}",
+        "additionalFields": {}
+      },
+      "id": "ac000000-1111-4111-8111-111111111a13",
+      "name": "Telegram - avisar ANTES de agir",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -520,
+        420
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "A cada 15min - uptime": {
+      "main": [
+        [
+          {
+            "node": "Checar status do site",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Checar status do site": {
+      "main": [
+        [
+          {
+            "node": "Site fora do ar?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Site fora do ar?": {
+      "main": [
+        [
+          {
+            "node": "Aguardar 2min e tentar de novo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Aguardar 2min e tentar de novo": {
+      "main": [
+        [
+          {
+            "node": "Checar status de novo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Checar status de novo": {
+      "main": [
+        [
+          {
+            "node": "Ainda fora do ar?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ainda fora do ar?": {
+      "main": [
+        [
+          {
+            "node": "Telegram - avisar (não resolveu sozinho)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Diário 9h - SEO/performance/GMN": {
+      "main": [
+        [
+          {
+            "node": "PageSpeed Insights",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PageSpeed Insights": {
+      "main": [
+        [
+          {
+            "node": "Avaliar performance [parcial — TODO GMN/Search Console]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Avaliar performance [parcial — TODO GMN/Search Console]": {
+      "main": [
+        [
+          {
+            "node": "Abaixo da meta (90+)?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Abaixo da meta (90+)?": {
+      "main": [
+        [
+          {
+            "node": "Telegram - avisar ANTES de agir",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

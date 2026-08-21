@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo H "Notch" (rodada 2 — ápice truncado com entalhe de
+    vértice, o detalhe ownable da marca)
+    Conceito: em vez de terminar em ponta (como G) ou em platô liso (como o
+    corte diagonal simples do símbolo A da rodada 1), o pico sobe, forma um
+    micro-platô e é interrompido por um pequeno ENTALHE (um recuo triangular
+    de ~10 unidades) antes de subir de novo a um segundo pico menor e só
+    então descer pela perna direita. Esse duplo-pico com entalhe é o detalhe
+    que ninguém mais no tabuleiro tem — pequeno o bastante pra não competir
+    com a silhueta geral, grande o bastante (~14% da altura ativa) pra
+    sobreviver a 16px como uma marca de luz visível no topo.
+    Geometria própria — nenhum ponto copiado de asset de estoque.
+    Grid: quadrado 100x100, base 10. Altura ativa 18–86, largura ativa 16–94.
+    Construção (2 formas sólidas independentes):
+      - Pico com entalhe (heptágono único, um só <path>):
+        16,86 -> 42,24 -> 48,18 (primeiro pico) -> 44,28 (entalhe, recua
+        pra dentro e desce) -> 52,20 (segundo pico, mais alto que o
+        primeiro) -> 58,26 -> 68,86 -> Z. Verificado sem auto-interseção: o
+        entalhe fica sempre à direita da perna esquerda e à esquerda da
+        perna direita, nunca vaza pra fora do contorno.
+      - Haste (retângulo simples, cortes retos — contraste deliberado com o
+        entalhe fussy do pico): 78,26 -> 94,26 -> 94,86 -> 78,86 -> Z.
+      - Fenda entre pico e haste: ~20 unidades no topo (y=26), ~10 na base
+        (y=86) — afunila descendo, o oposto do candidato G (que alarga
+        descendo) — nenhum dos dois canais se repete.
+    Uso: fill="currentColor". Pico = elegível para destaque verde no hero
+    bicolor; haste = off-white.
+  -->
+  <path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/>
+  <path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/>
+</svg>

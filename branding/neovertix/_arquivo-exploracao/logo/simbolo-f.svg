@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo F "Corte"
+    Conceito: N sólido e espesso cortado em 2 planos por uma única costura
+    diagonal — inspirado nos monogramas facetados do painel de referência,
+    mas achatado: 2 tons chapados, sem gradiente, sem sombra, sem 3D. O tom
+    2 é o tom 1 em opacidade reduzida sobre currentColor — assim os 2 planos
+    se adaptam sozinhos aos 4 modos de cor (acento vira acento+acento fraco,
+    branco vira branco+cinza, preto vira preto+cinza, etc.), sem precisar de
+    um SVG por modo.
+    Grid: quadrado 100x100, base 10. Altura ativa 14–86, largura ativa 14–86
+    (hastes mais grossas que os outros candidatos — 20 unidades — pra dar
+    massa suficiente aos 2 planos).
+    Construção:
+      - Silhueta do N (plano 1, base, opacidade 100%): 3 subcaminhos nonzero
+        — perna esquerda 14,14->34,14->34,86->14,86; perna direita
+        66,14->86,14->86,86->66,86; diagonal 66,14->86,14->54,86->34,86.
+      - Costura: reta de 0,10 a 100,78 (inclinação suave, atravessa a letra
+        inteira) — separa "acima/direita" (plano 1, mais claro) de
+        "abaixo/esquerda" (plano 2, mais escuro). Resultado: a perna direita
+        fica majoritariamente no plano claro, a esquerda no escuro — leitura
+        de luz batendo de cima-direita, sem simular sombra de verdade.
+      - Plano 2 é um retângulo grande (0,10 -> 100,78 -> 100,100 -> 0,100)
+        recortado pelo clipPath da própria silhueta do N — garante que o
+        tom 2 nunca vaza pra fora da letra.
+  -->
+  <defs>
+    <clipPath id="f-clip">
+      <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z"/>
+    </clipPath>
+  </defs>
+  <path d="M14,14 L34,14 L34,86 L14,86 Z M66,14 L86,14 L86,86 L66,86 Z M66,14 L86,14 L54,86 L34,86 Z" fill="currentColor"/>
+  <path d="M0,10 L100,78 L100,100 L0,100 Z" fill="currentColor" fill-opacity="0.55" clip-path="url(#f-clip)"/>
+</svg>

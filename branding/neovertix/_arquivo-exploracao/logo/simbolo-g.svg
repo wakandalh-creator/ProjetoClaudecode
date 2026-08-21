@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo G "Vetor" (rodada 2 — a fenda como protagonista)
+    Conceito: a massa do pico (Λ) é UM triângulo sólido, sem costura interna —
+    o gesto "N/Λ/V simultâneos" não vem de duas pernas com um V entre si (como
+    D/E), vem do canal entre o PICO e a HASTE: um canal de largura quase
+    constante (não afunilando a zero), cortando o símbolo num ângulo próprio,
+    distinto do ângulo das duas massas — lê como um raio/vetor ascendente
+    atravessando o N, não como sobra de espaço entre duas formas.
+    Geometria própria, recalculada do zero — nenhum ponto copiado de asset de
+    estoque.
+    Grid: quadrado 100x100, base 10. Altura ativa 16–86, largura ativa 14–94.
+    Construção (2 formas sólidas independentes):
+      - Pico (Λ, triângulo único): 14,86 -> 42,16 -> 58,86 -> Z. Ápice único
+        e afiado em 42,16 — sem platô, sem notch (isso é assinatura do
+        candidato H, não deste).
+      - Haste (quadrilátero, canto superior aberto em corte angular):
+        58,30 -> 84,16 -> 90,86 -> 70,86 -> Z. O vértice 58,30 fica perto do
+        ápice do pico, mas nunca o toca — mede-se a folga: no topo (y=30) a
+        fenda tem ~13 unidades; na base (y=86) tem ~12 — canal reto e
+        praticamente constante, não um V que fecha a zero. É essa
+        constância que faz o olho ler "vetor reto atravessando", em vez de
+        "sobra triangular". (v2: gap encurtado de ~16–20 pra ~12–13 unidades
+        — a v1 tinha folga grande demais e o pico e a haste liam como dois
+        glifos soltos em vez de um monograma só; corrigido após teste
+        visual em Playwright.)
+    Uso: fill="currentColor" — herda a cor do contêiner (acento / branco /
+    preto). Os dois <path> ficam separados de propósito: no hero bicolor da
+    página de opções, o pico (Λ) recebe o destaque em verde, a haste fica
+    off-white.
+  -->
+  <path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/>
+  <path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/>
+</svg>

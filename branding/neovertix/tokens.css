@@ -1,0 +1,166 @@
+/* ==========================================================================
+   NEOVERTIX — DESIGN TOKENS
+   Formalizados a partir do logo final aprovado (logo/final/logo-neovertix.png).
+   Navy escuro em camadas, prata/branco metálico (N + wordmark), verde contido
+   (seta ascendente) — Chakra Petch (display) + Manrope (texto).
+
+   Substitui a direção anterior "Território 02 — Malha" (verde-limão sobre
+   preto puro, rejeitada pelo Lucas antes do logo final).
+
+   Razões de contraste (WCAG 2.1, luminância relativa sRGB) recalculadas e
+   anotadas em cada bloco relevante. AA texto normal >= 4.5:1,
+   AA texto grande / non-text UI (SC 1.4.11) >= 3:1.
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+
+  /* ---------------------------------------------------------------------
+     COR — fundo em camadas (bg canvas + 3 níveis de surface)
+     --------------------------------------------------------------------- */
+  --nv-bg-canvas: #0A0E1A;      /* fundo raiz — navy quase-preto do logo */
+  --nv-surface-base: #121A2E;   /* cards, inputs, nav */
+  --nv-surface-raised: #1A2440; /* hover de card, dropdown */
+  --nv-surface-overlay: #232F52;/* modal, popover, tooltip */
+
+  /* ---------------------------------------------------------------------
+     COR — texto (primary/secondary/muted)
+     Contraste sobre --nv-bg-canvas: primary 17.94:1 · secondary 9.19:1 · muted 5.23:1
+     --------------------------------------------------------------------- */
+  --nv-text-primary: #F5F7FA;   /* branco-prata do wordmark */
+  --nv-text-secondary: #AAB4C2; /* extremidade escura do gradiente do N */
+  --nv-text-muted: #7A8699;     /* AA em bg-canvas/surface-base/surface-raised; em surface-overlay (3.56:1) reservar p/ texto grande */
+
+  /* ---------------------------------------------------------------------
+     COR — acento (verde da seta ascendente do logo — contido, não lima)
+     --------------------------------------------------------------------- */
+  --nv-accent: #43A047;
+  --nv-accent-hover: #66BB6A;
+  --nv-accent-light: #8BC34A;    /* topo do gradiente da seta — uso decorativo em gradientes, não texto isolado */
+  --nv-accent-dim: #2E7D32;      /* base do gradiente da seta — 3.75:1 sobre bg-canvas, usar em texto grande/UI não-textual */
+  --nv-accent-contrast: #121A2E; /* texto sobre acento: 5.24:1 (default) / 7.32:1 (hover). Branco daria só 3.30:1 — reprovado p/ texto normal, por isso navy escuro */
+
+  /* ---------------------------------------------------------------------
+     COR — bordas (sutil/forte)
+     --------------------------------------------------------------------- */
+  --nv-border-subtle: #18213A; /* decorativa, baixo contraste por design — não usar como único indicador de componente interativo */
+  --nv-border-strong: #5A6780; /* 3.38:1 sobre bg-canvas — usar em inputs, outline, foco */
+
+  /* ---------------------------------------------------------------------
+     COR — semântica (success reaproveita o próprio accent: o verde da
+     marca já significa "crescimento", sem precisar de um verde duplicado)
+     --------------------------------------------------------------------- */
+  --nv-success: #43A047;
+  --nv-success-contrast: #121A2E; /* 5.24:1 sobre --nv-success */
+  --nv-warning: #F5B942;
+  --nv-warning-contrast: #121A2E; /* 9.81:1 sobre --nv-warning */
+  --nv-error: #F0625F;
+  --nv-error-contrast: #121A2E;   /* 5.46:1 — usar sempre este tom escuro, nunca texto claro */
+  --nv-info: #5AC8FA;
+  --nv-info-contrast: #121A2E;    /* 9.13:1 sobre --nv-info */
+
+  /* ---------------------------------------------------------------------
+     TIPOGRAFIA — famílias
+     Display: Chakra Petch — sans condensado/geométrico com cortes angulares
+     que harmonizam com os terminais em flare do N e a geometria da seta.
+     Texto: Manrope — sans neutro, mantido da base anterior.
+     --------------------------------------------------------------------- */
+  --nv-font-display: 'Chakra Petch', ui-sans-serif, 'Segoe UI', sans-serif;
+  --nv-font-text: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nv-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* ---------------------------------------------------------------------
+     TIPOGRAFIA — escala (size / line-height / letter-spacing)
+     --------------------------------------------------------------------- */
+  --nv-h1-size: 3.5rem;    --nv-h1-lh: 1.05; --nv-h1-ls: -0.01em;  --nv-h1-weight: 700;
+  --nv-h2-size: 2.75rem;   --nv-h2-lh: 1.1;  --nv-h2-ls: -0.01em;  --nv-h2-weight: 700;
+  --nv-h3-size: 2rem;      --nv-h3-lh: 1.15; --nv-h3-ls: -0.005em; --nv-h3-weight: 600;
+  --nv-h4-size: 1.5rem;    --nv-h4-lh: 1.2;  --nv-h4-ls: 0;        --nv-h4-weight: 600;
+  --nv-body-lg-size: 1.15rem; --nv-body-lg-lh: 1.5; --nv-body-lg-ls: 0; --nv-body-lg-weight: 400;
+  --nv-body-size: 1rem;    --nv-body-lh: 1.6; --nv-body-ls: 0;     --nv-body-weight: 400;
+  --nv-small-size: 0.875rem; --nv-small-lh: 1.5; --nv-small-ls: 0; --nv-small-weight: 400;
+  --nv-caption-size: 0.75rem; --nv-caption-lh: 1.4; --nv-caption-ls: 0.02em; --nv-caption-weight: 500;
+  --nv-overline-size: 0.72rem; --nv-overline-lh: 1.4; --nv-overline-ls: 0.16em; --nv-overline-weight: 500;
+
+  /* ---------------------------------------------------------------------
+     ESPAÇAMENTO
+     --------------------------------------------------------------------- */
+  --nv-space-1: 0.25rem;
+  --nv-space-2: 0.5rem;
+  --nv-space-3: 0.75rem;
+  --nv-space-4: 1rem;
+  --nv-space-5: 1.5rem;
+  --nv-space-6: 2rem;
+  --nv-space-7: 3rem;
+  --nv-space-8: 4rem;
+  --nv-space-9: 6rem;
+
+  /* ---------------------------------------------------------------------
+     RAIO
+     --------------------------------------------------------------------- */
+  --nv-radius-sm: 6px;
+  --nv-radius-md: 10px;
+  --nv-radius-lg: 14px;
+  --nv-radius-full: 999px;
+
+  /* ---------------------------------------------------------------------
+     SOMBRA / GLOW — UI escura: bordas e glow sutis no lugar de sombra pesada
+     --------------------------------------------------------------------- */
+  --nv-shadow-inset-highlight: inset 0 1px 0 rgba(255,255,255,.03);
+  --nv-shadow-elevated: 0 8px 24px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  --nv-glow-accent: 0 0 0 1px rgba(67,160,71,.35), 0 0 24px rgba(67,160,71,.18);
+  --nv-focus-ring: 0 0 0 3px rgba(67,160,71,.35);
+
+  /* ---------------------------------------------------------------------
+     GRADIENTES DE MARCA — reaproveitam os tokens acima, não duplicam valor
+     Metal (N/wordmark): text-primary → text-secondary
+     Verde (seta): accent-light → accent-dim
+     --------------------------------------------------------------------- */
+  --nv-gradient-metal: linear-gradient(135deg, var(--nv-text-primary), var(--nv-text-secondary));
+  --nv-gradient-accent: linear-gradient(135deg, var(--nv-accent-light), var(--nv-accent-dim));
+}
+
+/* ==========================================================================
+   CLASSES UTILITÁRIAS DE EXEMPLO
+   ========================================================================== */
+
+.nv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nv-space-2);
+  padding: var(--nv-space-3) var(--nv-space-5);
+  border: none;
+  border-radius: var(--nv-radius-sm);
+  font-family: var(--nv-font-text);
+  font-weight: 600;
+  font-size: var(--nv-small-size);
+  cursor: pointer;
+  transition: background-color .15s ease, box-shadow .15s ease;
+}
+
+.nv-btn--primary {
+  background: var(--nv-accent);
+  color: var(--nv-accent-contrast); /* 5.24:1 — ver nota de contraste acima */
+}
+.nv-btn--primary:hover { background: var(--nv-accent-hover); }
+.nv-btn--primary:focus-visible { outline: none; box-shadow: var(--nv-focus-ring); }
+
+.nv-card {
+  background: var(--nv-surface-base);
+  color: var(--nv-text-primary);
+  border: 1px solid var(--nv-border-subtle);
+  border-radius: var(--nv-radius-md);
+  padding: var(--nv-space-6);
+  box-shadow: var(--nv-shadow-inset-highlight);
+}
+.nv-card:hover {
+  background: var(--nv-surface-raised);
+  border-color: var(--nv-border-strong);
+}
+.nv-card p {
+  color: var(--nv-text-secondary);
+  font-family: var(--nv-font-text);
+  font-size: var(--nv-body-size);
+  line-height: var(--nv-body-lh);
+}

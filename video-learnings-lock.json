@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "videos": {
+    "claude-code-agentes-rodando-notebook-fechado": {
+      "sourceVideo": {
+        "title": "Como manter agentes do Claude Code rodando com o notebook fechado e acompanhar pelo celular",
+        "uploader": "não identificado no vídeo",
+        "sourceHash": "sha256:5caf23d0c57923ddf42863bf41aff8391898186d2e073fc5ab68d7af7d4ce64d",
+        "originalSource": "https://www.instagram.com/reel/Da0Is-MuOFV/?igsh=MW5nMHZrZGJ5bnFrNw==",
+        "durationSeconds": 50.633333
+      },
+      "generatedDate": "2026-07-23",
+      "destination": "empresa",
+      "notePath": "C:/Users/lucas/OneDrive/Área de Trabalho/Cerebro Claude/Monitor/Aprendizados/claude-code-agentes-rodando-notebook-fechado.md",
+      "status": "completed",
+      "proximasAcoes": ["Gravar um Reels equivalente mostrando o fluxo no Windows (ajuste de energia + /remote-control + app mostrando a sessão), citando esse formato como referência."],
+      "impacto": []
+    }
+  }
+}

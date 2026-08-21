@@ -1,0 +1,258 @@
+{
+  "name": "05-checkpoint-2-staging",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Como disparar\nEtapas 5 (construção do site) e 6 (deploy staging Vercel) são MANUAIS, fora do n8n. Depois de subir o site no Vercel, chame este webhook (manualmente ou por um script curto) com JSON:\n{\n  \"lead_id\": \"...\",\n  \"nome\": \"...\",\n  \"link_vercel\": \"https://...\",\n  \"screenshot_url\": \"https://...\" // opcional\n}",
+        "height": 260,
+        "width": 340
+      },
+      "id": "a6666666-1111-4111-8111-111111111601",
+      "name": "Sticky - como disparar",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "checkpoint-2-staging",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "a6666666-1111-4111-8111-111111111602",
+      "name": "Webhook - site pronto no staging",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -1120,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendPhoto",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "binaryData": false,
+        "fileUrl": "={{ $json.body.screenshot_url }}",
+        "additionalFields": {
+          "caption": "={{ 'Staging pronto: ' + $json.body.nome }}"
+        }
+      },
+      "id": "a6666666-1111-4111-8111-111111111603",
+      "name": "Telegram - enviar screenshot (se houver)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -900,
+        220
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      },
+      "continueOnFail": true
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendAndWait",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "message": "={{ 'Site de staging pronto pra: ' + $json.body.nome + '\\n\\nLink: ' + $json.body.link_vercel + '\\n\\nAprovar pra mandar ao prospect?' }}",
+        "responseType": "approval",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "Aprovar e enviar",
+            "disapproveLabel": "Precisa de ajuste"
+          }
+        },
+        "options": {
+          "limitWaitTime": {
+            "values": {
+              "limitType": "afterTimeInterval",
+              "resumeAmount": 24,
+              "resumeUnit": "hours"
+            }
+          }
+        }
+      },
+      "id": "a6666666-1111-4111-8111-111111111604",
+      "name": "Telegram - aprovar staging (Wait)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -680,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR",
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-aprovado-staging",
+              "leftValue": "={{ $json.data.approved }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a6666666-1111-4111-8111-111111111605",
+      "name": "Aprovado?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-06",
+          "mode": "list",
+          "cachedResultName": "06-outreach-whatsapp"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "a6666666-1111-4111-8111-111111111606",
+      "name": "Disparar outreach",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -240,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'aguardando_ajuste' } }}",
+        "options": {}
+      },
+      "id": "a6666666-1111-4111-8111-111111111607",
+      "name": "Responder - precisa de ajuste",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -240,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { status: 'aprovado_outreach_disparado' } }}",
+        "options": {}
+      },
+      "id": "a6666666-1111-4111-8111-111111111608",
+      "name": "Responder - aprovado",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -20,
+        220
+      ]
+    }
+  ],
+  "connections": {
+    "Webhook - site pronto no staging": {
+      "main": [
+        [
+          {
+            "node": "Telegram - enviar screenshot (se houver)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - enviar screenshot (se houver)": {
+      "main": [
+        [
+          {
+            "node": "Telegram - aprovar staging (Wait)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - aprovar staging (Wait)": {
+      "main": [
+        [
+          {
+            "node": "Aprovado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aprovado?": {
+      "main": [
+        [
+          {
+            "node": "Disparar outreach",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Responder - precisa de ajuste",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Disparar outreach": {
+      "main": [
+        [
+          {
+            "node": "Responder - aprovado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

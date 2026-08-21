@@ -1,0 +1,300 @@
+{
+  "name": "08-contratos-pagamento",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## TODO — verificar contra a documentação real antes de ativar\n- Endpoints do Autentique abaixo são um chute plausível (GraphQL é o formato mais comum da API deles hoje, não REST puro) — confirmar na doc oficial antes de usar.\n- Endpoints do Asaas (`/v3/customers`, `/v3/payments`, `/v3/subscriptions`) são os reais da API v3, mas os IDs de produto/plano ainda não existem — criar antes.\n- Templates de contrato (desenvolvimento + manutenção) precisam já existir na conta Autentique.\n- Consentimento de imagem: item de checklist humano, não dá pra automatizar — confirmar manualmente antes de aprovar o Checkpoint 3 (dentro da conversa com o cliente, não é mais um node separado neste pipeline).",
+        "height": 300,
+        "width": 380
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a01",
+      "name": "Sticky - verificar antes de ativar",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        520
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "aaaaaaaa-1111-4111-8111-111111111a02",
+      "name": "Recebe aceite (sem mais ajustes)",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: 'mutation CreateDocument($name: String!) { createDocument(document: { name: $name }) { id } }', variables: { name: 'Contrato de Desenvolvimento - ' + $json.nome } }) }}",
+        "options": {}
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a03",
+      "name": "Autentique - contrato de desenvolvimento [confirmar API]",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1180,
+        220
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "autentique-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.autentique.com.br/v2/graphql",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ query: 'mutation CreateDocument($name: String!) { createDocument(document: { name: $name }) { id } }', variables: { name: 'Contrato de Manutenção Recorrente - ' + $json.nome } }) }}",
+        "options": {}
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a04",
+      "name": "Autentique - contrato de manutenção [confirmar API]",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -1180,
+        380
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "autentique-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.asaas.com/v3/customers",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ name: $json.nome, mobilePhone: $json.telefone, email: $json.email }) }}",
+        "options": {}
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a05",
+      "name": "Asaas - criar cliente",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -960,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "asaas-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.asaas.com/v3/payments",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ customer: $json.id, billingType: 'UNDEFINED', value: 2700, installmentCount: 12, description: 'Setup - Estrutura Digital Starter - ' + $('Recebe aceite (sem mais ajustes)').item.json.nome }) }}",
+        "options": {}
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a06",
+      "name": "Asaas - cobrança de setup (R$2.700, parcelável)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -740,
+        220
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "asaas-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.asaas.com/v3/subscriptions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ customer: $('Asaas - criar cliente').item.json.id, billingType: 'CREDIT_CARD', value: 600, cycle: 'MONTHLY', description: 'Manutenção mensal - Estrutura Digital Starter (fidelidade 3 meses) - ' + $('Recebe aceite (sem mais ajustes)').item.json.nome }) }}",
+        "options": {}
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a07",
+      "name": "Asaas - assinatura mensal (R$600/mês)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -740,
+        380
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "asaas-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "options": {
+          "webhookSuffix": "pagamento-confirmado"
+        }
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a08",
+      "name": "Aguardar contrato assinado + pagamento confirmado",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -520,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nO ideal é configurar webhooks nativos do Autentique (documento assinado) e do Asaas (pagamento confirmado) apontando pra este endpoint de retomada, em vez de depender de alguém chamar manualmente. Configurar em Autentique/Asaas → Webhooks depois de ativar este workflow.",
+        "height": 160,
+        "width": 320
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a09",
+      "name": "Sticky - webhooks nativos",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -520,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "SUBSTITUIR-PELO-ID-DO-WORKFLOW-09",
+          "mode": "list",
+          "cachedResultName": "09-deploy-hostinger"
+        },
+        "mode": "each",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "id": "aaaaaaaa-1111-4111-8111-111111111a10",
+      "name": "Acionar deploy final",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -300,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe aceite (sem mais ajustes)": {
+      "main": [
+        [
+          {
+            "node": "Autentique - contrato de desenvolvimento [confirmar API]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Autentique - contrato de desenvolvimento [confirmar API]": {
+      "main": [
+        [
+          {
+            "node": "Autentique - contrato de manutenção [confirmar API]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Autentique - contrato de manutenção [confirmar API]": {
+      "main": [
+        [
+          {
+            "node": "Asaas - criar cliente",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Asaas - criar cliente": {
+      "main": [
+        [
+          {
+            "node": "Asaas - cobrança de setup (R$2.700, parcelável)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Asaas - cobrança de setup (R$2.700, parcelável)": {
+      "main": [
+        [
+          {
+            "node": "Asaas - assinatura mensal (R$600/mês)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Asaas - assinatura mensal (R$600/mês)": {
+      "main": [
+        [
+          {
+            "node": "Aguardar contrato assinado + pagamento confirmado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguardar contrato assinado + pagamento confirmado": {
+      "main": [
+        [
+          {
+            "node": "Acionar deploy final",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

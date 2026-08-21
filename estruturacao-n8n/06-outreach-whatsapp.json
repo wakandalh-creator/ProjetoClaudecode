@@ -1,0 +1,657 @@
+{
+  "name": "06-outreach-whatsapp",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a7777777-1111-4111-8111-111111111701",
+      "name": "Recebe lead aprovado",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1400,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO — o ponto mais frágil deste workflow\nO nó \"Verificar se respondeu [TODO]\" precisa de estado compartilhado com o disparo do Agente Ana (07), que é acionado por mensagem INBOUND do WhatsApp (webhook separado). Sem isso, os follow-ups continuam mesmo depois do prospect responder.\n\nOpções:\n1. Data Table do n8n: gravar `respondeu=true` quando a mensagem inbound chegar (07), ler aqui antes de cada follow-up.\n2. Consultar a API de conversas do provedor de WhatsApp escolhido (Meta Cloud API ou BSP) — verificar se o endpoint expõe isso.\n\nEscolher o provedor de WhatsApp (Meta Cloud API direto vs. BSP) antes de configurar a credencial `whatsapp-business-api`.",
+        "height": 320,
+        "width": 380
+      },
+      "id": "a7777777-1111-4111-8111-111111111702",
+      "name": "Sticky - estado compartilhado",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1400,
+        520
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Mensagem 1 — Gancho→Dor→Ponte→Prova→CTA (ver estruturacao-n8n/template-outreach-etapa8.md). Pain Hook como padrão, ancorado no padrao_de_dor real do briefing (Etapa 3) — nunca texto genérico.\nconst item = $input.item.json;\nconst nome = item.nome || 'seu negócio';\nconst dor = (item.briefing && item.briefing.padrao_de_dor) || 'alguns pontos nas avaliações';\nconst notaGoogle = item.nota_google ? `nota ${item.nota_google}` : 'suas avaliações';\nitem._msg_outreach = `Olá! Sou a Ana, do Estruturação.\\n\\nReparamos que clientes do ${nome} mencionam pontos como \"${dor}\" nas avaliações — isso tem solução, e queríamos te mostrar.\\n\\nIsso costuma custar clientes que decidem antes mesmo de entrar em contato, só pela primeira impressão. Por isso preparamos algo específico pro seu negócio, não um modelo genérico.\\n\\nBaseado no que já funcionou pra negócios parecidos — ${notaGoogle} é real, e o padrão que aparece nelas a gente já sabe resolver.\\n\\nPosso te mostrar o que preparamos? Sem compromisso.`;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111703",
+      "name": "Montar mensagem 1 (primeiro contato)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json._msg_outreach } }) }}",
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111704",
+      "name": "Enviar WhatsApp - msg 1 [confirmar provedor]",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -960,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "hours"
+      },
+      "id": "a7777777-1111-4111-8111-111111111705",
+      "name": "Aguardar 2h",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -740,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: substituir por checagem real (Data Table ou API do provedor) — ver sticky note.\nconst item = $input.item.json;\nitem.respondeu = false; // placeholder\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111706",
+      "name": "Verificar se respondeu [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-nao-respondeu-2h",
+              "leftValue": "={{ $json.respondeu }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111707",
+      "name": "Sem resposta em 2h?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -300,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nconst nome = (item.nome || '').split(' ')[0];\nitem._msg_outreach = `Oi ${nome}! Vi que você ainda\\nnão teve chance de ver.\\n\\nQuando tiver um minutinho,\\nadoraria te mostrar o que preparamos.\\n\\nPode ser agora ou quando\\nestiver mais tranquilo. 🙂`;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111708",
+      "name": "Montar mensagem 2 (2h)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -80,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json._msg_outreach } }) }}",
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111709",
+      "name": "Enviar WhatsApp - msg 2",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        140,
+        220
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 22,
+        "unit": "hours"
+      },
+      "id": "a7777777-1111-4111-8111-111111111710",
+      "name": "Aguardar até 24h",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        360,
+        220
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: mesma checagem real do node anterior.\nconst item = $input.item.json;\nitem.respondeu = false;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111711",
+      "name": "Verificar se respondeu (24h) [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        580,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-nao-respondeu-24h",
+              "leftValue": "={{ $json.respondeu }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111712",
+      "name": "Sem resposta em 24h?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        800,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nconst nome = (item.nome || '').split(' ')[0];\nconst dominio = item.dominio_sugerido || 'seu domínio';\nitem._msg_outreach = `Olá ${nome}! Só passando para avisar\\nque o domínio ${dominio} que\\nseparamos para o seu negócio ainda\\nestá disponível.\\n\\nGuardamos por mais 48h para você.\\n\\nSe quiser dar uma olhada no que\\npreparamos, é só responder aqui. 😊`;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111713",
+      "name": "Montar mensagem 3 (24h)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1020,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json._msg_outreach } }) }}",
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111714",
+      "name": "Enviar WhatsApp - msg 3",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1240,
+        140
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      },
+      "id": "a7777777-1111-4111-8111-111111111715",
+      "name": "Aguardar até 48h",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1460,
+        140
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "jsCode": "// TODO: mesma checagem real.\nconst item = $input.item.json;\nitem.respondeu = false;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111716",
+      "name": "Verificar se respondeu (48h) [TODO]",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1680,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-nao-respondeu-48h",
+              "leftValue": "={{ $json.respondeu }}",
+              "rightValue": false,
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111717",
+      "name": "Sem resposta em 48h?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1900,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nitem._msg_outreach = `Oi ${(item.nome || '').split(' ')[0]}! Última mensagem, prometo. 🙂\\n\\nDeixei tudo guardado aqui caso\\nqueira ver quando estiver pronto.\\n\\nÉ só me chamar — sem pressa.\\n\\nTenha um ótimo dia! 👋`;\nreturn { json: item };"
+      },
+      "id": "a7777777-1111-4111-8111-111111111718",
+      "name": "Montar mensagem 4 (48h, última)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2120,
+        60
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json._msg_outreach } }) }}",
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111719",
+      "name": "Enviar WhatsApp - msg 4",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2340,
+        60
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "cond-caminho-b-fallback",
+              "leftValue": "={{ $json.caminho }}",
+              "rightValue": "B",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111720",
+      "name": "Caminho B? (fallback e-mail)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2120,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "SUBSTITUIR-REMETENTE",
+        "toEmail": "={{ $json.email }}",
+        "subject": "={{ 'Separamos algo pra ' + $json.nome }}",
+        "emailFormat": "text",
+        "text": "={{ $json._msg_outreach }}",
+        "options": {}
+      },
+      "id": "a7777777-1111-4111-8111-111111111721",
+      "name": "Fallback e-mail (só Caminho B)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        2340,
+        260
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Sem resposta após todas as tentativas — vai pra lista de reativação em 30 dias, sem mais contato (regra do script).\nreturn $input.item;"
+      },
+      "id": "a7777777-1111-4111-8111-111111111722",
+      "name": "Lista de reativação (30 dias)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2560,
+        260
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe lead aprovado": {
+      "main": [
+        [
+          {
+            "node": "Montar mensagem 1 (primeiro contato)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar mensagem 1 (primeiro contato)": {
+      "main": [
+        [
+          {
+            "node": "Enviar WhatsApp - msg 1 [confirmar provedor]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar WhatsApp - msg 1 [confirmar provedor]": {
+      "main": [
+        [
+          {
+            "node": "Aguardar 2h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguardar 2h": {
+      "main": [
+        [
+          {
+            "node": "Verificar se respondeu [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se respondeu [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Sem resposta em 2h?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sem resposta em 2h?": {
+      "main": [
+        [
+          {
+            "node": "Montar mensagem 2 (2h)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Montar mensagem 2 (2h)": {
+      "main": [
+        [
+          {
+            "node": "Enviar WhatsApp - msg 2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar WhatsApp - msg 2": {
+      "main": [
+        [
+          {
+            "node": "Aguardar até 24h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguardar até 24h": {
+      "main": [
+        [
+          {
+            "node": "Verificar se respondeu (24h) [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se respondeu (24h) [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Sem resposta em 24h?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sem resposta em 24h?": {
+      "main": [
+        [
+          {
+            "node": "Montar mensagem 3 (24h)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Montar mensagem 3 (24h)": {
+      "main": [
+        [
+          {
+            "node": "Enviar WhatsApp - msg 3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar WhatsApp - msg 3": {
+      "main": [
+        [
+          {
+            "node": "Aguardar até 48h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguardar até 48h": {
+      "main": [
+        [
+          {
+            "node": "Verificar se respondeu (48h) [TODO]",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar se respondeu (48h) [TODO]": {
+      "main": [
+        [
+          {
+            "node": "Sem resposta em 48h?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sem resposta em 48h?": {
+      "main": [
+        [
+          {
+            "node": "Montar mensagem 4 (48h, última)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Caminho B? (fallback e-mail)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Montar mensagem 4 (48h, última)": {
+      "main": [
+        [
+          {
+            "node": "Enviar WhatsApp - msg 4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Caminho B? (fallback e-mail)": {
+      "main": [
+        [
+          {
+            "node": "Fallback e-mail (só Caminho B)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Fallback e-mail (só Caminho B)": {
+      "main": [
+        [
+          {
+            "node": "Lista de reativação (30 dias)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

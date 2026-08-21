@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neovertix: IA que atende e vende pelo seu negócio</title>
+<meta name="description" content="Atendimento IA, SDR IA e CRM para PMEs que perdem venda por demora. Você vê o agente respondendo com dados reais do seu negócio antes de pagar qualquer coisa.">
+<meta property="og:title" content="Neovertix: IA que atende e vende pelo seu negócio">
+<meta property="og:description" content="Atendimento IA, SDR IA e CRM para PMEs que perdem venda por demora. Você vê o agente respondendo com dados reais do seu negócio antes de pagar qualquer coisa.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://neovertix.vercel.app/">
+<meta property="og:site_name" content="Neovertix">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image" content="https://neovertix.vercel.app/_assets/logo-lockup-final.webp">
+<meta property="og:image:width" content="720">
+<meta property="og:image:height" content="434">
+<meta property="og:image:alt" content="Neovertix">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Neovertix: IA que atende e vende pelo seu negócio">
+<meta name="twitter:description" content="Atendimento IA, SDR IA e CRM para PMEs que perdem venda por demora. Você vê o agente respondendo com dados reais do seu negócio antes de pagar qualquer coisa.">
+<meta name="twitter:image" content="https://neovertix.vercel.app/_assets/logo-lockup-final.webp">
+<link rel="canonical" href="https://neovertix.vercel.app/">
+<link rel="icon" type="image/webp" href="data:image/webp;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE"
+        crossorigin="anonymous"></script>
+<style>
+  :root {
+    --bg-canvas:      #0A0E1A;
+    --surface-base:   #121A2E;
+    --surface-raised: #1A2440;
+    --surface-overlay:#232F52;
+    --text-primary:   #F5F7FA;
+    --text-secondary: #AAB4C2;
+    --text-muted:     #7A8699;
+    --accent:         #43A047;
+    --accent-hover:   #66BB6A;
+    --accent-light:   #43A047;
+    --accent-dim:     #2E7D32;
+    --border-strong:  #5A6780;
+    --card-bg:        rgba(67, 160, 71, 0.06);
+    --card-border:    rgba(67, 160, 71, 0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg-canvas);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+  h1, h2, h3 { font-family: 'Chakra Petch', sans-serif; letter-spacing: -0.01em; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent-light);
+  }
+  a { color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* Scroll progress */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 100;
+    background: var(--accent); transform-origin: left center; transform: scaleX(0);
+  }
+
+  /* Custom cursor (desktop + motion only, toggled via JS class on body) */
+  .cursor-dot, .cursor-ring {
+    position: fixed; top: 0; left: 0; pointer-events: none; z-index: 99;
+    border-radius: 50%; transform: translate(-50%, -50%); opacity: 0;
+  }
+  .cursor-dot { width: 6px; height: 6px; background: var(--accent-light); }
+  .cursor-ring { width: 32px; height: 32px; border: 1px solid var(--border-strong); transition: border-color 0.25s ease; }
+  body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { opacity: 1; }
+  body.has-cursor.cursor-hover .cursor-ring { border-color: var(--accent-light); }
+  body.has-cursor a, body.has-cursor button, body.has-cursor summary { cursor: none; }
+
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 24px; backdrop-filter: blur(10px);
+    background: rgba(10, 14, 26, 0.72);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo img { width: 140px; height: auto; }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); text-decoration: none; transition: color 0.2s ease; }
+  .nav-links a:hover { color: var(--text-primary); }
+  .nav .btn-primary { padding: 10px 22px; font-size: 14px; }
+  @media (max-width: 900px) { .nav-links a:not(.btn-primary) { display: none; } }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block; background: var(--accent); color: var(--bg-canvas);
+    font-family: 'Manrope', sans-serif; font-weight: 700; font-size: 17px;
+    padding: 16px 34px; border-radius: 8px; text-decoration: none; transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-3px); background: var(--accent-hover); }
+  .btn-ghost {
+    display: inline-block; color: var(--text-secondary); font-weight: 600; font-size: 15px;
+    text-decoration: none; border-bottom: 1px solid var(--border-strong); padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-ghost:hover { color: var(--text-primary); border-color: var(--accent-light); }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    position: relative; text-align: center; padding: 140px 24px 80px;
+  }
+  .hero .container { position: relative; z-index: 1; max-width: 900px; }
+  .hero .eyebrow { display: block; margin-bottom: 26px; }
+  .hero h1 { font-size: 76px; font-weight: 700; line-height: 1.1; margin-bottom: 26px; }
+  .hero h1 .line { display: block; }
+  .hero h1 .word-mask { display: inline-block; overflow: hidden; vertical-align: top; }
+  .hero h1 .word { display: inline-block; }
+  .hero .subtitle { font-size: 19px; color: var(--text-secondary); margin-bottom: 40px; max-width: 620px; margin-left: auto; margin-right: auto; }
+  .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 56px; }
+  .scroll-down { font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+
+  /* Vertex — 3D faceted apex, pure CSS 3D (no WebGL dependency). Light logic: front/top face the
+     assumed light source and read bright; back/bottom/left stay dim — reads as a lit solid, not
+     an x-ray wireframe. The glow point at the outer cube's top-front-right corner is literal: the
+     vertex (o "vértice") is the brightest point where the form converges. */
+  .vertex-stage { display: none; }
+  @media (min-width: 901px) {
+    .vertex-stage {
+      display: block; position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
+      width: 360px; height: 360px; perspective: 1100px; z-index: 0; pointer-events: none;
+    }
+    .vertex-stage::before {
+      content: ''; position: absolute; inset: 14%; border-radius: 50%;
+      background: radial-gradient(circle, rgba(67, 160, 71, 0.20), transparent 68%);
+      filter: blur(36px); z-index: -1;
+    }
+  }
+  .vertex-tilt { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+  .vertex-cube, .vertex-cube-inner { position: absolute; top: 50%; left: 50%; transform-style: preserve-3d; }
+  .vertex-cube { --half: 104px; width: 208px; height: 208px; margin: -104px 0 0 -104px; animation: spinCube 26s linear infinite; }
+  .vertex-cube-inner { --half: 52px; width: 104px; height: 104px; margin: -52px 0 0 -52px; animation: spinCubeInner 19s linear infinite reverse; }
+  .face { position: absolute; inset: 0; backface-visibility: hidden; }
+  .face-front  { transform: translateZ(var(--half)); border: 1.5px solid var(--accent-light); background: linear-gradient(135deg, rgba(139, 195, 74, 0.20), rgba(67, 160, 71, 0.04)); }
+  .face-top    { transform: rotateX(90deg) translateZ(var(--half)); border: 1.5px solid var(--accent-light); background: linear-gradient(135deg, rgba(139, 195, 74, 0.26), rgba(67, 160, 71, 0.06)); }
+  .face-right  { transform: rotateY(90deg) translateZ(var(--half)); border: 1px solid var(--accent); background: rgba(67, 160, 71, 0.09); }
+  .face-left   { transform: rotateY(-90deg) translateZ(var(--half)); border: 1px solid var(--accent-dim); background: rgba(46, 125, 50, 0.07); }
+  .face-bottom { transform: rotateX(-90deg) translateZ(var(--half)); border: 1px solid var(--accent-dim); background: rgba(46, 125, 50, 0.05); }
+  .face-back   { transform: rotateY(180deg) translateZ(var(--half)); border: 1px solid var(--accent-dim); background: rgba(18, 26, 46, 0.4); }
+  .vertex-point {
+    position: absolute; top: 50%; left: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%; background: var(--accent-light);
+    box-shadow: 0 0 14px 3px rgba(139, 195, 74, 0.75), 0 0 36px 10px rgba(67, 160, 71, 0.32);
+    transform: translate3d(var(--half), calc(var(--half) * -1), var(--half));
+    animation: pulseVertex 3.2s ease-in-out infinite;
+  }
+  @keyframes spinCube { from { transform: rotateX(-9deg) rotateY(0deg); } to { transform: rotateX(-9deg) rotateY(360deg); } }
+  @keyframes spinCubeInner { from { transform: rotateX(13deg) rotateY(0deg); } to { transform: rotateX(13deg) rotateY(-360deg); } }
+  @keyframes pulseVertex {
+    0%, 100% { opacity: 0.65; transform: translate3d(var(--half), calc(var(--half) * -1), var(--half)) scale(1); }
+    50%      { opacity: 1;    transform: translate3d(var(--half), calc(var(--half) * -1), var(--half)) scale(1.5); }
+  }
+  @media (prefers-reduced-motion: reduce) { .vertex-stage { display: none; } }
+
+  /* Full-screen statement scenes */
+  .statement { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 24px; }
+  .statement .container { max-width: 880px; }
+  .statement p.big { font-size: 46px; font-weight: 700; line-height: 1.35; }
+  .statement p.big .accent { color: var(--accent-light); }
+  .statement p.small { margin-top: 22px; font-size: 17px; color: var(--text-muted); }
+  .tension { background: var(--bg-canvas); }
+  .proof { background: var(--surface-base); }
+  .proof p.big { font-family: 'JetBrains Mono', monospace; font-size: 26px; font-weight: 500; line-height: 1.6; }
+
+  /* Generic section rhythm */
+  section:not(.hero):not(.statement) { padding: 140px 24px; }
+  .section-head { text-align: center; max-width: 640px; margin: 0 auto 72px; }
+  .section-head .eyebrow { margin-bottom: 14px; }
+  .section-head h2 { font-size: 46px; font-weight: 700; margin-bottom: 14px; }
+  .section-head p { font-size: 17px; color: var(--text-secondary); }
+
+  /* Included — editorial list (replaces card grid) */
+  .included-list { max-width: 820px; margin: 0 auto; }
+  .included-item {
+    padding: 44px 0; border-top: 1px solid var(--card-border);
+  }
+  .included-list .included-item:last-child { border-bottom: 1px solid var(--card-border); }
+  .included-item h3 { font-size: 26px; margin-bottom: 10px; }
+  .included-item p { font-size: 16px; color: var(--text-muted); max-width: 540px; }
+
+  /* Mechanism — fallback (stacked) by default, pinned scroll-jack on desktop via JS class */
+  .mechanism { background: var(--surface-base); }
+  .mechanism-inner { padding: 140px 24px; }
+  .mech-track { display: flex; flex-direction: column; gap: 36px; max-width: 780px; margin: 0 auto; }
+  .mech-scene { padding: 8px 0; position: relative; }
+  .mech-scene .step-num { font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--accent-light); display: block; margin-bottom: 14px; }
+  .step-ghost { display: none; }
+  .mech-scene h3 { font-size: 30px; margin-bottom: 12px; }
+  .mech-scene p { font-size: 16px; color: var(--text-muted); max-width: 480px; }
+  .mech-dots { display: none; }
+  @media (min-width: 901px) {
+    .mechanism.is-pinned .mechanism-inner { height: 100vh; overflow: hidden; padding: 0; position: relative; display: flex; align-items: center; perspective: 1400px; }
+    .mechanism.is-pinned .section-head { display: none; }
+    .mechanism.is-pinned .mech-track { flex-direction: row; gap: 0; max-width: none; height: 100vh; width: 400%; }
+    .mechanism.is-pinned .mech-scene {
+      width: 100vw; height: 100vh; flex-shrink: 0; text-align: center; transform-style: preserve-3d;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 40px;
+    }
+    .mechanism.is-pinned .mech-scene .step-num { font-size: 22px; margin-bottom: 26px; }
+    .mechanism.is-pinned .mech-scene h3 { font-size: 52px; margin-bottom: 22px; }
+    .mechanism.is-pinned .mech-scene p { font-size: 19px; max-width: 560px; }
+    .mechanism.is-pinned .mech-scene .step-ghost {
+      display: block; position: absolute; top: 50%; left: 50%; z-index: -1;
+      transform: translate(-50%, -54%); font-family: 'Chakra Petch', sans-serif; font-weight: 700;
+      font-size: 380px; line-height: 1; color: var(--surface-overlay); opacity: 0.55;
+      pointer-events: none; user-select: none;
+    }
+    .mechanism.is-pinned .mech-dots {
+      display: flex; gap: 10px; position: absolute; bottom: 48px; left: 50%; transform: translateX(-50%); z-index: 2;
+    }
+    .mech-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); transition: background 0.3s ease, transform 0.3s ease; }
+    .mech-dot.active { background: var(--accent); transform: scale(1.3); }
+  }
+
+  /* Prévia Vértice: mock de conversa do painel 04 (clímax). Beats via GSAP no JS. */
+  .previa-demo {
+    margin: 32px auto 0; width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: 16px;
+    padding: 22px 24px; background: var(--surface-raised); border: 1px solid var(--card-border);
+    border-radius: 12px; text-align: left;
+  }
+  .dado-real { display: flex; flex-direction: column; gap: 4px; }
+  .dado-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+  .dado-texto { font-size: 15px; color: var(--text-secondary); }
+  .agente-icon {
+    display: flex; align-items: center; justify-content: center; width: 34px; height: 34px;
+    border-radius: 50%; background: var(--card-bg); border: 1px solid var(--accent);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--accent-light);
+  }
+  .resposta-ia { display: flex; flex-direction: column; gap: 8px; }
+  .resposta-ia .linha { font-size: 15.5px; font-weight: 600; color: var(--text-primary); line-height: 1.5; }
+  .mech-scene .cta-final { display: inline-block; margin-top: 28px; }
+
+  /* Pricing — full-screen dramatic reveal */
+  .pricing { min-height: 100vh; display: flex; align-items: center; }
+  .pricing-inner { text-align: center; max-width: 980px; margin: 0 auto; perspective: 1000px; }
+  .price-display { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin: 48px 0 40px; text-align: left; transform-style: preserve-3d; }
+  .price-card { display: flex; flex-direction: column; gap: 10px; padding: 28px 4px 0; border-top: 2px solid var(--card-border); transition: transform 0.3s ease; }
+  .price-card--featured {
+    border-top-color: var(--accent); background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 32px 24px 28px; transform: scale(1.045); box-shadow: 0 20px 48px rgba(0,0,0,0.28);
+  }
+  .price-card h3 { font-size: 20px; }
+  .price-amount {
+    font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 600; color: var(--text-primary);
+    display: block; font-variant-numeric: tabular-nums; letter-spacing: -0.01em;
+  }
+  .price-card--featured .price-amount { font-size: 44px; color: var(--accent-light); }
+  .price-detail { display: block; font-size: 13px; color: var(--text-muted); }
+  .price-scope { font-size: 14px; color: var(--text-secondary); line-height: 1.55; flex: 1; }
+  .price-card .btn-primary, .price-card .btn-ghost { align-self: flex-start; margin-top: 6px; }
+  .guarantee { margin-top: 8px; padding: 20px 28px; border: 1px solid var(--card-border); border-radius: 8px; font-size: 14.5px; color: var(--text-secondary); }
+  .guarantee strong { color: var(--text-primary); }
+
+  /* FAQ */
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-top: 1px solid var(--card-border); }
+  .faq-list .faq-item:last-child { border-bottom: 1px solid var(--card-border); }
+  .faq-item summary {
+    list-style: none; cursor: pointer; padding: 24px 0; font-weight: 600; font-size: 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+"; font-family: 'JetBrains Mono', monospace; font-size: 20px; color: var(--accent);
+    flex-shrink: 0; transition: transform 0.25s ease;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item p { padding-bottom: 24px; font-size: 15px; color: var(--text-secondary); line-height: 1.6; }
+
+  /* Closing CTA + contact form */
+  .closing-cta { background: var(--surface-base); text-align: center; min-height: 100vh; display: flex; align-items: center; }
+  .closing-cta .container { max-width: 640px; }
+  .closing-cta h2 { font-size: 46px; font-weight: 700; margin-bottom: 16px; }
+  .closing-cta .subtitle { font-size: 17px; color: var(--text-secondary); margin-bottom: 44px; }
+  .contact-form {
+    background: var(--surface-raised); border: 1px solid var(--card-border); border-radius: 16px;
+    padding: 36px; text-align: left; display: flex; flex-direction: column; gap: 16px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+  .field input, .field textarea {
+    font-family: 'Manrope', sans-serif; font-size: 15px; color: var(--text-primary);
+    background: var(--surface-base); border: 1px solid var(--border-strong); border-radius: 8px;
+    padding: 12px 14px; outline: none; transition: border-color 0.2s ease;
+  }
+  .field input:focus, .field textarea:focus { border-color: var(--accent); }
+  .field textarea { resize: vertical; min-height: 80px; }
+  .hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .form-note { font-size: 12.5px; color: var(--text-secondary); text-align: center; }
+  .form-success { display: none; text-align: center; padding: 20px; font-size: 15px; color: var(--accent-light); font-weight: 600; }
+  .form-error { display: none; text-align: center; padding-top: 8px; font-size: 13.5px; color: #E57373; }
+  .signature { margin-top: 56px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--text-muted); }
+
+  /* Footer */
+  footer { padding: 48px 24px; text-align: center; border-top: 1px solid var(--card-border); }
+  footer img { width: 100px; height: auto; margin: 0 auto 14px; }
+  footer p { font-size: 13px; color: var(--text-muted); }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero h1 { font-size: 48px; }
+    .statement p.big { font-size: 32px; }
+    .section-head h2 { font-size: 34px; }
+    .form-row { grid-template-columns: 1fr; }
+    .price-display { grid-template-columns: 1fr; gap: 32px; }
+    .price-card--featured { transform: none; }
+  }
+  @media (max-width: 580px) {
+    section:not(.hero):not(.statement) { padding: 96px 20px; }
+    .statement { padding: 60px 20px; }
+    .hero { padding-top: 120px; }
+    .hero h1 { font-size: 36px; }
+    .nav-logo img { width: 110px; }
+    .closing-cta h2 { font-size: 30px; }
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Neovertix",
+  "url": "https://neovertix.vercel.app/",
+  "logo": "https://neovertix.vercel.app/_assets/logo-lockup-final.webp",
+  "description": "Colocamos IA para atender e vender por você. Rápido, sem parecer robô. Neovertix implementa atendimento IA, SDR IA e CRM automatizados para pequenas e médias empresas brasileiras que perdem venda por demora no atendimento.",
+  "areaServed": "BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Neovertix",
+  "url": "https://neovertix.vercel.app/",
+  "inLanguage": "pt-BR"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Atendimento e vendas com IA para PMEs",
+  "provider": { "@type": "Organization", "name": "Neovertix", "url": "https://neovertix.vercel.app/" },
+  "areaServed": "BR",
+  "description": "Atendimento IA, SDR IA e CRM automatizados para PMEs que perdem venda por demora no atendimento.",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Planos Neovertix",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Piloto Vértice",
+        "price": "1900",
+        "priceCurrency": "BRL",
+        "description": "Setup único, sem mensalidade (Programa Fundador: R$ 900 nas primeiras vagas, limitadas). 2 a 4 semanas, 1 canal (WhatsApp ou Instagram), atendimento IA ou SDR IA + CRM simples, com métrica definida no início e medida no final."
+      },
+      {
+        "@type": "Offer",
+        "name": "Operação Vértice",
+        "price": "4500",
+        "priceCurrency": "BRL",
+        "description": "Setup de R$ 4.500 + R$ 1.200/mês. 2 canais integrados, atendimento IA + SDR IA rodando juntos, CRM configurado, manutenção e ajuste mensal do fluxo."
+      },
+      {
+        "@type": "Offer",
+        "name": "Vértice Full",
+        "price": "9000",
+        "priceCurrency": "BRL",
+        "description": "A partir de R$ 9.000 de setup + R$ 2.800/mês. Stack completo: site/landing page + atendimento IA + SDR IA + CRM, canais múltiplos, reunião estratégica mensal com o fundador."
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "IA não vai soar robótica falando com meus clientes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Testamos a voz do agente com o jeito que o seu negócio já fala antes de ele conversar com qualquer cliente. E na Prévia Vértice você vê o agente respondendo com os seus dados, ao vivo. Se soar robô ali, a gente não fecha."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês são novos, sem case. Por que eu confiaria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Somos novos mesmo, por isso o processo é ao contrário do mercado: você vê o sistema rodando com os dados do seu negócio antes de assinar. Os primeiros clientes entram no Programa Fundador com condição especial (Piloto por R$ 900), porque estão construindo essa prova junto com a gente. E se mesmo assim a métrica combinada não melhorar 30%, a Garantia Vértice cobre isso: você não paga nada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quanto tempo até funcionar de verdade?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O Piloto tem prazo fechado: 2 a 4 semanas. A métrica é definida no início e medida no final. Não é trimestre de consultoria: é entrega com data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se quebrar, quem conserta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quem escreve o código é quem atende o chamado, sem camada de suporte terceirizado no meio. E você recebe um walkthrough técnico transparente do que foi construído, para nunca ficar refém de caixa-preta."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<div class="scroll-progress"></div>
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<nav class="nav">
+  <a href="#top" class="nav-logo">
+    <img src="_assets/logo-lockup-final.webp" alt="Neovertix" width="720" height="434">
+  </a>
+  <div class="nav-links">
+    <a href="#processo">Como funciona</a>
+    <a href="#preco">Investimento</a>
+    <a href="#faq">Perguntas</a>
+    <a href="#contato" class="btn-primary">Quero minha prévia</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="vertex-stage">
+    <div class="vertex-tilt">
+      <div class="vertex-cube">
+        <div class="face face-front"></div><div class="face face-back"></div>
+        <div class="face face-right"></div><div class="face face-left"></div>
+        <div class="face face-top"></div><div class="face face-bottom"></div>
+        <div class="vertex-point" aria-hidden="true"></div>
+      </div>
+      <div class="vertex-cube-inner">
+        <div class="face face-front"></div><div class="face face-back"></div>
+        <div class="face face-right"></div><div class="face face-left"></div>
+        <div class="face face-top"></div><div class="face face-bottom"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <span class="eyebrow">Atendimento IA · SDR IA · CRM</span>
+    <h1>
+      <span class="line"><span class="word-mask"><span class="word">A</span></span> <span class="word-mask"><span class="word">IA</span></span> <span class="word-mask"><span class="word">atende.</span></span></span>
+      <span class="line"><span class="word-mask"><span class="word">A</span></span> <span class="word-mask"><span class="word">IA</span></span> <span class="word-mask"><span class="word">vende.</span></span></span>
+      <span class="line"><span class="word-mask"><span class="word">E</span></span> <span class="word-mask"><span class="word">você</span></span> <span class="word-mask"><span class="word">vê</span></span> <span class="word-mask"><span class="word">funcionando</span></span></span>
+      <span class="line"><span class="word-mask"><span class="word">antes</span></span> <span class="word-mask"><span class="word">de</span></span> <span class="word-mask"><span class="word">pagar.</span></span></span>
+    </h1>
+    <p class="subtitle">Colocamos IA para atender e vender por você. Rápido, sem parecer robô. Antes de qualquer contrato, a Prévia Vértice mostra o agente respondendo com dados reais do seu negócio.</p>
+    <div class="hero-ctas">
+      <a href="#contato" class="btn-primary magnetic">Quero minha prévia</a>
+      <a href="#processo" class="btn-ghost">Ver como funciona</a>
+    </div>
+    <div class="scroll-down">Role para ver</div>
+  </div>
+</header>
+
+<section class="statement tension">
+  <div class="container">
+    <p class="big reveal">Enquanto você lê isso, tem lead esperando resposta no seu WhatsApp. <span class="accent">Quem responde primeiro leva a venda.</span></p>
+    <p class="small reveal">Demora não é sua cultura. É sua falta de sistema.</p>
+  </div>
+</section>
+
+<section class="mechanism" id="processo">
+  <div class="mechanism-inner">
+    <div class="section-head" style="margin-bottom: 56px;">
+      <span class="eyebrow reveal">Como funciona</span>
+      <h2 class="reveal">Da primeira conversa à Prévia Vértice ao vivo</h2>
+    </div>
+    <div class="mech-track">
+      <div class="mech-scene reveal">
+        <span class="step-ghost" aria-hidden="true">01</span>
+        <span class="step-num">01 / 04</span>
+        <h3>Diagnóstico da operação</h3>
+        <p>Mapeamos por onde seus leads chegam, quanto tempo esperam e onde a venda trava. Uma conversa direta, sem compromisso, e já saímos com a métrica que o piloto vai melhorar.</p>
+      </div>
+      <div class="mech-scene reveal">
+        <span class="step-ghost" aria-hidden="true">02</span>
+        <span class="step-num">02 / 04</span>
+        <h3>Desenho do fluxo</h3>
+        <p>Definimos canal, escopo e o tom de voz do agente, com o jeito que o seu negócio já fala com cliente, não um script genérico. Tudo documentado antes de escrever uma linha.</p>
+      </div>
+      <div class="mech-scene reveal">
+        <span class="step-ghost" aria-hidden="true">03</span>
+        <span class="step-num">03 / 04</span>
+        <h3>Construção do agente</h3>
+        <p>Construímos o atendimento IA ou o SDR IA e conectamos ao CRM. Cada resposta é testada em cenário real antes de chegar perto de um cliente seu. Testado, não prometido.</p>
+      </div>
+      <div class="mech-scene reveal" id="painel-previa">
+        <span class="step-ghost" aria-hidden="true">04</span>
+        <span class="step-num">04 / 04</span>
+        <h3>Prévia Vértice ao vivo</h3>
+        <p>Você vê o agente respondendo com dados reais do seu negócio, não slide, não mockup. Se não convencer você, não convence seu cliente. Só depois disso a gente fala de contrato.</p>
+        <div class="previa-demo">
+          <div class="dado-real">
+            <span class="dado-label">Mensagem do cliente</span>
+            <span class="dado-texto">“Vocês entregam hoje ainda?”</span>
+          </div>
+          <div class="agente-icon" aria-hidden="true">IA</div>
+          <div class="resposta-ia">
+            <span class="linha">Entregamos! Fechando o pedido até as 17h, chega ainda hoje.</span>
+            <span class="linha">Quer que eu já separe o horário pra você?</span>
+          </div>
+        </div>
+        <a href="#contato" class="btn-ghost magnetic cta-final">Quero minha prévia</a>
+      </div>
+    </div>
+    <div class="mech-dots">
+      <span class="mech-dot active"></span><span class="mech-dot"></span><span class="mech-dot"></span><span class="mech-dot"></span>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="produto">
+  <div class="container">
+    <div class="section-head">
+      <h2>Engenharia, não slide</h2>
+      <p>Cada entrega sai com a mesma base técnica, testada antes de chegar perto do seu cliente.</p>
+    </div>
+    <div class="included-list">
+      <div class="included-item reveal">
+        <div><h3>Atendimento IA</h3><p>Responde no WhatsApp ou Instagram em segundos, a qualquer hora, no tom do seu negócio. O lead que chega às 22h recebe resposta às 22h, não na manhã seguinte.</p></div>
+      </div>
+      <div class="included-item reveal">
+        <div><h3>SDR IA</h3><p>Qualifica o lead, faz as perguntas certas, agenda e cobra follow-up sozinho. Você entra na conversa quando ela já está quente, só para fechar.</p></div>
+      </div>
+      <div class="included-item reveal">
+        <div><h3>CRM automatizado</h3><p>Cada conversa vira registro, cada lead tem estágio no funil. Nada depende de alguém lembrar de anotar: o fluxo alimenta o CRM sozinho.</p></div>
+      </div>
+      <div class="included-item reveal">
+        <div><h3>Site e landing page</h3><p>Quando o negócio pede, construímos a página que alimenta esse mesmo fluxo: formulário caindo direto no agente e no CRM, não uma vitrine solta. Componente do Vértice Full.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="statement proof">
+  <div class="container">
+    <p class="big reveal">Você não vai ver depoimento aqui. <span class="accent">Ainda.</span></p>
+    <p class="small reveal">Somos novos nisso, e não vamos fingir o contrário. Em vez de case emprestado, mostramos o sistema rodando com os dados do seu negócio antes de você assinar qualquer coisa. Os primeiros clientes entram no Programa Fundador, com condição especial, porque estão construindo essa prova junto com a gente. Quando os números existirem de verdade, eles entram aqui, não antes.</p>
+  </div>
+</section>
+
+<section class="pricing" id="preco">
+  <div class="container pricing-inner">
+    <span class="eyebrow reveal">Investimento</span>
+    <h2 class="reveal">Três formas de começar</h2>
+    <div class="price-display reveal">
+      <div class="price-card">
+        <h3>Piloto Vértice</h3>
+        <span class="price-amount">R$ 1.900</span>
+        <span class="price-detail">setup único · sem mensalidade</span>
+        <p class="price-scope">2 a 4 semanas · 1 canal (WhatsApp ou Instagram) · atendimento IA ou SDR IA + CRM simples · métrica definida no início e medida no final. Programa Fundador: R$ 900 nas primeiras vagas (limitadas). Coberto pela Garantia Vértice: melhora de 30% na métrica ou você não paga.</p>
+        <a href="#contato" class="btn-ghost magnetic">Começar pelo Piloto</a>
+      </div>
+      <div class="price-card price-card--featured">
+        <h3>Operação Vértice</h3>
+        <span class="price-amount">R$ 4.500</span>
+        <span class="price-detail">setup · R$ 1.200/mês</span>
+        <p class="price-scope">2 canais integrados · atendimento IA + SDR IA rodando juntos · CRM configurado · manutenção e ajuste mensal do fluxo.</p>
+        <a href="#contato" class="btn-primary magnetic">Quero a Operação</a>
+      </div>
+      <div class="price-card">
+        <h3>Vértice Full</h3>
+        <span class="price-amount">a partir de R$ 9.000</span>
+        <span class="price-detail">setup · R$ 2.800/mês</span>
+        <p class="price-scope">Stack completo: site/landing page + atendimento IA + SDR IA + CRM · canais múltiplos · reunião estratégica mensal com o fundador.</p>
+        <a href="#contato" class="btn-ghost magnetic">Falar sobre o Full</a>
+      </div>
+    </div>
+    <p class="guarantee reveal"><strong>Garantia Vértice:</strong> a métrica é combinada no início do Piloto. Se ela não melhorar 30%, você não paga nada.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2>Antes de perguntar, já respondemos</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary>IA não vai soar robótica falando com meus clientes?</summary>
+        <p>Testamos a voz do agente com o jeito que o seu negócio já fala antes de ele conversar com qualquer cliente. E na Prévia Vértice você vê o agente respondendo com os seus dados, ao vivo. Se soar robô ali, a gente não fecha.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Vocês são novos, sem case. Por que eu confiaria?</summary>
+        <p>Somos novos mesmo, por isso o processo é ao contrário do mercado: você vê o sistema rodando com os dados do seu negócio antes de assinar. Os primeiros clientes entram no Programa Fundador com condição especial (Piloto por R$ 900), porque estão construindo essa prova junto com a gente. E se mesmo assim a métrica combinada não melhorar 30%, a Garantia Vértice cobre isso: você não paga nada.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Quanto tempo até funcionar de verdade?</summary>
+        <p>O Piloto tem prazo fechado: 2 a 4 semanas. A métrica é definida no início e medida no final. Não é trimestre de consultoria: é entrega com data.</p>
+      </details>
+      <details class="faq-item reveal">
+        <summary>Se quebrar, quem conserta?</summary>
+        <p>Quem escreve o código é quem atende o chamado, sem camada de suporte terceirizado no meio. E você recebe um walkthrough técnico transparente do que foi construído, para nunca ficar refém de caixa-preta.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="closing-cta" id="contato">
+  <div class="container">
+    <h2>Quer ver a IA respondendo pelo seu negócio?</h2>
+    <p class="subtitle">Sem call de uma hora, sem proposta genérica. A gente monta a Prévia Vértice com os seus dados e te mostra rodando. Você decide depois de ver.</p>
+    <form class="contact-form" id="lead-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="f-nome">Seu nome</label>
+          <input id="f-nome" name="nome" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="f-negocio">Nome do negócio</label>
+          <input id="f-negocio" name="negocio" type="text" required autocomplete="organization">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-contato">WhatsApp ou e-mail</label>
+        <input id="f-contato" name="contato" type="text" required>
+      </div>
+      <div class="field">
+        <label for="f-msg">Conta rápido o que você precisa (opcional)</label>
+        <textarea id="f-msg" name="mensagem"></textarea>
+      </div>
+      <div class="field hp-field" aria-hidden="true">
+        <label for="f-site">Não preencha este campo</label>
+        <input id="f-site" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button type="submit" class="btn-primary magnetic">Quero minha prévia</button>
+      <p class="form-note">Sem compromisso. A gente responde pra combinar os detalhes da prévia.</p>
+      <p class="form-success" id="form-success" aria-live="polite">Recebido. Vamos preparar sua prévia e te chamar em breve.</p>
+      <p class="form-error" id="form-error" role="alert">Não deu pra enviar agora. Confere sua conexão e tenta de novo, ou chama no WhatsApp.</p>
+    </form>
+    <p class="signature">A gente constrói, não promete.</p>
+  </div>
+</section>
+
+<footer>
+  <img src="_assets/logo-lockup-final.webp" alt="Neovertix" width="720" height="434">
+  <p>A gente constrói, não promete. · © 2026 Neovertix</p>
+</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isDesktop = window.matchMedia("(min-width: 901px)").matches;
+  const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+  const EASE = "power2.out"; // vocabulário de motion único do site — reserva-se power3/power4 só pro reveal do hero
+
+  if (!reduceMotion) {
+    gsap.set(".hero h1 .word", { yPercent: 110 });
+    gsap.set([".hero .eyebrow", ".hero .subtitle", ".hero .hero-ctas", ".hero .scroll-down"], { opacity: 0, y: 30 });
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.to(".hero .eyebrow", { opacity: 1, y: 0, duration: 0.6 })
+      .to(".hero h1 .word", { yPercent: 0, duration: 0.9, stagger: 0.035, ease: "power4.out" }, "-=0.2")
+      .to(".hero .subtitle", { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
+      .to(".hero .hero-ctas", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+      .to(".hero .scroll-down", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
+
+    if (hasFinePointer) {
+      const hero = document.querySelector(".hero");
+      const vertexTiltY = gsap.quickTo(".vertex-tilt", "rotateY", { duration: 0.6, ease: EASE });
+      const vertexTiltX = gsap.quickTo(".vertex-tilt", "rotateX", { duration: 0.6, ease: EASE });
+      hero.addEventListener("mousemove", (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        gsap.to(".hero .container",  { x: x * 8,  y: y * 5,  duration: 0.8 });
+        vertexTiltY(x * 18);
+        vertexTiltX(-y * 12);
+      });
+
+      document.querySelectorAll(".magnetic").forEach(el => {
+        const moveX = gsap.quickTo(el, "x", { duration: 0.3, ease: EASE });
+        const moveY = gsap.quickTo(el, "y", { duration: 0.3, ease: EASE });
+        el.addEventListener("mousemove", (e) => {
+          const rect = el.getBoundingClientRect();
+          moveX((e.clientX - rect.left - rect.width / 2) * 0.35);
+          moveY((e.clientY - rect.top - rect.height / 2) * 0.35);
+        });
+        el.addEventListener("mouseleave", () => { moveX(0); moveY(0); });
+      });
+
+      const priceDisplay = document.querySelector(".price-display");
+      if (priceDisplay) {
+        priceDisplay.addEventListener("mousemove", (e) => {
+          const rect = priceDisplay.getBoundingClientRect();
+          const px = (e.clientX - rect.left) / rect.width - 0.5;
+          const py = (e.clientY - rect.top) / rect.height - 0.5;
+          gsap.to(priceDisplay, { rotateY: px * 3, rotateX: -py * 3, duration: 0.4, ease: EASE });
+        });
+        priceDisplay.addEventListener("mouseleave", () => {
+          gsap.to(priceDisplay, { rotateY: 0, rotateX: 0, duration: 0.6, ease: EASE });
+        });
+      }
+    }
+
+    gsap.set(".reveal", { opacity: 0, y: 45 });
+    ScrollTrigger.batch(".reveal", {
+      start: "top 85%",
+      onEnter: batch => gsap.to(batch, { opacity: 1, y: 0, duration: 0.8, stagger: 0.1, ease: EASE })
+    });
+
+    if (isDesktop) {
+      const mechanism = document.querySelector(".mechanism");
+      const track = document.querySelector(".mech-track");
+      mechanism.classList.add("is-pinned");
+
+      // Clímax: beats da Prévia Vértice (painel 04) numa timeline única, com labels
+      // nomeados. Fica pausada e é dirigida pelo mesmo onUpdate do pin logo abaixo,
+      // só avança no último terço do scroll (progress > 2/3), como um scrub próprio.
+      const previaTl = gsap.timeline({ paused: true, defaults: { ease: EASE } })
+        .addLabel("dadoChega")
+        .from(".dado-real", { opacity: 0, y: 20 })
+        .addLabel("processando", "+=0.3")
+        .to(".agente-icon", { scale: 1.15, repeat: 1, yoyo: true, duration: 0.3 }, "processando")
+        .to(mechanism, { backgroundColor: "#16261F" }, "processando") // physicalization: fundo esquenta
+        .addLabel("resposta", "+=0.3")
+        .to("#painel-previa", { scale: 1.03 }, "resposta") // physicalization: push do painel
+        .from(".resposta-ia .linha", { opacity: 0, y: 16, stagger: 0.15 }, "resposta")
+        .addLabel("cta", "+=0.4")
+        .from(".cta-final", { opacity: 0, scale: 0.95 }, "cta");
+
+      gsap.to(track, {
+        x: () => -(track.scrollWidth - window.innerWidth),
+        ease: "none",
+        scrollTrigger: {
+          trigger: mechanism,
+          start: "top top",
+          end: () => "+=" + (track.scrollWidth - window.innerWidth),
+          pin: true,
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: self => {
+            // 4 panels laid end-to-end means 3 travel segments between them (track is
+            // scrolled by 3 panel-widths total): panels rest at progress 0, 1/3, 2/3, 1,
+            // NOT at 0, .25, .5, .75. Scale by (panelCount - 1), not panelCount.
+            const panelProgress = self.progress * 3;
+            const idx = Math.round(panelProgress);
+            document.querySelectorAll(".mech-dot").forEach((d, i) => d.classList.toggle("active", i === idx));
+            document.querySelectorAll(".mech-scene").forEach((scene, i) => {
+              const dist = gsap.utils.clamp(-1, 1, panelProgress - i);
+              gsap.set(scene, { rotateY: dist * -14, scale: 1 - Math.abs(dist) * 0.06 });
+            });
+            // Painel 04 assume os beats no último segmento do pin (progress 2 a 3);
+            // roda por cima do gsap.set acima, que só cobre rotateY/scale genéricos.
+            previaTl.progress(gsap.utils.clamp(0, 1, panelProgress - 2));
+          }
+        }
+      });
+      ScrollTrigger.refresh();
+    }
+
+    if (hasFinePointer) {
+      document.body.classList.add("has-cursor");
+      const dot = document.querySelector(".cursor-dot");
+      const ring = document.querySelector(".cursor-ring");
+      const moveDot = gsap.quickTo(dot, "x", { duration: 0.1, ease: EASE });
+      const moveDotY = gsap.quickTo(dot, "y", { duration: 0.1, ease: EASE });
+      const moveRing = gsap.quickTo(ring, "x", { duration: 0.35, ease: EASE });
+      const moveRingY = gsap.quickTo(ring, "y", { duration: 0.35, ease: EASE });
+      window.addEventListener("mousemove", (e) => {
+        moveDot(e.clientX); moveDotY(e.clientY);
+        moveRing(e.clientX); moveRingY(e.clientY);
+      });
+      document.querySelectorAll("a, button, summary").forEach(el => {
+        el.addEventListener("mouseenter", () => {
+          document.body.classList.add("cursor-hover");
+          gsap.to(ring, { scale: 1.7, duration: 0.25, ease: EASE });
+        });
+        el.addEventListener("mouseleave", () => {
+          document.body.classList.remove("cursor-hover");
+          gsap.to(ring, { scale: 1, duration: 0.25, ease: EASE });
+        });
+      });
+    }
+  }
+
+  ScrollTrigger.create({
+    trigger: document.body, start: "top top", end: "bottom bottom",
+    onUpdate: self => { document.querySelector(".scroll-progress").style.transform = `scaleX(${self.progress})`; }
+  });
+
+  // ponytail: troque pelo endpoint real do webhook n8n de captura de lead antes de publicar
+  const LEAD_WEBHOOK_URL = "https://SEU-N8N-AQUI/webhook/neovertix-lead";
+
+  const form = document.getElementById("lead-form");
+  const success = document.getElementById("form-success");
+  const errorMsg = document.getElementById("form-error");
+  const submitBtn = form.querySelector("button[type=submit]");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (form.website.value) return; // honeypot tripped, silently drop
+
+    errorMsg.style.display = "none";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando…";
+    try {
+      const res = await fetch(LEAD_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: form.nome.value,
+          negocio: form.negocio.value,
+          contato: form.contato.value,
+          mensagem: form.mensagem.value
+        })
+      });
+      if (!res.ok) throw new Error("webhook status " + res.status);
+      form.querySelectorAll("input, textarea, button").forEach(el => el.style.display = "none");
+      success.style.display = "block";
+    } catch (err) {
+      errorMsg.style.display = "block";
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Quero minha prévia";
+    }
+  });
+</script>
+
+</body>
+</html>

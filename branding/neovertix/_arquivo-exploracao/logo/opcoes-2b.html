@@ -1,0 +1,799 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Neovertix — Rodada 2b · símbolo (G–K)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, p, figure { margin: 0; }
+  svg { display: block; }
+  a { color: inherit; }
+
+  :root {
+    --bg-0: #0b0f0d;
+    --bg-1: #121815;
+    --bg-2: #1a211c;
+    --bg-3: #232b24;
+    --bg-blue: #0a0e1a;
+    --text: #f2f5f0;
+    --text-dim: #93a093;
+    --accent: #b4e33d;
+    --accent-hi: #cbff5e;
+    --accent-dim: #6e8a24;
+    --border: #2c352d;
+    --on-accent: #121815;
+    --paper: #f4f1ea;
+    --ink: #121815;
+    --ink-dim: #6b6f66;
+    --warn: #e3b23d;
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Manrope', sans-serif;
+  }
+
+  body {
+    background: var(--bg-0);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+  .symbol { width: 1em; height: 1em; color: inherit; }
+
+  /* ---- masthead ---- */
+  .masthead { padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 7vw, 4rem); max-width: 1180px; margin: 0 auto; }
+  .masthead-eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--font-display); font-size: .72rem; letter-spacing: .1em; color: var(--accent);
+    border: 1px solid var(--border); border-radius: 999px; padding: .4rem .9rem; margin-bottom: 1.75rem;
+  }
+  .masthead-eyebrow::before { content: '>'; }
+  .masthead h1 { font-family: var(--font-display); font-size: clamp(1.9rem, 4.6vw, 3rem); font-weight: 700; letter-spacing: -0.01em; max-width: 26ch; }
+  .masthead p { margin-top: 1.25rem; max-width: 70ch; font-size: clamp(1rem, 1.5vw, 1.12rem); color: var(--text-dim); }
+  .masthead p strong { color: var(--text); }
+
+  .brief-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 2.25rem; }
+  .brief-card { background: var(--bg-1); border: 1px solid var(--border); border-radius: 14px; padding: 1.25rem 1.4rem; }
+  .brief-card h3 { font-family: var(--font-display); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .6rem; }
+  .brief-card.keep h3 { color: var(--accent); }
+  .brief-card.avoid h3 { color: var(--warn); }
+  .brief-card ul { margin: 0; padding-left: 1.1rem; font-size: .92rem; color: var(--text-dim); display: grid; gap: .3rem; }
+
+  .masthead-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.25rem; }
+  .masthead-nav a {
+    text-decoration: none; font-size: .85rem; font-weight: 600; color: var(--text); background: var(--bg-1);
+    border: 1px solid var(--border); border-radius: 999px; padding: .55rem 1.1rem;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .masthead-nav a:hover { border-color: var(--accent-dim); transform: translateY(-1px); }
+
+  /* ---- candidate section ---- */
+  .candidate { max-width: 1180px; margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); border-top: 1px solid var(--border); }
+  .c-head { display: grid; grid-template-columns: auto 1fr; gap: clamp(1rem, 4vw, 2rem); align-items: end; margin-bottom: 2.5rem; }
+  .c-letter { font-family: var(--font-display); font-size: clamp(3.5rem, 9vw, 6rem); font-weight: 700; line-height: .8; color: var(--accent); }
+  .c-name { font-family: var(--font-display); font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; letter-spacing: -0.01em; }
+  .c-desc { color: var(--text-dim); margin-top: .4rem; max-width: 64ch; font-size: 1rem; }
+
+  .section-label {
+    font-family: var(--font-display); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--text-dim); display: flex; align-items: center; gap: .6rem; margin-bottom: 1rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .block { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+
+  .hero-tile {
+    background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    display: flex; align-items: center; justify-content: center; padding: clamp(2.5rem, 8vw, 4rem);
+  }
+  .hero-tile .symbol { width: clamp(180px, 28vw, 320px); height: clamp(180px, 28vw, 320px); color: var(--accent); }
+
+  .scale-row {
+    display: flex; align-items: flex-end; gap: clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem clamp(1.5rem, 4vw, 2.5rem); flex-wrap: wrap;
+  }
+  .scale-item { display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+  .scale-item .symbol { color: var(--text); }
+  .scale-item span { font-family: var(--font-display); font-size: .68rem; color: var(--text-dim); }
+  .s-16 { width: 16px; height: 16px; }
+  .s-32 { width: 32px; height: 32px; }
+  .s-64 { width: 64px; height: 64px; }
+  .s-128 { width: 128px; height: 128px; }
+
+  .mode-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .mode-card {
+    border-radius: 14px; border: 1px solid var(--border); padding: 1.75rem 1.25rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.1rem; min-height: 176px;
+  }
+  .mode-card .symbol { width: 60px; height: 60px; }
+  .mode-card figcaption { font-family: var(--font-display); font-size: .68rem; letter-spacing: .05em; text-transform: uppercase; }
+  .mode-dark   { background: var(--bg-1); }
+  .mode-dark   .symbol { color: var(--accent); }
+  .mode-dark   figcaption { color: var(--text-dim); }
+  .mode-dark2  { background: var(--bg-2); }
+  .mode-dark2  .symbol { color: var(--text); }
+  .mode-dark2  figcaption { color: var(--text-dim); }
+  .mode-paper  { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper  .symbol { color: var(--ink); }
+  .mode-paper  figcaption { color: var(--ink-dim); }
+  .mode-paper2 { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper2 .symbol { color: var(--accent-dim); }
+  .mode-paper2 figcaption { color: var(--ink-dim); }
+
+  /* hero bicolor */
+  .hero-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-bicolor-tile {
+    flex: 1 1 240px; background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: clamp(1.75rem, 6vw, 2.75rem); display: flex; flex-direction: column; align-items: center; gap: 1.1rem;
+  }
+  .hero-bicolor-tile svg { width: clamp(140px, 20vw, 220px); height: clamp(140px, 20vw, 220px); }
+  .hero-bicolor-tile span { font-family: var(--font-display); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim); }
+
+  /* lockup (2 formatos) */
+  .lockup-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .lockup-tile {
+    flex: 1 1 260px; background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: clamp(1.75rem, 6vw, 2.75rem); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .9rem;
+  }
+  .lockup-tile svg { width: clamp(190px, 32vw, 300px); height: auto; color: var(--text); }
+  .lockup-tile span { font-family: var(--font-display); font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--text-dim); }
+
+  /* teste de fundo */
+  .bg-test-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .bg-test-tile {
+    flex: 1 1 200px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1rem; padding: clamp(2rem, 6vw, 3rem); border: 1px solid var(--border);
+  }
+  .bg-test-tile.tile-black { background: var(--bg-0); }
+  .bg-test-tile.tile-blue  { background: var(--bg-blue); border-color: rgba(255,255,255,.08); }
+  .bg-test-tile svg { width: clamp(100px, 16vw, 150px); height: clamp(100px, 16vw, 150px); color: var(--accent); }
+  .bg-test-tile span { font-family: var(--font-display); font-size: .68rem; color: var(--text-dim); }
+
+  .icon-row { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .icon-mock { width: 112px; height: 112px; border-radius: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .icon-mock.acc { background: var(--accent); }
+  .icon-mock.acc .symbol { width: 58%; height: 58%; color: var(--on-accent); }
+  .icon-mock.drk { background: var(--bg-2); border: 1px solid var(--border); }
+  .icon-mock.drk .symbol { width: 58%; height: 58%; color: var(--accent); }
+
+  .rationale { list-style: none; display: grid; gap: .9rem; padding: 0; }
+  .rationale li { display: grid; grid-template-columns: auto 1fr; gap: .8rem; font-size: .98rem; color: var(--text); }
+  .rationale li::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); margin-top: .5rem; }
+  .rationale li.risk::before { background: var(--warn); }
+  .rationale li.risk span strong { color: var(--warn); }
+
+  /* ---- recomendação final ---- */
+  .verdict { max-width: 1180px; margin: 0 auto; padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem); border-top: 1px solid var(--border); }
+  .verdict-card {
+    background: linear-gradient(155deg, var(--bg-1), var(--bg-2));
+    border: 1px solid var(--accent-dim); border-radius: 18px; padding: clamp(1.75rem, 5vw, 2.75rem);
+    display: grid; grid-template-columns: auto 1fr; gap: clamp(1.5rem, 4vw, 2.5rem); align-items: center;
+  }
+  .verdict-card svg { width: clamp(90px, 14vw, 130px); height: clamp(90px, 14vw, 130px); color: var(--accent); flex-shrink: 0; }
+  .verdict-card h2 { font-family: var(--font-display); font-size: clamp(1.3rem, 3vw, 1.7rem); margin-bottom: .6rem; }
+  .verdict-card p { color: var(--text-dim); font-size: .98rem; max-width: 68ch; }
+  .verdict-card p strong { color: var(--text); }
+
+  .site-footer {
+    max-width: 1180px; margin: 0 auto; padding: 3rem clamp(1.25rem, 5vw, 3rem) 4rem;
+    color: var(--text-dim); font-size: .85rem; border-top: 1px solid var(--border); margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .c-head { grid-template-columns: 1fr; }
+    .scale-row { justify-content: space-between; }
+    .verdict-card { grid-template-columns: 1fr; text-align: center; }
+    .verdict-card svg { margin: 0 auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SPRITE (símbolos de cor única, reusados via <use>) ============ -->
+<svg class="sprite" aria-hidden="true">
+  <defs>
+    <linearGradient id="heroGrad" x1="20" y1="90" x2="65" y2="10" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#CBFF5E"/>
+      <stop offset="100%" stop-color="#2F5C12"/>
+    </linearGradient>
+
+    <symbol id="sym-g" viewBox="0 0 100 100">
+      <path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/>
+      <path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-h" viewBox="0 0 100 100">
+      <path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/>
+      <path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-i" viewBox="0 0 100 100">
+      <path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/>
+      <path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/>
+      <path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="sym-j" viewBox="0 0 100 100">
+      <path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/>
+    </symbol>
+    <symbol id="sym-k" viewBox="0 0 100 100">
+      <path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+      <path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+      <path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/>
+    </symbol>
+
+    <symbol id="lockup-g" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+    </symbol>
+    <symbol id="lockup-h" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+    </symbol>
+    <symbol id="lockup-i" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+    </symbol>
+    <symbol id="lockup-j" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+    </symbol>
+    <symbol id="lockup-k" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="40" letter-spacing="5" fill="currentColor">NEOVERTIX</text>
+    </symbol>
+
+    <symbol id="lockup-g-lower" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="500" font-size="42" letter-spacing="-0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-h-lower" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="500" font-size="42" letter-spacing="-0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-i-lower" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="500" font-size="42" letter-spacing="-0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-j-lower" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="500" font-size="42" letter-spacing="-0.5" fill="currentColor">neovertix</text>
+    </symbol>
+    <symbol id="lockup-k-lower" viewBox="0 0 460 100">
+      <g transform="translate(4,9) scale(0.82)"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></g>
+      <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="500" font-size="42" letter-spacing="-0.5" fill="currentColor">neovertix</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Direção criativa · Neovertix — símbolo, rodada 2b (agente 2 de 2)</div>
+  <h1>5 novos candidatos — G a K. Um colega em paralelo cobre D, E, F.</h1>
+  <p>
+    Direção obrigatória pra todo o tabuleiro: monograma "N" afiado, plano (sem 3D/metálico),
+    variante hero <strong>bicolor</strong> — traços off-white com a parte que lê como pico/V
+    destacada em verde-limão, sólido ou em gradiente contido de verde. Wordmark em Manrope
+    500–600, mostrado em caixa alta com tracking largo e em caixa baixa. Fundo oficial off-black
+    <code>#0B0F0D</code> testado também sobre azul-escuro profundo <code>#0A0E1A</code>. Os cinco
+    candidatos abaixo são construções deliberadamente distintas entre si — nenhum reaproveita a
+    geometria de outro, nem a do painel de referência de estoque do dono.
+  </p>
+  <div class="brief-grid">
+    <div class="brief-card keep">
+      <h3>Mantido</h3>
+      <ul>
+        <li>Monograma N dominante, plano</li>
+        <li>Diagonais cortantes, massa sólida ou stroke preciso</li>
+        <li>Vértice/pico embutido na geometria, não decorado</li>
+        <li>Terminais em corte angular (exceto I, ponta afiada de propósito)</li>
+      </ul>
+    </div>
+    <div class="brief-card avoid">
+      <h3>Evitado</h3>
+      <ul>
+        <li>Gradiente azul-roxo, metálico, 3D</li>
+        <li>Seta literal colada no traço</li>
+        <li>Contorno hexágono, escudo ou ribbon</li>
+        <li>Clone 1:1 da referência de estoque do painel</li>
+      </ul>
+    </div>
+  </div>
+  <nav class="masthead-nav">
+    <a href="#cand-g">G — Vetor</a>
+    <a href="#cand-h">H — Notch</a>
+    <a href="#cand-i">I — Itálico</a>
+    <a href="#cand-j">J — Traço Único</a>
+    <a href="#cand-k">K — Blueprint</a>
+    <a href="#veredito">Recomendação</a>
+  </nav>
+</header>
+
+<!-- ============================================================ CANDIDATO G ============================================================ -->
+<section class="candidate" id="cand-g">
+  <div class="c-head">
+    <div class="c-letter">G</div>
+    <div>
+      <div class="c-name">Vetor</div>
+      <div class="c-desc">A fenda de espaço negativo como protagonista: um canal quase constante entre o pico e a haste desenha um vetor/raio ascendente nítido dentro do N.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Hero bicolor — off-white + pico em verde</div>
+    <div class="hero-row">
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M58,30 L84,16 L90,86 L70,86 Z" fill="var(--text)"/>
+          <path d="M14,86 L42,16 L58,86 Z" fill="var(--accent)"/>
+        </svg>
+        <span>Variante A · verde sólido</span>
+      </div>
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M58,30 L84,16 L90,86 L70,86 Z" fill="var(--text)"/>
+          <path d="M14,86 L42,16 L58,86 Z" fill="url(#heroGrad)"/>
+        </svg>
+        <span>Variante B · gradiente lima→verde profundo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><figcaption>Acento-dim #6E8A24 · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup — caixa alta e caixa baixa</div>
+    <div class="lockup-row">
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-g"/></svg><span>NEOVERTIX · caps, tracking largo</span></div>
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-g-lower"/></svg><span>neovertix · caixa baixa</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Fundo — off-black vs. azul-escuro</div>
+    <div class="bg-test-row">
+      <div class="bg-test-tile tile-black"><svg viewBox="0 0 100 100"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>#0B0F0D</span></div>
+      <div class="bg-test-tile tile-blue"><svg viewBox="0 0 100 100"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg><span>#0A0E1A</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><path d="M14,86 L42,16 L58,86 Z" fill="currentColor"/><path d="M58,30 L84,16 L90,86 L70,86 Z" fill="currentColor"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Duas formas sólidas só — pico e haste — ligadas por um canal quase constante (16 a 20 unidades), não por um V que fecha a zero: o corte lê como vetor reto atravessando o N, não como sobra triangular.</span></li>
+      <li><span>Ápice único e afiado, sem platô: contraste deliberado com H (que tem o entalhe) — silhueta mais compacta e mais "seta" do bloco todo.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> o canal reto pode, em tamanhos muito pequenos e telas de baixa densidade, colapsar visualmente com a diagonal natural da haste — vale testar em favicon real de 16×16px antes de finalizar.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO H ============================================================ -->
+<section class="candidate" id="cand-h">
+  <div class="c-head">
+    <div class="c-letter">H</div>
+    <div>
+      <div class="c-name">Notch</div>
+      <div class="c-desc">Ápice truncado com notch de vértice: o pico não termina em ponta, termina num micro-platô cortado por um pequeno entalhe — o detalhe ownable da marca.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Hero bicolor — off-white + pico em verde</div>
+    <div class="hero-row">
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M78,26 L94,26 L94,86 L78,86 Z" fill="var(--text)"/>
+          <path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="var(--accent)"/>
+        </svg>
+        <span>Variante A · verde sólido</span>
+      </div>
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M78,26 L94,26 L94,86 L78,86 Z" fill="var(--text)"/>
+          <path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="url(#heroGrad)"/>
+        </svg>
+        <span>Variante B · gradiente lima→verde profundo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><figcaption>Acento-dim #6E8A24 · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup — caixa alta e caixa baixa</div>
+    <div class="lockup-row">
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-h"/></svg><span>NEOVERTIX · caps, tracking largo</span></div>
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-h-lower"/></svg><span>neovertix · caixa baixa</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Fundo — off-black vs. azul-escuro</div>
+    <div class="bg-test-row">
+      <div class="bg-test-tile tile-black"><svg viewBox="0 0 100 100"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>#0B0F0D</span></div>
+      <div class="bg-test-tile tile-blue"><svg viewBox="0 0 100 100"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg><span>#0A0E1A</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><path d="M16,86 L42,24 L48,18 L44,28 L52,20 L58,26 L68,86 Z" fill="currentColor"/><path d="M78,26 L94,26 L94,86 L78,86 Z" fill="currentColor"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Duplo-pico com entalhe é peça única no tabuleiro: ~10 unidades de recuo, ~14% da altura ativa — dimensionado pra sobreviver a 16px como uma marca de luz visível no topo.</span></li>
+      <li><span>Haste em corte reto simples contrasta de propósito com o pico mais elaborado — dá ao olho um lugar pra "descansar", evita que o símbolo inteiro pareça ruído.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> é o candidato com mais pontos de ancoragem (7 no contorno do pico) — em reprodução ruim (carimbo, bordado grosso) o entalhe pode sumir primeiro; vale ter uma variante simplificada sem o notch como reserva pra esses usos.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO I ============================================================ -->
+<section class="candidate" id="cand-i">
+  <div class="c-head">
+    <div class="c-letter">I</div>
+    <div>
+      <div class="c-name">Itálico</div>
+      <div class="c-desc">N em itálico agressivo: slant forte, pontas ultra-afiadas nos dois extremos de cada traço, sensação de velocidade — o mais dinâmico do tabuleiro.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Hero bicolor — off-white + diagonal em verde</div>
+    <div class="hero-row">
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M24,88 L44,48 L34,12 L14,52 Z" fill="var(--text)"/>
+          <path d="M70,12 L90,48 L80,88 L60,52 Z" fill="var(--text)"/>
+          <path d="M46,12 L86,50 L76,88 L36,50 Z" fill="var(--accent)"/>
+        </svg>
+        <span>Variante A · verde sólido</span>
+      </div>
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M24,88 L44,48 L34,12 L14,52 Z" fill="var(--text)"/>
+          <path d="M70,12 L90,48 L80,88 L60,52 Z" fill="var(--text)"/>
+          <path d="M46,12 L86,50 L76,88 L36,50 Z" fill="url(#heroGrad)"/>
+        </svg>
+        <span>Variante B · gradiente lima→verde profundo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><figcaption>Acento-dim #6E8A24 · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup — caixa alta e caixa baixa</div>
+    <div class="lockup-row">
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-i"/></svg><span>NEOVERTIX · caps, tracking largo</span></div>
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-i-lower"/></svg><span>neovertix · caixa baixa</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Fundo — off-black vs. azul-escuro</div>
+    <div class="bg-test-row">
+      <div class="bg-test-tile tile-black"><svg viewBox="0 0 100 100"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>#0B0F0D</span></div>
+      <div class="bg-test-tile tile-blue"><svg viewBox="0 0 100 100"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg><span>#0A0E1A</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/><path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/><path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Três losangos com pontas afiadas nos dois extremos, fundidos por sobreposição — nenhum corte reto no símbolo inteiro, é o único candidato 100% "ponta", consistente com a proposta de velocidade.</span></li>
+      <li><span>Slant assimétrico (perna esquerda mais fechada, direita mais aberta) evita a leitura de itálico de fonte genérica — a inclinação é desenhada, não é um transform uniforme.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> é o candidato menos "flat/big tech" dos cinco — losangos sobrepostos podem ler mais perto de marca de e-sport/gaming do que de operações B2B; testar ao lado da wordmark antes de decidir.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO J ============================================================ -->
+<section class="candidate" id="cand-j">
+  <div class="c-head">
+    <div class="c-letter">J</div>
+    <div>
+      <div class="c-name">Traço Único</div>
+      <div class="c-desc">O N desenhado como um caminho único que dobra no ápice — uma linha grossa que sobe, quebra no vértice e desce. Minimalismo de um gesto só.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Hero bicolor — off-white + descida (V) em verde</div>
+    <div class="hero-row">
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M16,84 L48,18" fill="none" stroke="var(--text)" stroke-width="18" stroke-linecap="round"/>
+          <path d="M48,18 L86,84" fill="none" stroke="var(--accent)" stroke-width="18" stroke-linecap="round"/>
+        </svg>
+        <span>Variante A · verde sólido</span>
+      </div>
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M16,84 L48,18" fill="none" stroke="var(--text)" stroke-width="18" stroke-linecap="round"/>
+          <path d="M48,18 L86,84" fill="none" stroke="url(#heroGrad)" stroke-width="18" stroke-linecap="round"/>
+        </svg>
+        <span>Variante B · gradiente lima→verde profundo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><figcaption>Acento-dim #6E8A24 · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup — caixa alta e caixa baixa</div>
+    <div class="lockup-row">
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-j"/></svg><span>NEOVERTIX · caps, tracking largo</span></div>
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-j-lower"/></svg><span>neovertix · caixa baixa</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Fundo — off-black vs. azul-escuro</div>
+    <div class="bg-test-row">
+      <div class="bg-test-tile tile-black"><svg viewBox="0 0 100 100"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>#0B0F0D</span></div>
+      <div class="bg-test-tile tile-blue"><svg viewBox="0 0 100 100"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg><span>#0A0E1A</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><path d="M16,84 L48,18 L86,84" fill="none" stroke="currentColor" stroke-width="18" stroke-linejoin="bevel" stroke-linecap="butt"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Um &lt;path&gt; só, sem segunda forma: é a leitura mais literal e mais reduzida do painel de referência do dono — o gesto do pico basta pra ser a marca inteira.</span></li>
+      <li><span>Vértice em chanfro (bevel), não em ponta-de-agulha: mantém o vocabulário de "corte angular" da marca sem o miter estourar pra fora do grid num ângulo de ~54°.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> troca legibilidade literal de "N" por força gestual — sozinho, sem a wordmark ao lado, pode ler como check/chevron antes de ler como N; é uma aposta de marca (tipo Nike), não uma leitura garantida.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO K ============================================================ -->
+<section class="candidate" id="cand-k">
+  <div class="c-head">
+    <div class="c-letter">K</div>
+    <div>
+      <div class="c-name">Blueprint</div>
+      <div class="c-desc">O contraponto: mesma família construtiva de pico + haste, mas em stroke fino e preciso — não sólido. Geometria de blueprint, dá amplitude ao tabuleiro.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Hero bicolor — off-white + pico em verde</div>
+    <div class="hero-row">
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="var(--text)" stroke-width="8" stroke-linejoin="miter"/>
+          <path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linejoin="miter"/>
+          <path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="var(--accent)" stroke-width="8" stroke-linejoin="miter"/>
+        </svg>
+        <span>Variante A · verde sólido</span>
+      </div>
+      <div class="hero-bicolor-tile">
+        <svg viewBox="0 0 100 100">
+          <path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="var(--text)" stroke-width="8" stroke-linejoin="miter"/>
+          <path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="url(#heroGrad)" stroke-width="8" stroke-linejoin="miter"/>
+          <path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="url(#heroGrad)" stroke-width="8" stroke-linejoin="miter"/>
+        </svg>
+        <span>Variante B · gradiente lima→verde profundo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><figcaption>Acento-dim #6E8A24 · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup — caixa alta e caixa baixa</div>
+    <div class="lockup-row">
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-k"/></svg><span>NEOVERTIX · caps, tracking largo</span></div>
+      <div class="lockup-tile"><svg viewBox="0 0 460 100"><use href="#lockup-k-lower"/></svg><span>neovertix · caixa baixa</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Fundo — off-black vs. azul-escuro</div>
+    <div class="bg-test-row">
+      <div class="bg-test-tile tile-black"><svg viewBox="0 0 100 100"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>#0B0F0D</span></div>
+      <div class="bg-test-tile tile-blue"><svg viewBox="0 0 100 100"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg><span>#0A0E1A</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><path d="M12,86 L34,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M56,86 L74,86 L48,16 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/><path d="M84,30 L94,30 L94,86 L80,86 Z" fill="none" stroke="currentColor" stroke-width="8" stroke-linejoin="miter"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Mesma construção de pico + haste do G, mas 100% contorno (stroke 8, contra massas de 16–22 unidades dos outros) — dá contraste de peso ao tabuleiro inteiro, não só a este candidato.</span></li>
+      <li><span>Vão generoso entre pico e haste (~30 unidades no topo) é proposital: reforça a leitura "desenho técnico, espaçado" — função de contraponto, não de ícone principal do dia a dia.</span></li>
+      <li class="risk"><span><strong>Risco honesto:</strong> stroke fino é o mais frágil dos cinco em superfícies pequenas ou de baixo contraste (bordado, gravação a laser, favicon em tela não-retina) — bom em apresentações e materiais impressos grandes, arriscado como ícone de app sozinho.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ RECOMENDAÇÃO ============================================================ -->
+<section class="verdict" id="veredito">
+  <div class="section-label">Recomendação — combinação mais "big tech"</div>
+  <div class="verdict-card">
+    <svg viewBox="0 0 100 100">
+      <path d="M58,30 L84,16 L90,86 L70,86 Z" fill="var(--text)"/>
+      <path d="M14,86 L42,16 L58,86 Z" fill="url(#heroGrad)"/>
+    </svg>
+    <div>
+      <h2>G "Vetor" · gradiente lima→verde profundo · caixa alta · sobre off-black #0B0F0D</h2>
+      <p>
+        Entre os cinco, <strong>G</strong> é o que melhor equilibra as duas metades do briefing: silhueta
+        limpa o bastante pra funcionar como app icon (2 formas só, sem entalhe pra perder em reprodução
+        ruim, ao contrário de H), e ainda assim com um detalhe conceitual defensável — o canal reto entre
+        pico e haste, não uma sobra de V — que dá história pra contar em pitch sem precisar de slide extra.
+        A variante <strong>gradiente</strong> (não a sólida) é a mais "big tech": o degradê lima→verde
+        profundo dá profundidade sem virar 3D/metálico, e cai bem tanto no favicon quanto num hero grande de
+        site. Reserva direta: <strong>K "Blueprint"</strong>, mesma família construtiva, pra materiais onde
+        o peso do G for pesado demais (assinatura de e-mail, papelaria).
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  Neovertix — símbolo, rodada 2b, agosto de 2026. G–K construídos em paralelo aos candidatos D, E, F
+  (outro agente); nenhuma geometria compartilhada entre os dois blocos.
+</footer>
+
+</body>
+</html>

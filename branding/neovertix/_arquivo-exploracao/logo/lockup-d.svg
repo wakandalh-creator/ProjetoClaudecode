@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100" fill="none">
+  <!-- NEOVERTIX — Lockup D "Fenda". Símbolo (grid 100x100, escala .82) + wordmark Manrope 600 minúsculo (rodada 2: substitui JetBrains Mono, ver seção Wordmark de opcoes-2.html). -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z M58,20 L74,20 L88,86 L72,86 Z" fill="currentColor"/>
+  </g>
+  <text x="112" y="63" font-family="'Manrope', sans-serif" font-weight="600" font-size="50" letter-spacing="0.5" fill="currentColor">neovertix</text>
+</svg>

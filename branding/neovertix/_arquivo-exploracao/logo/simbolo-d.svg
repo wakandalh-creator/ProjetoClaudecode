@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo D "Fenda" (v2 — interpretação direta do painel
+    "pico-que-vira-N": ápice sólido no topo, duas pernas caem dele formando
+    um V/Λ, uma terceira haste semi-vertical fecha a leitura de N à direita.
+    Geometria, proporções e cortes abaixo são nossos — não copiados de
+    nenhum asset de estoque; ver racional de originalidade no rodapé.
+    Grid: quadrado 100x100, base 10. Altura ativa 14–86, largura ativa 18–92.
+    Construção (3 triângulos/cunhas independentes, sem sobreposição —
+    3 fendas de espaço negativo finas separam os 3 traços):
+      - Traço 1 (perna esquerda do ápice): 18,86 -> 34,86 -> 50,14 -> Z.
+        Base plana (corte angular, não arredondado) de 16 unidades, sobe
+        até o ápice único em 50,14.
+      - Traço 2 (perna direita do ápice = diagonal do N): 58,86 -> 74,86 ->
+        50,14 -> Z. Nasce no MESMO ápice (50,14) — os traços 1 e 2 se tocam
+        só nesse ponto e abrem pra baixo: a fenda entre eles é 0 no topo e
+        cresce até 24 unidades na base (58-34) — um V nítido no vazio,
+        não decorado por cima, é a folga entre as duas pernas do próprio Λ.
+        Isso é o que faz o símbolo ler como N, Λ e V ao mesmo tempo.
+      - Traço 3 (haste semi-vertical, fecha o N): 58,20 -> 74,20 -> 88,86 ->
+        72,86 -> Z. Nasce logo abaixo do garfo do ápice e desce quase reta
+        (inclinação bem mais suave que a diagonal do traço 2) — contraste
+        deliberado que faz o olho ler "haste vertical", não "terceira
+        lâmina solta". A fenda com o traço 2 fica fina e constante (2 a 6
+        unidades) do topo à base, então as três massas leem como um N só —
+        a v1 deste símbolo tinha a haste começando na metade da altura e
+        sem seguir a inclinação da diagonal, o que lia como duas letras
+        separadas ("AI") em vez de um N; corrigido aqui.
+    Uso: fill="currentColor" — herda a cor do contêiner (acento / branco / preto).
+  -->
+  <path d="M18,86 L34,86 L50,14 Z M58,86 L74,86 L50,14 Z M58,20 L74,20 L88,86 L72,86 Z" fill="currentColor"/>
+</svg>

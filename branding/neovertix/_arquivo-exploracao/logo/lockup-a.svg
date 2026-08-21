@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100" fill="none">
+  <!-- NEOVERTIX — Lockup A "Cunha". Símbolo (grid 100x100, escala .82) + wordmark JetBrains Mono 700. -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M16,88 L44,24 L66,14 L80,88" stroke="currentColor" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
+    <path d="M16,88 L16,32" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <text x="112" y="66" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="58" letter-spacing="-2" fill="currentColor">Neovertix</text>
+</svg>

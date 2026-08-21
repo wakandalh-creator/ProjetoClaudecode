@@ -8,7 +8,8 @@
     "insights": "Monitor/Insights",
     "profiles": "Monitor/Perfis",
     "daily_moc": "Monitor/Daily",
-    "book_frameworks": "Monitor/Frameworks"
+    "book_frameworks": "Monitor/Frameworks",
+    "video_learnings": "Monitor/Aprendizados"
   },
   "tags": {
     "base": ["monitor", "ia"],
@@ -16,7 +17,8 @@
     "content_ideas": ["ideia-conteudo", "instagram"],
     "insights": ["insight", "estrategia"],
     "profiles": ["perfil", "instagram"],
-    "book_frameworks": ["framework", "livro"]
+    "book_frameworks": ["framework", "livro"],
+    "video_learnings": ["aprendizado", "video"]
   },
   "min_relevance_to_export": "medio",
   "notes": "Altere 'vault_path' para o caminho real do seu vault Obsidian. O sistema criará as subpastas automaticamente se não existirem."

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo I "Itálico" (rodada 2 — o mais dinâmico do tabuleiro)
+    Conceito: N clássico de 3 traços (perna esquerda, diagonal, perna
+    direita), mas cada traço é um losango/lâmina — largo no meio, afiado nas
+    DUAS pontas (topo e base), em vez de corte reto — e o conjunto inteiro
+    carrega um slant italico forte (~15–18° da vertical). O resultado lê
+    como um N desenhado a golpes de régua em alta velocidade: pontas que
+    picam, nunca terminam em corte plano. É o único candidato do bloco G–K
+    que quebra a regra geral de "terminal em corte angular reto" — aqui o
+    terminal É a ponta, de propósito, porque a direção pedida para este
+    candidato especificamente é velocidade, não precisão.
+    Geometria própria — nenhum ponto copiado de asset de estoque.
+    Grid: quadrado 100x100, base 10. Altura ativa 12–88, largura ativa 14–90.
+    Construção (3 losangos independentes, sobrepostos nas pontas pra
+    fundir num N só — a sobreposição é proposital, não erro de registro):
+      - Perna esquerda: 24,88 -> 44,48 -> 34,12 -> 14,52 -> Z. Ponta inferior
+        (24,88), ponta superior (34,12) — desloca a lâmina ~10 unidades pra
+        a direita subindo, isso é o slant.
+      - Diagonal (a peça que lê como "V" do N — elegível para destaque verde
+        no hero bicolor): 46,12 -> 86,50 -> 76,88 -> 36,50 -> Z. Cruza do
+        canto superior-esquerdo ao inferior-direito, se funde com as duas
+        pernas nas zonas de sobreposição (36–44 à esquerda, 60–76 à
+        direita).
+      - Perna direita: 70,12 -> 90,48 -> 80,88 -> 60,52 -> Z.
+    Uso: fill="currentColor". Pernas = off-white no hero bicolor; diagonal =
+    destaque verde.
+  -->
+  <path d="M24,88 L44,48 L34,12 L14,52 Z" fill="currentColor"/>
+  <path d="M46,12 L86,50 L76,88 L36,50 Z" fill="currentColor"/>
+  <path d="M70,12 L90,48 L80,88 L60,52 Z" fill="currentColor"/>
+</svg>

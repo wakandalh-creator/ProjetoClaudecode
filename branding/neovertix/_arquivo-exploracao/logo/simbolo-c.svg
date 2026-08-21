@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo C "Fusão"
+    Conceito: marca de convergência destilada ao mínimo — sem nós, sem linhas
+    finas, sem diagrama de rede (o símbolo anterior, rejeitado).
+    Grid: quadrado 100x100, base 10.
+    Construção: 3 lâminas triangulares sólidas, todas nascendo do MESMO ponto
+    único em 50,88 (o vértice) e abrindo em três larguras/alturas diferentes —
+    nunca um leque simétrico, nunca um asterisco/sparkle (as lâminas convergem
+    só para baixo, não irradiam em todas as direções):
+      - Lâmina esquerda:  50,88 -> 14,32 -> 36,20
+      - Lâmina central:   50,88 -> 44,8  -> 58,10   (mais alta e mais estreita)
+      - Lâmina direita:   50,88 -> 64,18 -> 86,34
+    As três se tocam apenas no vértice — a convergência de canais (WhatsApp,
+    Instagram, formulário) virando um único ponto de resposta, sem ilustrar o
+    processo, só o resultado.
+    Uso: fill="currentColor" — herda a cor do contêiner (acento / branco / preto).
+  -->
+  <path d="M50,88 L14,32 L36,20 Z M50,88 L44,8 L58,10 Z M50,88 L64,18 L86,34 Z"
+        fill="currentColor"/>
+</svg>

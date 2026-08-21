@@ -1,19 +1,45 @@
 {
-  "version": 1,
+  "version": 2,
   "owner": "Lucas",
-  "positioning": "Em definição — especialista em IA, automação e crescimento digital",
+  "brand": "Neovertix",
+  "positioning": "Para PMEs e empreendedores digitais brasileiros que perdem vendas por atendimento lento e processos manuais, a Neovertix é a agência de operações com IA que implementa atendimento, SDR e CRM automatizados em semanas — não trimestres. Diferente de agências de marketing tradicionais e consultorias de IA genéricas, colocamos o sistema rodando antes de fechar contrato, com o fundador escrevendo o código.",
+  "category": "agência de operações com IA",
+  "promise": "Colocamos IA para atender e vender por você — rápido, sem parecer robô.",
   "possible_niches": [
-    "automação com IA",
-    "Claude Code e agentes IA",
-    "marketing digital com IA",
-    "growth hacking",
-    "SaaS",
-    "produtividade e workflows"
+    "operações com IA (atendimento, SDR, CRM automatizados)",
+    "automação com IA para PMEs",
+    "agentes de IA e Claude Code",
+    "marketing digital com IA"
   ],
-  "target_audience": "Empreendedores digitais, criadores de conteúdo e agências que querem escalar com IA",
-  "content_goal": "Descobrir posicionamento + construir autoridade + aquisição de clientes",
-  "tone": "Direto, prático, orientado a resultados, sem jargão técnico desnecessário",
-  "offers": [],
-  "avoid_topics": [],
-  "notes": "Preencha 'offers' com seus produtos/serviços atuais e 'avoid_topics' com temas que não quer abordar. Isso melhora a qualidade das sugestões do Módulo 6."
+  "target_audience": "ICP primário: dono de PME brasileira (5-50 funcionários) em serviços, e-commerce, clínicas, imobiliárias ou educação, com volume de leads (WhatsApp/Instagram/formulário) mas perdendo venda por demora. ICP secundário: criadores/infoprodutores que escalaram audiência mas não atendimento; pequenas agências (white-label).",
+  "content_goal": "Build in public + autoridade técnica (arquétipo Mágico: demo ao vivo, nunca só slide) + aquisição de clientes para o Piloto Vértice",
+  "tone": "Direto ('Seu comercial responde em 30 segundos'), técnico sem jargão ('O agente lê a mensagem, consulta o CRM e responde'), honesto sobre onde estamos ('Somos novos nisso — e construímos junto com você'), sóbrio sem gritar (nada de caps/🚀), orientado a número ('De 4h de triagem manual pra 15 minutos')",
+  "brand_lexicon": ["vértice", "construímos", "roda sozinho", "responde em [tempo]", "mecanismo", "fluxo", "testado — não prometido", "entrega"],
+  "banned_words": ["revolucionar", "turbinar", "o futuro chegou", "funcionário digital que não dorme", "disruptivo", "sinergia", "potencializar", "ecossistema", "game changer", "vale por N humanos"],
+  "taglines": {
+    "institucional": "A gente constrói, não promete.",
+    "comercial": "em iteração — candidatos rodada 3: 'Construímos o ápice, não o enfeite' | 'Roda sozinho' | 'Todo lead vira faturamento' | 'Demora não é sua cultura. É sua falta de sistema' | 'O negócio roda. Você decide'"
+  },
+  "offers": [
+    {
+      "name": "Piloto Vértice",
+      "type": "entrada",
+      "price": "R$ 1.900 setup único (Programa Fundador: R$ 900)",
+      "scope": "2-4 semanas, 1 canal (WhatsApp ou Instagram), atendimento IA OU SDR IA + CRM simples, métrica combinada com garantia de 30% de melhora ou devolução total"
+    },
+    {
+      "name": "Operação Vértice",
+      "type": "core",
+      "price": "R$ 4.500 setup + R$ 1.200/mês",
+      "scope": "2 canais integrados, atendimento IA + SDR IA juntos, CRM configurado, manutenção mensal"
+    },
+    {
+      "name": "Vértice Full",
+      "type": "premium",
+      "price": "a partir de R$ 9.000 setup + R$ 2.800/mês",
+      "scope": "stack completo: site/landing page + atendimento + SDR + CRM, canais múltiplos, reunião estratégica mensal"
+    }
+  ],
+  "avoid_topics": ["promessas de milagre/receita garantida", "comparação 'vale por N humanos'", "hype genérico de IA sem demonstração"],
+  "notes": "Destilado de branding/neovertix/ (01-estrategia, 02-oferta, 03-hooks-slogans) em 2026-08-05. Fonte de verdade da marca: branding/neovertix/. Memória viva de tom: 'Social mídia IA/_context/tom-de-voz.md'."
 }

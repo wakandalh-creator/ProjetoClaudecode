@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100">
+  <!-- NEOVERTIX — Lockup B "Vetor". Símbolo (grid 100x100, escala .82) + wordmark JetBrains Mono 700. -->
+  <g transform="translate(4,9) scale(0.82)">
+    <path d="M20,88 L80,88 L66,14 L48,44 L59,51 L34,66 Z M60,30 L70,42 L56,44 Z"
+          fill="currentColor" fill-rule="evenodd"/>
+  </g>
+  <text x="112" y="66" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="58" letter-spacing="-2" fill="currentColor">Neovertix</text>
+</svg>

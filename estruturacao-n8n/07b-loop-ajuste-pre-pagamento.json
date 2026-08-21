@@ -1,0 +1,176 @@
+{
+  "name": "07b-loop-ajuste-pre-pagamento",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Como este loop funciona\n1. Ana (07) detecta pedido de ajuste e chama este workflow.\n2. Aqui só se AVISA o Lucas (não é aprovação — é uma tarefa: ir ajustar o site).\n3. O workflow fica pausado esperando o webhook `ajuste-concluido` — chamado manualmente (ou por um script curto) depois do rebuild (Etapa 5 manual, skill `landing`) e redeploy (Vercel).\n4. Ao retomar, manda o link atualizado de volta ao prospect e encerra — a conversa continua com a Ana normalmente a partir da próxima mensagem do cliente (webhook de 07).",
+        "height": 260,
+        "width": 380
+      },
+      "id": "a9999999-1111-4111-8111-111111111901",
+      "name": "Sticky - como funciona",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1120,
+        480
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "a9999999-1111-4111-8111-111111111902",
+      "name": "Recebe pedido de ajuste",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -1120,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "SUBSTITUIR-PELO-CHAT-ID-DO-FUNDADOR",
+        "text": "={{ 'Pedido de ajuste ANTES do pagamento — ' + ($json.nome || $json.telefone) + '\\n\\nMensagem do prospect: ' + $json.mensagem_recebida + '\\n\\nAção: ajustar o site (Claude Code + skill landing), redeploy no Vercel, e chamar o webhook de retomada com o novo link (ver README).\\n\\nLembrete: essa é a única rodada de ajuste gratuita antes do pagamento — ajustes depois de pago entram na garantia da manutenção recorrente.' }}",
+        "additionalFields": {}
+      },
+      "id": "a9999999-1111-4111-8111-111111111903",
+      "name": "Telegram - avisar Fundador (ação necessária)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        -900,
+        300
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "PLACEHOLDER",
+          "name": "telegram-bot-fundador"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "options": {
+          "webhookSuffix": "ajuste-concluido"
+        }
+      },
+      "id": "a9999999-1111-4111-8111-111111111904",
+      "name": "Aguardar ajuste concluído (Wait webhook)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -680,
+        300
+      ],
+      "webhookId": "SUBSTITUIR-APOS-IMPORTAR"
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nConfirmar, na UI do n8n, o nome exato da expressão pra pegar a URL de retomada deste Wait node (varia por versão — algo como `{{ $execution.resumeUrl }}`). Ela deveria ter sido incluída na mensagem do Telegram acima, mas como não dá pra validar aqui, adicione manualmente depois de importar.",
+        "height": 160,
+        "width": 320
+      },
+      "id": "a9999999-1111-4111-8111-111111111905",
+      "name": "Sticky - resume URL",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -680,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// O body do webhook de retomada deve trazer { link_vercel_atualizado: \"...\" }.\nconst item = $input.item.json;\nconst body = item.body || {};\nitem.link_vercel = body.link_vercel_atualizado || item.link_vercel;\nitem._msg_reapresentacao = `Prontinho, ${(item.nome || '').split(' ')[0]}! Ajustei conforme combinamos. 😊\\n\\nDá uma olhada de novo aqui: ${item.link_vercel}\\n\\nFicou como você queria?`;\nreturn { json: item };"
+      },
+      "id": "a9999999-1111-4111-8111-111111111906",
+      "name": "Montar reapresentação",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/SUBSTITUIR-PHONE-NUMBER-ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.telefone, type: 'text', text: { body: $json._msg_reapresentacao } }) }}",
+        "options": {}
+      },
+      "id": "a9999999-1111-4111-8111-111111111907",
+      "name": "Reenviar link atualizado ao prospect",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -240,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "whatsapp-business-api"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Recebe pedido de ajuste": {
+      "main": [
+        [
+          {
+            "node": "Telegram - avisar Fundador (ação necessária)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram - avisar Fundador (ação necessária)": {
+      "main": [
+        [
+          {
+            "node": "Aguardar ajuste concluído (Wait webhook)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aguardar ajuste concluído (Wait webhook)": {
+      "main": [
+        [
+          {
+            "node": "Montar reapresentação",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar reapresentação": {
+      "main": [
+        [
+          {
+            "node": "Reenviar link atualizado ao prospect",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

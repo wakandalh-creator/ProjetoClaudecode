@@ -24,6 +24,11 @@ Checks:
   9. Has responsive @media at 900px AND 580px
   10. Has <h1> (exactly one) and <h2> (one or more)
   11. CTA uses <button> or <a> (not <div> with onclick)
+  12. CDN <script> tags carry SRI (integrity + crossorigin)
+  13. No unscoped shared-class selectors in gsap calls (a bare ".cls" selector
+      matching >1 element hides copies the timeline never reveals)
+  14. Has <meta name="description">; og:title + og:description (WARN)
+  15. prefers-reduced-motion handled (WARN)
 
 NO LLM CALLS. Pure regex + line scan.
 
@@ -48,6 +53,10 @@ SAMPLE_PASS_HTML = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quill AI — Async Standup Tool</title>
+  <meta name="description" content="Quill AI is the async standup tool for remote engineering teams who hate Zoom — collect updates automatically and keep shipping.">
+  <meta property="og:title" content="Quill AI — Async Standup Tool">
+  <meta property="og:description" content="Async standups for remote engineering teams.">
+  <meta property="og:type" content="website">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root { --navy: #0A1628; --teal: #00D4AA; }
@@ -57,6 +66,7 @@ SAMPLE_PASS_HTML = """<!DOCTYPE html>
     .closing-cta { padding: 120px 24px; background: var(--navy); }
     @media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 580px) { .features-grid { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: reduce) { .scroll-down { animation: none; } }
   </style>
 </head>
 <body>
@@ -78,13 +88,15 @@ SAMPLE_PASS_HTML = """<!DOCTYPE html>
     <h2>Stop scheduling. Start shipping.</h2>
     <a class="btn-primary" href="/signup">Start free</a>
   </section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE" crossorigin="anonymous"></script>
   <script>
-    gsap.set([".eyebrow", ".hero h1", ".subtitle", ".btn-primary"], { opacity: 0, y: 30 });
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-    tl.to(".eyebrow", { opacity: 1, y: 0, duration: 0.6 })
-      .to(".hero h1", { opacity: 1, y: 0, duration: 0.8 }, "-=0.3");
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      gsap.set([".hero .eyebrow", ".hero h1", ".hero .subtitle", ".hero .btn-primary"], { opacity: 0, y: 30 });
+      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+      tl.to(".hero .eyebrow", { opacity: 1, y: 0, duration: 0.6 })
+        .to(".hero h1", { opacity: 1, y: 0, duration: 0.8 }, "-=0.3");
+    }
   </script>
 </body>
 </html>
@@ -124,7 +136,7 @@ def validate(html: str) -> Dict[str, Any]:
     if re.search(r"<html\s+[^>]*lang=", html, re.IGNORECASE):
         add("html-lang", "PASS", "<html> has lang attribute")
     else:
-        add("html-lang", "WARN", "<html> missing lang attribute (accessibility)")
+        add("html-lang", "FAIL", "<html> missing lang attribute (must match copy language, e.g. pt-BR)")
 
     # Rule 2: viewport meta
     if re.search(r'<meta\s+[^>]*name=["\']viewport["\']', html, re.IGNORECASE):
@@ -233,6 +245,56 @@ def validate(html: str) -> Dict[str, Any]:
         add("cta-semantic", "FAIL", f"<div> with onclick detected ({len(div_onclick)} found) — use <button> or <a>")
     else:
         add("cta-semantic", "PASS", "No <div onclick> patterns (buttons/links used semantically)")
+
+    # Rule 12: SRI on CDN scripts
+    cdn_scripts = re.findall(
+        r'<script[^>]+src=["\'][^"\']*(?:cdnjs\.cloudflare\.com|unpkg\.com)[^"\']*["\'][^>]*>',
+        html, re.IGNORECASE)
+    missing_sri = [s for s in cdn_scripts if "integrity=" not in s or "crossorigin" not in s]
+    if cdn_scripts and missing_sri:
+        add("cdn-sri", "FAIL", f"{len(missing_sri)} CDN script(s) missing integrity/crossorigin (SRI)")
+    elif cdn_scripts:
+        add("cdn-sri", "PASS", "All CDN scripts carry SRI (integrity + crossorigin)")
+
+    # Rule 13: hidden-but-never-revealed gsap selectors. The dry-run bug: a bare
+    # ".cls" in gsap.set() hides EVERY element with that class, but the reveal
+    # animation targets a scoped variant (".hero .cls"), leaving the other
+    # copies permanently invisible. A bare selector in set() is fine only if
+    # the SAME bare selector also appears in a reveal call (tl.to /
+    # ScrollTrigger.batch), as with ".feature-card".
+    orphaned = set()
+    for group in re.findall(r'gsap\.set\s*\(\s*(\[[^\]]*\]|"[^"]+"|\'[^\']+\')', html):
+        for sel in re.findall(r'["\']([^"\']+)["\']', group):
+            sel = sel.strip()
+            if re.fullmatch(r"\.[A-Za-z][\w-]*", sel):  # bare single class, no scoping
+                cls = re.escape(sel[1:])
+                multi_match = len(re.findall(r'class=["\'][^"\']*\b' + cls + r'\b', html)) > 1
+                revealed_same = (html.count(f'"{sel}"') + html.count(f"'{sel}'")) >= 2
+                if multi_match and not revealed_same:
+                    orphaned.add(sel)
+    if orphaned:
+        add("gsap-selector-scope", "FAIL",
+            f"gsap.set() hides multiple elements via {sorted(orphaned)} but never reveals them with the same selector — scope both set() and reveal with the section class (e.g. .hero .btn-primary)")
+    else:
+        add("gsap-selector-scope", "PASS", "No gsap.set() selector hides elements it never reveals")
+
+    # Rule 14: meta description + OG tags
+    if re.search(r'<meta\s+[^>]*name=["\']description["\']', html, re.IGNORECASE):
+        add("meta-description", "PASS", "Meta description present")
+    else:
+        add("meta-description", "FAIL", "Missing <meta name='description'> (SEO baseline)")
+    og_missing = [p for p in ("og:title", "og:description")
+                  if not re.search(r'property=["\']' + p + r'["\']', html, re.IGNORECASE)]
+    if og_missing:
+        add("og-tags", "WARN", f"Missing Open Graph tag(s): {og_missing}")
+    else:
+        add("og-tags", "PASS", "og:title + og:description present")
+
+    # Rule 15: reduced motion
+    if "prefers-reduced-motion" in html:
+        add("reduced-motion", "PASS", "prefers-reduced-motion handled")
+    else:
+        add("reduced-motion", "WARN", "No prefers-reduced-motion handling (accessibility)")
 
     return finalize(findings)
 

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!--
+    NEOVERTIX — Símbolo B "Vetor"
+    Conceito: pico/vetor ascendente sólido, assinatura própria.
+    Grid: quadrado 100x100, base 10.
+    Construção (um único path, fill-rule evenodd):
+      - Base sólida 20,88 -> 80,88 (largura 60, centro geométrico em x=50).
+      - Ápice em 66,14 — deslocado 16 unidades à direita do centro (vértice
+        deslocado, não simétrico).
+      - Borda esquerda entalhada: em vez de reta até a base, um entalhe
+        assimétrico morde a lateral esquerda (48,44 -> 59,51 -> 34,66) — a
+        mordida existe só de um lado, nunca espelhada.
+      - Negativo interno: um segundo subpath (60,30 -> 70,42 -> 56,44) fechado
+        dentro da massa sólida, virando furo via evenodd — uma janela que deixa
+        o vértice "respirar" por dentro.
+    Uso: fill="currentColor" — herda a cor do contêiner (acento / branco / preto).
+  -->
+  <path d="M20,88 L80,88 L66,14 L48,44 L59,51 L34,66 Z M60,30 L70,42 L56,44 Z"
+        fill="currentColor" fill-rule="evenodd"/>
+</svg>

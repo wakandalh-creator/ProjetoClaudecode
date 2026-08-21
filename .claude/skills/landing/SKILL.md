@@ -6,7 +6,8 @@ metadata:
   source_spec: "megaprompts/04-landing-megaprompt.md"
   build_pattern: "Path B (direct conversion)"
   distinct_from: "product-team/skills/landing-page-generator (different output format + optimization target)"
-  version: 1.0.0
+  version: 1.1.0
+  local_patches: "2026-08-08 — hero selector scoping (dry-run bug), SRI on GSAP CDN, SEO/locale baseline, reduced-motion + pointer gates, optional section library. Re-apply if a skills re-sync overwrites this file; context in estruturacao-n8n/guia-skills-etapa-5.md."
 ---
 
 # Landing — Premium HTML Landing Page Generator
@@ -171,6 +172,17 @@ See [`references/brand_system_design.md`](references/brand_system_design.md) for
   - `border-color: var(--teal)` (brighten from --card-border)
   - `transition: 0.3s ease`
 
+## Optional Sections (between Features and Closing CTA)
+
+Core order stays Hero → Features → [optional] → Closing CTA. Insert per the client's real architecture (e.g. from a site-architecture pass); all reuse the ScrollTrigger.batch reveal (pattern 3) with their OWN scoped classes:
+
+- **`.gallery`** — image grid, 2-col mobile → 4-col desktop; every `<img>` gets `loading="lazy"`, `alt`, and explicit `width`/`height` (no layout shift)
+- **`.social-proof`** — testimonial cards (quote, name, source) or review badges; same hover treatment as `.feature-card`
+- **`.faq`** — native `<details>/<summary>` accordions, zero JS
+- **`.booking`** — contact/booking form; `POST` to a configurable endpoint (e.g. an n8n webhook), with a hidden honeypot field + `required` validation; NEVER inline API keys or secrets in client-side JS
+
+When an optional section reuses `.btn-primary`, the Hero Entrance scoping rule (pattern 1) is what keeps it visible — never widen those selectors.
+
 ## Section 3: Closing CTA
 
 - Full-width, `background: var(--navy-mid)`
@@ -189,21 +201,28 @@ See [`references/gsap_animation_patterns.md`](references/gsap_animation_patterns
 ### 1. Hero Entrance (GSAP timeline)
 
 ```js
-// MUST use gsap.set() FIRST to prevent FOUC
-gsap.set([".eyebrow", ".hero h1", ".hero .subtitle", ".btn-primary", ".scroll-down"], {
+// MUST use gsap.set() FIRST to prevent FOUC.
+// Every selector MUST be scoped to .hero — unscoped shared classes
+// (.btn-primary, .eyebrow) also match copies in later sections: the set()
+// hides them all, but the timeline only reveals the hero copies, leaving
+// the closing-CTA button permanently invisible (bug found in real render,
+// invisible in code review).
+gsap.set([".hero .eyebrow", ".hero h1", ".hero .subtitle", ".hero .btn-primary", ".hero .scroll-down"], {
   opacity: 0,
   y: 30
 });
 
 const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-tl.to(".eyebrow", { opacity: 1, y: 0, duration: 0.6 })
+tl.to(".hero .eyebrow", { opacity: 1, y: 0, duration: 0.6 })
   .to(".hero h1", { opacity: 1, y: 0, duration: 0.8 }, "-=0.3")
   .to(".hero .subtitle", { opacity: 1, y: 0, duration: 0.6 }, "-=0.5")
-  .to(".btn-primary", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
-  .to(".scroll-down", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
+  .to(".hero .btn-primary", { opacity: 1, y: 0, duration: 0.5 }, "-=0.3")
+  .to(".hero .scroll-down", { opacity: 1, y: 0, duration: 0.4 }, "-=0.2");
 ```
 
 ### 2. Mouse Parallax
+
+Only attach on devices with a real pointer — on touch devices the listener is dead weight (see Motion Accessibility below).
 
 ```js
 const hero = document.querySelector(".hero");
@@ -257,13 +276,45 @@ CSS handles ambient continuous motion (smoother, cheaper than GSAP for indefinit
 .scroll-down { animation: bounce 2s ease-in-out infinite; }
 ```
 
+### Motion Accessibility (required)
+
+Gate ALL GSAP work behind a reduced-motion check, and the mouse parallax additionally behind a pointer check. Because `gsap.set()` is what hides elements, skipping the whole block under reduced motion means those users get the full page, static — no invisible content.
+
+```js
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!reduceMotion) {
+  // ALL gsap.set() + timelines + ScrollTrigger.batch() go here
+
+  if (window.matchMedia("(pointer: fine)").matches) {
+    // mouse parallax listener goes here (skip on touch devices)
+  }
+}
+```
+
+CSS keyframe animations get the equivalent media query:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+  .hero-shapes-back *, .hero-shapes-mid *, .scroll-down { animation: none; }
+}
+```
+
 ## Required CDN Dependencies
 
 ```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha384-d+vyQ0dYcymoP8ndq2hW7FGC50nqGdXUEgoOUGxbbkAJwZqL7h+jKN0GGgn9hFDS"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
+        integrity="sha384-poC0r6usQOX2Ayt/VGA+t81H6V3iN9L+Irz9iO8o+s0X20tLpzc9DOOtnKxhaQSE"
+        crossorigin="anonymous"></script>
 ```
+
+The `integrity` hashes above were computed from the real 3.12.2 files downloaded from cdnjs (2026-08-08). If you bump the GSAP version, recompute both hashes from the downloaded files (`openssl dgst -sha384 -binary file | openssl base64 -A`) — NEVER invent or copy hashes from third-party snippets. The Google Fonts stylesheet gets no SRI (its response varies per user-agent); the preconnect hints substitute.
 
 NO other external CSS or JS files. All custom CSS in `<style>`, all custom JS in `<script>` blocks within the same HTML file.
 
@@ -278,6 +329,16 @@ See [`references/single_file_html_discipline.md`](references/single_file_html_di
   - 580px → all grids → 1-col; H1 scales down to ~52px
 - **Viewport meta:** `<meta name="viewport" content="width=device-width, initial-scale=1">`
 
+## SEO & Locale Baseline (required)
+
+- `<html lang>` MUST match the copy language (`pt-BR` for Brazilian-Portuguese pages, etc.) — never leave `en` on a non-English page
+- `<title>` ≤ 60 chars: product name + primary benefit
+- `<meta name="description">` 150–160 chars, derived from the hero subtext
+- Open Graph: `og:title`, `og:description`, `og:type` (`website`); `og:image` when the client provides an image
+- `<link rel="canonical">` when the final domain is known (skip on staging)
+- Favicon inline as an SVG data URI (keeps the single-file discipline)
+- For local-business clients: one JSON-LD `LocalBusiness` block in `<head>` (name, address, phone, openingHours; geo if known) — only real data, never invented
+
 ## Output Spec
 
 - **Path:** `${OUTPUT_DIR}/<product-name-kebab>.html`
@@ -291,11 +352,14 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 
 - All 3 required sections present (`.hero`, `.features`, `.closing-cta`)
 - CDN deps present (Inter + GSAP + ScrollTrigger)
+- SRI on every CDN `<script>` (`integrity` + `crossorigin`)
+- No unscoped shared-class selectors inside `gsap` calls when the class appears more than once in the page (the invisible-button bug)
 - `gsap.set()` initial states precede any `gsap.timeline` or `gsap.to` (FOUC prevention)
+- `prefers-reduced-motion` gate present
 - Responsive breakpoints at 900px + 580px
 - No external `<link rel="stylesheet">` other than Google Fonts
 - No external `<script src=>` other than GSAP CDN
-- `<meta name="viewport">` present
+- `<meta name="viewport">`, `<html lang>`, `<meta name="description">`, OG tags present
 - All animated elements have initial-state declarations
 
 ## Error Handling
@@ -341,6 +405,6 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 
 ---
 
-**Version:** 1.0.0
+**Version:** 1.1.0 (local patches 2026-08-08 — see `metadata.local_patches`)
 **Source spec:** [`megaprompts/04-landing-megaprompt.md`](../../../../megaprompts/04-landing-megaprompt.md)
 **Build pattern:** Path B (direct conversion). Distinct from `product-team/skills/landing-page-generator/`.

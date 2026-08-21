@@ -29,6 +29,21 @@ Atalhos, siglas e linguagem interna do Lucas.
 | Remotion / create-video | Framework de vídeo programático em React — testado em `Documentos\teste-remotion\meu-teste\`, template TikTok (legendas via Whisper.cpp local) |
 | Whisper.cpp | Transcrição de áudio local usada pelo template Remotion-TikTok — na máquina do Lucas, só os modelos `tiny`/`base`/`small` cabem na RAM disponível |
 
+## Referências externas — modelos de contrato
+
+Salvos em 2026-08-05 para verificar depois, ao formalizar o contrato do pacote Otimização Multi-Mecanismo (SEO+AEO+GEO+CRO — ver artefato SOP gerado na sessão):
+
+- Contrato de prestação de serviços (genérico): https://diegocastroadvogado.com.br/contrato-de-prestacao-de-servicos/
+- Modelo de contrato de prestação de serviços de SEO: https://diegocastroadvogado.com.br/modelo-de-contrato-de-prestacao-de-servicos-de-seo/
+
+Servem de base para os contratos próprios. Revisar quando a estruturação da empresa estiver concluída.
+
+## Vault "Estruturação" — regra de escrita (2026-08-05)
+
+**Sempre escrever em `G:\Meu Drive\Estruturação\`, nunca mais em `C:\Users\lucas\OneDrive\Documentos\Obsidian Vault\Estruturação\`.** O Drive é o vault mestre oficial (decisão de 13/07, reafirmada em 05/08 depois de reconectar o Google Drive Desktop). O caminho do OneDrive é backup histórico — tinha virado o vault de fato só porque o Drive Desktop ficou desligado por quase um mês; isso foi corrigido.
+
+Detalhe: os dois locais ainda estão parcialmente divergentes (só o arquivo do Piloto Salões/Barbearias foi reconciliado em 05/08). Se for editar algo que só existe na cópia do OneDrive, avisar o Lucas antes de decidir onde gravar.
+
 ## Comandos frequentes
 
 | Atalho | Comando completo |

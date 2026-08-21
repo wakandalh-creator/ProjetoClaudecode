@@ -434,3 +434,395 @@ Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.
 Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-07-16T17:54:04.1974896-03:00] Done
+[2026-07-17T11:51:33.9448669-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-17T11:53:57.1053884-03:00] Done
+[2026-07-21T18:19:29.2035859-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   3e19f3a..24c5e88  master     -> origin/master
+Updating 3e19f3a..24c5e88
+error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-07-21T18:19:43.2342965-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-21T18:20:22.5624073-03:00] Done
+[2026-07-22T10:59:17.5104622-03:00] Starting Obsidian sync
+Updating 3e19f3a..24c5e88
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-07-22T11:00:10.1191725-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-22T11:00:13.7232384-03:00] Done
+[2026-07-23T10:47:58.7580418-03:00] Starting Obsidian sync
+Updating 3e19f3a..24c5e88
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-07-23T10:48:04.6604891-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-23T10:48:17.5105353-03:00] Done
+[2026-07-24T08:43:10.5035180-03:00] Starting Obsidian sync
+Updating 3e19f3a..24c5e88
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-07-24T08:43:17.0602315-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-07-24T08:43:41.3173541-03:00] Done
+[2026-08-01T15:26:40.9219869-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   24c5e88..bb18e00  master     -> origin/master
+Updating 3e19f3a..bb18e00
+error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-01T15:26:57.9527738-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-01T15:27:07.5614240-03:00] Done
+[2026-08-02T14:23:08.9119542-03:00] Starting Obsidian sync
+Updating 3e19f3a..bb18e00
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-02T14:23:15.5298218-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-02T14:23:20.0695319-03:00] Done
+[2026-08-03T15:28:12.1458944-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   bb18e00..0f66546  master     -> origin/master
+Updating 3e19f3a..0f66546
+error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-03T15:28:21.5320468-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-03T15:28:39.3309748-03:00] Done
+[2026-08-05T15:14:33.8956336-03:00] Starting Obsidian sync
+Updating 3e19f3a..0f66546
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-05T15:14:37.1072138-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-05T15:14:40.1556315-03:00] Done
+[2026-08-07T20:20:50.0842547-03:00] Starting Obsidian sync
+Updating 3e19f3a..0f66546
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-07T20:21:31.3036021-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-07T20:21:41.1152404-03:00] Done
+[2026-08-08T19:10:39.9884765-03:00] Starting Obsidian sync
+Updating 3e19f3a..0f66546
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-08T19:10:45.3140621-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-08T19:10:56.3255218-03:00] Done
+[2026-08-09T19:23:44.4193071-03:00] Starting Obsidian sync
+Updating 3e19f3a..0f66546
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-09T19:23:54.8605031-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-09T19:24:02.1574093-03:00] Done
+[2026-08-11T06:23:52.0554029-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   0f66546..76bf3ba  master     -> origin/master
+Updating 3e19f3a..76bf3ba
+error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-11T06:23:57.4924589-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-11T06:24:03.5210995-03:00] Done
+[2026-08-11T19:00:35.2626866-03:00] Starting Obsidian sync
+Updating 3e19f3a..76bf3ba
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-11T19:00:46.5305495-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-11T19:00:54.3340476-03:00] Done
+[2026-08-18T20:52:54.7767936-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   76bf3ba..e1cba12  master     -> origin/master
+Updating 3e19f3a..e1cba12
+error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-18T20:53:09.3082224-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-18T20:53:21.3056866-03:00] Done
+[2026-08-20T14:50:08.2116973-03:00] Starting Obsidian sync
+Updating 3e19f3a..e1cba12
+git.exe : error: Unable to create 'C:/Users/lucas/OneDrive/Documentos/ProjetoClaudecode/.git/index.lock': File exists.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (error: Unable t...': File exists.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Another git process seems to be running in this repository, or the lock file may be stale
+error: could not write index
+fatal: Cannot autostash
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-20T14:50:24.9729894-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-20T14:50:30.2709319-03:00] Done

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Neovertix — 3 símbolos candidatos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body, h1, h2, h3, p, figure { margin: 0; }
+  svg { display: block; }
+  a { color: inherit; }
+
+  :root {
+    --bg-0: #0b0f0d;
+    --bg-1: #121815;
+    --bg-2: #1a211c;
+    --bg-3: #232b24;
+    --text: #f2f5f0;
+    --text-dim: #93a093;
+    --accent: #b4e33d;
+    --accent-hi: #cbff5e;
+    --accent-dim: #6e8a24;
+    --border: #2c352d;
+    --on-accent: #121815;
+    --paper: #f4f1ea;
+    --ink: #121815;
+    --ink-dim: #6b6f66;
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Manrope', sans-serif;
+    --chrome-font: 'Manrope', sans-serif;
+  }
+
+  body {
+    background: var(--bg-0);
+    color: var(--text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  }
+
+  /* sprite hidden defs */
+  .sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+  .symbol { width: 1em; height: 1em; color: inherit; }
+
+  /* ---- masthead ---- */
+  .masthead {
+    padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 3rem) clamp(3rem, 7vw, 4rem);
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .masthead-eyebrow {
+    display: inline-flex; align-items: center; gap: .55rem;
+    font-family: var(--font-display);
+    font-size: .72rem; letter-spacing: .1em;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: .4rem .9rem;
+    margin-bottom: 1.75rem;
+  }
+  .masthead-eyebrow::before { content: '>'; }
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    max-width: 20ch;
+  }
+  .masthead p {
+    margin-top: 1.25rem;
+    max-width: 66ch;
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    color: var(--text-dim);
+  }
+  .masthead-nav { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.25rem; }
+  .masthead-nav a {
+    text-decoration: none; font-size: .85rem; font-weight: 600;
+    color: var(--text); background: var(--bg-1);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: .55rem 1.1rem;
+    transition: border-color .15s ease, transform .15s ease;
+  }
+  .masthead-nav a:hover { border-color: var(--accent-dim); transform: translateY(-1px); }
+
+  /* ---- candidate section ---- */
+  .candidate {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(3rem, 6vw, 4.5rem) clamp(1.25rem, 5vw, 3rem);
+    border-top: 1px solid var(--border);
+  }
+  .c-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(1rem, 4vw, 2rem);
+    align-items: end;
+    margin-bottom: 2.5rem;
+  }
+  .c-letter {
+    font-family: var(--font-display);
+    font-size: clamp(3.5rem, 9vw, 6rem);
+    font-weight: 700;
+    line-height: .8;
+    color: var(--accent);
+  }
+  .c-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .c-desc { color: var(--text-dim); margin-top: .4rem; max-width: 62ch; font-size: 1rem; }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex; align-items: center; gap: .6rem;
+    margin-bottom: 1rem;
+  }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .block { margin-bottom: clamp(2.5rem, 5vw, 3.5rem); }
+
+  /* hero tile */
+  .hero-tile {
+    background: var(--bg-1);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    padding: clamp(2.5rem, 8vw, 4rem);
+  }
+  .hero-tile .symbol { width: clamp(180px, 28vw, 320px); height: clamp(180px, 28vw, 320px); color: var(--accent); }
+
+  /* scale row */
+  .scale-row {
+    display: flex; align-items: flex-end; gap: clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: 2rem clamp(1.5rem, 4vw, 2.5rem);
+    flex-wrap: wrap;
+  }
+  .scale-item { display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+  .scale-item .symbol { color: var(--text); }
+  .scale-item span { font-family: var(--font-display); font-size: .68rem; color: var(--text-dim); }
+  .s-16 { width: 16px; height: 16px; }
+  .s-32 { width: 32px; height: 32px; }
+  .s-64 { width: 64px; height: 64px; }
+  .s-128 { width: 128px; height: 128px; }
+
+  /* 4 modes grid */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .mode-card {
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    padding: 1.75rem 1.25rem;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 1.1rem;
+    min-height: 176px;
+  }
+  .mode-card .symbol { width: 60px; height: 60px; }
+  .mode-card figcaption {
+    font-family: var(--font-display); font-size: .68rem; letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+  .mode-dark   { background: var(--bg-1); }
+  .mode-dark   .symbol { color: var(--accent); }
+  .mode-dark   figcaption { color: var(--text-dim); }
+  .mode-dark2  { background: var(--bg-2); }
+  .mode-dark2  .symbol { color: var(--text); }
+  .mode-dark2  figcaption { color: var(--text-dim); }
+  .mode-paper  { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper  .symbol { color: var(--ink); }
+  .mode-paper  figcaption { color: var(--ink-dim); }
+  .mode-paper2 { background: var(--paper); border-color: rgba(0,0,0,.1); }
+  .mode-paper2 .symbol { color: var(--accent-dim); }
+  .mode-paper2 figcaption { color: var(--ink-dim); }
+
+  /* lockup */
+  .lockup-tile {
+    background: var(--bg-1); border: 1px solid var(--border); border-radius: 16px;
+    padding: clamp(2rem, 6vw, 3rem);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lockup-tile svg { width: clamp(220px, 40vw, 340px); height: auto; color: var(--text); }
+  .lockup-tile .use-a use, .lockup-tile .use-b use, .lockup-tile .use-c use {}
+
+  /* app icon mock */
+  .icon-row { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .icon-mock {
+    width: 112px; height: 112px;
+    border-radius: 26px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-mock.acc { background: var(--accent); }
+  .icon-mock.acc .symbol { width: 58%; height: 58%; color: var(--on-accent); }
+  .icon-mock.drk { background: var(--bg-2); border: 1px solid var(--border); }
+  .icon-mock.drk .symbol { width: 58%; height: 58%; color: var(--accent); }
+
+  /* rationale */
+  .rationale { list-style: none; display: grid; gap: .9rem; padding: 0; }
+  .rationale li {
+    display: grid; grid-template-columns: auto 1fr; gap: .8rem;
+    font-size: .98rem; color: var(--text);
+  }
+  .rationale li::before {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent); margin-top: .5rem;
+  }
+
+  .site-footer {
+    max-width: 1180px; margin: 0 auto;
+    padding: 3rem clamp(1.25rem, 5vw, 3rem) 4rem;
+    color: var(--text-dim); font-size: .85rem;
+    border-top: 1px solid var(--border); margin-top: 1rem;
+  }
+
+  @media (max-width: 640px) {
+    .c-head { grid-template-columns: 1fr; }
+    .scale-row { justify-content: space-between; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ SPRITE (símbolos definidos uma vez, reusados via <use>) ============ -->
+<svg class="sprite" aria-hidden="true">
+  <defs>
+    <symbol id="sym-a" viewBox="0 0 100 100">
+      <path d="M16,88 L44,24 L66,14 L80,88" stroke="currentColor" stroke-width="14" stroke-linecap="square" stroke-linejoin="round" fill="none"/>
+      <path d="M16,88 L16,32" stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="sym-b" viewBox="0 0 100 100">
+      <path d="M20,88 L80,88 L66,14 L48,44 L59,51 L34,66 Z M60,30 L70,42 L56,44 Z" fill="currentColor" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="sym-c" viewBox="0 0 100 100">
+      <path d="M50,88 L14,32 L36,20 Z M50,88 L44,8 L58,10 Z M50,88 L64,18 L86,34 Z" fill="currentColor"/>
+    </symbol>
+
+    <symbol id="lockup-a" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M16,88 L44,24 L66,14 L80,88" stroke="currentColor" stroke-width="14" stroke-linecap="square" stroke-linejoin="round" fill="none"/>
+        <path d="M16,88 L16,32" stroke="currentColor" stroke-width="14" stroke-linecap="round" fill="none"/>
+      </g>
+      <text x="112" y="66" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="58" letter-spacing="-2" fill="currentColor">Neovertix</text>
+    </symbol>
+    <symbol id="lockup-b" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M20,88 L80,88 L66,14 L48,44 L59,51 L34,66 Z M60,30 L70,42 L56,44 Z" fill="currentColor" fill-rule="evenodd"/>
+      </g>
+      <text x="112" y="66" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="58" letter-spacing="-2" fill="currentColor">Neovertix</text>
+    </symbol>
+    <symbol id="lockup-c" viewBox="0 0 430 100">
+      <g transform="translate(4,9) scale(0.82)">
+        <path d="M50,88 L14,32 L36,20 Z M50,88 L44,8 L58,10 Z M50,88 L64,18 L86,34 Z" fill="currentColor"/>
+      </g>
+      <text x="112" y="66" font-family="'JetBrains Mono', monospace" font-weight="700" font-size="58" letter-spacing="-2" fill="currentColor">Neovertix</text>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="masthead">
+  <div class="masthead-eyebrow">Direção criativa · Neovertix — símbolo</div>
+  <h1>3 candidatos a símbolo. Calibre big tech.</h1>
+  <p>
+    O território Malha foi aprovado — verde-limão <code>#B4E33D</code> sobre off-black em camadas,
+    JetBrains Mono + Manrope. O símbolo de rede de nós convergindo, não. Aqui estão três caminhos
+    novos, cada um nascendo do mesmo conceito — <strong>Neo + vértice</strong> — mas resolvido em
+    geometria mínima: 1 forma fechada ou 2–3 traços, nada de diagrama.
+  </p>
+  <nav class="masthead-nav">
+    <a href="#cand-a">A — Cunha</a>
+    <a href="#cand-b">B — Vetor</a>
+    <a href="#cand-c">C — Fusão</a>
+  </nav>
+</header>
+
+<!-- ============================================================ CANDIDATO A ============================================================ -->
+<section class="candidate" id="cand-a">
+  <div class="c-head">
+    <div class="c-letter">A</div>
+    <div>
+      <div class="c-name">Cunha</div>
+      <div class="c-desc">Monograma abstrato N+V — duas hastes soldadas na base, ápice trocado por um corte diagonal assimétrico.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-a"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-a"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-a"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-a"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-a"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-a"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-a"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-a"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-a"/></svg><figcaption>Acento · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-a"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-a"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-a"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Dois traços apenas — a haste e o platô cortado se soldam no mesmo pé, como N e V nascendo de um golpe só de régua.</span></li>
+      <li><span>O corte no topo troca a ponta óbvia por um platô: o vértice não é prometido em pico, é alcançado e nivelado — a mesma lógica de "testado, não prometido" da marca.</span></li>
+      <li><span>Silhueta lê como monograma a 16px sem precisar de contorno extra — funciona como favicon sem virar mancha.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO B ============================================================ -->
+<section class="candidate" id="cand-b">
+  <div class="c-head">
+    <div class="c-letter">B</div>
+    <div>
+      <div class="c-name">Vetor</div>
+      <div class="c-desc">Vetor ascendente sólido, ápice deslocado do centro, entalhe assimétrico numa borda e uma janela interna de negativo.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-b"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-b"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-b"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-b"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-b"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-b"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-b"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-b"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-b"/></svg><figcaption>Acento · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-b"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-b"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-b"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Massa sólida única — sem contorno, sem traço fino — é a forma mais "ícone de app" das três: preenche o quadrado e aguenta ser reduzido sem perder peso visual.</span></li>
+      <li><span>O ápice fora do centro e o entalhe de um lado só quebram a simetria óbvia de seta ou flâmula — ninguém confunde com ícone de play, alerta ou gráfico de tendência.</span></li>
+      <li><span>A janela interna é o único dos três com profundidade construtiva de verdade — parece usinada, não desenhada.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================ CANDIDATO C ============================================================ -->
+<section class="candidate" id="cand-c">
+  <div class="c-head">
+    <div class="c-letter">C</div>
+    <div>
+      <div class="c-name">Fusão</div>
+      <div class="c-desc">Três lâminas sólidas de larguras e alturas diferentes convergindo para um único ponto na base — zero nós, zero linhas finas.</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Símbolo · em escala</div>
+    <div class="hero-tile"><svg class="symbol"><use href="#sym-c"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Prova de legibilidade — 16 a 128px</div>
+    <div class="scale-row">
+      <div class="scale-item"><svg class="symbol s-16"><use href="#sym-c"/></svg><span>16px</span></div>
+      <div class="scale-item"><svg class="symbol s-32"><use href="#sym-c"/></svg><span>32px</span></div>
+      <div class="scale-item"><svg class="symbol s-64"><use href="#sym-c"/></svg><span>64px</span></div>
+      <div class="scale-item"><svg class="symbol s-128"><use href="#sym-c"/></svg><span>128px</span></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">4 modos de cor</div>
+    <div class="mode-grid">
+      <figure class="mode-card mode-dark"><svg class="symbol"><use href="#sym-c"/></svg><figcaption>Acento · escuro</figcaption></figure>
+      <figure class="mode-card mode-dark2"><svg class="symbol"><use href="#sym-c"/></svg><figcaption>Branco sólido · escuro</figcaption></figure>
+      <figure class="mode-card mode-paper"><svg class="symbol"><use href="#sym-c"/></svg><figcaption>Preto sólido · claro</figcaption></figure>
+      <figure class="mode-card mode-paper2"><svg class="symbol"><use href="#sym-c"/></svg><figcaption>Acento · claro</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Lockup horizontal</div>
+    <div class="lockup-tile"><svg viewBox="0 0 430 100"><use href="#lockup-c"/></svg></div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Favicon / ícone de app</div>
+    <div class="icon-row">
+      <div class="icon-mock acc"><svg class="symbol"><use href="#sym-c"/></svg></div>
+      <div class="icon-mock drk"><svg class="symbol"><use href="#sym-c"/></svg></div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="section-label">Por que este candidato</div>
+    <ul class="rationale">
+      <li><span>Herda o conceito de convergência do símbolo rejeitado (canais diferentes viram uma resposta só), mas troca a malha de nós e linhas por três formas sólidas — o resultado é ícone, não diagrama de rede.</span></li>
+      <li><span>As três larguras assimétricas evitam a leitura de asterisco, sparkle ou hexágono: a convergência acontece só de baixo pra cima, nunca irradiando em todas as direções.</span></li>
+      <li><span>É o candidato com maior área de tinta sólida — funciona melhor em superfícies pequenas e em contextos de baixo contraste (favicon, ícone de app, marca d'água).</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer class="site-footer">
+  Neovertix — símbolo, agosto de 2026. Território Malha aprovado; três caminhos de símbolo em avaliação.
+</footer>
+
+</body>
+</html>

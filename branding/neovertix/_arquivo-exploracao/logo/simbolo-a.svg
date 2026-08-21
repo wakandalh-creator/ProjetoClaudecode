@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!--
+    NEOVERTIX — Símbolo A "Cunha"
+    Conceito: monograma abstrato N + V fundidos, com corte de ápice.
+    Grid: quadrado 100x100, base 10 (linhas de grade a cada 10 unidades).
+    Construção:
+      - Traço 1 (perna esquerda + platô + perna direita): M16,88 -> L44,24 -> L66,14 -> L80,88
+        A perna esquerda sobe em ~69°, a direita em ~76°: assimétrico de propósito.
+        O segmento 44,24 -> 66,14 substitui o ápice pontudo por um corte diagonal
+        (não-horizontal, não-centralizado) — "o vértice foi alcançado e nivelado,
+        não prometido em ponta".
+      - Traço 2 (haste): M16,88 -> L16,32, soldada ao mesmo pé da perna esquerda —
+        a soma dos dois traços na base é o "N" (vertical + diagonal); o platô
+        cortado no topo é o "V" sem a ponta. Dois traços, um único gesto.
+    Uso: stroke="currentColor" — herda a cor do contêiner (acento / branco / preto).
+  -->
+  <path d="M16,88 L44,24 L66,14 L80,88" stroke="currentColor" stroke-width="14" stroke-linecap="square" stroke-linejoin="round"/>
+  <path d="M16,88 L16,32" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+</svg>

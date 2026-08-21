@@ -1,0 +1,135 @@
+{
+  "name": "03-briefing-claude-api",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a4444444-1111-4111-8111-111111111401",
+      "name": "Recebe dados coletados",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -900,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## TODO\nConfirmar o model ID atual da Claude API na sua conta Anthropic antes de ativar (o valor abaixo é um placeholder). Configurar a credencial `anthropic-api` (HTTP Header Auth, header `x-api-key`) em Settings → Credentials.",
+        "height": 160,
+        "width": 320
+      },
+      "id": "a4444444-1111-4111-8111-111111111402",
+      "name": "Sticky - modelo",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -900,
+        460
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.item.json;\nconst avaliacoes = (item.avaliacoes_texto || []).slice(0, 50).join('\\n- ');\nconst instaBio = item.instagram_bio || '';\nconst siteAtualCopy = item.site_atual_copy || '';\n\nconst prompt = `Você é um estrategista de marca para pequenos negócios locais. Com base nos dados abaixo de um ${item.tem_site_existente ? 'negócio que já tem site' : 'negócio que ainda não tem site'} do nicho \"${item.nicho || 'não informado'}\", em ${item.regiao || 'região não informada'}, gere um briefing estruturado em JSON puro (sem markdown, sem texto fora do JSON) com exatamente estas chaves:\n{\n  \"tom_de_voz\": string,\n  \"paleta_sugerida\": [string, string, string],\n  \"proposta_de_valor\": string,\n  \"nome\": string,\n  \"telefone\": string,\n  \"email\": string,\n  \"redes_sociais\": { \"instagram\": string },\n  \"padrao_de_dor\": string\n}\n\nDados do negócio:\n- Nicho: ${item.nicho || ''}\n- Região: ${item.regiao || ''}\n- Nome: ${item.nome || ''}\n- Telefone: ${item.telefone || ''}\n- Email: ${item.email || ''}\n- Instagram: ${item.instagram_handle || ''}\n- Bio do Instagram: ${instaBio}\n- Nota Google: ${item.nota_google || ''}\n- Avaliações do Google (texto bruto, extrair padrão de dor/elogio real, não inventar):\n- ${avaliacoes}\n${item.tem_site_existente ? '- Conteúdo do site atual (preservar identidade, não recomeçar do zero):\\n' + siteAtualCopy : ''}\n\nO campo \"padrao_de_dor\" deve vir das avaliações reais, não de suposição genérica. Se não houver avaliações suficientes, diga isso explicitamente no campo em vez de inventar. O \"tom_de_voz\" e a \"proposta_de_valor\" devem refletir o nicho informado, não um tom genérico — cada nicho tem convenções diferentes (ex.: advocacia/clínica pedem tom mais formal e cuidado regulatório; salão/oficina podem ser mais próximos e informais).`;\n\nitem._prompt_briefing = prompt;\nreturn { json: item };"
+      },
+      "id": "a4444444-1111-4111-8111-111111111403",
+      "name": "Montar prompt do briefing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            },
+            {
+              "name": "content-type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ model: \"claude-sonnet-5\", max_tokens: 1024, messages: [{ role: \"user\", content: $json._prompt_briefing }] }) }}",
+        "options": {}
+      },
+      "id": "a4444444-1111-4111-8111-111111111404",
+      "name": "Chamar Claude API",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -460,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLACEHOLDER",
+          "name": "anthropic-api"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extrai o JSON do texto retornado pela Claude API e funde com os dados originais do lead.\nconst response = $input.item.json;\nconst original = $('Montar prompt do briefing').item.json;\nconst text = response.content && response.content[0] ? response.content[0].text : '{}';\n\nlet briefing;\ntry {\n  const match = text.match(/\\{[\\s\\S]*\\}/);\n  briefing = JSON.parse(match ? match[0] : text);\n} catch (e) {\n  briefing = { erro_parse: true, texto_bruto: text };\n}\n\nconst merged = { ...original, briefing };\ndelete merged._prompt_briefing;\nreturn { json: merged };"
+      },
+      "id": "a4444444-1111-4111-8111-111111111405",
+      "name": "Parsear briefing JSON",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -240,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Recebe dados coletados": {
+      "main": [
+        [
+          {
+            "node": "Montar prompt do briefing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Montar prompt do briefing": {
+      "main": [
+        [
+          {
+            "node": "Chamar Claude API",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chamar Claude API": {
+      "main": [
+        [
+          {
+            "node": "Parsear briefing JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
