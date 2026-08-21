@@ -21,8 +21,8 @@
 | 12 | Salvos do IG → roteiros no tom de voz | Roteira | Sprint 2 |
 | 13 | Geração de roteiros | Roteira | ✅ ativo |
 | 14 | Análise de roteiro (score 0-10, corte ≥7) | Iana | ✅ ativo |
-| 15 | Carrosséis (estático + animado) | Pixel | Sprint 4 |
-| 16 | Criativos de imagem (Pillow-first) | Pixel | Sprint 4 |
+| 15 | Carrosséis (estático + animado) | Pixel | ✅ ativo |
+| 16 | Criativos de imagem (Pillow-first) | Pixel | ✅ ativo |
 | 17 | Vídeo: cortes SRT-driven | Corta | Sprint 5 |
 | 18 | Calendário de campanha + sazonalidades | Mapeia | Sprint 4 |
 | 19 | OPR / relatório de performance | Mede | Sprint 5 |
