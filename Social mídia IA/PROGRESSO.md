@@ -97,11 +97,21 @@ O Instagram bloqueia indexação de texto de post/reel via WebSearch para os 61 
 
 ## Sprint 4 — Carrosséis, criativos, campanha
 
-**Status: ⬜ Não iniciado**
+**Status: 🟡 Código pronto e parcialmente verificado, 2026-08-21**
 
-- [ ] M6 — módulo 15 (carrossel estático + animado, prompts KlingAI prontos)
-- [ ] M7 — módulo 16 (criativos Pillow-first + banana/Gemini)
-- [ ] M8 — módulo 18 (calendário mensal/15d/semanal) + `_context/sazonalidades-brasil.md`
+- [x] M6 — módulo 15 (carrossel estático + animado) + `_templates/carrossel-animado.md` escritos — **teste ao vivo travado** (o roteiro de carrossel da campanha de teste bateu 2x reprovado na Iana, decisão de negócio pendente com o Lucas: ver Sprint 1)
+- [x] M7 — módulo 16 (criativos Pillow-first + Nano Banana) escrito **e testado ao vivo com sucesso** — criativo real gerado pro roteiro "leads-perdidos-custo.md" (8,5/10), `create_image.py` evoluído pra puxar cores/fontes de `tokens.json`
+- [x] M8 — módulo 18 (calendário) + `_context/sazonalidades-brasil.md` (12 datas) escritos **e testados ao vivo** — campanha semanal real gerada em `producao/campanhas/2026-08/campanha.md` com dado fresco do monitor (2026-08-21)
+- [x] Monitor atualizado antes do teste (relatório de 09/08 estava com 12 dias) — achado bônus: módulo 6 do monitor gerou 2x a frase banida "vendedor que nunca dorme" e se autocorrigiu antes de salvar
+- [ ] **Marco (parcial):** campanha semanal real ✅, criativo real ✅ — carrossel real ainda pendente da decisão do Lucas sobre o slide de prova (ver abaixo)
+
+### Decisão pendente do Lucas (bloqueia o teste completo do módulo 15)
+
+Roteiro `producao/roteiros/2026-08-21/triagem-4h-15min.md`, rodada 2, 6,9/10, reprovado — Iana achou um **número inventado** no gancho ("em 4 minutos, ele já decidiu", não existe em `marca.md`) mesmo na correção. O bloqueio real: o slide de prova só fecha em ≥7 se usar a garantia de 30% — mas ela já está reservada pro slot de sexta da mesma campanha (framework RISCO INVERTIDO). Duas opções, detalhadas no próprio arquivo (seção "Avaliação Iana — rodada 2"):
+- **A** — mantém a garantia reservada pra sexta, este carrossel fica em ~7,0 (prova mais fraca)
+- **B** — usa a garantia aqui também (~7,3), sexta precisa de outro ângulo
+
+Ainda em aberto desde o Sprint 1: o mesmo tipo de decisão no roteiro `producao/roteiros/2026-08-05/mecanismo-sem-culpa.md` (nunca resolvida).
 - [ ] **Marco:** campanha do mês completa com carrossel animado e criativos
 
 ---
