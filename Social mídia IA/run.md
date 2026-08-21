@@ -24,7 +24,7 @@
 | 15 | Carrosséis (estático + animado) | Pixel | ✅ ativo |
 | 16 | Criativos de imagem (Pillow-first) | Pixel | ✅ ativo |
 | 17 | Vídeo: cortes SRT-driven | Corta | Sprint 5 |
-| 18 | Calendário de campanha + sazonalidades | Mapeia | Sprint 4 |
+| 18 | Calendário de campanha + sazonalidades | Mapeia | ✅ ativo |
 | 19 | OPR / relatório de performance | Mede | Sprint 5 |
 
 ## Fluxo padrão de um conteúdo
