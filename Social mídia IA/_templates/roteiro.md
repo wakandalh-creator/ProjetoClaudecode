@@ -6,6 +6,7 @@
 ---
 titulo: {nome interno curto}
 formato: reel | carrossel | post
+rede: instagram | tiktok    # onde publica primeiro; default instagram até Sprint 6 (Metricool) — mesmo roteiro pode ir pras duas se o formato bater
 pilar: rapido-de-verdade | engenharia-nao-slide | risco-zero    # pilar de mensagem da marca
 origem: {salvos/@handle | noticia | banco-hooks | campanha | ideia-propria}
 status: roteirizacao          # roteirizacao → gravacao → edicao → agendado → postado
