@@ -8,8 +8,8 @@
 |---|---|---|
 | Inteligência | `monitor/` (01-08) | tendências, perfis, benchmark, top10, modelos, aplicação, exports |
 | Produção | `Social mídia IA/modules/` (10-19) | notícias→ângulos, concorrentes→hooks, salvos→roteiros, roteiros, QA, carrosséis, criativos, vídeo, campanha, OPR |
-| Braço Python | `ig-saves-engine/` | sync de salvos do IG (por pasta) + publicação com gate `aprovado` |
-| Squad | `.claude/agents/` | 10 agentes nomeados (org chart no CLAUDE.md) |
+| Braço Python | `ig-saves-engine/` | sync de salvos do IG (por pasta) + publicação com gate `aprovado` — hoje só Instagram; **meta é multirede (prioridade Instagram+TikTok) via Metricool no Sprint 6** |
+| Squad | `.claude/agents/` | 11 agentes nomeados (org chart no CLAUDE.md) |
 | Memória | `_context/` + vault Obsidian | marca, tom de voz vivo, viralização, sazonalidades |
 
 ## Módulos (status de implementação)
