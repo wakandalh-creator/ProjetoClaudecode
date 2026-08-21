@@ -148,3 +148,11 @@ Ideia do Lucas: usar o avatar de IA em duas frentes — (1) conteúdo Neovertix 
 - [ ] Resto da estrutura (`_sop/`, `_templates/`, `modules/`, `bancos/`, `producao/`) — só depois da entrevista, pra não nascer genérica
 
 **Não é sprint numerado do plano principal** — corre em paralelo, sem tirar prioridade do Sprint 4 em diante.
+
+---
+
+## Complemento — Lapida (engenheiro de prompt do sistema)
+
+**Status: ✅ Criado, 2026-08-21**
+
+11º agente do squad (`.claude/agents/lapida.md`), Opus. Duas funções: (1) refina pedido vago do Lucas num briefing executável antes de rotear pro agente certo; (2) audita ambiguidade/referência quebrada/ineficiência no squad depois de qualquer mudança grande — formaliza o que as auditorias manuais dos Sprints 1-3 já faziam ad-hoc. Registrado na regra de roteamento do `CLAUDE.md`.
