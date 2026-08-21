@@ -267,6 +267,7 @@ Sistema de marketing da Neovertix em `Social mídia IA/` (orquestrador: `Social 
 | **corta** | Editor de Vídeo | Sonnet | cortes SRT-driven, performance de vídeo |
 | **posta** | Gerente de Publicação | Haiku | kanban Notion, gate de aprovação, auditoria de copy |
 | **mede** | Analista de Métricas | Sonnet | resultados, OPR, realimenta tom de voz e bancos |
+| **genese** | Engenheiro de Prompt / Fundação | Opus | funda marca/criador de conteúdo nova (hoje: `Criador UGC/`) — entrevista de posicionamento, não participa da produção do dia a dia |
 
 **Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos.
 
