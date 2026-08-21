@@ -28,7 +28,7 @@ Contexto de negócio usado nesta análise (`config/business.json`): Neovertix, a
 **Replicabilidade:** Alta — Lucas já constrói literalmente com Claude Code (este próprio sistema de monitoramento é prova disso) e o objetivo de conteúdo já inclui "build in public + autoridade técnica".
 **Justificativa:** Não exige mudança de nicho, só de enquadramento: em vez de ensinar Claude Code para devs, mostrar Claude Code sendo usado para construir o motor da própria agência.
 
-> **Ideia adaptada para Lucas:** Reel "bastidores" mostrando um comando real do Claude Code criando/ajustando um agente de atendimento da Neovertix — hook: "Isso aqui é o comando que acabou de criar um vendedor que nunca dorme."
+> **Ideia adaptada para Lucas:** Reel "bastidores" mostrando um comando real do Claude Code criando/ajustando um agente de atendimento da Neovertix — hook: "Isso aqui é o comando que acabou de colocar o comercial pra responder em 30 segundos."
 
 ---
 
