@@ -131,3 +131,20 @@ O Instagram bloqueia indexação de texto de post/reel via WebSearch para os 61 
 ## Fase 2 — Dashboard web (planejada, execução futura)
 
 **Status: 📋 Planejada em alto nível, não iniciada** — ver seção 4 do plano aprovado.
+
+---
+
+## Iniciativa paralela — Criador UGC (segunda marca)
+
+**Status: 📋 Registrado e com espaço criado, 2026-08-21 — aguardando kickoff**
+
+Ideia do Lucas: usar o avatar de IA em duas frentes — (1) conteúdo Neovertix quando ele não quiser aparecer (já é o módulo 14/Sprint 6, sem duplicar aqui) e (2) uma persona/criador **separado**, nicho a definir, pra diversificar renda e testar formatos fora do tom B2B sóbrio da Neovertix.
+
+- [x] Espaço criado: `Criador UGC/` (README com contexto, pré-requisitos e a regra dura contra depoimento fake)
+- [x] Técnica de fotos de produto em lote registrada (`_context/tecnica-fotos-produto.md`) — trava de fidelidade + Nano Banana, adaptada do guia externo pra rodar via API em vez de Claude for Chrome + Flow
+- [x] Agente **Gênese** criado (`.claude/agents/genese.md`) — engenheiro de prompt/onboarding, conduz a entrevista de posicionamento (nicho, público, monetização, tom, persona do avatar) e monta o cérebro de marca inicial
+- [ ] Sessão de entrevista com o Gênese (aguardando o Lucas decidir rodar)
+- [ ] Higgsfield/HeyGen reconectados (bloqueio externo, mesmo do módulo 14)
+- [ ] Resto da estrutura (`_sop/`, `_templates/`, `modules/`, `bancos/`, `producao/`) — só depois da entrevista, pra não nascer genérica
+
+**Não é sprint numerado do plano principal** — corre em paralelo, sem tirar prioridade do Sprint 4 em diante.
