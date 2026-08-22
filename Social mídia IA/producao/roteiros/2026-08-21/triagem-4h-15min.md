@@ -7,7 +7,7 @@ origem: campanha
 status: roteirizacao
 data_prevista: 2026-08-27
 resultado:
-score_iana: 6.9
+score_iana:
 ---
 
 ## Mensagem central
