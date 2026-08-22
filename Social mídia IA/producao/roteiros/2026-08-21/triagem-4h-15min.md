@@ -29,7 +29,7 @@ A triagem que hoje toma 4 horas do time acontece em 15 minutos com o agente roda
 [CTA] **Slide 8** — Comenta TRIAGEM aqui embaixo — te chamo no direct e monto esse fluxo com os números da sua operação, ao vivo.
 
 ## Legenda (se aplicável)
-Sua equipe demora 4 horas pra responder um lead. Em 4 minutos, ele já decidiu.
+Sua equipe leva 4 horas pra responder um lead. O concorrente respondeu em segundos.
 
 10 leads perdidos por demora custam R$3.000 a R$15.000 por mês. O agente lê a mensagem, consulta o CRM e responde na hora.
 
