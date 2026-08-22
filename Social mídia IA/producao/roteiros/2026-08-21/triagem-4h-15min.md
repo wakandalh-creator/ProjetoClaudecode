@@ -67,6 +67,17 @@ Arrasta pra ver o antes e o depois, card por card.
 - Nenhuma mudança na estrutura de 8 slides nem no plano de design — confirmado pelo encaminhamento da Iana.
 - `score_iana` zerado no frontmatter (o 6,8 era da rodada 1, não representa mais este texto) — aguardando nova avaliação do módulo 14.
 
+### Rodada 3 EXCEPCIONAL — fix pontual (autorizada pelo Lucas, fora do limite de 2 rodadas)
+
+Decisão do Lucas: a garantia de 30% segue reservada pro slot [RISCO INVERTIDO] de sexta da campanha (Versão A da sugestão 4, rodada 2) — não usada aqui. Só o fix já deixado pronto pela Iana na sugestão 1 da rodada 2 foi aplicado; nada mais foi tocado.
+
+- **Gancho (slide 1):** trocado "Sua equipe demora 4 horas pra responder um lead. Em 4 minutos, ele já decidiu." por **"Sua equipe leva 4 horas pra responder um lead. O concorrente respondeu em segundos."** — mata os dois defeitos apontados na rodada 2: "4 minutos" não era número âncora (inventado) e "decidiu" abria um loop que só fechava no slide 2. "Resposta em segundos, não em horas" é número âncora de `marca.md`; contraste duplo do framework [CONTRASTE NUMÉRICO DUPLO] preservado, agora com os dois lados ancorados.
+- **Slide 2:** "concorrente" saiu daqui pra não repetir a mesma palavra que agora abre a capa — "O lead não espera a fila andar — ele testa o concorrente que respondeu primeiro." virou **"Ele não espera a fila andar — testa quem responder primeiro."** Resto da frase (dor financeira ancorada, R$3.000-R$15.000/mês) intocado.
+- **Legenda, linha 1:** espelha o gancho novo, mesma regra já usada na rodada 2 (sugestão 7) — sem isso o número inventado "4 minutos" continuaria vazando pra peça publicada mesmo com o gancho corrigido. Único ajuste feito na legenda; parágrafo 2 e hashtags intocados.
+- **Slide 7 [PROVA]:** mantido como está — versão enxuta que já prova o mecanismo (métrica de tempo de resposta combinada antes de começar), sem abrir a garantia de 30%. Nem a reescrita da Versão A da Iana (sugestão 4, rodada 2) foi aplicada — fora do escopo autorizado desta rodada.
+- **Nada mais mudou:** mensagem central, slides 3-6, slide 8, plano de design e estrutura de 8 slides seguem idênticos à rodada 2.
+- `score_iana` zerado no frontmatter — o 6,9 era da rodada 2, não representa mais este texto. Aguardando nova avaliação do módulo 14 (rodada 3).
+
 ## Avaliação Iana — rodada 1
 
 Score: **6,8/10 → REPROVADO (rodada 1/2)**
