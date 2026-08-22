@@ -15,9 +15,9 @@ A triagem que hoje toma 4 horas do time acontece em 15 minutos com o agente roda
 
 ## Roteiro
 
-[GANCHO] **Slide 1** — Sua equipe demora 4 horas pra responder um lead. Em 4 minutos, ele já decidiu.
+[GANCHO] **Slide 1** — Sua equipe leva 4 horas pra responder um lead. O concorrente respondeu em segundos.
 
-[EMOÇÃO] **Slide 2** — O lead não espera a fila andar — ele testa o concorrente que respondeu primeiro. 10 leads perdidos por demora custam R$3.000 a R$15.000 por mês.
+[EMOÇÃO] **Slide 2** — Ele não espera a fila andar — testa quem responder primeiro. 10 leads perdidos por demora custam R$3.000 a R$15.000 por mês.
 
 [VIRADA] **Slide 3** — Antes: a mensagem chega e fica parada até alguém sair de outra ligação.
 **Slide 4** — Antes: quando alguém finalmente abre o CRM, já se passaram 4 horas — e o lead quente esfriou junto com o resto da fila.
