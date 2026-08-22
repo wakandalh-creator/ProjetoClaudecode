@@ -834,3 +834,34 @@ Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vau
 graph.html written - open in any browser, no server needed
 [2026-08-21T13:47:12.3591465-03:00] Done
 [2026-08-22T10:21:09.6345857-03:00] Starting Obsidian sync
+git.exe : warning: fetch updated the current branch head.
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (warning: fetch ...nt branch head.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+fast-forwarding your working tree from
+commit 52586aa948ba2d98a418349ef4332a72e6ded160.
+error: Your local changes to the following files would be overwritten by merge:
+	.claude/scripts/graphify-obsidian-sync.log
+Please commit your changes or stash them before you merge.
+Aborting
+fatal: Cannot fast-forward your working tree.
+After making sure that you saved anything precious from
+$ git diff 52586aa948ba2d98a418349ef4332a72e6ded160
+output, run
+$ git reset --hard
+to recover.
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-08-22T10:22:07.8000554-03:00] WARN: git pull exited 128 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-22T10:22:20.2365576-03:00] Done
