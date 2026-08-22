@@ -254,10 +254,10 @@ def gerar_carrossel(output_dir: str) -> list:
                  "Quando alguém finalmente abre o CRM, já se passaram 4 horas — e "
                  "o lead quente esfriou junto com o resto da fila.",
                  _fila_parada)
-    lamina_depois(path(5), "1",
+    lamina_depois(path(5), 5, "1",
                   "O agente lê a mensagem no segundo em que ela chega e consulta "
                   "o CRM sozinho — histórico, se já é cliente, o que já foi combinado.")
-    lamina_depois(path(6), "2",
+    lamina_depois(path(6), 6, "2",
                   "Responde com esse histórico na mão e sobe pro topo da fila "
                   "quem já pediu orçamento.",
                   payoff="4 horas de triagem viram 15 minutos.")
