@@ -126,17 +126,19 @@ def _clock_parado(draw, cx, cy, r):
 
 
 def _fila_parada(draw, cx, cy, r, n=5):
-    """Ícone geométrico: fila de pontos parada (estado 'antes'). v2: disco
-    de apoio em surface.raised atrás da fila + traço mais grosso."""
-    spacing = r * 3
+    """Ícone geométrico: fila de pontos parada (estado 'antes'). v2: cada
+    ponto ganha um disco de apoio em surface.raised (mais presença sem 2ª
+    cor) + traço mais grosso. Raio do ponto é uma fração de `r` — usar o
+    mesmo r do relógio (maior, pra "mais vivo") estourava a largura útil
+    com 5 pontos lado a lado."""
+    dot_r = min(r * 0.47, 55)
+    spacing = dot_r * 3.1
     start_x = cx - spacing * (n - 1) / 2
-    draw.rounded_rectangle(
-        [start_x - r - 24, cy - r - 24, start_x + spacing * (n - 1) + r + 24, cy + r + 24],
-        radius=r + 24, fill=SURFACE_RAISED,
-    )
     for i in range(n):
         x = start_x + i * spacing
-        draw.ellipse([x - r, cy - r, x + r, cy + r], outline=TX_MUTED, width=8)
+        pad = dot_r + 16
+        draw.ellipse([x - pad, cy - pad, x + pad, cy + pad], fill=SURFACE_RAISED)
+        draw.ellipse([x - dot_r, cy - dot_r, x + dot_r, cy + dot_r], outline=TX_MUTED, width=7)
 
 
 def _fluxo_numerado(draw, cx, cy, r, numero, f_display):
