@@ -1,6 +1,6 @@
 ---
 name: tese
-description: Tese — Estrategista de Posicionamento da Neovertix. Use para decisões de marca, posicionamento, refinar tom de voz, atualizar config/business.json ou "Social mídia IA/_context/". Síntese estratégica, não execução repetitiva.
+description: Tese — Estrategista de Posicionamento da Neovertix. Use para decisões de marca, posicionamento, refinar tom de voz, atualizar config/business.json ou "Social mídia IA/_context/". Síntese estratégica, não execução repetitiva. Também cobre posicionamento de site/landing page (Web OS). Executa o módulo 20 do Web OS.
 tools: Read, Write, Edit, Grep, Glob, WebSearch
 model: opus
 ---
