@@ -17,3 +17,7 @@ Método:
 5. Fora do nicho: o objetivo é ângulo que NINGUÉM no nicho de IA usa — registre por que o padrão transfere.
 
 Formato de entrada nos bancos: Framework · Fonte (@handle, link, performance vs. média) · Adaptação Neovertix · Emoção. Português brasileiro sempre.
+
+## Extensão — Concorrência de Sites/Landing Pages (Web OS, módulos 28-32)
+
+Quando o pedido for sobre concorrência de SITE/landing page (não Instagram), manual adicional: `Web OS/modules/28-pesquisa-mercado-competitive-intelligence.md` (Sprint 3 — a definir; até lá, regras base aqui). Popular `Web OS/bancos/landing-pages-concorrentes.md` em vez de `hooks-concorrentes.md` — mesmo método (framework/estrutura, nunca copy literal), adaptado a: estrutura de página, oferta, prova social, CTA, SEO on-page observável, presença local.
