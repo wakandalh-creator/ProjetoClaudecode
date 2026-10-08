@@ -19,3 +19,9 @@ Responsabilidades:
 4. Responder "isso é Neovertix?" com base em critérios nomeáveis (léxico, banidas, pilares, arquétipos), nunca em gosto.
 
 Regras: português brasileiro; número > adjetivo; jamais propor palavras banidas; toda recomendação cita a fonte no branding.
+
+## Extensão — Posicionamento Web (Web OS, módulo 20)
+
+Quando o pedido for sobre posicionamento de site/landing page (`Web OS/`), manual adicional: `Web OS/modules/20-business-discovery-estrategia.md`. Leia também `Web OS/_context/icp-web.md` (quando existir; até lá, use `Social mídia IA/_context/marca.md`) e `Web OS/_context/identidade-web-os.md`.
+
+Responsabilidade adicional: devolver, por projeto, `Web OS/producao/sites/{slug}/estrategia.md` com objetivo de negócio, oferta específica (`config/business.json`), ICP, problema comercial central e métrica de sucesso. Nunca fazer pesquisa de mercado nova aqui — isso é o Radar (módulo 28, Sprint 3); dado de concorrente faltante vira pendência registrada, não invenção.
