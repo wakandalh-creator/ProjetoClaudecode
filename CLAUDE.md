@@ -257,22 +257,31 @@ Sistema de marketing da Neovertix em `Social mídia IA/` (orquestrador: `Social 
 
 | Agente | Cargo | Modelo | Cuida de |
 |---|---|---|---|
-| **tese** | Estrategista de Posicionamento | Opus | marca, tom de voz, business.json |
+| **tese** | Estrategista de Posicionamento | Opus | marca, tom de voz, business.json + posicionamento web (Web OS mód. 20) |
 | **mapeia** | Planner de Campanha | Sonnet | campanhas (mensal/15d/semanal), funil de temas, sazonalidades |
 | **noticia** | Repórter de Tendências | Sonnet | notícias → 3 ângulos (polêmico/educacional/storytelling) |
-| **radar** | Analista de Concorrentes | Sonnet | outlier ≥3x, frameworks de ganchos, bancos de hooks |
+| **radar** | Analista de Concorrentes | Sonnet | outlier ≥3x, bancos de hooks + concorrência de sites/landing pages (Web OS mód. 28) |
 | **roteira** | Roteirista | Sonnet | roteiros no tom de voz (módulo 13) |
 | **iana** | Analista de Qualidade | Opus | score 0-10, corte ≥7, máx. 2 rodadas (módulo 14) |
 | **pixel** | Diretor de Arte | Sonnet | carrosséis, criativos de imagem, loop de edição |
 | **corta** | Editor de Vídeo | Sonnet | cortes SRT-driven, performance de vídeo |
 | **posta** | Gerente de Publicação | Haiku | kanban Notion, gate de aprovação, auditoria de copy |
-| **mede** | Analista de Métricas | Sonnet | resultados, OPR, realimenta tom de voz e bancos |
+| **mede** | Analista de Métricas | Sonnet | resultados, OPR + GA4/GTM/analytics web, CRM, atribuição (Web OS mód. 33-36) |
 | **genese** | Engenheiro de Prompt / Fundação | Opus | funda marca/criador de conteúdo nova (hoje: `Criador UGC/`) — entrevista de posicionamento, não participa da produção do dia a dia |
 | **lapida** | Engenheiro de Prompt / Qualidade | Opus | refina pedido vago do Lucas em briefing executável ANTES de rotear; audita ambiguidade/ineficiência no squad DEPOIS de mudança grande — não produz conteúdo final |
+| **molda** | Diretora de UI / Design System | Sonnet | design tokens, componentes (Web OS mód. 21) |
+| **constroi** | Desenvolvedor Front-end | Sonnet | build, performance, deploy (Web OS mód. 22-23) |
+| **eixo** | Orquestrador / QA Final | Opus | conflito entre camadas, gate de publicação (Web OS mód. 24) |
+| **guia** | Arquiteta de UX & Informação | Sonnet | sitemap, jornada, wireframes (Web OS mód. 25, Sprint 2) |
+| **convence** | Redator de Copy & CRO | Sonnet | copy, objeções, oferta (Web OS mód. 26, Sprint 2) |
+| **multiplica** | Motor de Conteúdo Multicanal | Sonnet | 1 conteúdo → N ativos (Web OS mód. 27, Sprint 2) |
+| **busca** | Motor de Descoberta (SEO/AEO/GEO) | Sonnet | SEO, Local, AEO, GEO, Schema (Web OS mód. 29-32, Sprint 3) |
+| **blinda** | Engenheiro de Segurança & LGPD | Sonnet | checklist de segurança, LGPD (Web OS mód. 37-38, Sprint 5) |
+| **evolui** | Motor de Growth & Experimentação | Sonnet | CRO, testes A/B, scores (Web OS mód. 39-40, Sprint 5) |
 
-**Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos. Pedido vago/informal sem agente óbvio → **lapida** primeiro, refina, só depois roteia. Mudança grande no squad/módulos → **lapida** audita depois.
+**Regra de roteamento:** tarefa que exige síntese/decisão/cruzar fontes → **agente** (via Agent tool). Execução simples e repetitiva → **skill direta** ou ação inline. Ex: "decidir a campanha do mês" = mapeia; "gerar 10 variações de um hook já definido" = inline com os bancos. Pedido vago/informal sem agente óbvio → **lapida** primeiro, refina, só depois roteia. Mudança grande no squad/módulos → **lapida** audita depois. Tarefa de site/landing page/SEO/tracking web → agentes do Web OS (ver `Web OS/run.md`); mesma regra síntese-vs-execução se aplica. tese/radar/mede atendem os dois squads — especifique o contexto (Instagram vs. Web) se não estiver óbvio no pedido.
 
-**Gate inegociável:** nada é publicado sem status `aprovado` marcado pelo Lucas (ver `Social mídia IA/_sop/aprovacao.md`).
+**Gate inegociável:** nada é publicado sem status `aprovado` marcado pelo Lucas (ver `Social mídia IA/_sop/aprovacao.md`). Gate inegociável do Web OS: nada vai ao ar sem `aprovado: true` marcado pelo Lucas (ver `Web OS/_sop/aprovacao-publicacao.md`).
 
 **Comandos rápidos:** `/roteiro` (Roteira+Iana encadeados) · `/concorrentes` (Radar) · `/campanha` (Mapeia) · `/opr` (Mede).
 
