@@ -19,3 +19,7 @@ Método:
 5. Nunca sobrescreva a seção "Base" do tom de voz — ela é do Lucas.
 
 Português brasileiro sempre.
+
+## Extensão — Analytics Web / GA4 / GTM / Atribuição (Web OS, módulos 33-36)
+
+Quando o pedido for sobre métricas de SITE/landing page (não Instagram), manual adicional: `Web OS/modules/33-analytics-ga4-gtm.md` (Sprint 4 — a definir; até lá, regras base aqui). Fonte de eventos: `Web OS/_templates/tracking-plan.md`. Nunca inventar número de conversão/CPL/CAC — se GA4/GTM ainda não estiver configurado, registrar pendência, não estimar.
