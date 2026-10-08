@@ -865,3 +865,256 @@ Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.
 Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-08-22T10:22:20.2365576-03:00] Done
+[2026-08-24T19:26:24.9758639-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   f5adbc3..dbaf070  master     -> origin/master
+Updating f5adbc3..dbaf070
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: 053fd74
+Fast-forward
+ reports/2026-08-24/02-perfis-instagram.md | 191 ++++++++++++++++++++++++++++++
+ 1 file changed, 191 insertions(+)
+ create mode 100644 reports/2026-08-24/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-24T19:27:03.9221213-03:00] Done
+[2026-08-25T21:17:12.9420960-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-25T21:17:31.6446455-03:00] Done
+[2026-08-27T19:09:47.4988421-03:00] Starting Obsidian sync
+[2026-08-29T11:23:00.1201197-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-29T11:23:09.0755208-03:00] Done
+[2026-08-30T15:50:26.8224557-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-08-30T15:51:33.8076433-03:00] Done
+[2026-09-02T21:40:21.3179805-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   dbaf070..7fcba2d  master     -> origin/master
+Updating dbaf070..7fcba2d
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: 686502d
+Fast-forward
+ reports/2026-08-31/02-perfis-instagram.md | 486 ++++++++++++++++++++++++++++++
+ 1 file changed, 486 insertions(+)
+ create mode 100644 reports/2026-08-31/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-02T21:41:13.3582753-03:00] Done
+[2026-09-05T08:30:14.8032429-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-05T08:30:29.3702888-03:00] Done
+[2026-09-07T14:29:17.9281240-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   7fcba2d..0d0c371  master     -> origin/master
+Updating 7fcba2d..0d0c371
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: a8f9bc9
+Fast-forward
+ reports/2026-09-07/02-perfis-instagram.md | 427 ++++++++++++++++++++++++++++++
+ 1 file changed, 427 insertions(+)
+ create mode 100644 reports/2026-09-07/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-07T14:29:55.2051999-03:00] Done
+[2026-09-08T21:33:47.7438710-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-08T21:34:07.6416402-03:00] Done
+[2026-09-13T19:43:14.8058934-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-13T19:43:21.4541141-03:00] Done
+[2026-09-17T23:01:38.8968214-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   0d0c371..9acd1de  master     -> origin/master
+Updating 0d0c371..9acd1de
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: f3b1c6e
+Fast-forward
+ reports/2026-09-14/02-perfis-instagram.md | 538 ++++++++++++++++++++++++++++++
+ 1 file changed, 538 insertions(+)
+ create mode 100644 reports/2026-09-14/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-17T23:02:57.1561717-03:00] Done
+[2026-09-20T18:36:58.7925423-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-20T18:37:18.7076668-03:00] Done
+[2026-09-26T18:46:11.0474700-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   9acd1de..a33dc42  master     -> origin/master
+Updating 9acd1de..a33dc42
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: e29c0e4
+Fast-forward
+ reports/2026-09-21/02-perfis-instagram.md | 512 ++++++++++++++++++++++++++++++
+ 1 file changed, 512 insertions(+)
+ create mode 100644 reports/2026-09-21/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-26T18:46:26.6551823-03:00] Done
+[2026-09-28T20:16:13.8578539-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   a33dc42..d88d0ba  master     -> origin/master
+Updating a33dc42..d88d0ba
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: adb40f8
+Fast-forward
+ reports/2026-09-28/02-perfis-instagram.md | 546 ++++++++++++++++++++++++++++++
+ 1 file changed, 546 insertions(+)
+ create mode 100644 reports/2026-09-28/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-28T20:17:13.0961858-03:00] Done
+[2026-09-29T20:10:28.7288477-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-09-29T20:11:12.0696497-03:00] Done
+[2026-10-01T19:35:48.8636436-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-01T19:35:56.1201419-03:00] Done
+[2026-10-03T08:00:44.3458807-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-03T08:01:05.1016733-03:00] Done
+[2026-10-03T08:30:07.9182328-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-03T08:30:17.6104071-03:00] Done
+[2026-10-04T22:31:10.7463195-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-04T22:31:18.1884634-03:00] Done
+[2026-10-06T06:08:20.6715335-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   d88d0ba..24c38b6  master     -> origin/master
+Updating d88d0ba..24c38b6
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: 8b40eaf
+Fast-forward
+ reports/2026-10-05/02-perfis-instagram.md | 118 ++++++++++++++++++++++++++++++
+ 1 file changed, 118 insertions(+)
+ create mode 100644 reports/2026-10-05/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-06T06:08:32.1028856-03:00] Done
+[2026-10-07T23:49:37.9381708-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-07T23:49:48.0656635-03:00] Done
