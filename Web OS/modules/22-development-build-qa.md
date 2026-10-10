@@ -34,9 +34,11 @@ Contraste mínimo AA, alt text em toda imagem, navegação por teclado funcional
 
 Invocar `accessibility` como referência de implementação WCAG 2.2.
 
-### Passo 4b — Auditoria técnica + polimento
+### Passo 4b — Auditoria técnica + polimento + piso de craft
 
 Invocar `web-quality-audit` (auditoria Lighthouse-style: performance, acessibilidade, SEO, boas práticas, com níveis de severidade). Em seguida, invocar `impeccable-design-polish` como passada final de polimento pré-handoff (modos Audit/Critique/Polish).
+
+Checklist do piso de craft (módulo 21, Passo 2a-bis — não-negociável, independente de nicho/Intensity): zero tell de "IA genérica" · micro-interação (hover/focus/active) em todo elemento interativo, nenhum no default do navegador · GSAP+Lenis como motor de animação, nenhuma transição em CSS improvisado · hierarquia tipográfica deliberada · os 8 breakpoints testados de verdade, não só no preview · dentro do performance budget. Falhar qualquer item aqui bloqueia o handoff pro módulo 23 tanto quanto falhar a11y.
 
 Não rodar `impeccable-design-polish` junto com `make-interfaces-feel-better` — cobrem o mesmo tipo de ajuste, é trabalho duplicado.
 
