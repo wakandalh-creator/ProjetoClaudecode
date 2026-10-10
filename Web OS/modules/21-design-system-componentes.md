@@ -25,9 +25,19 @@ Curar com o Lucas 1-3 sites de referência (Dribbble, Awwwards, Pinterest — nu
 
 ### Passo 2 — Tokens do projeto
 
-Definir cor primária/secundária/destaque, escala tipográfica, espaçamento (herda 4/8px do global), radius, shadow, breakpoints (320/375/390/430/768/1024/1280/1440+). Herdar do banco global por padrão; todo desvio precisa de motivo registrado em `specs/design.md`.
+Definir cor primária/secundária/destaque, escala tipográfica, espaçamento (herda 4/8px do global), radius, shadow, breakpoints (320/375/390/430/768/1024/1280/1440+) e **motion** (duration/easing/intensity/movement — herda de `Web OS/bancos/design-tokens-globais.md` seção Motion). Herdar do banco global por padrão; todo desvio precisa de motivo registrado em `specs/design.md`.
+
+Regra de motion, não negociável: toda animação precisa cumprir pelo menos 1 função (orientar, explicar, confirmar, gerar emoção com intenção, criar continuidade, ajudar conversão) — sem função, não entra. `prefers-reduced-motion` sempre respeitado.
 
 Invocar a skill `design-system` (modo "Gerar") pra extrair tokens a partir das referências e gerar o rascunho de `DESIGN.md`/`design-tokens.json` que alimenta o `specs/design.md` final.
+
+### Passo 2b — Performance budget
+
+Antes de desenhar qualquer seção, declarar o orçamento de performance do projeto em `specs/design.md`: LCP < 2,5s, INP < 200ms, CLS < 0,1 (mesmos limiares que o módulo 23 vai auditar), mais um limite consciente de peso de imagem/animação por seção. Cada efeito visual proposto nos passos seguintes precisa caber nesse orçamento — se não cabe, corta ou simplifica antes de chegar no módulo 22, não depois.
+
+### Passo 3c — Trust Architecture
+
+Pra cada seção que pede prova/confiança, listar de onde ela vem *antes* de prometer algo: clareza do processo, metodologia, demonstração do mecanismo, número real (nunca estimado), garantia, política visível — nunca só "depoimento" como única fonte de confiança. Mostrar evidência antes da promessa, não depois.
 
 ### Passo 3 — Inventário de componentes e direção visual
 
