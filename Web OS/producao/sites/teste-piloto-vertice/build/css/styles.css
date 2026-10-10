@@ -317,8 +317,11 @@ a:focus-visible, button:focus-visible {
 .como-funciona h2 { margin-bottom: var(--nv-space-3); }
 .como-funciona > .container > .body-lg { margin-bottom: var(--nv-space-7); }
 
-.mecanismo {
+.mecanismo__wrap {
   position: relative;
+}
+
+.mecanismo {
   list-style: none;
   margin: 0;
   padding: 0;
