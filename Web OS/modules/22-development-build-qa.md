@@ -53,3 +53,4 @@ Title, meta description e H1 únicos por página; `sitemap.xml` e `robots.txt` b
 - Nunca aprovar/avançar sem os 3 checklists preenchidos (QA ativo, a11y, auditoria técnica).
 - Componente bem-sucedido é candidato a `Web OS/bancos/componentes-aprovados.md` — confirmar com o Lucas antes de promover.
 - `frontend-patterns` fica de fora desta etapa — é específica de React/Next.js, stack errada pra um build HTML+CSS.
+- Motion opcional (verificado, 2026-10-09): se o `specs/design.md` pedir animação disparada por scroll além do que CSS puro resolve, a skill `gsap-scrolltrigger` é real e de propósito geral (não confundir com a skill `gsap` sozinha, que é específica da ferramenta HyperFrames e não se aplica aqui). GSAP/ScrollTrigger/Lenis funcionam em JS puro via `<script>`, sem exigir React — cabem na stack HTML+CSS como progressive enhancement. Não é default; só entra se o `specs/design.md` justificar com a regra de propósito do motion token.
