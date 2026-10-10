@@ -506,9 +506,11 @@ a:focus-visible, button:focus-visible {
   .container { padding-inline: var(--nv-space-7); }
   section { padding-block: var(--nv-space-9); }
 
-  .mecanismo { gap: var(--nv-space-7); padding-left: var(--nv-space-6); }
+  /* Padding-left de .mecanismo__passo fica igual em todo breakpoint de
+     propósito — é o que ancora a posição x da trilha (.mecanismo__trail,
+     left fixo); mudar um sem o outro desalinha a trilha dos números. */
+  .mecanismo { gap: var(--nv-space-7); }
   .mecanismo__trail { display: block; }
-  .mecanismo__passo { padding-left: var(--nv-space-6); }
   .mecanismo__num { font-size: 1rem; }
 
   .objecoes__list { grid-template-columns: repeat(2, 1fr); gap: var(--nv-space-7); }
