@@ -44,7 +44,7 @@ Vocabulário de movimento — existe pra toda animação do projeto citar um val
 |---|---|
 | Duration | 100ms (micro) · 200ms (padrão) · 300ms (transição de seção) · 500ms (entrada de bloco) — acima de 500ms só com justificativa |
 | Easing | `ease-out` (padrão pra entrada) · `ease-in-out` (padrão pra transição) · spring só quando o tom da marca permitir brincalhão (registrar por quê) |
-| Intensity | Subtle (padrão) · Medium · Strong/Cinematic — Strong/Cinematic exige justificativa no `specs/design.md`, nunca é default |
+| Intensity | **Determina o escopo de ScrollTrigger, calibrado por nicho**: Subtle = entrada no Hero + micro-interação de botão, sem scroll-trigger por seção (nicho B2B sóbrio/institucional) · Medium = scroll-reveal por seção, sem pinning (maioria dos projetos) · Strong/Cinematic = pinning/scrubbing/parallax real (só nicho visual-first — ex: criador de conteúdo, produto físico premium; exige justificativa no `specs/design.md` citando o ICP que sustenta essa escolha) |
 | Movement | Fade · Slide · Scale — vocabulário base. Rotate/Blur/Parallax/Morph só quando a seção de fato pede (nunca decorativo) |
 
 **Regra de propósito (obrigatória, não é token mas governa o uso de todos acima)**: toda animação precisa cumprir pelo menos 1 função — orientar, explicar, confirmar, gerar emoção com intenção, criar continuidade entre seções, ou ajudar conversão. Se não cumprir nenhuma, não entra. `prefers-reduced-motion: reduce` sempre respeitado — o usuário precisa entender o que a empresa faz com toda animação desligada.
