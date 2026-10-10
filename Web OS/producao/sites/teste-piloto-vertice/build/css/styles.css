@@ -469,6 +469,13 @@ a:focus-visible, button:focus-visible {
    MOTION — reduced motion (não-negociável, independente de Intensity)
    ========================================================================== */
 
+/* Rede de segurança: impressão/export em PDF não dispara scroll, então um
+   trigger scroll-gated nunca "acontece" — sem isto, as seções abaixo da
+   dobra imprimiriam em branco (opacity:0 permanente). */
+@media print {
+  [data-hero-reveal], [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   [data-hero-reveal], [data-reveal] { opacity: 1 !important; transform: none !important; }
   .motion-ready [data-reveal] { opacity: 1; transform: none; }
