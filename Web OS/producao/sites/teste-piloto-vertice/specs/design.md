@@ -65,7 +65,7 @@ Evidência antes de promessa, por seção — nenhuma delas depende de depoiment
 
 | Seção | De onde vem a confiança |
 |---|---|
-| Como funciona | Mecanismo exposto passo a passo (lê → consulta CRM → responde) — clareza do processo, não afirmação genérica |
+| Como funciona | Mecanismo exposto passo a passo (lê → consulta CRM → responde) — clareza do processo, não afirmação genérica. *(2026-10-09: o parallax/scrub desta seção — ver Movimento e interação — reforça essa evidência, não substitui; a animação segue a sequência real, não decora em cima dela.)* |
 | Garantia Vértice | Risco invertido: métrica combinada + devolução de 30% — garantia é a prova, não o depoimento |
 | Objeções | Resposta direta às 4 objeções reais do ICP, não genérica |
 | Programa Fundador | Vaga limitada enquadrada como real/temporária (3-5), nunca contador falso |
