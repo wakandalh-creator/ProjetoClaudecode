@@ -143,6 +143,12 @@
     </div>
   </footer>
 
+  <!-- Pendência de segurança (registrada, não resolvida nesta rodada): faltam atributos
+       integrity/crossorigin (SRI) nestes 3 scripts externos. Não adicionei hash forjado —
+       sem acesso de rede neste ambiente pra buscar o hash real, e um hash incorreto quebra
+       o carregamento silenciosamente (pior que não ter SRI). Antes de qualquer deploy público
+       (módulo 23 / land-and-deploy), gerar os hashes reais pra estas versões exatas ou
+       hospedar os 3 arquivos localmente em build/js/vendor/. -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="https://unpkg.com/lenis@1/dist/lenis.min.js" defer></script>
