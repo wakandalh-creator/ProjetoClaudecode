@@ -37,13 +37,27 @@ Herança: `Web OS/bancos/design-tokens-globais.md` está vazio em todas as categ
 
 **Pendência pro Lucas (não decido isso sozinho):** estes tokens são a identidade travada da Neovertix, não um padrão genérico de cliente — não promovi nada para `Web OS/bancos/design-tokens-globais.md` nesta rodada porque cor/tipografia aqui são *marca específica*, não padrão reutilizável entre clientes futuros (só a escala de espaçamento e os breakpoints já batem 1:1 com o global, sem ação necessária). Se o Lucas quiser que o espaçamento/radius/shadow desta marca vire o default do Web OS mesmo assim, isso é uma decisão explícita dele, não inferida aqui.
 
-## Performance budget (acrescentado 2026-10-09, a partir de adendo do Lucas)
+## Performance budget (acrescentado 2026-10-09; revisado no mesmo dia após subir Intensity pra Strong)
 
-Declarado antes do módulo 22 começar — todo efeito visual proposto nesta spec precisa caber aqui, senão corta antes de chegar no build:
+Declarado antes do módulo 22 começar — todo efeito visual proposto nesta spec precisa caber aqui, senão corta antes de chegar no build. Limiares não mudam com a Intensity (são os mesmos que o módulo 23 audita depois); o que muda é como o orçamento é gasto:
 
-- LCP < 2,5s · INP < 200ms · CLS < 0,1 (mesmo limiar que o módulo 23 vai auditar depois).
-- Página 100% tipográfica (ver Pipeline de imagem abaixo) — sem peso de imagem hero a orçar nesta rodada.
-- Animação: só a entrada orquestrada do Hero (ver Movimento e interação) + micro-interação de botão. Nada de scroll-triggered nesta v1 — se entrar depois, é incremento sobre este orçamento, não substituição dele.
+- **LCP < 2,5s** — página continua 100% tipográfica (zero imagem hero a orçar). Risco novo com Strong: o H1 do Hero não pode depender de JS pra aparecer — elemento do LCP precisa estar visível via CSS puro desde o primeiro paint; a entrada animada (opacity/translateY) só pode partir de um estado que já reserva o espaço e nunca pode ficar invisível além de ~150ms se o GSAP atrasar (fallback: conteúdo visível por padrão, JS só adiciona o estado inicial oculto depois de confirmar que carregou — nunca o inverso). GSAP core + ScrollTrigger + Lenis (~45-70KB combinados, gzip) carregam com `defer`, nunca bloqueando o parse do HTML/CSS.
+- **INP < 200ms** — todo listener de scroll usa o ticker do GSAP/Lenis (passivo, `transform`/`opacity` só — nunca propriedade de layout), pra não travar a thread principal durante um toque/clique no meio de um scroll.
+- **CLS < 0,1** — todo elemento com scroll-reveal reserva o espaço de layout desde o carregamento (oculto via `opacity`, nunca via `display:none`/`height:0`); nenhuma reflow quando a animação dispara.
+- **Orçamento de animação por seção** (Passo 2a-bis exige consciência por seção, não orçamento único genérico):
+
+| Seção | Animação orçada |
+|---|---|
+| Hero | Entrada orquestrada (eyebrow→H1 stagger→CTA) + parallax camada 1 (glow de fundo, baixo custo: 1 elemento, só `transform`) |
+| Problema | Scroll-reveal simples (fade+slide curto) |
+| Como funciona | Scroll-reveal + parallax camada 2 (trilho entre os 3 passos, scrub síncrono — maior custo da página, mitigado por ser só `transform` em 1 elemento) |
+| Oferta | Scroll-reveal simples |
+| Garantia Vértice | Scroll-reveal simples — **sem** contador numérico animado (ver nota em Movimento e interação) |
+| Objeções | Scroll-reveal com stagger entre os 4 itens |
+| Programa Fundador | Scroll-reveal simples |
+| CTA final | Scroll-reveal simples |
+
+Nenhuma seção ganha mais de 1 efeito simultâneo. Os 2 parallax (Hero e Como funciona) são o teto da página — não adicionar um terceiro sem revisar este orçamento de novo.
 
 ## Trust Architecture (acrescentado 2026-10-09)
 
