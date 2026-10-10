@@ -30,7 +30,7 @@
 | 30 | Entity Map & Schema | Busca | Sprint 3 — a definir |
 | 31 | SEO, SEO Local, GBP Engine, Review Intelligence | Busca | Sprint 3 — a definir |
 | 32 | AEO, GEO & LLMS.txt | Busca | Sprint 3 — a definir |
-| 33 | Analytics Engine: GA4+GTM+Tracking Plan | Mede (ext) | Sprint 4 — a definir |
+| 33 | Analytics Engine: GA4+GTM+Tracking Plan (inclui Behavior Analytics — scroll depth, rage/dead click, abandono por seção, acrescentado 2026-10-09) | Mede (ext) | Sprint 4 — a definir |
 | 34 | UTM System & Atribuição | Mede (ext) | Sprint 4 — a definir |
 | 35 | CRM Integration & BI Dashboard | Mede (ext) | Sprint 4 — a definir |
 | 36 | Monitoramento Contínuo Web | Mede (ext) | Sprint 4 — a definir |
