@@ -90,6 +90,7 @@ h1, h2, h3, h4 {
   font-family: var(--nv-font-display);
   margin: 0;
   text-wrap: balance;
+  overflow-wrap: break-word; /* rede de segurança contra overflow em telas estreitas (320px) */
 }
 
 h1 {
