@@ -171,6 +171,6 @@ Nenhum outro elemento ganha parallax — Oferta/Garantia/Objeções/Programa Fun
 
 ## Checklist de aprovação
 
-- [ ] Aprovado pelo Lucas em: {data}
+- [x] Aprovado pelo Lucas em: 2026-10-09 (via chat — "deixa os dois e podemos adaptar conforme os projetos forem sendo executados")
 
 **Sem essa marcação, o módulo 22 (Constrói) não inicia.**
