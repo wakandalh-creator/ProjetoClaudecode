@@ -31,6 +31,19 @@ Regra de motion, não negociável: toda animação precisa cumprir pelo menos 1 
 
 Invocar a skill `design-system` (modo "Gerar") pra extrair tokens a partir das referências e gerar o rascunho de `DESIGN.md`/`design-tokens.json` que alimenta o `specs/design.md` final.
 
+### Passo 2a-bis — Piso de craft (não-negociável, todo projeto, qualquer nicho)
+
+Objetivo de negócio por trás desta regra (não é estética por estética): sustentar preço mais alto e percepção de valor — o cliente vendo o site precisa sentir "isso não é barato". Isso é separado da Intensity (que varia por nicho) — o piso abaixo é igual em **todo** projeto Web OS, do mais sóbrio ao mais visual:
+
+- Zero marca de "IA genérica" — checado contra a lista de tells do `frontend-design`/`design-taste-frontend`/`impeccable-design-polish` (gradiente roxo-azul, card de vidro, hero centralizado sobre gradiente, eyebrow ALL-CAPS repetido, kit de card SaaS).
+- Micro-interação real em **todo** elemento interativo (botão, link, card, campo de formulário) — estado hover/focus/active sempre definido, nunca deixado no default do navegador. É isso que "parece caro" mesmo em Intensity Subtle, não escala/parallax.
+- Motor de animação de verdade (GSAP+Lenis, ver banco de Motion Tokens) em vez de CSS improvisado — mesmo numa única transição.
+- Tipografia com hierarquia deliberada (peso, escala, ritmo vertical) — nunca tamanho de fonte "no olho".
+- Responsividade sem concessão: testar os 8 breakpoints do padrão global de verdade, não só o preview do editor — quebra em qualquer um deles derruba a percepção de valor tanto quanto um erro visual no desktop.
+- Performance dentro do budget do Passo 2b abaixo — um site lindo que demora 4s pra carregar comunica o oposto de premium.
+
+Esse piso entra no checklist do módulo 22 (Passo 4b) como item de QA, não é opcional "se der tempo".
+
 ### Passo 2b — Performance budget
 
 Antes de desenhar qualquer seção, declarar o orçamento de performance do projeto em `specs/design.md`: LCP < 2,5s, INP < 200ms, CLS < 0,1 (mesmos limiares que o módulo 23 vai auditar), mais um limite consciente de peso de imagem/animação por seção. Cada efeito visual proposto nos passos seguintes precisa caber nesse orçamento — se não cabe, corta ou simplifica antes de chegar no módulo 22, não depois.
