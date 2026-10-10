@@ -36,6 +36,26 @@ Herança: `Web OS/bancos/design-tokens-globais.md` está vazio em todas as categ
 
 **Pendência pro Lucas (não decido isso sozinho):** estes tokens são a identidade travada da Neovertix, não um padrão genérico de cliente — não promovi nada para `Web OS/bancos/design-tokens-globais.md` nesta rodada porque cor/tipografia aqui são *marca específica*, não padrão reutilizável entre clientes futuros (só a escala de espaçamento e os breakpoints já batem 1:1 com o global, sem ação necessária). Se o Lucas quiser que o espaçamento/radius/shadow desta marca vire o default do Web OS mesmo assim, isso é uma decisão explícita dele, não inferida aqui.
 
+## Performance budget (acrescentado 2026-10-09, a partir de adendo do Lucas)
+
+Declarado antes do módulo 22 começar — todo efeito visual proposto nesta spec precisa caber aqui, senão corta antes de chegar no build:
+
+- LCP < 2,5s · INP < 200ms · CLS < 0,1 (mesmo limiar que o módulo 23 vai auditar depois).
+- Página 100% tipográfica (ver Pipeline de imagem abaixo) — sem peso de imagem hero a orçar nesta rodada.
+- Animação: só a entrada orquestrada do Hero (ver Movimento e interação) + micro-interação de botão. Nada de scroll-triggered nesta v1 — se entrar depois, é incremento sobre este orçamento, não substituição dele.
+
+## Trust Architecture (acrescentado 2026-10-09)
+
+Evidência antes de promessa, por seção — nenhuma delas depende de depoimento (que não existe ainda):
+
+| Seção | De onde vem a confiança |
+|---|---|
+| Como funciona | Mecanismo exposto passo a passo (lê → consulta CRM → responde) — clareza do processo, não afirmação genérica |
+| Garantia Vértice | Risco invertido: métrica combinada + devolução de 30% — garantia é a prova, não o depoimento |
+| Objeções | Resposta direta às 4 objeções reais do ICP, não genérica |
+| Programa Fundador | Vaga limitada enquadrada como real/temporária (3-5), nunca contador falso |
+| Rodapé (implícito, cobrir no módulo 22) | Contato real do Lucas, não "equipe" — reforça arquétipo Cara Comum |
+
 ## Tom e estrutura
 
 **Tom** (herdado de `brandbook.md` §3 + `estrategia.md` §6):
