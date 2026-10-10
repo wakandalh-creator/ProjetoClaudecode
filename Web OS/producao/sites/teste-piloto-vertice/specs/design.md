@@ -113,6 +113,8 @@ Decisões tomadas pra não ler como template genérico, verificadas contra a lis
 
 ### Movimento e interação (`emil-design-eng`)
 
+**Motor: GSAP + Lenis** (padrão de todo projeto Web OS, revisado em 2026-10-09 — não é mais CSS puro improvisado, mesmo em Intensity Subtle). Intensity desta página: **Subtle** — ICP é PME B2B sóbrio, decisor único (`icp-web.md`), sem justificativa pra Medium/Strong (que exigiriam nicho mais visual). Subtle aqui significa escopo contido de ScrollTrigger (sem reveal por seção, sem pinning/parallax), não motor improvisado — o piso de craft (módulo 21, Passo 2a-bis) continua valendo igual a qualquer outro projeto: toda micro-interação é real, não default do navegador.
+
 Decisões de easing/duração/spring aplicadas — não empilhadas com outra skill de "taste" na mesma decisão:
 
 - **Um único momento orquestrado de entrada, no Hero**: eyebrow aparece (opacity 160ms ease-out) → linhas do H1 entram com stagger curto (translateY(8px)→0 + opacity, ~40ms entre linhas, ease-out, ≤250ms cada) → CTA aparece por último. Nenhuma outra seção tem animação de scroll-reveal por padrão — evita o "fade-and-slide-up em cada seção" que o próprio `frontend-design` marca como tell de IA.
