@@ -127,17 +127,38 @@ Decisões tomadas pra não ler como template genérico, verificadas contra a lis
 
 ### Movimento e interação (`emil-design-eng`)
 
-**Motor: GSAP + Lenis** (padrão de todo projeto Web OS, revisado em 2026-10-09 — não é mais CSS puro improvisado, mesmo em Intensity Subtle). Intensity desta página: **Subtle** — ICP é PME B2B sóbrio, decisor único (`icp-web.md`), sem justificativa pra Medium/Strong (que exigiriam nicho mais visual). Subtle aqui significa escopo contido de ScrollTrigger (sem reveal por seção, sem pinning/parallax), não motor improvisado — o piso de craft (módulo 21, Passo 2a-bis) continua valendo igual a qualquer outro projeto: toda micro-interação é real, não default do navegador.
+**Revisão 2026-10-09 — Intensity subiu de Subtle pra Strong, exceção pontual deste projeto.** Decisão do Lucas, não inferida por mim: o default calibrado pelo ICP de conversão (`icp-web.md` — PME B2B sóbria, decisor único) continuaria Subtle, e é isso que vale pra qualquer projeto futuro com esse mesmo perfil. Esta página específica, porém, acumula um segundo papel que o ICP de conversão não cobre: ela é a **vitrine de capacidade de build da própria Neovertix**, olhada por quem está avaliando se a agência "constrói coisa impressionante" antes de confiar o próprio projeto a ela — uma audiência de craft, não de tom. Por isso: **a voz/léxico/estrutura de copy não mudam em nada** (seção Tom e estrutura intacta, sóbria) — só o orçamento de movimento sobe, e só nos dois pontos abaixo onde isso tem função, não decoração.
 
-Decisões de easing/duração/spring aplicadas — não empilhadas com outra skill de "taste" na mesma decisão:
+**Motor: GSAP + Lenis** (padrão de todo projeto Web OS desde 2026-10-09 — não é CSS improvisado em nenhuma Intensity). Com Strong, Lenis assume o scroll smoothing da página inteira (não só o Hero) e ScrollTrigger passa a orquestrar reveal por seção + os 2 parallax abaixo.
 
-- **Um único momento orquestrado de entrada, no Hero**: eyebrow aparece (opacity 160ms ease-out) → linhas do H1 entram com stagger curto (translateY(8px)→0 + opacity, ~40ms entre linhas, ease-out, ≤250ms cada) → CTA aparece por último. Nenhuma outra seção tem animação de scroll-reveal por padrão — evita o "fade-and-slide-up em cada seção" que o próprio `frontend-design` marca como tell de IA.
-- **Botões** (CTA primário/secundário): `transform: scale(0.97)` em `:active`, `transition: transform 160ms ease-out` — feedback de pressão imediato. Hover já definido em `tokens.css` (`background-color .15s ease`), mantido sem alteração.
-- **Foco de teclado**: usar `--nv-focus-ring` (já tokenizado) em todo elemento interativo — nunca remover outline sem substituto visível.
-- **Card de Oferta**: sem hover de elevação — o card em si não é clicável (o CTA dentro dele é); animar algo que não responde a uma ação do usuário não tem propósito, conforme o framework de decisão do emil ("should this animate at all?").
-- **Objeções**: estático, sem transição — reforça o tom "sóbrio, não gritado".
-- **Sem spring/bounce em nenhum elemento** — decisão deliberada: springs/bounce comunicam playfulness, que conflita com o tom sóbrio e o arquétipo Cara Comum da marca. Reservado pra nunca usar nesta página, a menos que o Lucas peça explicitamente.
-- **`prefers-reduced-motion: reduce`** respeitado em toda a página — mantém opacity, remove transform-based motion (regra de acessibilidade do emil-design-eng, não negociável mesmo em teste de pipeline).
+**Onde entra scroll-reveal (Medium, todas as 8 seções) — com variação por seção, não o mesmo tratamento repetido:**
+
+| Seção | Reveal | Função |
+|---|---|---|
+| Hero | Não é scroll-reveal (já visível no load) — ver entrada orquestrada abaixo | Primeira impressão não pode depender de scroll |
+| Problema | Fade + slide curto (translateY 8px→0, 300ms ease-out) | Dar 1 pausa de leitura antes do mecanismo |
+| Como funciona | Reveal por passo, sincronizado com o scrub do parallax (ver abaixo) — não é um fade genérico | Literalmente demonstra a sequência do mecanismo — função explicativa, não decorativa |
+| Oferta | Fade + slide curto | Pontuar o momento de preço/escopo |
+| Garantia Vértice | Fade + slide curto — **sem contador numérico subindo até 30%**: a garantia é um limiar fixo, não uma métrica que "cresce"; animar como se fosse crescendo distorceria o que o número significa (risco de veracidade, não só estética) | Reforça o risco invertido sem fingir dinamismo que não existe |
+| Objeções | Stagger entre os 4 itens (~60ms entre cada, fade+slide) | Pacing de leitura — evita parede de texto |
+| Programa Fundador | Fade + slide curto | Pausa visual antes do CTA final |
+| CTA final | Fade + slide curto, reusa o componente do Hero | Fecha o espelhamento com a abertura |
+
+**Onde entra parallax real (Strong) — só 2 camadas, nada mais:**
+
+1. **Hero → Problema**: glow de fundo (radial, cor accent-dim, já tokenizado) atrás do H1 se move a ~0,4x da velocidade do scroll enquanto o usuário desce do Hero pro Problema. Função: **criar continuidade entre seções** (uma das funções explicitamente permitidas pela regra de propósito do módulo 21) — a página não "corta" de uma seção pra outra, ela tem profundidade espacial.
+2. **Como funciona**: a trilha/linha que conecta os 3 passos numerados se move em velocidade diferente do texto dos passos (scrub: true, atado à posição do scroll, não a uma duração fixa). Função: **explicar** — o movimento da trilha reforça visualmente que é uma sequência acontecendo, não 3 cards soltos.
+
+Nenhum outro elemento ganha parallax — Oferta/Garantia/Objeções/Programa Fundador são momentos de decisão/leitura, e movimento de fundo ali teria custo de atenção sem função (mesmo em Strong, a regra "toda animação cumpre 1 função" continua valendo — Strong manda escopo, não dispensa).
+
+**Decisões que não mudam com Strong** (não empilhadas com outra skill de "taste" na mesma decisão):
+
+- **Sem spring/bounce em nenhum elemento, mesmo em Strong.** Importante não confundir: Strong aqui significa mais coreografia de scroll (parallax/scrub), não playfulness. Spring/bounce comunicaria um tom brincalhão que contradiz o arquétipo Cara Comum e a voz sóbria — isso não mudou, só o escopo de scroll mudou.
+- **Botões** (CTA primário/secundário): `transform: scale(0.97)` em `:active`, `transition: transform 160ms ease-out`. Hover já definido em `tokens.css` (`background-color .15s ease`), mantido sem alteração.
+- **Foco de teclado**: `--nv-focus-ring` (já tokenizado) em todo elemento interativo — nunca remover outline sem substituto visível.
+- **Card de Oferta**: ainda sem hover de elevação — o card não é clicável (o CTA dentro dele é); isso não muda com Strong, continua sem função.
+- **`prefers-reduced-motion: reduce`**: com Strong isso importa mais, não menos — reveal vira opacity-only (sem translateY), e os 2 parallax desligam completamente (ficam estáticos na posição final), nunca só "mais lento". O usuário entende 100% do conteúdo com todo movimento desligado — regra de acessibilidade do emil-design-eng, não negociável independente de Intensity.
+- **Progressive enhancement**: com motor GSAP/Lenis real e mais pontos de animação, a exigência de "funciona com JS desligado" (banco de Motion Tokens) fica mais importante de testar no módulo 22, não menos — todo conteúdo revelado por scroll-reveal precisa estar presente e legível no HTML/CSS base, só a entrada que depende de JS.
 
 ## Pipeline de imagem
 
