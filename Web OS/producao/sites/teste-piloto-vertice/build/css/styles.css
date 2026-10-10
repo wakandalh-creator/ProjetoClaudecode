@@ -1,0 +1,522 @@
+/* ==========================================================================
+   PILOTO VÉRTICE — build do módulo 22 (Constrói)
+   Tokens vendorizados a partir de branding/neovertix/tokens.css (fonte oficial
+   da marca) direto neste arquivo — build/ fica self-contained, sem depender
+   de caminho pra fora da pasta de entrega. Qualquer mudança de marca precisa
+   ser replicada aqui manualmente (não há build step/import real nesta stack).
+   ========================================================================== */
+
+:root {
+  /* Cor — fundo em camadas */
+  --nv-bg-canvas: #0A0E1A;
+  --nv-surface-base: #121A2E;
+  --nv-surface-raised: #1A2440;
+  --nv-surface-overlay: #232F52;
+
+  /* Cor — texto */
+  --nv-text-primary: #F5F7FA;
+  --nv-text-secondary: #AAB4C2;
+  --nv-text-muted: #7A8699;
+
+  /* Cor — acento */
+  --nv-accent: #43A047;
+  --nv-accent-hover: #66BB6A;
+  --nv-accent-dim: #2E7D32;
+  --nv-accent-contrast: #121A2E;
+
+  /* Cor — bordas */
+  --nv-border-subtle: #18213A;
+  --nv-border-strong: #5A6780;
+
+  /* Tipografia — famílias */
+  --nv-font-display: 'Chakra Petch', ui-sans-serif, 'Segoe UI', sans-serif;
+  --nv-font-text: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --nv-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
+
+  /* Tipografia — escala fluida, ancorada no teto do token (clamp nunca excede o valor da spec) */
+  --nv-h1-size: clamp(2.25rem, 1.55rem + 3.6vw, 3.5rem);
+  --nv-h2-size: clamp(1.85rem, 1.4rem + 2.3vw, 2.75rem);
+  --nv-h3-size: clamp(1.35rem, 1.15rem + 1vw, 2rem);
+  --nv-body-lg-size: clamp(1.05rem, 1rem + 0.25vw, 1.15rem);
+
+  /* Espaçamento — escala 4/8px */
+  --nv-space-1: 0.25rem;
+  --nv-space-2: 0.5rem;
+  --nv-space-3: 0.75rem;
+  --nv-space-4: 1rem;
+  --nv-space-5: 1.5rem;
+  --nv-space-6: 2rem;
+  --nv-space-7: 3rem;
+  --nv-space-8: 4rem;
+  --nv-space-9: 6rem;
+
+  /* Raio — diferenciado por hierarquia */
+  --nv-radius-sm: 6px;
+  --nv-radius-md: 10px;
+  --nv-radius-lg: 14px;
+  --nv-radius-full: 999px;
+
+  /* Sombra / glow — nunca rgba(0,0,0,.1) genérica */
+  --nv-shadow-inset-highlight: inset 0 1px 0 rgba(255,255,255,.03);
+  --nv-shadow-elevated: 0 8px 24px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.02);
+  --nv-glow-accent: 0 0 0 1px rgba(67,160,71,.35), 0 0 24px rgba(67,160,71,.18);
+  --nv-focus-ring: 0 0 0 3px rgba(67,160,71,.35);
+}
+
+/* ==========================================================================
+   RESET / BASE
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto; /* Lenis assume o smoothing quando carrega; sem Lenis, scroll nativo normal */
+}
+
+body {
+  margin: 0;
+  background: var(--nv-bg-canvas);
+  color: var(--nv-text-primary);
+  font-family: var(--nv-font-text);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg { max-width: 100%; display: block; }
+
+h1, h2, h3, h4 {
+  font-family: var(--nv-font-display);
+  margin: 0;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--nv-h1-size);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--nv-h2-size);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--nv-h3-size);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+}
+
+p { margin: 0; }
+
+.body-lg {
+  font-size: var(--nv-body-lg-size);
+  line-height: 1.5;
+  color: var(--nv-text-secondary);
+  max-width: 42ch;
+}
+
+a { color: inherit; }
+
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-inline: var(--nv-space-5);
+}
+
+section {
+  padding-block: var(--nv-space-8);
+}
+
+main > section + section { border-top: 1px solid var(--nv-border-subtle); }
+
+/* ==========================================================================
+   SKIP LINK (teclado)
+   ========================================================================== */
+
+.skip-link {
+  position: absolute;
+  left: var(--nv-space-3);
+  top: -3rem;
+  background: var(--nv-accent);
+  color: var(--nv-accent-contrast);
+  padding: var(--nv-space-2) var(--nv-space-4);
+  border-radius: var(--nv-radius-sm);
+  font-family: var(--nv-font-text);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: none;
+  z-index: 100;
+  transition: top 160ms ease-out;
+}
+
+.skip-link:focus-visible {
+  top: var(--nv-space-3);
+  outline: none;
+  box-shadow: var(--nv-focus-ring);
+}
+
+/* ==========================================================================
+   FOCO DE TECLADO — global, nunca remove outline sem substituto
+   ========================================================================== */
+
+a:focus-visible, button:focus-visible {
+  outline: none;
+  box-shadow: var(--nv-focus-ring);
+  border-radius: var(--nv-radius-sm);
+}
+
+/* ==========================================================================
+   COMPONENTES — Botão (base do brandkit Neovertix, adaptado)
+   ========================================================================== */
+
+.nv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nv-space-2);
+  padding: var(--nv-space-3) var(--nv-space-5);
+  min-height: 44px;
+  border: none;
+  border-radius: var(--nv-radius-sm);
+  font-family: var(--nv-font-text);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, box-shadow 150ms ease, transform 160ms ease-out;
+}
+
+.nv-btn--primary {
+  background: var(--nv-accent);
+  color: var(--nv-accent-contrast);
+}
+.nv-btn--primary:hover { background: var(--nv-accent-hover); }
+.nv-btn--primary:active { transform: scale(0.97); }
+.nv-btn--primary:focus-visible { box-shadow: var(--nv-focus-ring); }
+
+.microcopy {
+  margin-top: var(--nv-space-3);
+  font-size: 0.875rem;
+  color: var(--nv-text-muted);
+}
+
+/* ==========================================================================
+   COMPONENTES — Card (base do brandkit, usado só na Oferta)
+   ========================================================================== */
+
+.nv-card {
+  background: var(--nv-surface-base);
+  border: 1px solid var(--nv-border-subtle);
+  border-radius: var(--nv-radius-md);
+  padding: var(--nv-space-6);
+  box-shadow: var(--nv-shadow-inset-highlight);
+}
+
+/* Card de Oferta não é clicável (o CTA dentro dele é) — sem hover de elevação,
+   decisão explícita da spec (design.md, Movimento e interação). */
+.oferta-card:hover { background: var(--nv-surface-base); border-color: var(--nv-border-subtle); }
+
+/* ==========================================================================
+   EYEBROW — mono, uso único na página (Hero). Não reutilizar em outra seção.
+   ========================================================================== */
+
+.eyebrow {
+  font-family: var(--nv-font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--nv-accent);
+  margin: 0 0 var(--nv-space-4);
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--nv-space-9) var(--nv-space-8);
+  isolation: isolate;
+}
+
+.hero__inner { position: relative; z-index: 1; text-align: left; }
+
+.hero h1 { max-width: 20ch; }
+
+.hero__subhead {
+  margin-top: var(--nv-space-5);
+  font-size: var(--nv-body-lg-size);
+  line-height: 1.5;
+  color: var(--nv-text-secondary);
+  max-width: 42ch;
+}
+
+.hero__cta { margin-top: var(--nv-space-6); }
+
+/* Glow de fundo — decorativo, camada de parallax 1. Posição estática por
+   padrão (funciona sem JS); o scrub de scroll é só um acréscimo via GSAP. */
+.hero__glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: min(60rem, 140vw);
+  height: 40rem;
+  transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(67,160,71,.22), rgba(67,160,71,0) 70%);
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* ---- Entrada do Hero (fallback-first) --------------------------------
+   Estado final/visível é o default em CSS puro — o H1 nunca depende de JS
+   pra aparecer. O JS (main.js), só depois de confirmar GSAP carregado,
+   aplica o estado inicial oculto e anima no mesmo tick (sem flash). */
+[data-hero-reveal] { opacity: 1; transform: none; }
+
+/* ==========================================================================
+   PROBLEMA / OFERTA / GARANTIA / FUNDADOR / CTA FINAL — reveal padrão
+   ========================================================================== */
+
+/* Fallback: sempre visível por padrão — funciona 100% com JS desligado.
+   Só fica oculto quando .motion-ready confirma que o motor de animação
+   carregou (classe adicionada pelo main.js, nunca por CSS sozinho). */
+[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ==========================================================================
+   PROBLEMA
+   ========================================================================== */
+
+.problema h2 { max-width: 18ch; margin-bottom: var(--nv-space-5); }
+
+/* ==========================================================================
+   COMO FUNCIONA
+   ========================================================================== */
+
+.como-funciona h2 { margin-bottom: var(--nv-space-3); }
+.como-funciona > .container > .body-lg { margin-bottom: var(--nv-space-7); }
+
+.mecanismo {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--nv-space-6);
+}
+
+.mecanismo__passo {
+  position: relative;
+  padding-left: var(--nv-space-7);
+}
+
+.mecanismo__num {
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-family: var(--nv-font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--nv-accent);
+}
+
+.mecanismo__passo h3 { margin-bottom: var(--nv-space-2); }
+.mecanismo__passo p { color: var(--nv-text-secondary); max-width: 38ch; }
+
+/* Trilha — camada de parallax 2. Estática por padrão (sem JS: uma linha fixa
+   já comunica "sequência"); o scrub só reforça o movimento. */
+.mecanismo__trail {
+  display: none; /* a trilha só faz sentido visualmente no layout de coluna única
+                     com recuo lateral — ver breakpoint >=768 abaixo */
+  position: absolute;
+  left: 0.55rem;
+  top: 0.6rem;
+  bottom: 0.6rem;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--nv-accent), var(--nv-accent-dim));
+  transform-origin: top;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   OFERTA
+   ========================================================================== */
+
+.oferta h2 { margin-bottom: var(--nv-space-5); }
+
+.oferta-card__escopo {
+  list-style: none;
+  margin: 0 0 var(--nv-space-5);
+  padding: 0;
+  display: grid;
+  gap: var(--nv-space-2);
+  color: var(--nv-text-secondary);
+}
+.oferta-card__escopo li::before { content: "— "; color: var(--nv-accent); }
+
+.oferta-card__prazo { color: var(--nv-text-secondary); margin-bottom: var(--nv-space-4); }
+
+.oferta-card__preco {
+  font-family: var(--nv-font-display);
+  font-size: var(--nv-h3-size);
+  font-weight: 700;
+  color: var(--nv-text-primary);
+}
+.oferta-card__preco span {
+  display: block;
+  font-family: var(--nv-font-text);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--nv-text-muted);
+}
+
+.oferta-card__fundador {
+  margin-top: var(--nv-space-2);
+  margin-bottom: var(--nv-space-6);
+  font-size: 0.875rem;
+  color: var(--nv-text-muted);
+}
+
+/* ==========================================================================
+   GARANTIA VÉRTICE — borda strong (não accent; accent fica reservado pro
+   número e pro CTA), número em destaque único da seção.
+   ========================================================================== */
+
+.garantia__box {
+  border: 1px solid var(--nv-border-strong);
+  border-radius: var(--nv-radius-lg);
+  padding: var(--nv-space-7);
+}
+
+.garantia__box h2 { margin-bottom: var(--nv-space-4); }
+.garantia__box .body-lg { max-width: 56ch; }
+
+.garantia__numero {
+  margin-top: var(--nv-space-6);
+  font-family: var(--nv-font-display);
+  font-size: var(--nv-h3-size);
+  font-weight: 700;
+}
+.garantia__numero .accent { color: var(--nv-accent); }
+
+/* ==========================================================================
+   OBJEÇÕES — 4 blocos estáticos, stagger no reveal (sem accordion: YAGNI)
+   ========================================================================== */
+
+.objecoes h2 { margin-bottom: var(--nv-space-6); }
+
+.objecoes__list {
+  display: grid;
+  gap: var(--nv-space-6);
+}
+
+.objecoes__item h3 { margin-bottom: var(--nv-space-2); color: var(--nv-text-primary); }
+.objecoes__item p { color: var(--nv-text-secondary); max-width: 52ch; }
+
+/* ==========================================================================
+   PROGRAMA FUNDADOR
+   ========================================================================== */
+
+.fundador h2 { margin-bottom: var(--nv-space-4); }
+.fundador .body-lg { max-width: 56ch; }
+
+/* ==========================================================================
+   CTA FINAL — reusa o mesmo componente do Hero
+   ========================================================================== */
+
+.cta-final { text-align: left; }
+.cta-final h2 { max-width: 24ch; margin-bottom: var(--nv-space-5); }
+
+/* ==========================================================================
+   RODAPÉ — contato real do Lucas, não "equipe"
+   ========================================================================== */
+
+.site-footer {
+  padding-block: var(--nv-space-7);
+  border-top: 1px solid var(--nv-border-subtle);
+}
+
+.site-footer__nome { font-family: var(--nv-font-display); font-weight: 600; font-size: 1.05rem; }
+.site-footer__linha { margin-top: var(--nv-space-2); color: var(--nv-text-secondary); }
+.site-footer__contato { margin-top: var(--nv-space-4); font-size: 0.8125rem; color: var(--nv-text-muted); }
+
+/* ==========================================================================
+   MOTION — reduced motion (não-negociável, independente de Intensity)
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-hero-reveal], [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .motion-ready [data-reveal] { opacity: 1; transform: none; }
+  .hero__glow, .mecanismo__trail { transform: none !important; }
+  .nv-btn--primary:active { transform: none; }
+}
+
+/* ==========================================================================
+   BREAKPOINTS — 375 / 390 / 430 / 768 / 1024 / 1280 / 1440+
+   (320px é o piso, coberto pelos estilos acima sem media query)
+   ========================================================================== */
+
+@media (min-width: 375px) {
+  .container { padding-inline: var(--nv-space-6); }
+}
+
+@media (min-width: 390px) {
+  /* Ajuste fino de respiro — mesma régua, telas um pouco maiores. */
+  section { padding-block: var(--nv-space-8); }
+}
+
+@media (min-width: 430px) {
+  .hero__cta { display: flex; align-items: center; gap: var(--nv-space-5); }
+  .hero__cta .microcopy { margin-top: 0; }
+}
+
+@media (min-width: 768px) {
+  .container { padding-inline: var(--nv-space-7); }
+  section { padding-block: var(--nv-space-9); }
+
+  .mecanismo { gap: var(--nv-space-7); padding-left: var(--nv-space-6); }
+  .mecanismo__trail { display: block; }
+  .mecanismo__passo { padding-left: var(--nv-space-6); }
+  .mecanismo__num { font-size: 1rem; }
+
+  .objecoes__list { grid-template-columns: repeat(2, 1fr); gap: var(--nv-space-7); }
+
+  .garantia__box { padding: var(--nv-space-8); }
+}
+
+@media (min-width: 1024px) {
+  .hero__inner { max-width: 44rem; }
+  .oferta-card { max-width: 32rem; }
+  .garantia__box { display: grid; grid-template-columns: 1.3fr 1fr; align-items: center; gap: var(--nv-space-8); }
+  .garantia__box h2 { grid-column: 1 / -1; }
+}
+
+@media (min-width: 1280px) {
+  .container { max-width: 78rem; }
+  section { padding-block: 7rem; }
+}
+
+@media (min-width: 1440px) {
+  .container { max-width: 84rem; }
+}
