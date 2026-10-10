@@ -34,9 +34,11 @@ Escala base: 4, 8, 12, 16, 24, 32, 48, 64, 80, 96 (px). Ajustes por projeto regi
 
 Padrão: 320, 375, 390, 430, 768, 1024, 1280, 1440+ (px) — mobile-first, nunca só encolher o desktop.
 
-## Motion (acrescentado 2026-10-09, a partir de adendo do Lucas)
+## Motion (acrescentado 2026-10-09, a partir de adendo do Lucas; política de default revisada no mesmo dia)
 
-Vocabulário de movimento — existe pra toda animação do projeto citar um valor daqui em vez de inventar número solto. GSAP/ScrollTrigger/Lenis são as ferramentas padrão quando o projeto precisar de animação disparada por scroll — funcionam em JS puro, não exigem React, cabem na stack HTML+CSS do Web OS como progressive enhancement (o site funciona com JS desligado).
+Vocabulário de movimento — existe pra toda animação do projeto citar um valor daqui em vez de inventar número solto. **GSAP + Lenis são o motor padrão de todo projeto Web OS** (não mais opcional) — toda landing page sai com animação feita por engine de verdade, não CSS improvisado, garantindo o mesmo piso de qualidade técnica de movimento independente do cliente/nicho. ScrollTrigger entra conforme a Intensity abaixo. Funcionam em JS puro via `<script>`, não exigem React, cabem na stack HTML+CSS do Web OS como progressive enhancement (o site funciona com JS desligado — regra de acessibilidade continua valendo).
+
+**A Intensity controla QUANTO movimento, não SE a ferramenta é usada**: todo projeto usa GSAP+Lenis; a diferença entre Subtle e Cinematic é a quantidade/escopo de animação, calibrada por nicho (Passo 2 do módulo 21, a partir do ICP em `estrategia.md`) — não é "todo site igual" (contradiria a seção 20 do doc-fonte, que recomenda nível de experiência Awwwards sem cara de agência criativa pra todo nicho).
 
 | Categoria | Valores padrão |
 |---|---|
