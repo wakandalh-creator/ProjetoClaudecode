@@ -1,7 +1,7 @@
 # Estratégia Web — trial-vertice (slug provisório)
 
 > **Status: projeto real, destinado a ir ao ar.** Substitui e descarta `Web OS/producao/sites/teste-piloto-vertice/` por decisão do Lucas ("o criado não ficou bom, pode desconsiderar") — **nada daquele projeto é reaproveitado**, nem copy, nem specs, nem design.
-> Agente: Tese-ext · Módulo: `Web OS/modules/20-business-discovery-estrategia.md` · Data: 2026-10-12
+> Agente: Tese-ext · Módulo: `Web OS/modules/20-business-discovery-estrategia.md` · Data: 2026-10-12 (revisado no mesmo dia com as decisões da 2ª rodada da entrevista)
 > Fontes: entrevista com o Lucas (2026-10-12) · `config/business.json` · `branding/neovertix/01-estrategia.md` · `branding/neovertix/02-oferta.md` · `Web OS/_context/icp-web.md` · `Web OS/_context/identidade-web-os.md` · `Social mídia IA/_context/marca.md`
 > ⚠️ **O slug `trial-vertice` é provisório.** Nome e slug definitivos são pendência nº 2. Decidir **antes** do módulo 22 (build/deploy) — renomear depois arrasta `memory.md`, `specs/`, URLs e tracking.
 
