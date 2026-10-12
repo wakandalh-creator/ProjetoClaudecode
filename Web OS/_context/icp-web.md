@@ -1,6 +1,6 @@
 # ICP Web — quem cada landing page precisa convencer
 
-> Destilado de `Social mídia IA/_context/marca.md` + `config/business.json` em 2026-10-08 (tabela oferta→página atualizada em 2026-10-12: a Piloto Vértice foi substituída pelo teste grátis de 5 dias — brief: `Web OS/producao/sites/trial-vertice/estrategia.md`), especializado pro contexto de landing page (qual ICP cada oferta atende quando a pessoa chega numa página, não num feed). Fonte completa: `branding/neovertix/01-estrategia.md`.
+> Destilado de `Social mídia IA/_context/marca.md` + `config/business.json` em 2026-10-08, especializado pro contexto de landing page (qual ICP cada oferta atende quando a pessoa chega numa página, não num feed). Fonte completa: `branding/neovertix/01-estrategia.md`.
 
 ## Base (só muda por decisão explícita do Lucas)
 
