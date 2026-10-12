@@ -238,25 +238,29 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 ## 8. Pendências (não estimar, não decidir por conta própria)
 
-Numeração preservada das versões anteriores do brief, pra quem já leu. Pendências 1, 3 e 4 foram resolvidas e a nº 10 foi **cancelada** (ver abaixo).
+Numeração preservada das versões anteriores do brief, pra quem já leu. Resolvidas: 1, 3, 4, 6, 8 e a maior parte de 7 e 11. Cancelada: 10. **Só o que está na tabela abaixo ainda bloqueia trabalho.**
 
 | # | Pendência | Dono | O que bloqueia |
 |---|---|---|---|
-| **2** | **Nome e slug definitivos** do produto e do projeto. Lucas: "depois a gente pensa no nome do projeto" — não escolheu entre os candidatos sugeridos. Slug `trial-vertice` segue provisório; a copy usa `[nome pendente]`. **O nome não precisa usar "vértice"** (não é produto da linha Vértice — ver §6) | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, hero da página. **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
-| **5** | **Dado de concorrência:** como as landing pages concorrentes (Bluelephant, Toolzz, Essent.IA, MelhorAgencia.ai, Intelecta — nomes de `01-estrategia.md` §8) estruturam oferta, trial e preço. Nenhum dado de página coletado. **Inclui validar a hipótese do "painel vazio"** (§6) | **Radar, módulo 28 (Sprint 3)** | Contra-ângulo, bloco de comparação e qualquer headline comparativa |
-| **6** | **Política de dados e desconexão do trial:** o que o agente acessa no WhatsApp/Instagram/CRM, o que acontece com as conversas quando o trial acaba, como o cliente desconecta. Nada disso é conhecido hoje | **Lucas + Blinda (módulos 37–38)** | O bloco que responde a objeção nº 1 da página ("vou conectar o WhatsApp da minha empresa?"). **Não inventar política de dados nem alegação de segurança/LGPD** |
-| **7** | **Quem configura o agente durante o trial** (o Lucas manualmente? automatizado?) e **quanto tempo leva** da conexão até o agente responder o primeiro lead | **Lucas** | Honestidade do copy de ativação, promessa de tempo, e saber se "self-service" significa "sem reunião de vendas" ou "sem humano nenhum" — são duas páginas diferentes |
-| **8** | *(herdada)* **Divergência de tagline entre as fontes:** `business.json` marca a comercial como "em iteração — candidatos rodada 3"; `01-estrategia.md` §7 dá "Escala sem contratar" como oficial | **Tese + Lucas** | Headline do hero |
+| **2** | **Nome e slug definitivos** do produto e do projeto. Lucas: "depois a gente pensa no nome do projeto". Slug `trial-vertice` segue provisório; a copy usa `[nome pendente]`. **O nome não precisa usar "vértice"** (não é produto da linha Vértice — ver §6) | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, hero da página. **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
+| **5** | **Dado de concorrência.** Alvos: **RD Station** e **Kommo** (CRM/automação, adicionados pelo Lucas em 2026-10-12) + Bluelephant, Toolzz, Essent.IA, MelhorAgencia.ai, Intelecta (`01-estrategia.md` §8). Nenhuma dessas páginas foi analisada ainda. Interessa: como estruturam **trial**, oferta e preço. **Inclui validar a hipótese do "painel vazio"** (§6) | **Radar, módulo 28 (Sprint 3)** | Contra-ângulo, bloco de comparação e qualquer headline comparativa. *Nota: RD Station e Kommo são players de CRM/automação com trial próprio — comparar trial-contra-trial é mais relevante aqui do que comparar com agências* |
+| **7b** | **Tempo de ativação:** quanto leva da conexão até o agente responder o primeiro lead. **Sem número medido** (a parte "quem configura" foi resolvida — ver decisões) | **Lucas / primeira execução real** | Qualquer promessa de tempo na copy ("pronto em X minutos"). Até medir, a página descreve passos, não minutos |
 | **9** | *(herdada)* **Domínio/URL de destino** não confirmado (`01-estrategia.md` §8: neovertix.com/.com.br/.ai sem DNS, disponibilidade real não verificada) | **Lucas** | Deploy |
-| **11** | **NOVA — ICP não validado para este produto.** O ICP de §3 é **inferido** do público geral da Neovertix; não existe ICP validado para este produto independente, e `icp-web.md` (linha Vértice) não serve como fonte. Um trial self-service com conexão técnica de canal pode atrair perfil diferente do que a venda assistida atrai | **Lucas** | Confirmar a quem a página fala (dono de PME? criador/infoprodutor, dada a afinidade do Plano 2 com Instagram?). Afeta copy, objeções e canal de tráfego. **Se este produto ganhar ICP próprio, ele precisa de `_context` próprio — não encaixar em `icp-web.md`** |
+| **11b** | **Validação do ICP em campanha real.** O alvo está definido pelo Lucas (§3), mas **nenhuma conversão testou esse recorte** — nem qual vertical responde melhor (clínica? concessionária? advocacia?) | **Mede, módulos 33–36, após o 1º ciclo** | Priorizar vertical na copy e no tráfego da V2. Não bloqueia a V1 |
 
 ### Decisões fechadas em 2026-10-12 (fonte: Lucas)
 
-1. **Duração: 5 dias** (era "4 ou 7"). Fechado — a página publica 5, não uma faixa.
+1. **Duração: 5 dias** (era "4 ou 7"). A página publica 5, não uma faixa.
 2. **Preço: entrada + recorrência.** Plano 1 = R$ 2.500 + R$ 500/mês · Plano 2 = R$ 3.200 + R$ 700/mês. **Liberado pra página.**
-3. **Linha de produto: independente** (3ª rodada, corrige a leitura anterior de "substitui a Piloto Vértice"). Mesma empresa — Neovertix —, produtos diferentes: linha Vértice (implementação sob medida), Web OS (criação automática de sites/landing pages) e **este produto** (agente de IA + CRM + redes sociais, via Bolten). **Não substitui, não se funde, não herda a Garantia Vértice.** Agregar à linha Vértice no futuro é decisão do Lucas.
-4. *Item futuro, sem decisão:* possível acréscimo/upsell pra cliente existente.
-5. **Pendência nº 10 CANCELADA** ("destino da Garantia Vértice"): ela nasceu da leitura errada de substituição. Este produto nunca teve essa garantia — não há nada pra aposentar nem redesenhar. A garantia continua sendo da linha Vértice, intacta.
+3. **Linha de produto: independente** (corrige a leitura anterior de "substitui a Piloto Vértice"). Mesma empresa — Neovertix —, produtos diferentes: linha Vértice (implementação sob medida), Web OS (criação automática de sites/landing pages) e **este produto** (agente de IA + CRM + redes sociais, via Bolten). **Não substitui, não se funde, não herda a Garantia Vértice.**
+4. **Dados e descarte (era pendência nº 6):** instância própria por cliente durante os 5 dias; **se não comprar, a instância é descartada** — sem acesso residual, sem dado além do período. É só isso que a página pode afirmar (ver §3, objeção 5).
+5. **Quem configura (era a metade de nº 7):** **o próprio cliente**, self-service de verdade, com **suporte do agente de IA da Neovertix durante a configuração** + material de ativação (documentação/tutorial) a ser construído. O "quanto tempo leva" segue aberto como nº 7b.
+6. **Tagline (era pendência nº 8): "Escala sem contratar"** — oficial para este produto, a favor de `01-estrategia.md` §7.
+7. **ICP (era pendência nº 11):** comércio local e pequenas empresas em geral — clínicas, concessionárias, imobiliárias, advocacia, comércio local amplo. **Criador/infoprodutor descartado.** Validação em campanha fica como nº 11b.
+8. **Canal de aquisição:** Instagram do Lucas, possível TikTok depois (nota de distribuição em §3, insumo pro módulo 27).
+9. *Item futuro, sem decisão:* possível acréscimo/upsell pra cliente existente.
+10. **Pendência nº 10 CANCELADA** ("destino da Garantia Vértice"): nasceu da leitura errada de substituição. Este produto nunca teve essa garantia — nada pra aposentar. A garantia continua sendo da linha Vértice, intacta.
+11. **Modelo de venda reafirmado:** marketing leva o cliente a entrar → testa sem fidelidade → se gostar, compra. Já coberto em §1 e §4, sem mudança.
 
 ### Nenhuma fonte de marca foi alterada por este brief
 
