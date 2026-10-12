@@ -105,7 +105,7 @@ Herdadas (`icp-web.md` + `02-oferta.md` §5):
 **How Might We:** como fazer a conexão do canal parecer **pequena, reversível e segura** — ao ponto de o dono preferir conectar hoje a continuar perdendo lead — sem mentir sobre a fricção técnica que existe?
 
 **Consequências diretas pra arquitetura da página** (entregar pro Guia/módulo 25 e pro Convence/módulo 26):
-- A página **não vende IA**. Vende um teste de [4 ou 7] dias que acaba sozinho.
+- A página **não vende IA**. Vende um teste de 5 dias que acaba sozinho.
 - **Prova > promessa** (`identidade-web-os.md`): o ativo de prova mais forte disponível é o **log de conversas reais** que o agente resolveu durante o trial — mostrar o formato do que o cliente vai ver, não um dashboard bonito.
 - **Reversibilidade é bloco de página, não rodapé.** "Desconecta quando quiser / acaba e pronto" tem o mesmo peso visual do CTA.
 - A fricção de ativação é um **funil dentro da página** (3 passos nomeados), não um botão mágico.
