@@ -26,6 +26,10 @@ Invocar `production-audit` pra gerar um veredito formal e read-only (score 0-100
 
 Invocar `browser-qa` pra uma passada visual/de interação read-only. Diferente do `qa` do módulo 22 (que edita código ativamente) — aqui o build já deveria estar fechado, então é só confirmação.
 
+### Passo 1c — Checklist complementar de pré-lançamento (opcional, verificado 2026-10-12)
+
+Invocar `redesign-existing-projects` como reforço — o checklist dela flagra explicitamente itens que o resto do pipeline pode deixar passar (favicon/og:image faltando, padrões genéricos de IA tipo fonte/ícone/stock photo padrão). Não substitui o Passo 1, só adiciona uma 2ª lente.
+
 ### Passo 2 — Resolver conflito entre camadas
 
 Se houver tensão entre recomendações de módulos diferentes, aplicar nesta ordem:
