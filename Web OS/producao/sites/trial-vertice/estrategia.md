@@ -56,7 +56,7 @@ Padrão setup + mensalidade, igual às outras ofertas Neovertix (`02-oferta.md` 
 
 - **Sobre a Bolten:** a documentação da Bolten **não menciona trial nativo**. O período grátis é decisão comercial da Neovertix por cima da ferramenta. A página **nunca** pode sugerir que o trial é recurso da plataforma, nem afirmar qualquer capacidade da Bolten além de: CRM white-label, agente de IA treinável, WhatsApp (QR Code ou Cloud API oficial), Meta/Instagram (Conversions API).
 - **White-label significa marca Neovertix na frente.** A página não precisa (nem deve, sem decisão do Lucas) citar a Bolten como fornecedor.
-- **Não misturar com a Garantia Vértice** (métrica combinada, ≥30% ou devolução, `02-oferta.md` §2). Aquela é o mecanismo de reversão de risco da Piloto Vértice, que é **paga**. Num trial grátis, "devolução total" não significa nada e os dois mecanismos juntos confundem. Um só por página.
+- **A Garantia Vértice (≥30% ou devolução total, `02-oferta.md` §2) NÃO entra nesta página.** Ela era o mecanismo de reversão de risco da Piloto Vértice, oferta **paga** — que esta oferta substituiu. Num trial grátis, "devolução total" não significa nada, e o trial já é a reversão de risco. O destino da garantia (aposentar ou redesenhar para os planos pagos) é **pendência nº 10** e só o Lucas decide; até então ela continua intacta em `business.json` e `02-oferta.md`, mas fora desta página.
 
 ---
 
