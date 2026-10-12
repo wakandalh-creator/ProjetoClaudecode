@@ -100,7 +100,7 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 
 **Look Outward (lado do prospect).** Quem sente a dor: o dono, pessoalmente, vendo mensagem não respondida às 22h. Quando aparece: pico de lead e fora do horário comercial. Consequência: o lead compra de quem respondeu primeiro. Quem não tem o problema: quem já paga equipe de plantão, ou quem não gera lead. Quem é o mais cético e o mais qualificado ao mesmo tempo: o dono que já tentou chatbot de árvore de decisão e saiu queimado.
 
-**O que mudou em relação à oferta anterior:** na Piloto Vértice, o custo de errar a escolha era **dinheiro + tempo de implantação**. Num trial grátis, sem cartão e sem reunião, esse custo foi a zero. **Mas o custo percebido não foi a zero — ele mudou de natureza.**
+**O que é diferente aqui.** Num produto pago e assistido (como a linha Vértice), o custo de errar a escolha é **dinheiro + tempo de implantação**. Num trial grátis, sem cartão e sem reunião, esse custo foi a zero. **Mas o custo percebido não foi a zero — ele mudou de natureza.**
 
 **Reframe — problema comercial central desta página:**
 
