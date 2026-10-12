@@ -219,11 +219,11 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 ## 8. Pendências (não estimar, não decidir por conta própria)
 
-Numeração preservada da V1 do brief, pra quem já leu. Pendências 1, 3 e 4 foram resolvidas pelo Lucas em 2026-10-12 (ver "Decisões fechadas" abaixo).
+Numeração preservada das versões anteriores do brief, pra quem já leu. Pendências 1, 3 e 4 foram resolvidas e a nº 10 foi **cancelada** (ver abaixo).
 
 | # | Pendência | Dono | O que bloqueia |
 |---|---|---|---|
-| **2** | **Nome e slug definitivos** da oferta e do projeto. Lucas, 2ª rodada: "depois a gente pensa no nome do projeto" — recusou escolher entre Agente Vértice / Vértice 5 Dias / Vértice Ativo. Slug `trial-vertice` segue provisório; copy usa `[nome pendente]` | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, `"name"` em `config/business.json` (hoje placeholder). **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
+| **2** | **Nome e slug definitivos** do produto e do projeto. Lucas: "depois a gente pensa no nome do projeto" — não escolheu entre os candidatos sugeridos. Slug `trial-vertice` segue provisório; a copy usa `[nome pendente]`. **O nome não precisa usar "vértice"** (não é produto da linha Vértice — ver §6) | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, hero da página. **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
 | **5** | **Dado de concorrência:** como as landing pages concorrentes (Bluelephant, Toolzz, Essent.IA, MelhorAgencia.ai, Intelecta — nomes de `01-estrategia.md` §8) estruturam oferta, trial e preço. Nenhum dado de página coletado. **Inclui validar a hipótese do "painel vazio"** (§6) | **Radar, módulo 28 (Sprint 3)** | Contra-ângulo, bloco de comparação e qualquer headline comparativa |
 | **6** | **Política de dados e desconexão do trial:** o que o agente acessa no WhatsApp/Instagram/CRM, o que acontece com as conversas quando o trial acaba, como o cliente desconecta. Nada disso é conhecido hoje | **Lucas + Blinda (módulos 37–38)** | O bloco que responde a objeção nº 1 da página ("vou conectar o WhatsApp da minha empresa?"). **Não inventar política de dados nem alegação de segurança/LGPD** |
 | **7** | **Quem configura o agente durante o trial** (o Lucas manualmente? automatizado?) e **quanto tempo leva** da conexão até o agente responder o primeiro lead | **Lucas** | Honestidade do copy de ativação, promessa de tempo, e saber se "self-service" significa "sem reunião de vendas" ou "sem humano nenhum" — são duas páginas diferentes |
