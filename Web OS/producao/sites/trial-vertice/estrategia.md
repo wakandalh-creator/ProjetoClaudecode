@@ -1,9 +1,13 @@
 # Estratégia Web — trial-vertice (slug provisório)
 
 > **Status: projeto real, destinado a ir ao ar.** Substitui e descarta `Web OS/producao/sites/teste-piloto-vertice/` por decisão do Lucas ("o criado não ficou bom, pode desconsiderar") — **nada daquele projeto é reaproveitado**, nem copy, nem specs, nem design.
-> Agente: Tese-ext · Módulo: `Web OS/modules/20-business-discovery-estrategia.md` · Data: 2026-10-12 (revisado no mesmo dia com as decisões da 2ª rodada da entrevista)
-> Fontes: entrevista com o Lucas (2026-10-12) · `config/business.json` · `branding/neovertix/01-estrategia.md` · `branding/neovertix/02-oferta.md` · `Web OS/_context/icp-web.md` · `Web OS/_context/identidade-web-os.md` · `Social mídia IA/_context/marca.md`
-> ⚠️ **O slug `trial-vertice` é provisório.** Nome e slug definitivos são pendência nº 2. Decidir **antes** do módulo 22 (build/deploy) — renomear depois arrasta `memory.md`, `specs/`, URLs e tracking.
+> Agente: Tese-ext · Módulo: `Web OS/modules/20-business-discovery-estrategia.md` · Data: 2026-10-12 (revisado 3x no mesmo dia — ver §8)
+>
+> **Escopo — ler antes de qualquer decisão a jusante.** Este é um produto **novo e independente** da Neovertix (decisão do Lucas, 2026-10-12, 3ª rodada): *"nosso nome da empresa é o mesmo, mas nesse momento são produtos diferentes."* A linha **Vértice** (Piloto / Operação / Full, em `config/business.json`) é a linha de implementação sob medida; o **Web OS** é a linha de criação automática de sites e landing pages — e é a ferramenta que está construindo **esta** página. Este produto (agente de IA + CRM + redes sociais, via Bolten) é uma **terceira linha**: não substitui nenhuma oferta, não se funde, não herda a Garantia Vértice. Agregar à linha Vértice no futuro é decisão do Lucas, não deste brief.
+>
+> Fontes: entrevista com o Lucas (2026-10-12) · `branding/neovertix/01-estrategia.md` e `02-oferta.md` (marca, voz, léxico, âncoras de custo — a **empresa** é a mesma) · `Web OS/_context/identidade-web-os.md` (princípios e veracidade do sistema) · `config/business.json` (contexto de preço/padrão comercial). **`Web OS/_context/icp-web.md` NÃO é fonte obrigatória aqui** — aquele arquivo mapeia oferta→página **da linha Vértice** (ver §3).
+>
+> ⚠️ **O slug `trial-vertice` é provisório.** Nome e slug definitivos são pendência nº 2. Decidir **antes** do módulo 22 (build/deploy) — renomear depois arrasta `memory.md`, `specs/`, URLs e tracking. **E atenção:** o nome **não precisa carregar "vértice"**, porque este produto não pertence à linha Vértice — o `-vertice` no slug atual é resíduo do provisório, não decisão de marca.
 
 ---
 
