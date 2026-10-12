@@ -67,15 +67,29 @@ Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice 
 
 ## 3. ICP
 
-⚠️ **ICP INFERIDO, NÃO VALIDADO — pendência nº 11.** `Web OS/_context/icp-web.md` mapeia oferta→página **da linha Vértice** e não é fonte obrigatória para este produto independente. O ICP abaixo é **inferido do público geral que a Neovertix já mapeou** (`01-estrategia.md` §3, mesma empresa, mesma dor de origem) — não existe ICP formalmente validado para este produto. Ele é plausível, não confirmado: um trial self-service com conexão técnica de canal pode atrair um perfil diferente do que a venda assistida da linha Vértice atrai. **Nenhum módulo a jusante deve tratar o que segue como ICP fechado até o Lucas validar.**
+**ICP próprio deste produto, definido pelo Lucas** (2026-10-12). `Web OS/_context/icp-web.md` mapeia oferta→página **da linha Vértice** e **não** é fonte aqui — este produto tem ICP próprio e nada do que segue vai pra `icp-web.md`.
 
-**Primário inferido (quem a página precisa convencer):** dono de PME brasileira, 5–50 funcionários, em serviços, e-commerce, clínica, imobiliária ou educação. Recebe lead por WhatsApp, Instagram ou formulário e demora horas pra responder. Decisor único — assina e conecta sozinho, sem comitê. **É ele quem tem a senha/o celular do WhatsApp da empresa** — fato operacional que importa muito aqui, porque a ativação depende disso.
+⚠️ **Definido ≠ validado.** O alvo abaixo é decisão do dono do negócio, não resultado de campanha: **nenhuma conversão real testou esse recorte ainda**. Tratar como alvo de trabalho, não como ICP comprovado (pendência nº 11, reduzida à validação em campanha).
 
-**Secundário inferido (tolerado, não endereçado na V1):** criador/infoprodutor com DM de lançamento parada; pequena agência interessada em white-label.
+**Primário — comércio local e pequenas empresas em geral**, "tudo que tiver essa possibilidade de venda" (palavras do Lucas). Verticais citadas explicitamente:
 
-**Observação pra alimentar a validação da pendência nº 11:** o Plano 2 (R$ 3.200 + R$ 700/mês, com Instagram) tem afinidade natural com criador/infoprodutor, e um trial self-service sem reunião é formato de compra mais compatível com esse público do que venda assistida. **Se este produto deve falar primariamente com criadores em vez de PME, é decisão do Lucas** — nenhum agente infere isso sozinho. Até a validação, a página é construída para o primário inferido (dono de PME).
+| Vertical | Por que entra |
+|---|---|
+| Clínicas | Volume de agendamento por WhatsApp, lead perecível |
+| Concessionárias | Lead de alto ticket, resposta rápida decide a visita |
+| Imobiliárias | Lead chega por anúncio a qualquer hora |
+| Advocacia | Primeiro contato por WhatsApp, triagem de caso |
+| Comércio local (amplo) | Qualquer negócio com venda por mensagem |
+
+Perfil comum: **decisor único** — assina e conecta sozinho, sem comitê. **É ele quem tem a senha/o celular do WhatsApp da empresa** — fato operacional que importa muito aqui, porque a ativação depende disso.
+
+**Recorte mais amplo que o da linha Vértice** (`01-estrategia.md` §3: serviços, e-commerce, clínicas, imobiliárias, educação): este produto inclui explicitamente **concessionárias e advocacia**, e lidera com "comércio local" em vez de "PME 5–50 funcionários". Mais uma razão para não forçar os dois ICPs no mesmo arquivo.
+
+**Hipótese criador/infoprodutor — descartada pelo Lucas.** Eu havia levantado que o Plano 2 (com Instagram) teria afinidade com criador/infoprodutor; o alvo definido é PME/comércio local. **Não construir a página para criador.**
 
 **Fora do ICP desta página:** quem não tem volume de lead (não tem o que o agente atender) e quem não pode/não quer conectar o canal oficial da empresa (a oferta não funciona sem isso — não tentar convencer esse perfil na copy, é desperdício de página).
+
+**Canal de aquisição (nota de distribuição, não é ICP — insumo pro Multiplica/módulo 27):** começa pelas **postagens do Instagram do Lucas**, com possível migração pro **TikTok** depois. Consequência prática pra esta página: o tráfego da V1 é **morno e founder-led** (gente que já viu o Lucas falar), não frio de busca — a página pode contar com algum reconhecimento prévio, mas não pode depender dele.
 
 ### Objeções que a página é obrigada a responder
 
