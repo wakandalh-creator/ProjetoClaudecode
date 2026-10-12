@@ -42,9 +42,9 @@ Checklist do piso de craft (módulo 21, Passo 2a-bis — não-negociável, indep
 
 Não rodar `impeccable-design-polish` junto com `make-interfaces-feel-better` — cobrem o mesmo tipo de ajuste, é trabalho duplicado.
 
-### Passo 5 — SEO técnico baseline
+### Passo 5 — SEO técnico baseline + metadado social
 
-Title, meta description e H1 únicos por página; `sitemap.xml` e `robots.txt` básicos. Cobertura completa de SEO fica pro módulo 31 (Sprint 3) — aqui é só o piso técnico.
+Title, meta description e H1 únicos por página; `sitemap.xml` e `robots.txt` básicos. Favicon + `og:image`/`og:title`/`twitter:card` (preview de compartilhamento social) — invocar a skill `image` (seção "OG & Social Preview Images"). Favicon deriva do logo da marca (`branding/neovertix/logo/final/`), nunca gerado do zero por IA. Cobertura completa de SEO fica pro módulo 31 (Sprint 3) — aqui é só o piso técnico, mas favicon/OG não ficam de fora: é o tipo de ausência que `redesign-existing-projects` (módulo 24) flagra explicitamente num QA de pré-lançamento.
 
 ## Saída
 
