@@ -213,8 +213,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 - Qualquer resultado de cliente, depoimento, nº de clientes atendidos, nº de trials rodados (não existe prova social própria ainda)
 - Tempo de ativação ("rodando em X minutos") — **não medido**, ver pendência nº 7
 - "De 4h de triagem manual pra 15 minutos" e "responde em 30 segundos" — são **exemplos de tom de voz** em `01-estrategia.md` §6, **não resultados medidos**
-- Garantia de ≥30% ou devolução — pertencia à Piloto Vértice, que esta oferta substituiu; destino em aberto (pendência nº 10)
-- R$ 1.900 / R$ 900 (Piloto Vértice e Programa Fundador) — oferta descontinuada como entrada, não pode aparecer
+- Garantia de ≥30% ou devolução · R$ 1.900 / R$ 900 · Programa Fundador · "piloto de 2–4 semanas" — tudo isso é **da linha Vértice**, outro produto. Não aparece nesta página, nem como comparação
 
 ---
 
