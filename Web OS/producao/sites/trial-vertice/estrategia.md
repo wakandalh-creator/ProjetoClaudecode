@@ -128,8 +128,8 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 **Consequências diretas pra arquitetura da página** (entregar pro Guia/módulo 25 e pro Convence/módulo 26):
 - A página **não vende IA**. Vende um teste de 5 dias que acaba sozinho.
 - **Prova > promessa** (`identidade-web-os.md`): o ativo de prova mais forte disponível é o **log de conversas reais** que o agente resolveu durante o trial — mostrar o formato do que o cliente vai ver, não um dashboard bonito.
-- **Reversibilidade é bloco de página, não rodapé.** "Desconecta quando quiser / acaba e pronto" tem o mesmo peso visual do CTA.
-- A fricção de ativação é um **funil dentro da página** (3 passos nomeados), não um botão mágico.
+- **Reversibilidade é bloco de página, não rodapé.** Agora com conteúdo factual (§3, objeção 5): instância própria, acaba em 5 dias, descartada se não comprar. Mesmo peso visual do CTA.
+- A fricção de ativação é um **funil dentro da página** (3 passos nomeados), não um botão mágico — e o suporte do agente de IA durante a configuração entra como parte do passo, não como rodapé de FAQ.
 
 ---
 
