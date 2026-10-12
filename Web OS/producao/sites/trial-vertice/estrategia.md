@@ -66,9 +66,9 @@ Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice 
 
 ## 3. ICP
 
-Base de ICP conforme `Web OS/_context/icp-web.md` — **a seção "Base" daquele arquivo só muda por decisão explícita do Lucas e este brief não a altera.**
+⚠️ **ICP INFERIDO, NÃO VALIDADO — pendência nº 11.** `Web OS/_context/icp-web.md` mapeia oferta→página **da linha Vértice** e não é fonte obrigatória para este produto independente. O ICP abaixo é **inferido do público geral que a Neovertix já mapeou** (`01-estrategia.md` §3, mesma empresa, mesma dor de origem) — não existe ICP formalmente validado para este produto. Ele é plausível, não confirmado: um trial self-service com conexão técnica de canal pode atrair um perfil diferente do que a venda assistida da linha Vértice atrai. **Nenhum módulo a jusante deve tratar o que segue como ICP fechado até o Lucas validar.**
 
-**Primário (quem a página precisa convencer):** dono de PME brasileira, 5–50 funcionários, em serviços, e-commerce, clínica, imobiliária ou educação. Recebe lead por WhatsApp, Instagram ou formulário e demora horas pra responder. Decisor único — assina e conecta sozinho, sem comitê. **É ele quem tem a senha/o celular do WhatsApp da empresa** — fato operacional que importa muito aqui, porque a ativação depende disso.
+**Primário inferido (quem a página precisa convencer):** dono de PME brasileira, 5–50 funcionários, em serviços, e-commerce, clínica, imobiliária ou educação. Recebe lead por WhatsApp, Instagram ou formulário e demora horas pra responder. Decisor único — assina e conecta sozinho, sem comitê. **É ele quem tem a senha/o celular do WhatsApp da empresa** — fato operacional que importa muito aqui, porque a ativação depende disso.
 
 **Secundário (tolerado, não endereçado na V1):** criador/infoprodutor com DM de lançamento parada; pequena agência interessada em white-label.
 
