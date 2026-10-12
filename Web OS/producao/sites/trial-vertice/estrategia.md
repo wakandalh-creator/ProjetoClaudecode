@@ -126,7 +126,7 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 
 **Job emocional:** parar de carregar o WhatsApp da empresa como ansiedade pessoal.
 
-**Job específico desta oferta (o que o trial contrata que a Piloto não contratava):** *"deixar de apostar."* O dono não quer avaliar um fornecedor — ele quer **ver com os olhos dele, nos leads dele, antes de assumir qualquer compromisso**, e sem gastar uma hora numa reunião de vendas pra isso. O trial não compete com outra IA; compete com **procrastinar a decisão**.
+**Job específico deste produto (o que o trial contrata e um serviço assistido não contrata):** *"deixar de apostar."* O dono não quer avaliar um fornecedor — ele quer **ver com os olhos dele, nos leads dele, antes de assumir qualquer compromisso**, e sem gastar uma hora numa reunião de vendas pra isso. O trial não compete com outra IA; compete com **procrastinar a decisão**.
 
 **Dores, ordenadas:**
 1. Lead esfriando enquanto ninguém responde — perda de receita direta.
