@@ -11,7 +11,7 @@
 
 | Oferta | Landing page serve | ICP principal |
 |---|---|---|
-| **Entrada — teste grátis de 5 dias** (`offers[0]`, nome pendente) | Página de **ativação self-service**: CTA único = conectar o canal e começar o teste. Sem agendamento de demo, sem formulário de contato. Prova = o agente atendendo os leads reais do cliente | ICP primário, decisor único — que tem a senha/o celular do WhatsApp da empresa |
+| Piloto Vértice | Página de conversão rápida, baixo compromisso, prova via demo | ICP primário, decisor único |
 | Operação Vértice | Página com mais prova social/caso, ciclo de decisão um pouco mais longo | ICP primário, decisor com sócio/financeiro |
 | Vértice Full | Página consultiva, menos CTA de autoatendimento, mais agendamento de reunião | ICP primário maduro ou ICP secundário (agência) |
 
