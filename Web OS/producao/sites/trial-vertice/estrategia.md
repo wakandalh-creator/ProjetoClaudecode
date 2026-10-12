@@ -162,7 +162,7 @@ Herdadas (`icp-web.md` + `02-oferta.md` §5):
 
 | Pilar | O que esta página mostra |
 |---|---|
-| Rápido de verdade | Prazo fechado de [4 ou 7] dias, com os 3 passos de ativação nomeados e visíveis |
+| Rápido de verdade | Prazo fechado de 5 dias, com os 3 passos de ativação nomeados e visíveis |
 | Engenharia, não slide | O agente atende **lead real**, não demo — e você lê as conversas. "Testado — não prometido" é literalmente a oferta aqui |
 | Você não paga pra descobrir se funciona | Levado ao extremo: não paga, não agenda, não fala com vendedor, e no fim não precisa cancelar nada |
 
