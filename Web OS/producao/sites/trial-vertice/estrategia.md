@@ -69,7 +69,7 @@ Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice 
 
 **ICP próprio deste produto, definido pelo Lucas** (2026-10-12). `Web OS/_context/icp-web.md` mapeia oferta→página **da linha Vértice** e **não** é fonte aqui — este produto tem ICP próprio e nada do que segue vai pra `icp-web.md`.
 
-⚠️ **Definido ≠ validado.** O alvo abaixo é decisão do dono do negócio, não resultado de campanha: **nenhuma conversão real testou esse recorte ainda**. Tratar como alvo de trabalho, não como ICP comprovado (pendência nº 11, reduzida à validação em campanha).
+⚠️ **Definido ≠ validado.** O alvo abaixo é decisão do dono do negócio, não resultado de campanha: **nenhuma conversão real testou esse recorte ainda**. Tratar como alvo de trabalho, não como ICP comprovado (pendência nº 11b — validação em campanha).
 
 **Primário — comércio local e pequenas empresas em geral**, "tudo que tiver essa possibilidade de venda" (palavras do Lucas). Verticais citadas explicitamente:
 
