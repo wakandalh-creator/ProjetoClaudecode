@@ -223,7 +223,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 **Números permitidos na página — e só estes:**
 - **5 dias** (duração do trial, fechada)
 - **R$ 2.500 de entrada + R$ 500/mês** (Plano 1) · **R$ 3.200 de entrada + R$ 700/mês** (Plano 2) — sempre com setup e recorrência juntos no mesmo bloco; exibir a entrada sozinha esconde o custo real e queima a honestidade da marca
-- 5–50 funcionários (recorte de ICP)
+- **5 dias** e os nomes dos verticais do ICP (clínica, concessionária, imobiliária, advocacia, comércio local) — ditos pelo Lucas. **"5–50 funcionários" sai:** esse recorte é da linha Vértice, não deste produto, cujo alvo é "comércio local e pequenas empresas em geral" sem faixa de headcount declarada
 - Âncoras de `_context/marca.md`: SDR CLT júnior ~R$ 3.800–4.200/mês · 10 leads perdidos por demora = R$ 3.000–15.000/mês (ticket R$ 300–1.500) — como cálculo, não slogan
 - "responde em segundos" (formulação da fonte, `02-oferta.md` §4)
 - Preço redondo, sem "R$ 2.497" (`02-oferta.md` §3: a marca é sóbria, não vende impulso)
