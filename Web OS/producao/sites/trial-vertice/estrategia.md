@@ -196,11 +196,12 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 **Baseline: não existe.** Nenhuma landing page da marca rodou com histórico de conversão, e esta oferta é nova. A primeira execução **define** a linha de base. **Nenhuma meta numérica neste brief** — qualquer número aqui seria inventado (regra de veracidade do Web OS). Meta só após o primeiro ciclo medido pelo Mede (módulos 33–36).
 
 **Números permitidos na página — e só estes:**
-- 4 **ou** 7 dias (depois da pendência nº 1 — não publicar "4 a 7 dias" como se fosse faixa; é uma escolha, não um intervalo)
+- **5 dias** (duração do trial, fechada)
+- **R$ 2.500 de entrada + R$ 500/mês** (Plano 1) · **R$ 3.200 de entrada + R$ 700/mês** (Plano 2) — sempre com setup e recorrência juntos no mesmo bloco; exibir a entrada sozinha esconde o custo real e queima a honestidade da marca
 - 5–50 funcionários (recorte de ICP)
 - Âncoras de `_context/marca.md`: SDR CLT júnior ~R$ 3.800–4.200/mês · 10 leads perdidos por demora = R$ 3.000–15.000/mês (ticket R$ 300–1.500) — como cálculo, não slogan
 - "responde em segundos" (formulação da fonte, `02-oferta.md` §4)
-- R$ 2.500 / R$ 3.200 — **bloqueados até a pendência nº 4** (sem saber se é setup, mensalidade ou repasse, publicar o número cria promessa que o contrato pode não sustentar)
+- Preço redondo, sem "R$ 2.497" (`02-oferta.md` §3: a marca é sóbria, não vende impulso)
 
 **Números proibidos na página:**
 - Qualquer resultado de cliente, depoimento, nº de clientes atendidos, nº de trials rodados (não existe prova social própria ainda)
