@@ -35,20 +35,17 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 - 10 leads perdidos por demora = R$ 3.000-15.000/mês em receita não realizada (ticket R$ 300-1.500)
 - De 4h de triagem manual pra 15 minutos
 - Resposta em segundos, não em horas; lead às 23h atendido na hora
-- ~~Garantia: métrica combinada melhora ≥30% ou o piloto sai de graça~~ — **suspenso em 2026-10-12** (era da Piloto Vértice, oferta substituída; destino em decisão pelo Lucas). Segue documentada em `branding/neovertix/02-oferta.md` §2, mas **não usar em conteúdo** até decisão
-- Teste grátis de 5 dias: o agente atende os leads reais do cliente e no fim acaba, sem cobrança automática
+- Garantia: métrica combinada melhora ≥30% ou o piloto sai de graça
 
 ## Ofertas (CTAs de conteúdo apontam pra cá)
 
 | Oferta | Preço | Escopo |
 |---|---|---|
-| **Entrada: teste grátis 5 dias** *(nome pendente)* | grátis → Plano 1: R$ 2.500 entrada + R$ 500/mês · Plano 2: R$ 3.200 entrada + R$ 700/mês | Self-service, sem reunião: o cliente conecta o canal real (WhatsApp/Instagram/CRM), o agente de IA atende os leads reais dele por 5 dias, e no fim **acaba — sem cobrança automática**. Plano 1 = agente + CRM · Plano 2 = agente + CRM + Instagram |
+| Piloto Vértice | R$ 1.900 (Fundador: R$ 900) | 1 canal, atendimento OU SDR IA + CRM, 2-4 sem., garantia 30% |
 | Operação Vértice | R$ 4.500 + R$ 1.200/mês | 2 canais, atendimento + SDR, CRM, manutenção |
 | Vértice Full | R$ 9.000+ + R$ 2.800+/mês | stack completo + reunião mensal |
 
-**Regra de enquadramento (decisão do Lucas, 2026-10-12):** vender **agente de IA**; o CRM **vem incluído**, nunca é a manchete. Na copy usar "vem incluído"/"vem junto" — nunca "de brinde" (linguagem de impulso, contraria a voz sóbria).
-
-**Atualização 2026-10-12:** a **Piloto Vértice** (R$ 1.900 / Fundador R$ 900, 2-4 semanas, garantia de 30%) foi **substituída** pela oferta de entrada acima. Consequências pra produção de conteúdo: (1) **não usar mais** R$ 1.900 / R$ 900 nem "piloto de 2-4 semanas" em hook ou CTA; (2) o **Programa Fundador** (3-5 vagas) ficou sem oferta hospedeira — não citar até o Lucas redefinir; (3) o destino da **garantia de ≥30% ou devolução** é pendência aberta (ela era da Piloto) — **não usar como prova** até decisão. CTA de conteúdo agora aponta pra **ativação do teste grátis**, não pra agendamento de demo. Brief: `Web OS/producao/sites/trial-vertice/estrategia.md`.
+**Programa Fundador:** 3-5 vagas, piloto a R$ 900 em troca de case com nome/logo + depoimento em vídeo. Vaga limitada, não desconto permanente.
 
 ## Estratégia de conteúdo do novo entrante
 
