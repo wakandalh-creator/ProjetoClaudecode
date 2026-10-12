@@ -70,9 +70,9 @@ Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice 
 
 **Primário inferido (quem a página precisa convencer):** dono de PME brasileira, 5–50 funcionários, em serviços, e-commerce, clínica, imobiliária ou educação. Recebe lead por WhatsApp, Instagram ou formulário e demora horas pra responder. Decisor único — assina e conecta sozinho, sem comitê. **É ele quem tem a senha/o celular do WhatsApp da empresa** — fato operacional que importa muito aqui, porque a ativação depende disso.
 
-**Secundário (tolerado, não endereçado na V1):** criador/infoprodutor com DM de lançamento parada; pequena agência interessada em white-label.
+**Secundário inferido (tolerado, não endereçado na V1):** criador/infoprodutor com DM de lançamento parada; pequena agência interessada em white-label.
 
-**Observação registrada (não é proposta de mudança de ICP):** o Plano 2 (R$ 3.200, com Instagram) tem afinidade natural com o ICP secundário criador/infoprodutor, e um trial self-service sem reunião é um formato de compra mais compatível com esse público do que a Piloto Vértice era. **Se o Lucas quiser que esta página fale primariamente com criadores, é decisão dele** — `icp-web.md` proíbe qualquer agente inferir mudança de ICP. Até então: ICP primário = dono de PME.
+**Observação pra alimentar a validação da pendência nº 11:** o Plano 2 (R$ 3.200 + R$ 700/mês, com Instagram) tem afinidade natural com criador/infoprodutor, e um trial self-service sem reunião é formato de compra mais compatível com esse público do que venda assistida. **Se este produto deve falar primariamente com criadores em vez de PME, é decisão do Lucas** — nenhum agente infere isso sozinho. Até a validação, a página é construída para o primário inferido (dono de PME).
 
 **Fora do ICP desta página:** quem não tem volume de lead (não tem o que o agente atender) e quem não pode/não quer conectar o canal oficial da empresa (a oferta não funciona sem isso — não tentar convencer esse perfil na copy, é desperdício de página).
 
