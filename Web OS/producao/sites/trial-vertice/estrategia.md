@@ -19,7 +19,7 @@
 
 Consequência direta: a conversão da página **termina na ativação técnica**, não num formulário. Isso é diferente de tudo que o Web OS já briefou — o gargalo não é o clique, é a conexão do canal (ver §4 e métrica em §7).
 
-Por que não é demo agendada (como era a Piloto Vértice): a prova deixou de ser o Lucas mostrando o agente com dados do prospect e passou a ser **o próprio agente atendendo os leads reais do prospect**. É o pilar 3 da marca — "você não paga pra descobrir se funciona" (`01-estrategia.md` §5) — levado ao limite: não paga nada e não fala com vendedor.
+Por que não é demo agendada (modelo que a linha Vértice usa): aqui a prova não é o Lucas mostrando o agente com dados do prospect — é **o próprio agente atendendo os leads reais do prospect**. É o pilar 3 da marca — "você não paga pra descobrir se funciona" (`01-estrategia.md` §5) — levado ao limite: não paga nada e não fala com vendedor.
 
 ---
 
