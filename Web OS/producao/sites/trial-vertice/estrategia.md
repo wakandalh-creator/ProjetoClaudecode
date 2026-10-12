@@ -41,14 +41,16 @@ Regra para toda a página e para todos os módulos a jusante: **o herói da ofer
 
 ⚠️ **Correção de léxico (Tese):** "de brinde" é linguagem de venda de impulso e contraria o atributo de voz "sóbrio, não gritado" (`01-estrategia.md` §6). Na copy, usar **"o CRM vem incluído"** / **"vem junto"**. "Brinde" fica no vocabulário interno de posicionamento, não na página.
 
-### Planos pós-trial (fonte: Lucas, direta)
+### Planos pós-trial (fonte: Lucas, direta — confirmado na 2ª rodada)
 
-| Plano | Valor | Escopo |
-|---|---|---|
-| 1 | **R$ 2.500** | Agente de IA + CRM incluído (sem redes sociais) |
-| 2 | **R$ 3.200** | Agente de IA + CRM + redes sociais (Instagram) |
+| Plano | Entrada (setup único) | Recorrência | Escopo |
+|---|---|---|---|
+| 1 | **R$ 2.500** | **R$ 500/mês** | Agente de IA + CRM incluído (sem redes sociais) |
+| 2 | **R$ 3.200** | **R$ 700/mês** | Agente de IA + CRM + redes sociais (Instagram) |
 
-⚠️ **Não declarado:** se R$ 2.500 / R$ 3.200 são **setup único, mensalidade ou valor dentro do modelo de repasse/parceria com a Bolten**. Pendência nº 4. **Até resolver, a página não exibe preço como número fechado** — ver §7 (números permitidos).
+Padrão setup + mensalidade, igual às outras ofertas Neovertix (`02-oferta.md` §3: setup ancora a construção, mensalidade ancora manutenção e iteração). **Preço liberado pra publicação na página** — o bloqueio anterior caiu.
+
+**Item futuro (não é decisão, não bloqueia nada):** o Lucas vai avaliar depois um possível acréscimo/upsell pra quem já é cliente. Sem definição — não aparece na página nem no `business.json`.
 
 ### Regras de veracidade específicas desta página (`identidade-web-os.md`)
 
