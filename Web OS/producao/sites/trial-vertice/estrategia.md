@@ -25,7 +25,7 @@ Por que não é demo agendada (modelo que a linha Vértice usa): aqui a prova n�
 
 ## 2. Oferta específica
 
-**Oferta NOVA que passou a ser a oferta de ENTRADA da Neovertix, no lugar da Piloto Vértice** (decisão do Lucas, 2026-10-12, 2ª rodada). Fonte: entrevista com o Lucas em 2026-10-12. `config/business.json` já foi sincronizado — `offers[0]` agora é esta oferta.
+**Produto novo e independente da Neovertix.** Não é oferta de entrada da linha Vértice, não substitui a Piloto Vértice, não entra em `config/business.json` por ora. Registrar (ou não) no `business.json` é decisão futura do Lucas — faz sentido se/quando ele decidir agregar este produto à linha Vértice. **Até então, a fonte de verdade desta oferta é este arquivo.** Fonte dos dados: entrevista com o Lucas em 2026-10-12.
 
 | Campo | Valor (fonte: entrevista Lucas 2026-10-12) |
 |---|---|
