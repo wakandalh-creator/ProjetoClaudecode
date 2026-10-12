@@ -31,10 +31,11 @@ Por que não é demo agendada (modelo que a linha Vértice usa): aqui a prova n�
 |---|---|
 | Formato | Teste grátis self-service: **sem reunião, sem agendamento, sem compromisso** |
 | Duração | **5 dias** (fechado) |
-| Natureza do ambiente | Projeto configurado **para o cliente** — não sandbox genérico com dados fictícios |
-| Ativação | O cliente **conecta o canal real dele**: nº de WhatsApp e/ou Instagram e/ou CRM |
+| Natureza do ambiente | **Módulo/instância própria**, criada para aquele cliente — não sandbox genérico com dados fictícios |
+| Ativação | O cliente **conecta o canal real dele**: nº de WhatsApp e/ou Instagram e/ou CRM. **Quem configura é o próprio cliente** (self-service de verdade), com o **agente de IA da Neovertix dando suporte durante a configuração** + material de ativação (documentação/tutorial) que o Lucas vai construir |
 | O que roda no trial | O agente de IA atende os **leads reais** do cliente durante o período |
 | Fim do trial | **Simplesmente acaba.** Sem cobrança automática, sem renovação, sem letra miúda. O cliente vê o resultado e decide depois |
+| Se não comprar | A instância é **simplesmente descartada** — sem acesso residual, sem dado guardado além do período de teste |
 | Infraestrutura | Plataforma **Bolten** (parceria nova) — CRM white-label com agente de IA treinável, WhatsApp via QR Code ou Cloud API oficial, Meta/Instagram via Conversions API |
 
 ### Enquadramento de venda (decisão explícita do Lucas)
