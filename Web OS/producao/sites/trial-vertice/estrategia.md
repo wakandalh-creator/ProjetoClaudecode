@@ -214,30 +214,31 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 ## 8. Pendências (não estimar, não decidir por conta própria)
 
+Numeração preservada da V1 do brief, pra quem já leu. Pendências 1, 3 e 4 foram resolvidas pelo Lucas em 2026-10-12 (ver "Decisões fechadas" abaixo).
+
 | # | Pendência | Dono | O que bloqueia |
 |---|---|---|---|
-| **1** | **Duração do trial: 4 ou 7 dias.** Não decidido | **Lucas** | Headline, CTA, copy inteira, e-mails do trial, nome da oferta se o número entrar nele |
-| **2** | **Nome e slug definitivos** da oferta e do projeto. Lucas: "ainda não sei, vou definir depois". Slug atual `trial-vertice` é provisório | **Lucas** | Pasta do projeto, URL, tracking, memory.md. **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
-| **3** | **Esta oferta SUBSTITUI a Piloto Vértice** (R$ 1.900/R$ 900, sales-assisted, 2–4 semanas, garantia de 30%) **ou é uma 4ª linha paralela** em `config/business.json`? | **Lucas** | Como (e se) o `business.json` é atualizado · se a Garantia Vértice continua existindo · se a página pode ou não conviver com a Piloto no mesmo site. **Este brief NÃO alterou o `business.json`** |
-| **4** | **Natureza dos valores R$ 2.500 / R$ 3.200:** setup único, mensalidade, ou valor dentro do modelo de parceria/repasse (70/30 ou similar) com a Bolten? | **Lucas** | Exibir preço na página com confiança total. Até resolver, a V1 trabalha sem número de preço |
+| **2** | **Nome e slug definitivos** da oferta e do projeto. Lucas, 2ª rodada: "depois a gente pensa no nome do projeto" — recusou escolher entre Agente Vértice / Vértice 5 Dias / Vértice Ativo. Slug `trial-vertice` segue provisório; copy usa `[nome pendente]` | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, `"name"` em `config/business.json` (hoje placeholder). **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
 | **5** | **Dado de concorrência:** como as landing pages concorrentes (Bluelephant, Toolzz, Essent.IA, MelhorAgencia.ai, Intelecta — nomes de `01-estrategia.md` §8) estruturam oferta, trial e preço. Nenhum dado de página coletado. **Inclui validar a hipótese do "painel vazio"** (§6) | **Radar, módulo 28 (Sprint 3)** | Contra-ângulo, bloco de comparação e qualquer headline comparativa |
 | **6** | **Política de dados e desconexão do trial:** o que o agente acessa no WhatsApp/Instagram/CRM, o que acontece com as conversas quando o trial acaba, como o cliente desconecta. Nada disso é conhecido hoje | **Lucas + Blinda (módulos 37–38)** | O bloco que responde a objeção nº 1 da página ("vou conectar o WhatsApp da minha empresa?"). **Não inventar política de dados nem alegação de segurança/LGPD** |
 | **7** | **Quem configura o agente durante o trial** (o Lucas manualmente? automatizado?) e **quanto tempo leva** da conexão até o agente responder o primeiro lead | **Lucas** | Honestidade do copy de ativação, promessa de tempo, e saber se "self-service" significa "sem reunião de vendas" ou "sem humano nenhum" — são duas páginas diferentes |
 | **8** | *(herdada)* **Divergência de tagline entre as fontes:** `business.json` marca a comercial como "em iteração — candidatos rodada 3"; `01-estrategia.md` §7 dá "Escala sem contratar" como oficial | **Tese + Lucas** | Headline do hero |
 | **9** | *(herdada)* **Domínio/URL de destino** não confirmado (`01-estrategia.md` §8: neovertix.com/.com.br/.ai sem DNS, disponibilidade real não verificada) | **Lucas** | Deploy |
+| **10** | **NOVA — destino da Garantia Vértice** (≥30% ou devolução total, `02-oferta.md` §2). Ela pertencia à Piloto Vértice, agora descontinuada como entrada. Aposentar de vez, ou redesenhar pra incidir sobre os planos pagos (R$ 2.500 / R$ 3.200 + recorrência)? Lucas não decidiu | **Lucas** | Bloco de reversão de risco **pós-trial** da página (o trial resolve o risco de entrada, não o de assinar um plano com setup de R$ 2.500+). Também bloqueia limpar `02-oferta.md` §2 e o campo de garantia em `business.json` — **nada foi removido dessas fontes** |
 
-### Sugestão de nome (proposta da Tese — NÃO é decisão, pendência nº 2 segue aberta)
+### Decisões fechadas em 2026-10-12 (2ª rodada, fonte: Lucas)
 
-Critério: o nome precisa dizer que **é o seu sistema, com os seus leads, e que acaba sozinho**. Candidatos construídos só com léxico já aprovado em `business.json`:
+1. **Duração: 5 dias** (era "4 ou 7"). Fechado — a página publica 5, não uma faixa.
+2. **Preço: entrada + recorrência.** Plano 1 = R$ 2.500 + R$ 500/mês · Plano 2 = R$ 3.200 + R$ 700/mês. Mesmo padrão setup+mensalidade das outras ofertas. **Preço liberado pra página.**
+3. **Esta oferta SUBSTITUI a Piloto Vértice** como oferta de entrada. Sincronia já executada (ver abaixo).
+4. *Item futuro, sem decisão:* possível acréscimo/upsell pra cliente existente — não entra em página nem em `business.json` até o Lucas definir.
 
-| Candidato | Slug | Léxico usado | Risco |
-|---|---|---|---|
-| **Vértice Aberto** | `vertice-aberto` | vértice | "Aberto" não comunica prazo nem fim automático |
-| **Vértice [4/7] Dias** | `vertice-7-dias` | vértice + número > adjetivo | Trava o nome na pendência nº 1; renomear se a duração mudar |
-| **Roda Sozinho** | `roda-sozinho` | roda sozinho (léxico puro) | Nome de resultado, não de oferta — pode confundir com a Operação Vértice |
+### Sincronia executada (2026-10-12, pela Tese, após a decisão do Lucas)
 
-Leitura da Tese: **"Vértice [4/7] Dias"** é o mais honesto com a oferta (prazo fechado é o pilar 1 da marca e número > adjetivo é regra da casa), mas depende da pendência nº 1. Decisão é do Lucas.
+| Arquivo | O que mudou |
+|---|---|
+| `config/business.json` | `offers[0]` substituído: Piloto Vértice → esta oferta, com `"name"` em placeholder até a pendência nº 2. `content_goal` atualizado (não cita mais "Piloto Vértice"). `positioning` ajustado no trecho "colocamos o sistema rodando antes de fechar contrato". `notes` registra a substituição |
+| `Web OS/_context/icp-web.md` | Linha "Piloto Vértice" da tabela oferta→página trocada pela oferta nova (página de ativação self-service, CTA de trial em vez de demo) |
+| `Social mídia IA/_context/marca.md` | Tabela de ofertas e pilar 3 atualizados — **arquivo de outro squad** (produção de conteúdo), tocado porque é a fonte de tom compartilhada e citava a oferta extinta |
 
-### Nota de sincronia (fora do escopo desta página, pra registro)
-
-`config/business.json` tem 3 ofertas e **nenhuma** corresponde a esta. Se a pendência nº 3 resolver por "substitui a Piloto Vértice", muda `offers[0]`, o `content_goal` ("aquisição de clientes para o Piloto Vértice"), a tabela oferta→página de `Web OS/_context/icp-web.md` e a tabela de ofertas de `Social mídia IA/_context/marca.md`. Se resolver por "4ª linha paralela", é só inclusão. **A Tese faz essa sincronia depois da decisão do Lucas — não antes.**
+**Não alterado de propósito:** `branding/neovertix/02-oferta.md` e `01-estrategia.md` (fonte de verdade da marca; a reescrita da oferta ali depende da pendência nº 10 e de uma passada completa de oferta, não de um patch) e `Social mídia IA/_context/tom-de-voz.md` (seção "Base" só muda por decisão explícita do Lucas).
