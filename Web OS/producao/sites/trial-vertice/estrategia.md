@@ -229,21 +229,18 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Pend�
 | **7** | **Quem configura o agente durante o trial** (o Lucas manualmente? automatizado?) e **quanto tempo leva** da conexão até o agente responder o primeiro lead | **Lucas** | Honestidade do copy de ativação, promessa de tempo, e saber se "self-service" significa "sem reunião de vendas" ou "sem humano nenhum" — são duas páginas diferentes |
 | **8** | *(herdada)* **Divergência de tagline entre as fontes:** `business.json` marca a comercial como "em iteração — candidatos rodada 3"; `01-estrategia.md` §7 dá "Escala sem contratar" como oficial | **Tese + Lucas** | Headline do hero |
 | **9** | *(herdada)* **Domínio/URL de destino** não confirmado (`01-estrategia.md` §8: neovertix.com/.com.br/.ai sem DNS, disponibilidade real não verificada) | **Lucas** | Deploy |
-| **10** | **NOVA — destino da Garantia Vértice** (≥30% ou devolução total, `02-oferta.md` §2). Ela pertencia à Piloto Vértice, agora descontinuada como entrada. Aposentar de vez, ou redesenhar pra incidir sobre os planos pagos (R$ 2.500 / R$ 3.200 + recorrência)? Lucas não decidiu | **Lucas** | Bloco de reversão de risco **pós-trial** da página (o trial resolve o risco de entrada, não o de assinar um plano com setup de R$ 2.500+). Também bloqueia limpar `02-oferta.md` §2 e o campo de garantia em `business.json` — **nada foi removido dessas fontes** |
+| **11** | **NOVA — ICP não validado para este produto.** O ICP de §3 é **inferido** do público geral da Neovertix; não existe ICP validado para este produto independente, e `icp-web.md` (linha Vértice) não serve como fonte. Um trial self-service com conexão técnica de canal pode atrair perfil diferente do que a venda assistida atrai | **Lucas** | Confirmar a quem a página fala (dono de PME? criador/infoprodutor, dada a afinidade do Plano 2 com Instagram?). Afeta copy, objeções e canal de tráfego. **Se este produto ganhar ICP próprio, ele precisa de `_context` próprio — não encaixar em `icp-web.md`** |
 
-### Decisões fechadas em 2026-10-12 (2ª rodada, fonte: Lucas)
+### Decisões fechadas em 2026-10-12 (fonte: Lucas)
 
 1. **Duração: 5 dias** (era "4 ou 7"). Fechado — a página publica 5, não uma faixa.
-2. **Preço: entrada + recorrência.** Plano 1 = R$ 2.500 + R$ 500/mês · Plano 2 = R$ 3.200 + R$ 700/mês. Mesmo padrão setup+mensalidade das outras ofertas. **Preço liberado pra página.**
-3. **Esta oferta SUBSTITUI a Piloto Vértice** como oferta de entrada. Sincronia já executada (ver abaixo).
-4. *Item futuro, sem decisão:* possível acréscimo/upsell pra cliente existente — não entra em página nem em `business.json` até o Lucas definir.
+2. **Preço: entrada + recorrência.** Plano 1 = R$ 2.500 + R$ 500/mês · Plano 2 = R$ 3.200 + R$ 700/mês. **Liberado pra página.**
+3. **Linha de produto: independente** (3ª rodada, corrige a leitura anterior de "substitui a Piloto Vértice"). Mesma empresa — Neovertix —, produtos diferentes: linha Vértice (implementação sob medida), Web OS (criação automática de sites/landing pages) e **este produto** (agente de IA + CRM + redes sociais, via Bolten). **Não substitui, não se funde, não herda a Garantia Vértice.** Agregar à linha Vértice no futuro é decisão do Lucas.
+4. *Item futuro, sem decisão:* possível acréscimo/upsell pra cliente existente.
+5. **Pendência nº 10 CANCELADA** ("destino da Garantia Vértice"): ela nasceu da leitura errada de substituição. Este produto nunca teve essa garantia — não há nada pra aposentar nem redesenhar. A garantia continua sendo da linha Vértice, intacta.
 
-### Sincronia executada (2026-10-12, pela Tese, após a decisão do Lucas)
+### Nenhuma fonte de marca foi alterada por este brief
 
-| Arquivo | O que mudou |
-|---|---|
-| `config/business.json` | `offers[0]` substituído: Piloto Vértice → esta oferta (price com entrada + recorrência dos 2 planos; `"name"` em placeholder até a pendência nº 2). `content_goal` não cita mais "Piloto Vértice". `notes` registra a substituição e a pendência nº 10. **`positioning` não mudou** — continua literalmente verdadeiro ("colocamos o sistema rodando antes de fechar contrato"), e deriva de `01-estrategia.md` §2, que é fonte de verdade |
-| `Web OS/_context/icp-web.md` | Linha "Piloto Vértice" da tabela oferta→página trocada pela oferta nova (ativação self-service, CTA de trial em vez de demo). Seção "Base" (ICP primário/secundário) **intocada** |
-| `Social mídia IA/_context/marca.md` | **Arquivo de outro squad** (produção de conteúdo), tocado porque é a fonte de tom compartilhada e citava a oferta extinta: tabela de ofertas, pilar 3, regra "agente de IA lidera / CRM vem incluído", e a garantia de ≥30% marcada como **suspensa para uso em conteúdo**. Também registra que R$ 1.900/R$ 900 e o Programa Fundador saem dos hooks |
+Nada em `config/business.json`, `Web OS/_context/icp-web.md`, `Social mídia IA/_context/marca.md`, `branding/neovertix/*` ou `tom-de-voz.md` muda por causa deste produto. Uma sincronia chegou a ser feita na 2ª rodada (quando a leitura era "substitui a Piloto Vértice") e **foi revertida** ao baseline. Se/quando o Lucas decidir agregar este produto à linha Vértice, a Tese faz o registro — não antes.
 
-**Não alterado de propósito:** `branding/neovertix/02-oferta.md` e `01-estrategia.md` (fonte de verdade da marca; a reescrita da oferta ali depende da pendência nº 10 e de uma passada completa de oferta, não de um patch) e `Social mídia IA/_context/tom-de-voz.md` (seção "Base" só muda por decisão explícita do Lucas).
+**O que continua herdado da marca Neovertix** (é a mesma empresa): posicionamento, voz, arquétipos Mágico + Cara Comum, léxico e palavras banidas, âncoras de custo (`02-oferta.md` §3) e a direção visual de `01-estrategia.md` §8.
