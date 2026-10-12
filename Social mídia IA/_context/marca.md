@@ -35,7 +35,8 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 - 10 leads perdidos por demora = R$ 3.000-15.000/mês em receita não realizada (ticket R$ 300-1.500)
 - De 4h de triagem manual pra 15 minutos
 - Resposta em segundos, não em horas; lead às 23h atendido na hora
-- Garantia: métrica combinada melhora ≥30% ou o piloto sai de graça
+- ~~Garantia: métrica combinada melhora ≥30% ou o piloto sai de graça~~ — **suspenso em 2026-10-12** (era da Piloto Vértice, oferta substituída; destino em decisão pelo Lucas). Segue documentada em `branding/neovertix/02-oferta.md` §2, mas **não usar em conteúdo** até decisão
+- Teste grátis de 5 dias: o agente atende os leads reais do cliente e no fim acaba, sem cobrança automática
 
 ## Ofertas (CTAs de conteúdo apontam pra cá)
 
