@@ -193,6 +193,8 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 
 **Léxico da marca — continua valendo, é a mesma empresa** (`business.json` / `01-estrategia.md` §6): construímos · roda sozinho · responde em [tempo] · mecanismo · fluxo · **testado — não prometido** · entrega. Liderar sempre com **"agente de IA"**; "CRM" entra como item incluído, nunca como produto principal.
 
+**Tagline oficial deste produto: "Escala sem contratar"** (decisão do Lucas, 2026-10-12 — resolve a divergência a favor de `01-estrategia.md` §7, contra o "em iteração" de `business.json`). Benefício em 3 palavras, serve de headline ou de linha de apoio do hero. A assinatura institucional **"A gente constrói, não promete."** continua disponível como fechamento.
+
 **Ressalva sobre "vértice":** a palavra segue no léxico da **empresa**, mas este produto **não pertence à linha Vértice** — usar "vértice" no nome ou na copy desta página sugeriria um parentesco de produto que não existe. Recomendação da Tese: reservar "vértice" para a linha Vértice e nomear este produto por aquilo que ele faz. Decisão do nome é do Lucas (pendência nº 2).
 
 **Banidas — bloqueio duro na copy** (`business.json`): revolucionar · turbinar · o futuro chegou · funcionário digital que não dorme · disruptivo · sinergia · potencializar · ecossistema · game changer · "vale por N humanos".
