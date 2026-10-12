@@ -21,12 +21,12 @@ Por que não é demo agendada (como era a Piloto Vértice): a prova deixou de se
 
 ## 2. Oferta específica
 
-**Oferta NOVA. Não existe em `config/business.json`.** Fonte: entrevista com o Lucas em 2026-10-12. Decisão de incluí-la (ou não) no `business.json` é pendência nº 3 — este brief não altera o `business.json`.
+**Oferta NOVA que passou a ser a oferta de ENTRADA da Neovertix, no lugar da Piloto Vértice** (decisão do Lucas, 2026-10-12, 2ª rodada). Fonte: entrevista com o Lucas em 2026-10-12. `config/business.json` já foi sincronizado — `offers[0]` agora é esta oferta.
 
 | Campo | Valor (fonte: entrevista Lucas 2026-10-12) |
 |---|---|
 | Formato | Teste grátis self-service: **sem reunião, sem agendamento, sem compromisso** |
-| Duração | **4 ou 7 dias — não decidido** (pendência nº 1) |
+| Duração | **5 dias** (fechado) |
 | Natureza do ambiente | Projeto configurado **para o cliente** — não sandbox genérico com dados fictícios |
 | Ativação | O cliente **conecta o canal real dele**: nº de WhatsApp e/ou Instagram e/ou CRM |
 | O que roda no trial | O agente de IA atende os **leads reais** do cliente durante o período |
