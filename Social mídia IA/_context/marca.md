@@ -27,7 +27,7 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 
 1. **Rápido de verdade** — semanas, não trimestres; prova: demo com dados reais do prospect
 2. **Engenharia, não slide** — stack de verdade (agentes IA, n8n, MCPs); prova: walkthrough técnico transparente
-3. **Você não paga pra descobrir se funciona** — teste grátis de 5 dias com os leads reais do cliente, que acaba sozinho (desde 2026-10-12; antes era o piloto de 2-4 semanas com garantia de 30%)
+3. **Você não paga pra descobrir se funciona** — piloto 2-4 semanas com métrica combinada e garantia de 30%
 
 ## Números âncora (usar em hooks/provas — sempre estes, nunca inventar)
 
