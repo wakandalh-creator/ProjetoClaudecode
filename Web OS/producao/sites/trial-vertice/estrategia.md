@@ -237,8 +237,8 @@ Numeração preservada da V1 do brief, pra quem já leu. Pendências 1, 3 e 4 fo
 
 | Arquivo | O que mudou |
 |---|---|
-| `config/business.json` | `offers[0]` substituído: Piloto Vértice → esta oferta, com `"name"` em placeholder até a pendência nº 2. `content_goal` atualizado (não cita mais "Piloto Vértice"). `positioning` ajustado no trecho "colocamos o sistema rodando antes de fechar contrato". `notes` registra a substituição |
-| `Web OS/_context/icp-web.md` | Linha "Piloto Vértice" da tabela oferta→página trocada pela oferta nova (página de ativação self-service, CTA de trial em vez de demo) |
-| `Social mídia IA/_context/marca.md` | Tabela de ofertas e pilar 3 atualizados — **arquivo de outro squad** (produção de conteúdo), tocado porque é a fonte de tom compartilhada e citava a oferta extinta |
+| `config/business.json` | `offers[0]` substituído: Piloto Vértice → esta oferta (price com entrada + recorrência dos 2 planos; `"name"` em placeholder até a pendência nº 2). `content_goal` não cita mais "Piloto Vértice". `notes` registra a substituição e a pendência nº 10. **`positioning` não mudou** — continua literalmente verdadeiro ("colocamos o sistema rodando antes de fechar contrato"), e deriva de `01-estrategia.md` §2, que é fonte de verdade |
+| `Web OS/_context/icp-web.md` | Linha "Piloto Vértice" da tabela oferta→página trocada pela oferta nova (ativação self-service, CTA de trial em vez de demo). Seção "Base" (ICP primário/secundário) **intocada** |
+| `Social mídia IA/_context/marca.md` | **Arquivo de outro squad** (produção de conteúdo), tocado porque é a fonte de tom compartilhada e citava a oferta extinta: tabela de ofertas, pilar 3, regra "agente de IA lidera / CRM vem incluído", e a garantia de ≥30% marcada como **suspensa para uso em conteúdo**. Também registra que R$ 1.900/R$ 900 e o Programa Fundador saem dos hooks |
 
 **Não alterado de propósito:** `branding/neovertix/02-oferta.md` e `01-estrategia.md` (fonte de verdade da marca; a reescrita da oferta ali depende da pendência nº 10 e de uma passada completa de oferta, não de um patch) e `Social mídia IA/_context/tom-de-voz.md` (seção "Base" só muda por decisão explícita do Lucas).
