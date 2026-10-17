@@ -1,98 +1,116 @@
 # Design Spec — trial-vertice (slug provisório)
 
-> Fonte única da verdade do design deste projeto. Gerado pelo Molda (módulo 21) a partir de `estrategia.md`, `references/notas-referencia.md`, `Web OS/bancos/design-tokens-globais.md` e `Web OS/bancos/componentes-aprovados.md`. **Precisa de aprovação explícita do Lucas antes do módulo 22 (build) começar** — ver seção Aprovação no fim, com as decisões específicas que pedem confirmação dele.
+> Fonte única da verdade do design deste projeto. Gerado pelo Molda (módulo 21) a partir de `estrategia.md`, `references/notas-referencia.md`, `Web OS/bancos/design-tokens-globais.md` e `Web OS/bancos/componentes-aprovados.md`. **Precisa de aprovação explícita do Lucas antes do módulo 22 (build) começar** — ver seção Aprovação no fim, com a decisão específica que pede confirmação dele.
 >
-> Nota de método: `design-tokens-globais.md` e `componentes-aprovados.md` estão **vazios** (nenhum projeto Web OS passou por aqui ainda — `teste-piloto-vertice` foi descartado e não reaproveitado). Este é o primeiro conjunto de tokens/componentes real do sistema. Tudo abaixo é proposto como primeira entrada dos bancos, não como herança de um padrão já existente — a aprovação do Lucas neste documento funciona como a confirmação de promoção exigida pelas regras do módulo.
+> **Revisão (atualização pós-protótipo):** depois da entrega original abaixo, Lucas e a sessão de protótipo iteraram diretamente num Artifact visual — decisão de cor/tipografia precisava ser vista, não só lida. O resultado final diverge bastante da proposta original nas seções **Color, Typography, Motion, Trust Architecture e Inventário de Componentes**, reescritas abaixo pra refletir a realidade. **Protótipo vivo (referência mais atual que qualquer descrição em texto): `https://claude.ai/code/artifact/e0537736-3314-4af9-837c-4e6bf1fab12e`.**
+>
+> Nota de método: a proposta original partiu do banco `design-tokens-globais.md` **vazio**. Na iteração com o Lucas, descobrimos que a Neovertix já tem um design system oficial e aprovado em `branding/neovertix/tokens.json` (formalizado a partir do logo final aprovado) — esse arquivo é a fonte de verdade de **cor** a partir desta revisão, não o banco global vazio.
 
 ## Referências analisadas
 
-Ver `references/notas-referencia.md`. Nenhum site individual foi screenshotado/analisado nesta sessão (sem ferramenta de navegação visual disponível) — a direção vem de características conhecidas das 3 galerias indicadas pelo Lucas (Awwwards = craft, land-book = estrutura B2B, minimal.gallery = contenção), combinadas com `branding/neovertix/01-estrategia.md` §8.
+Ver `references/notas-referencia.md` pra contexto original (Awwwards/land-book/minimal.gallery, características gerais, sem screenshot individual). **Superado na prática pelo protótipo vivo** (link acima) e por uma referência de produto usada na iteração de cor: EasyPanel (fundo claro, texto quase-preto, botão verde sólido em pill) — usada como ponto de partida pras variações claras testadas, não copiada 1:1 (ver correção de contraste em Color).
 
 ## Contexto que molda as decisões abaixo
 
-- **ICP não é tech/startup**: comércio local e PME (clínicas, concessionárias, imobiliárias, advocacia) — decisor único, não comitê, não é público que valoriza estética "SaaS do Vale do Silício". Isso pesa contra qualquer intensidade de motion alta e contra qualquer visual que pareça "ferramenta de dev".
-- **Não existe Garantia Vértice aqui.** O mecanismo de confiança próprio é: instância própria por cliente + descarte automático se não comprar. Isso precisa de bloco visual pesado (Passo 3c), não FAQ.
+- **ICP não é tech/startup**: comércio local e PME (clínicas, concessionárias, imobiliárias, advocacia) — decisor único, não comitê, não é público que valoriza estética "SaaS do Vale do Silício". Isso pesa contra qualquer intensidade de motion alta e contra qualquer visual que pareça "ferramenta de dev". (Pendência 11b do brief de estratégia sobre validação do ICP continua aberta — não é deste módulo.)
+- **Não existe Garantia Vértice aqui.** O mecanismo de confiança próprio é: instância própria por cliente + descarte automático se não comprar. Na versão final isso não é mais um bloco visual separado — virou um dos 4 passos do "Como Funciona" (ver Trust Architecture).
 - **Lucas aparece como pessoa** (Cara Comum), mesmo sem vender por reunião.
-- **Prova principal = log de conversa real**, formato de conversa, não dashboard.
-- **Nenhuma alegação de segurança/LGPD/criptografia** — isso restringe até a escolha de ícone (ver Passo 3c).
+- **Nenhuma alegação de segurança/LGPD/criptografia** — regra de veracidade mantida; ver nota sobre o ícone de cadeado/escudo em Trust Architecture.
 
 ---
 
 ## Tokens do projeto
 
-Herdados de `Web OS/bancos/design-tokens-globais.md` onde já havia valor concreto (Spacing, Breakpoints, vocabulário de Motion); definidos aqui como primeira proposta onde o banco estava vazio (Color, Typography, Radius, Shadow, Intensity de Motion escolhida).
-
 ### Color
 
-| Token | Valor | Uso | Desvio do global? Por quê? |
-|---|---|---|---|
-| `color.bg.dark` (off-black) | `#16151A` | Fundo de seções escuras (Hero, Trust Architecture) | Não é desvio — é a 1ª entrada do banco. Off-black conforme `01-estrategia.md` §8 (nunca preto puro `#000`). |
-| `color.bg.light` (off-white) | `#F6F3EE` | Fundo de seções claras (maioria da página) | 1ª entrada. Off-white com leve tom papel — evita branco clínico/estéril, reforça "comércio local/humano" em vez de "SaaS frio". |
-| `color.text.ink` | `#1C1B1F` | Texto sobre fundo claro | 1ª entrada. Ligeiramente mais suave que o off-black de fundo, pra não competir com ele como "quase-preto duplo". |
-| `color.accent.clay` | `#C1552E` (terracota/argila) | ÚNICA cor de destaque da página inteira: CTA, links, grifos, linhas divisórias do bloco de confiança | 1ª entrada — **decisão que pede confirmação do Lucas** (ver Aprovação). Escolhido no lugar de azul/verde: azul é o clichê do nicho CRM/automação (inclusive os concorrentes a validar no módulo 28 — RD Station, Kommo); verde seria lido como "clichê do WhatsApp"; terracota é quente, sóbrio, humano (reforça Cara Comum) e nunca aparece em `01-estrategia.md` §8 como banido. |
-| `color.neutral.100/400/700` | `#D8D5D0` / `#8C8A87` / `#4B4A50` | Bordas, divisores, texto secundário | 1ª entrada — rampa neutra derivada do off-black/off-white, sem matiz própria (evita 2ª cor de destaque competindo com a clay). |
+**Mudança total em relação à entrega original.** A proposta de accent terracota (`#C1552E`) foi **rejeitada** — Lucas pediu "as cores da nossa logo". Fonte de verdade agora é `branding/neovertix/tokens.json` (sistema oficial, formalizado a partir do logo final aprovado), não o banco global vazio.
 
-**Regra de aplicação, não negociável nesta página:** uma única cor de destaque (`clay`) em toda a página — nunca duas cores saturadas disputando atenção na mesma tela (requisito literal de `01-estrategia.md` §8). Zero gradiente em qualquer combinação dessas cores.
+**Direção testada e descartada:** a paleta navy escura oficial do tokens.json (`bg.canvas #0A0E1A` + `accent.default #43A047`) foi montada num protótipo e **descartada por decisão do Lucas**. Registro aqui pra ninguém redescobrir/testar de novo sem saber que já foi avaliada — não é mais opção ativa.
+
+**Estado atual — 2 variações claras testadas, nenhuma escolhida como definitiva** (pendência real, ver Aprovação). Lucas pediu pra testar direções claras usando como ponto de partida a referência EasyPanel (fundo claro, texto quase-preto, botão verde sólido em pill).
+
+| Token | Cinza claro + verde | Branco + verde | Uso |
+|---|---|---|---|
+| `color.bg` | `#F6F6F4` | `#FFFFFF` | Fundo raiz da página |
+| `color.panel` | `#FFFFFF` | `#FFFFFF` (separação só por borda/sombra — mesmo valor do bg nesta variação) | Cards, nav, inputs |
+| `color.panel-raised` | `#EDEDEA` | `#F4F4F2` | Hover de card, superfície elevada |
+| `color.ink` | `#121212` | `#121212` | Texto principal |
+| `color.ink-soft` | `#5B5B58` | `#5B5B58` | Texto secundário |
+| `color.ink-mute` | `#8A8A86` | `#8A8A86` | Texto terciário/placeholder |
+| `color.border` | `#E5E5E1` | `#E5E5E1` | Divisores, contorno de card |
+| `color.accent` | `#43A047` | `#43A047` | CTA, botão primário, único destaque saturado da página — verde oficial da seta do logo (`tokens.json → color.accent.default`) |
+| `color.accent-hover` | `#2E7D32` | `#2E7D32` | Hover do botão — tom mais escuro, pensado pra fundo claro. **Desvio documentado do tokens.json**: o `accent.hover` oficial (`#66BB6A`, mais claro) foi pensado pra fundo escuro — não usar aqui. |
+| `color.accent-text` | `#121A2E` (escuro) | `#121A2E` (escuro) | Texto sobre o botão verde — **nunca branco** |
+
+**Correção de acessibilidade sobre a própria referência copiada:** a referência EasyPanel usa texto escuro sobre botão verde — testamos contraste e confirmamos que não é só estética, é necessário: branco sobre `#43A047` dá 3.3:1 (reprova WCAG AA pra texto normal); escuro (`#121A2E`) sobre o mesmo verde dá 5.2:1 (aprova). Isso coincide com o que o próprio `tokens.json` já havia calculado pra fundo escuro (`color.accent.contrast`) — aqui confirma que vale igual pra fundo claro.
+
+**Regra de aplicação, ainda vale:** uma única cor de destaque saturada (`accent` verde) em toda a página — nunca duas cores saturadas competindo na mesma tela.
 
 ### Typography
 
-| Token | Valor | Uso | Desvio do global? Por quê? |
-|---|---|---|---|
-| `font.display` | Fraunces (variável, eixo óptico "display", peso 600–700) | H1, H2, tagline, citação de destaque | 1ª entrada. Serifada com caráter (não é geométrica-sans-de-SaaS-genérico) — carrega peso/presença institucional, compatível com público que não é tech-hype. Variável = 1 arquivo só cobrindo a faixa de peso, ajuda o budget de performance (Passo 2b). |
-| `font.body` | Hanken Grotesk (variável, peso 400–600) | Corpo de texto, labels, botões, transcrição do log de conversa | 1ª entrada. Grotesco neutro e muito legível em telas pequenas (ICP majoritariamente mobile, 320–430px) — evitado "Inter" de propósito por ser a fonte-padrão mais associada a templates genéricos de IA/SaaS. |
-| Escala (base 16px, razão ~1,25) | 12 / 14 / 16 / 20 / 25 / 31 / 39 / 49 / 61 (px) | caption/label / small / body / lead / H4 / H3 / H2 / H1 mobile / H1 desktop | Escala moderada (não dramática) — coerente com a contenção de minimal.gallery, evita "drama de tipografia" como substituto de conteúdo real. |
-| Peso como hierarquia | H1/H2 em Fraunces 600–700; H3/H4/labels em Hanken Grotesk 600; corpo em 400; botão em 500 | — | Operacionaliza a regra da marca "tipografia carrega mais peso do que cor" — a hierarquia vem do peso/escala tipográfica, a `clay` fica reservada só pra pontos de ação/prova. |
+**Mudança total.** O par Fraunces + Hanken Grotesk (proposta original) foi abandonado. Chakra Petch — fonte oficial de display do `tokens.json` — também foi testada e **não ficou** como escolha final. A versão final usa **Manrope como única família**, display e body.
 
-**Tell evitado deliberadamente:** eyebrow em ALL-CAPS repetido (está na lista de marcas de "IA genérica" do piso de craft). Onde a página precisar de um rótulo pequeno acima de um título, usa Hanken Grotesk 500 em caixa normal (sentence case) com uma linha/régua em `clay` ao lado — nunca caixa alta.
+| Token | Valor | Uso |
+|---|---|---|
+| `font.display` / `font.body` | Manrope (variável) | Toda a página — não há mais par serifado/grotesco, é tudo sans-serif Manrope |
+| Peso em títulos de destaque (H1/H2/H3) | 800 | Hierarquia vem do peso dentro da mesma família, não de uma segunda fonte |
+| Peso no corpo | 400–600 | Texto corrido, labels, botão |
+
+Escala numérica de tamanho (12/14/16/20/25/31/39/49/61 px) da entrega original **mantida sem revisão nesta sessão** — ninguém testou/definiu uma escala nova no protótipo, só a família/peso mudaram.
+
+**Tell evitado, ainda vale (ajustado o nome do token de cor):** eyebrow em ALL-CAPS repetido continua banido. Onde a página precisar de um rótulo pequeno acima de um título: Manrope 500–600 em caixa normal (sentence case) com uma linha/régua em `accent` (verde) ao lado — nunca caixa alta.
 
 ### Spacing
 
-Escala 4/8/12/16/24/32/48/64/80/96 (px) — herdada sem desvio.
+Escala 4/8/12/16/24/32/48/64/80/96 (px) — herdada sem desvio, sem mudança reportada no protótipo.
 
 ### Radius
 
-| Token | Valor | Uso | Desvio do global? Por quê? |
+| Token | Valor | Uso | Nota |
 |---|---|---|---|
-| `radius.sm` | 4px | Inputs, chips pequenos | 1ª entrada. |
-| `radius.md` | 8px | Botões, cards | 1ª entrada. **Decisão deliberada: nunca pill/full-round em botão** — pill button é parte do "kit de card SaaS" genérico listado no piso de craft; 8px mantém sóbrio/institucional. |
-| `radius.lg` | 16px | Painéis grandes, blocos de imagem/moodboard | 1ª entrada. |
+| `radius.sm` | 4px | Inputs, chips pequenos | Sem mudança reportada. |
+| `radius.card` | **14px** | Cards, painéis (ambas as variações claras) | **Decidido no protótipo** — coincide com `radius.lg` do `tokens.json` oficial (14px). |
+| `radius.button` | **pill (full-round)** | Botão primário | **Mudança em relação à entrega original**, que proibia pill explicitamente ("sem pill, 8px institucional"). A referência EasyPanel usa botão pill e o protótipo final adotou — registrado aqui como decisão nova, substitui a regra antiga. |
 
 ### Shadow
 
-| Token | Valor | Uso | Desvio do global? Por quê? |
+| Token | Valor | Uso | Nota |
 |---|---|---|---|
-| `shadow.none` (padrão) | sem sombra — separação por borda de 1px em `neutral.100` | Estado padrão de todo card/bloco | 1ª entrada. Evita o tell "card flutuando com sombra pesada sobre fundo gradiente" — usa a lógica de "profundidade em camadas de fundo" da marca em vez de sombra. |
-| `shadow.elevated` | deslocamento vertical pequeno (4px), blur baixo, opacidade baixa (~8%) | Só em estado de hover/foco pontual (dropdown, card elevando no hover) — nunca no estado padrão | 1ª entrada. |
+| `shadow.card` | `0 2px 10px rgba(0,0,0,.05)` — bem suave | Estado padrão de card/painel (ambas as variações claras) | **Mudança em relação à entrega original**, que previa "sem sombra por padrão, só borda". No protótipo final há sombra suave por padrão, nunca pesada — sem sombra pesada em nenhum estado. |
 
 ### Breakpoints
 
-320 / 375 / 390 / 430 / 768 / 1024 / 1280 / 1440+ (px) — herdado sem desvio. Atenção especial no Passo 2a-bis abaixo aos componentes que mudam de layout nos 4 primeiros (320–430), onde o ICP majoritariamente acessa.
+320 / 375 / 390 / 430 / 768 / 1024 / 1280 / 1440+ (px) — herdado sem desvio, sem mudança reportada.
 
 ### Motion
 
 Motor: **GSAP + Lenis** (padrão obrigatório de todo projeto Web OS, não é escolha deste projeto).
 
-| Categoria | Valor | Desvio do global? Por quê? |
-|---|---|---|
-| Duration | 200ms (padrão) · 300ms (transição de seção) · 500ms (entrada de bloco) | Sem desvio — usa os valores padrão do banco. |
-| Easing | `ease-out` (entrada) · `ease-in-out` (transição) | Sem desvio. **Spring explicitamente descartado**: o atributo de voz "sóbrio, não gritado" (`01-estrategia.md` §6) não permite registro de tom brincalhão — spring ficaria na linha do que a marca evita. |
-| **Intensity** | **Medium** | **Decisão que pede atenção do Lucas** (ver Aprovação) — o banco global descreve Subtle como o ajuste padrão pra "nicho B2B sóbrio/institucional", e este ICP é literalmente isso. Justificativa pra ainda assim escolher Medium (scroll-reveal por seção, sem pinning) em vez de Subtle (só Hero + micro-interação): a página tem estrutura narrativa sequencial pesada (problema → arquitetura de confiança → como funciona → prova → oferta → objeções) que se beneficia de revelar-ao-rolar pra pautar a leitura seção a seção — função de motion = orientar + criar continuidade, não decoração. Scroll-reveal sóbrio (fade + leve slide, sem pin/scrub/parallax) hoje é padrão esperado em página B2B bem executada (inclusive no padrão estrutural de land-book) — a ausência total dele arrisca parecer estática/barata, o que vai contra o piso de craft ("isso não é barato"). **Strong/Cinematic fica explicitamente fora** (pinning/scrubbing/parallax real) — incompatível com o ICP e com o orçamento de performance mobile. |
-| Movement | Fade + Slide (8–16px) como vocabulário base de entrada de seção. Scale (0.98→1) reservado só pro bloco de prova (log de conversa), simulando mensagens "chegando" — função: gerar emoção com intenção. Nenhum rotate/blur/parallax/morph — nenhuma seção pede. | Sem desvio de vocabulário, escolha de onde aplicar é deste projeto. |
+**A pergunta genérica "Intensity: Medium vs. Subtle" da entrega original foi substituída na prática.** O protótipo final não usa scroll-reveal genérico por seção — usa animações pontuais e funcionais, uma por módulo/seção, cada uma com propósito claro (confirmar que é real ou explicar o mecanismo), não decoração:
 
-`prefers-reduced-motion: reduce` sempre respeitado — com motion desligado, cada seção continua legível e a mensagem central ("5 dias, canal real, sem compromisso") chega inteira só com texto.
+| Onde | Animação | Função |
+|---|---|---|
+| Aba "Agente de IA" (Módulos com abas) | Bolhas de conversa de WhatsApp aparecendo em sequência | Confirmar que é real, não mockup estático |
+| Aba "Redes Sociais" (Módulos com abas) | Bolhas de conversa de Instagram aparecendo em sequência | Mesma função, outro canal |
+| Aba "CRM de Vendas" (Módulos com abas) | Barras de "sinal" (urgência/orçamento) preenchendo quando o card aparece | Explicar o mecanismo de qualificação do lead |
+| Aba "Conversões" (Módulos com abas) | Linha conectando "anúncio → lead" | Explicar o mecanismo de atribuição |
+
+Fora dessas quatro, sem scroll-reveal genérico documentado no protótipo. `prefers-reduced-motion: reduce` continua respeitado — sem motion, cada painel segue legível só com o checklist em texto.
 
 ---
 
 ## Piso de craft (Passo 2a-bis) — checklist aplicado neste projeto
 
+Mantido como estava na entrega original, com uma correção factual (os tokens de cor/radius/shadow mudaram, ver acima):
+
 | Item do piso | Como este projeto cumpre |
 |---|---|
-| Zero marca de "IA genérica" | Sem gradiente azul-roxo (paleta off-black/off-white + 1 accent terracota), sem card de vidro, hero não é stack centralizado sobre gradiente (ver Hero no inventário — layout assimétrico), sem eyebrow ALL-CAPS repetido, sem kit de card SaaS (botão sem pill, sombra ausente por padrão). |
-| Micro-interação real em todo interativo | Botão: hover = leve elevação (2px) + mudança de cor, foco = anel visível em `clay`, active = scale 0.98. Link: sublinhado crescendo do centro. Card: hover = borda muda de `neutral.100` pra `clay` + leve elevação, nunca sombra pesada. Campo de formulário (conexão de canal): foco com anel `clay` + estado de validação inline. Nenhum elemento fica no default do navegador. |
+| Zero marca de "IA genérica" | Sem gradiente, sem card de vidro, hero não é stack centralizado sobre gradiente — paleta clara cinza/branco + 1 accent verde (cores oficiais do logo via `tokens.json`), sem eyebrow ALL-CAPS repetido. **Nota de revisão:** a regra original "botão sem pill, sombra ausente por padrão" foi superada pela decisão do protótipo (botão pill, sombra suave por padrão — ver Radius/Shadow); os demais itens desta linha continuam valendo. |
+| Micro-interação real em todo interativo | Sem mudança reportada no protótipo — mantida a intenção original (hover/foco/active visíveis em todo elemento interativo); detalhe fino é tarefa do módulo 22. |
 | Motor de animação de verdade | GSAP + Lenis confirmados como motor deste projeto (não é opcional). |
-| Tipografia com hierarquia deliberada | Ver escala e pesos acima — documentados, não "no olho". |
-| Responsividade sem concessão | Componentes com atenção extra nomeada no Inventário (funil de 3 passos, bloco de prova, comparação de 2 planos) — teste real nos 8 breakpoints é item de QA do módulo 22, não opcional. |
-| Performance dentro do budget | Ver Passo 2b abaixo — cada efeito proposto já nasce dentro do limite. |
+| Tipografia com hierarquia deliberada | Ver Typography acima — hierarquia por peso dentro de Manrope, documentada. |
+| Responsividade sem concessão | Teste real nos 8 breakpoints é item de QA do módulo 22, não opcional. |
+| Performance dentro do budget | Ver Performance budget abaixo. |
 
 ---
 
@@ -100,72 +118,71 @@ Motor: **GSAP + Lenis** (padrão obrigatório de todo projeto Web OS, não é es
 
 Limiares de auditoria (herdados, mesmos do módulo 23): **LCP < 2,5s · INP < 200ms · CLS < 0,1**.
 
-Orçamento consciente deste projeto:
+Orçamento consciente deste projeto, **atualizado pra refletir Manrope como única fonte**:
 
-- **Fontes**: 2 arquivos variáveis (Fraunces + Hanken Grotesk), subset Latin + diacríticos PT-BR, self-hosted woff2, combinado ~90–120kb. Fonte do elemento de LCP (H1 em Fraunces) com preload.
-- **Elemento de LCP = texto, não imagem.** Decisão deliberada: este é um serviço sem produto físico, e a prova mais forte (log de conversa) é representada em HTML/CSS real, não screenshot — isso mantém o LCP leve, o conteúdo acessível/copiável, e evita a armadilha de um hero com imagem pesada competindo com o orçamento.
-- **Motion**: GSAP core + Lenis + ScrollTrigger (Intensity Medium usa) — pacote já aceito como custo padrão de todo projeto Web OS, sem biblioteca de animação adicional.
-- **Imagens** (se houver, ver Passo 4/`images.md`): WebP/AVIF, responsive srcset, lazy-load abaixo da dobra. Meta: <150kb por imagem perto do hero, <80kb por imagem de apoio. Nada acima da dobra bloqueando o LCP além do texto do H1.
-- **Sem vídeo** no escopo desta V1 (não citado no brief) — se entrar depois, orçamento é revisto.
+- **Fontes**: 1 arquivo variável (Manrope), subset Latin + diacríticos PT-BR, self-hosted woff2 — menor custo que o par original de 2 famílias. Preload no peso usado pelo H1 (800).
+- **Elemento de LCP**: a entrega original previa texto puro (H1) como LCP, sem imagem no Hero. **Atenção pro módulo 22/23**: o Hero final tem "2 cards lado a lado, cada um com uma 'tela' de produto emoldurada tipo navegador" — se isso for implementado como imagem/screenshot (em vez de HTML/CSS real), checar se não passa a competir com o H1 pelo LCP antes de publicar.
+- **Motion**: GSAP core + Lenis + ScrollTrigger — mesmo pacote de custo padrão de todo projeto Web OS, sem biblioteca adicional. As 4 animações funcionais por aba (ver Motion) são pontuais, não scroll-reveal de página inteira — custo menor que a proposta original de Medium intensity.
+- **Imagens** (telas de produto emolduradas, screenshots dos módulos — ver `images.md`): WebP/AVIF, responsive srcset, lazy-load abaixo da dobra. Meta: <150kb por imagem perto do hero, <80kb por imagem de apoio.
+- **Sem vídeo** no escopo desta V1.
 
 ---
 
 ## Trust Architecture (Passo 3c)
 
-Pra cada seção que promete algo, a evidência vem antes — nunca "depoimento" como única fonte, e aqui não há nem depoimento disponível ainda (sem prova social própria, por brief).
+**Mudança estrutural**: o bloco separado "Arquitetura de Confiança" da entrega original não existe mais como seção isolada — a resposta à objeção nº1 (conectar WhatsApp é seguro/simples) virou um dos 4 passos do "Como Funciona". Essa pendência pode ser fechada como **resolvida por integração**: não há mais necessidade de ícone de cadeado/escudo (a seção virou texto nos passos numerados), então a extensão da regra "zero ícone de robô" pra zero ícone de segurança não-declarada deixa de ser uma decisão isolada — simplesmente não há mais bloco onde esse ícone poderia aparecer.
+
+Mapeamento atualizado promessa → evidência, pela estrutura final de página:
 
 | Seção | Promessa | Evidência que vem antes (ou junto) |
 |---|---|---|
-| **Hero** | "Escala sem contratar" | A promessa já nasce em formato factual, não adjetivo: linha de apoio imediata com o fato verificável — "5 dias. Seu WhatsApp real. Sem reunião, sem cartão." A tagline não fica sozinha sem âncora concreta ao lado. |
-| **Arquitetura de Confiança (objeção nº1)** | "Pode confiar o canal" | Clareza de mecanismo, não selo: explicar a instância própria por cliente + descarte automático se não comprar como um diagrama editorial de 3 passos (texto + divisores geométricos), não como badge de segurança. **Nenhum ícone de cadeado/escudo** — ver nota de atenção na Aprovação, porque nenhuma alegação de segurança/LGPD foi declarada, e um ícone desses sugere certificação que não existe. Extensão da regra "zero ícone de robô" pra zero ícone de segurança não-declarada. |
-| **Como funciona (3 passos)** | "É rápido de ativar" | Os 3 passos nomeados e honestos (conectar canal real self-service → suporte do agente de IA durante a configuração → agente atende leads reais por 5 dias) — mostra a fricção real (o dono precisa ter a senha do WhatsApp) em vez de prometer "fácil" vago. |
-| **Prova (log de conversa)** | "O agente realmente atende" | Evidência = a própria transcrição real, não dashboard. **Esta seção depende de um conteúdo real que ainda não existe** — ver pendência na Aprovação; o componente está pronto pra receber o log, mas não pode ser publicado com transcrição inventada/placeholder. |
-| **Quem constrói (Lucas)** | "Alguém de verdade responde se travar" | Foto real do Lucas + autoria do código — Cara Comum, nunca "nossa equipe". |
-| **Oferta (2 planos)** | Preço | Números reais liberados (§7 do brief), setup e recorrência sempre no mesmo bloco — nunca entrada isolada escondendo custo total. |
-| **Objeções/FAQ** | Respostas pontuais | Reforça a Arquitetura de Confiança já exposta mid-page — nunca é a primeira vez que a objeção nº1 aparece. |
-| **CTA final** | Repete o Hero | Mesma âncora factual (5 dias, instância própria, sem cobrança) — função de motion = criar continuidade. |
+| **Hero** | "Escala sem contratar" | 2 cards lado a lado (um por plano), cada um com uma tela de produto emoldurada tipo navegador — produto real visível, não mockup abstrato. **Se as telas incluírem as bolhas de conversa (WhatsApp/Instagram) do Motion**: precisa de conteúdo real, não transcrição inventada — mesma regra de veracidade da entrega original. |
+| **Problema** | Custo de não automatizar | Os 2 números de custo (custo de SDR CLT, custo de lead perdido) como conta, não slogan — mantido da entrega original. |
+| **Como Funciona (4 passos)** | "É rápido e seguro de ativar" | 4 passos numerados e honestos — um deles responde à objeção nº1 (conectar o canal real) só com texto, sem ícone de segurança/selo. |
+| **Módulos com abas** | "O produto realmente faz isso" | Checklist + screenshot emoldurado tipo navegador por módulo (Agente de IA / CRM / Conversões / Redes Sociais), com legenda embaixo — padrão adaptado do site da Bolten (fornecedor white-label), **sem reusar os screenshots reais deles** (mostram a marca errada). |
+| **Faixa de logos** | — | Marcada explicitamente como **ilustrativa, sem clientes reais ainda** — não é alegação de prova social. |
+| **Diferenciais por vertical** | "Serve pro meu negócio específico" | Abas por segmento (Clínicas/Imobiliárias/Concessionárias/Advocacia/Comércio local) — especificidade em vez de alegação genérica. |
+| **FAQ** | Respostas pontuais | Accordion nativo `<details>`, respostas factuais curtas. |
+| **Quem Constrói (Lucas)** | "Alguém de verdade responde se travar" | Foto real do Lucas + bio — Cara Comum, nunca "nossa equipe". |
+| **CTA final** | Repete o Hero | Mesma âncora factual do Hero. |
 
 ---
 
 ## Inventário de componentes (Passo 3)
 
-`componentes-aprovados.md` está vazio — não há nada pra reaproveitar ainda. Todo componente abaixo é **custom**, e os bem-sucedidos entram como candidatos ao banco (promoção só com confirmação do Lucas, não automática).
+`componentes-aprovados.md` segue vazio — nada pra reaproveitar ainda. Todo componente abaixo é **custom**; os bem-sucedidos entram como candidatos ao banco (promoção só com confirmação do Lucas, não automática).
 
-Direção visual (lente `frontend-design`: tipografia/cor/layout deliberados) + decisões de movimento (lente `emil-design-eng`: easing/duração/função) — uma lente por decisão, sem empilhar.
+**Estrutura de página final** (substitui o inventário da entrega original, baseado no brief anterior):
 
-| Seção | Reaproveitar? | Construir custom — direção | Motion |
-|---|---|---|---|
-| **Header/Nav** | Não há o que reaproveitar | Minimal: logo + 1 CTA (mesmo texto do CTA primário da página, sem CTA secundário competindo). Sticky, fundo off-white translúcido só depois de rolar (nunca glass/blur pesado). | Entrada: fade 200ms. Sem scroll-trigger (é chrome de interface, não conteúdo). |
-| **Hero** | Custom | Layout assimétrico 2 colunas (headline Fraunces + sub-linha factual + CTA à esquerda; indício visual do Lucas/produto à direita) — **não** stack centralizado sobre gradiente (tell explícito a evitar). | Fade+slide-up na entrada (500ms, ease-out) — função: orientar o olhar headline→CTA. |
-| **Problema** | Custom | Bloco de texto curto + os 2 cálculos permitidos (custo de SDR CLT, custo de lead perdido) apresentados como conta, não slogan — tipografia fazendo o peso, sem gráfico inventado. | Scroll-reveal fade+slide (Medium), uma vez só por bloco. |
-| **Arquitetura de Confiança** | Custom — **candidato forte a componente-base do banco**, qualquer projeto Web OS sem Garantia Vértice vai precisar disso | Diagrama editorial de 3 etapas com divisores em `clay`, tipografia carregando a explicação — sem ícone de cadeado/escudo (ver nota acima). Bloco com o mesmo peso visual do CTA, não enterrado em FAQ. | Revela as 3 etapas em sequência no scroll (stagger ~150ms entre etapas) — função: explicar o mecanismo passo a passo. |
-| **Como funciona (3 passos)** | Custom | Numerado, horizontal no desktop (1024+), empilhado a partir de 768. Linguagem honesta sobre a etapa técnica (não promete tempo). | Cada passo revela no scroll, mesma lógica do bloco de Confiança — função: criar continuidade entre os dois blocos vizinhos. |
-| **Prova (log de conversa)** | Custom — componente **"Conversation Log"**: thread estilizada tipo mensagem, não dashboard | Tipografia Hanken Grotesk pra transcrição, bolhas sutis diferenciando remetente, sem gráfico de métrica inventado ao lado. **Conteúdo real pendente** (ver Aprovação). | Bolhas entram com scale 0.98→1 staggered — função: gerar emoção com intenção (mensagens "chegando"). |
-| **Quem constrói (Lucas)** | Custom | Bloco pequeno, foto real + 2-3 linhas, zero "equipe"/"nós corporativo". | Fade simples, sem drama — função: confirmar quem responde. |
-| **Oferta (2 planos)** | Custom | 2 cards lado a lado (empilhados <768), borda hairline em `neutral.100`, sem badge "mais popular" (gimmick de SaaS). Setup + recorrência sempre no mesmo número. | Fade+slide-up simples, sem stagger — função: confirmar, não vender demais. |
-| **Objeções/FAQ** | Custom | Accordion simples, resposta factual curta por item (fonte: §3 do brief). | Expand/collapse com 200ms ease-in-out — função: confirmar. |
-| **CTA final** | Custom | Repete a âncora factual do Hero, mesmo botão primário. | Fade+slide, função: criar continuidade/fechamento. |
-| **Footer** | Custom | Minimal: assinatura "A gente constrói, não promete." + links institucionais neutros (sem alegação de segurança/LGPD no corpo — um link de política de privacidade no footer é prática padrão, não é "selo" de alegação). | Sem motion. |
+| Seção | Direção | Motion |
+|---|---|---|
+| **Nav** | Logo + 1 CTA, sem CTA secundário competindo. | Sem scroll-trigger documentado. |
+| **Hero** | 2 cards lado a lado, um por plano, cada um com uma "tela" de produto emoldurada tipo navegador. | Ver Motion — se incluir bolhas de conversa, são as animações de WhatsApp/Instagram descritas acima. |
+| **Problema** | 2 números de custo apresentados como conta, tipografia fazendo o peso. | Sem mudança reportada. |
+| **Como Funciona** | 4 passos numerados — um deles absorve a resposta à objeção nº1, só com texto. | Sem animação específica documentada no protótipo além da revelação dos passos. |
+| **Módulos com abas** | 4 abas (Agente de IA / CRM de Vendas / Conversões / Redes Sociais) — cada aba troca um painel com checklist + screenshot emoldurado tipo navegador e legenda embaixo. Padrão adaptado do site da Bolten, **sem reusar os screenshots reais deles**. | Uma animação funcional por aba — ver tabela em Motion. |
+| **Faixa de logos** | Marcada explicitamente como ilustrativa, sem clientes reais ainda. | Sem motion documentado. |
+| **Diferenciais por vertical** | Abas por segmento: Clínicas / Imobiliárias / Concessionárias / Advocacia / Comércio local. | Sem motion documentado além da troca de aba. |
+| **FAQ** | Accordion nativo `<details>` — sem componente custom de accordion. | Comportamento nativo do navegador. |
+| **Quem Constrói (Lucas)** | Bloco pequeno, foto real + bio curta, zero "equipe"/"nós corporativo" — mantido da entrega original. | Sem drama. |
+| **CTA final** | Repete a âncora factual do Hero, mesmo botão primário. | Sem mudança reportada. |
+| **Footer** | Não revisado na sessão de protótipo — mantido da entrega original: minimal, assinatura institucional + links, sem alegação de segurança/LGPD no corpo. | Sem motion. |
 
-**Atenção nos breakpoints 320–430 (Passo 2a-bis):** funil de 3 passos empilha mais cedo (768 já vertical, não só mobile estrito), bloco de prova vira coluna única a partir de 768, comparação de 2 planos nunca usa tabela com scroll horizontal — sempre cards empilhados.
+**Atenção nos breakpoints 320–430 (Passo 2a-bis):** segue valendo a regra geral de empilhar cedo (768 já vertical) e nunca usar tabela com scroll horizontal pra comparação de planos — sempre cards empilhados. Validar especificamente as abas de "Módulos" e "Diferenciais por vertical" em mobile (padrão de aba costuma precisar virar um padrão alternativo — select/accordion — abaixo de 768; não testado no protótipo, item de atenção pro módulo 22).
 
 ---
 
 ## Pipeline de imagem (Passo 4)
 
-**Sem produto físico** — é um serviço. Decisão deliberada antes de qualquer prompt: esta página é **text/componente-led**, não imagem-led — a prova central (log de conversa) é HTML/CSS real, não imagem gerada, e o Hero não depende de imagem pra funcionar como LCP (ver Passo 2b). Isso reduz a dependência de imagem a quase zero, o que também evita o risco de imagem genérica de IA competindo com a autenticidade exigida (Cara Comum, veracidade).
+**Sem produto físico** — é um serviço. Sem mudança reportada no protótipo em relação à decisão original: a página continua text/componente-led onde possível, mas ver nota de atenção em Performance budget sobre as telas de produto emolduradas do Hero e os screenshots emoldurados dos Módulos com abas — esses sim são imagem-led e precisam de pipeline próprio.
 
 Detalhe completo em `images.md`.
 
 ---
 
-## Decisões que pedem confirmação explícita do Lucas (não é a aprovação final da seção abaixo — são pontos específicos dentro dela)
+## Decisão que pede confirmação explícita do Lucas
 
-1. **Cor de destaque `clay` (`#C1552E`)** — 1ª entrada de Color no banco global, escolhida pra evitar o clichê azul (CRM/automação) e verde (WhatsApp), mas é uma escolha nova, sem precedente de marca documentado em hex.
-2. **Par tipográfico Fraunces + Hanken Grotesk** — 1ª entrada de Typography no banco global.
-3. **Intensity de Motion = Medium**, não Subtle — o banco global descreve Subtle como o ajuste padrão pra exatamente este tipo de ICP (B2B sóbrio/institucional); escolhi Medium por justificativa narrativa/estrutural (ver tabela de Motion), mas é uma divergência do "match óbvio" que vale o Lucas confirmar antes do módulo 22.
-4. **Extensão da regra "zero ícone de robô" pra também excluir ícone de cadeado/escudo** no bloco de Arquitetura de Confiança — inferência do Molda a partir da regra de veracidade (nenhuma alegação de segurança declarada), não uma instrução literal do brief.
-5. **Pendência de conteúdo, não de design**: o componente "Conversation Log" está especificado, mas **não pode ir ao ar com transcrição inventada** — precisa do log real que o brief menciona como existente, mas que ainda não foi entregue a este módulo. Isso bloqueia a publicação da seção de Prova, não o resto do build.
+1. **Qual das 2 variações claras vira a definitiva: cinza claro + verde ou branco + verde.** Lucas testou as duas e disse "deixa assim por enquanto" sem escolher — não foi decidido por ele ainda, e o Molda não decide isso no lugar dele.
 
 ## Aprovação
 
