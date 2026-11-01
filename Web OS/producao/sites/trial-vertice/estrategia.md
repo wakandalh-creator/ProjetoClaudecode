@@ -46,12 +46,14 @@ Regra para toda a página e para todos os módulos a jusante: **o herói da ofer
 
 ⚠️ **Correção de léxico (Tese):** "de brinde" é linguagem de venda de impulso e contraria o atributo de voz "sóbrio, não gritado" (`01-estrategia.md` §6). Na copy, usar **"o CRM vem incluído"** / **"vem junto"**. "Brinde" fica no vocabulário interno de posicionamento, não na página.
 
-### Planos pós-trial (fonte: Lucas, direta — confirmado na 2ª rodada)
+### Planos pós-trial (fonte: Lucas, direta — atualizado em 2026-11-01, substitui a estrutura de 2026-10-12)
 
 | Plano | Entrada (setup único) | Recorrência | Escopo |
 |---|---|---|---|
-| 1 | **R$ 2.500** | **R$ 500/mês** | Agente de IA + CRM incluído (sem redes sociais) |
-| 2 | **R$ 3.200** | **R$ 700/mês** | Agente de IA + CRM + redes sociais (Instagram) |
+| **Plano Inteligente** | **R$ 2.500** | **R$ 2.700/mês** | Agente de IA + CRM incluído (sem redes sociais) — **teto de até 500 atendimentos/mês** |
+| **Plano Escala** | **R$ 3.200** | **R$ 3.500/mês** | Tudo do Plano Inteligente + Gestão de Redes Sociais (Instagram) |
+
+A entrada continua sendo cobrança à parte, única; só a recorrência mudou de valor (decisão 12, §8). O que acontece acima de 500 atendimentos/mês **não foi definido** — pendência nº 12. Até lá, a página publica o teto como fato e não diz nada sobre excedente.
 
 Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice (`02-oferta.md` §3: setup ancora a construção, mensalidade ancora manutenção e iteração) — coerência de empresa, não pertencimento à linha. **Preço liberado pra publicação na página.**
 
