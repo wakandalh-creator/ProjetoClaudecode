@@ -1169,3 +1169,110 @@ Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.
 Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
 graph.html written - open in any browser, no server needed
 [2026-10-17T08:30:55.2968794-03:00] Done
+[2026-10-20T05:56:58.7957544-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   72df5cd..25cdda0  master     -> origin/master
+Updating 72df5cd..25cdda0
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: 7282b26
+Fast-forward
+ reports/2026-10-19/02-perfis-instagram.md | 161 ++++++++++++++++++++++++++++++
+ 1 file changed, 161 insertions(+)
+ create mode 100644 reports/2026-10-19/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-20T05:57:11.9374960-03:00] Done
+[2026-10-21T13:09:12.4152687-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-21T13:09:22.6011136-03:00] Done
+[2026-10-25T07:37:55.5867590-03:00] Starting Obsidian sync
+git.exe : fatal: unable to access 'https://github.com/wakandalh-creator/ProjetoClaudecode.git/': Could not resolve 
+host: github.com
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: unable t...ost: github.com:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-10-25T07:37:58.4890132-03:00] WARN: git pull exited 1 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-25T07:38:08.3954286-03:00] Done
+[2026-10-25T07:42:41.0078096-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-25T07:42:45.9795610-03:00] Done
+[2026-10-27T13:51:31.0635973-03:00] Starting Obsidian sync
+git.exe : From https://github.com/wakandalh-creator/ProjetoClaudecode
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (From https://gi...ojetoClaudecode:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+   25cdda0..e7adc26  master     -> origin/master
+Updating 25cdda0..e7adc26
+warning: in the working copy of '.claude/scripts/graphify-obsidian-sync.log', CRLF will be replaced by LF the next 
+time Git touches it
+Created autostash: 25d73f0
+Fast-forward
+ reports/2026-10-26/02-perfis-instagram.md | 142 ++++++++++++++++++++++++++++++
+ 1 file changed, 142 insertions(+)
+ create mode 100644 reports/2026-10-26/02-perfis-instagram.md
+Applied autostash.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-27T13:53:31.1106740-03:00] Done
+[2026-10-28T20:29:46.6509319-03:00] Starting Obsidian sync
+Already up to date.
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-28T20:30:14.1080055-03:00] Done
+[2026-10-31T13:46:03.7203081-03:00] Starting Obsidian sync
+git.exe : fatal: unable to access 'https://github.com/wakandalh-creator/ProjetoClaudecode.git/': Could not resolve 
+host: github.com
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: unable t...ost: github.com:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+git.exe : fatal: no rebase in progress
+No C:\Users\lucas\OneDrive\Documentos\ProjetoClaudecode\.claude\scripts\graphify-obsidian-sync.ps1:27 caractere:15
++     $output = & $Cmd @CmdArgs 2>&1 | Out-String
++               ~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (fatal: no rebase in progress:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+[2026-10-31T13:46:05.6958224-03:00] WARN: git pull exited 1 (rebase aborted) - continuing with whatever is on disk
+Obsidian vault: 132 notes in C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/
+Canvas: C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/graph.canvas
+Open C:\Users\lucas\OneDrive\????rea de Trabalho\Cerebro Claude\Codigo/ as a vault in Obsidian.
+graph.html written - open in any browser, no server needed
+[2026-10-31T13:46:11.5257453-03:00] Done
