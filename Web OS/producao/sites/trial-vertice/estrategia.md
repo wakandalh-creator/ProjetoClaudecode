@@ -216,7 +216,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 1. visitante → início da ativação (clique no CTA)
 2. **início → conexão concluída** (a taxa que mede a fricção técnica — provavelmente a mais importante do projeto)
 3. trial ativado → trial com uso real (leads atendidos > 0 ao longo do período)
-4. trial concluído → plano pago (Plano 1 ou Plano 2)
+4. trial concluído → plano pago (Plano Inteligente ou Plano Escala)
 
 **Não é métrica de sucesso:** tráfego, tempo na página, nº de cadastros, página estar bonita ou publicada (`identidade-web-os.md`, definição de sucesso).
 
