@@ -187,7 +187,7 @@ Regra geral: **tríade de abstratos ("X, Y e Z") é proibida.** No máximo 1 abs
 - B: "Ilustração conceitual com números de referência do nosso piloto padrão. Ainda não representa resultados de clientes. Os primeiros cases estão em construção pelo Programa Fundador."
 - ⚠ Obrigatório na versão B: ela usa "4h → 15 min" e "lead das 23h", números âncora que **não** são resultado de cliente. Sem rodapé, viram alegação.
 
-**Recomendação: headline A + sub B + itens B + rodapé B.** A headline conceitual dá o registro premium; a sub e os itens entregam o mecanismo dentro da primeira dobra (regra da seção 5).
+**Aprovado (seção 9): sobretítulo original "NEOVERTIX · BUSINESS OPERATING SYSTEM" + headline A + sub B + itens B + rodapé B.** A headline conceitual dá o registro premium; a sub e os itens entregam o mecanismo dentro da primeira dobra (regra da seção 5).
 
 ---
 
