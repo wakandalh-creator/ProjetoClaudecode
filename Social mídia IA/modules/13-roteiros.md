@@ -27,6 +27,12 @@ Se o insumo for post salvo de terceiro: extrair a ESTRUTURA (por que funcionou),
 - Gancho: gerar 3 opções, escolher a mais forte, registrar as outras 2 nas notas de produção.
 - Prova: usar SOMENTE números âncora de `marca.md` ou mecanismo demonstrável. Número inventado = reprovação automática.
 
+### Passo 3b — Checagens de formato (reel)
+- **Fala e tela são dois roteiros.** Escrever a fala e, separado, os cartões de texto na tela com tempo de cada um. Máx. 6 palavras por cartão; cartão do gancho já no frame 1. Área segura em 1080×1920: nada acima de y=230, abaixo de y=1440 nem nos 230 px da direita (legenda, botões e áudio cobrem). Legendas queimadas no corpo, porque a maioria assiste sem som.
+- **Tempo por cena.** Gancho falado em até 3s; nenhuma cena passa de 4s sem mudar o quadro; última fala repete uma palavra do gancho (loop). Para conferir:
+  `python3 ~/.claude/skills/ig-reel/beats.py roteiro.txt --target 30` (só a fala, uma frase por linha). Para comparar as 3 opções de gancho: `python3 ~/.claude/skills/ig-reel/hookscore.py ganchos.txt`. A nota só elimina ganchos fracos, não escolhe o vencedor.
+- **Legenda: os primeiros ~125 caracteres** são o que o feed mostra antes do "... mais". A primeira frase tem que caber inteira ali e ter um número ou nome concreto. Conferir com `python3 ~/.claude/skills/ig-caption/caption.py legenda.txt`.
+
 ### Passo 4 — Salvar e encaminhar
 - Salvar em `Social mídia IA/producao/roteiros/YYYY-MM-DD/{slug-do-titulo}.md`
 - Invocar o módulo 14 (Iana) na sequência. Se score <7: reescrever conforme sugestões (máx. 2 rodadas).
