@@ -27,7 +27,7 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 
 1. **Rápido de verdade** — semanas, não trimestres; prova: demo com dados reais do prospect
 2. **Engenharia, não slide** — stack de verdade (agentes IA, n8n, MCPs); prova: walkthrough técnico transparente
-3. **Você não paga pra descobrir se funciona** — piloto 2-4 semanas com métrica combinada e garantia de 30%
+3. **Você não paga pra descobrir se funciona** — sistema rodando com os seus dados antes do contrato; piloto 2-4 semanas com métrica combinada antes de começar
 
 ## Números âncora (usar em hooks/provas — sempre estes, nunca inventar)
 
@@ -35,9 +35,10 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 - 10 leads perdidos por demora = R$ 3.000-15.000/mês em receita não realizada (ticket R$ 300-1.500)
 - De 4h de triagem manual pra 15 minutos
 - Resposta em segundos, não em horas; lead às 23h atendido na hora
-- Garantia: métrica combinada melhora ≥30% ou o piloto sai de graça
 
 ## Ofertas (CTAs de conteúdo apontam pra cá)
+
+> A garantia de 30% segue no escopo comercial do Piloto, mas **não aparece na comunicação** (decisão do Lucas, 2026-11-01 — ver `tom-de-voz.md`).
 
 | Oferta | Preço | Escopo |
 |---|---|---|
@@ -46,6 +47,10 @@ Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimen
 | Vértice Full | R$ 9.000+ + R$ 2.800+/mês | stack completo + reunião mensal |
 
 **Programa Fundador:** 3-5 vagas, piloto a R$ 900 em troca de case com nome/logo + depoimento em vídeo. Vaga limitada, não desconto permanente.
+
+## Voz e método (v2 — 2026-11-01)
+
+Sobretítulo: **NEOVERTIX** · Método: **Entendemos. Estruturamos. Automatizamos. Evoluímos.** · Regras completas em `tom-de-voz.md` (Base v2). Nunca dizer "somos novos nisso".
 
 ## Estratégia de conteúdo do novo entrante
 

@@ -13,9 +13,55 @@
   ],
   "target_audience": "ICP primário: dono de PME brasileira (5-50 funcionários) em serviços, e-commerce, clínicas, imobiliárias ou educação, com volume de leads (WhatsApp/Instagram/formulário) mas perdendo venda por demora. ICP secundário: criadores/infoprodutores que escalaram audiência mas não atendimento; pequenas agências (white-label).",
   "content_goal": "Build in public + autoridade técnica (arquétipo Mágico: demo ao vivo, nunca só slide) + aquisição de clientes para o Piloto Vértice",
-  "tone": "Direto ('Seu comercial responde em 30 segundos'), técnico sem jargão ('O agente lê a mensagem, consulta o CRM e responde'), honesto sobre onde estamos ('Somos novos nisso — e construímos junto com você'), sóbrio sem gritar (nada de caps/🚀), orientado a número ('De 4h de triagem manual pra 15 minutos')",
-  "brand_lexicon": ["vértice", "construímos", "roda sozinho", "responde em [tempo]", "mecanismo", "fluxo", "testado — não prometido", "entrega"],
-  "banned_words": ["revolucionar", "turbinar", "o futuro chegou", "funcionário digital que não dorme", "disruptivo", "sinergia", "potencializar", "ecossistema", "game changer", "vale por N humanos"],
+  "tone": "Específico ('O agente lê a mensagem, consulta o CRM e responde em segundos'), metódico (Entendemos. Estruturamos. Automatizamos. Evoluímos.), transparente ('Ilustração conceitual. Não representa resultados de clientes.'), seguro sem gritar ('Testamos antes de vender'; nada de caps/🚀), técnico sem jargão. Objetivo: autoridade, confiança e credibilidade via método e demonstração, nunca alegação. Base completa: 'Social mídia IA/_context/tom-de-voz.md' (v2, 2026-11-01).",
+  "brand_lexicon": [
+    "vértice",
+    "construímos",
+    "roda sozinho",
+    "responde em [tempo]",
+    "mecanismo",
+    "fluxo",
+    "testado — não prometido",
+    "entrega",
+    "estrutura/estruturar",
+    "operação",
+    "método",
+    "etapa",
+    "diagnóstico",
+    "centralizado (com objeto)",
+    "integrado (com objeto)",
+    "piloto",
+    "métrica combinada",
+    "escopo"
+  ],
+  "banned_words": [
+    "revolucionar",
+    "turbinar",
+    "o futuro chegou",
+    "funcionário digital que não dorme",
+    "disruptivo",
+    "sinergia",
+    "potencializar",
+    "ecossistema",
+    "game changer",
+    "vale por N humanos",
+    "transformação digital",
+    "soluções inteligentes",
+    "jornada (do cliente)",
+    "alavancar",
+    "excelência",
+    "inovador",
+    "de ponta",
+    "360°",
+    "referência/líder (sem prova)",
+    "resultados comprovados (sem case)",
+    "podemos ajudar",
+    "otimizar (sem número)",
+    "somos novos nisso",
+    "somos uma agência nova",
+    "ainda estamos começando",
+    "garantia de 30% (na comunicação)"
+  ],
   "taglines": {
     "institucional": "A gente constrói, não promete.",
     "comercial": "em iteração — candidatos rodada 3: 'Construímos o ápice, não o enfeite' | 'Roda sozinho' | 'Todo lead vira faturamento' | 'Demora não é sua cultura. É sua falta de sistema' | 'O negócio roda. Você decide'"
@@ -40,6 +86,12 @@
       "scope": "stack completo: site/landing page + atendimento + SDR + CRM, canais múltiplos, reunião estratégica mensal"
     }
   ],
-  "avoid_topics": ["promessas de milagre/receita garantida", "comparação 'vale por N humanos'", "hype genérico de IA sem demonstração"],
-  "notes": "Destilado de branding/neovertix/ (01-estrategia, 02-oferta, 03-hooks-slogans) em 2026-08-05. Fonte de verdade da marca: branding/neovertix/. Memória viva de tom: 'Social mídia IA/_context/tom-de-voz.md'. Escopo de site/landing page da oferta 'Vértice Full' é executado pelo squad Web OS ('Web OS/run.md')."
+  "avoid_topics": [
+    "promessas de milagre/receita garantida",
+    "comparação 'vale por N humanos'",
+    "hype genérico de IA sem demonstração"
+  ],
+  "notes": "Destilado de branding/neovertix/ (01-estrategia, 02-oferta, 03-hooks-slogans) em 2026-08-05. Fonte de verdade da marca: branding/neovertix/. Memória viva de tom: 'Social mídia IA/_context/tom-de-voz.md'. Escopo de site/landing page da oferta 'Vértice Full' é executado pelo squad Web OS ('Web OS/run.md').",
+  "method": "Entendemos. Estruturamos. Automatizamos. Evoluímos.",
+  "overline": "NEOVERTIX"
 }
