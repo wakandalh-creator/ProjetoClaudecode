@@ -57,15 +57,15 @@ A marca fala como quem tem um processo: etapas nomeadas, entregável por etapa, 
 **Por quê:** método é a prova de competência disponível antes do primeiro case. Absorve o melhor da linha nova (a assinatura de 4 verbos).
 
 ### 2.3 Transparente *(evolui "Honesto")*. Gera confiança
-Diz o que é ilustração e o que é resultado, o que está no escopo e o que não está, quanto custa e o que acontece se não funcionar.
+Diz o que é ilustração e o que é resultado, o que está no escopo e o que não está, e quanto custa.
 
 | Soa assim | Não soa assim |
 |---|---|
 | "Ilustração conceitual. Ainda não são resultados de clientes." | "Resultados comprovados." |
-| "Se a métrica combinada não melhorar 30%, o piloto sai de graça." | "Satisfação garantida." |
+| "Antes de começar, combinamos qual número vamos medir." | "Satisfação garantida." |
 | "O piloto cobre 1 canal. O segundo entra na Operação Vértice." | "Atendemos todas as suas necessidades." |
 
-**Por quê:** honestidade sobre limites é o que faz o leitor acreditar no resto. Troca o "somos novos" (fala de nós) por honestidade operacional (fala do risco dele). Ver pendência 2.
+**Por quê:** honestidade sobre limites é o que faz o leitor acreditar no resto. A transparência fala de fatos (escopo, preço, o que é ilustração), nunca de "somos novos" (decisão 2).
 
 ### 2.4 Seguro *(funde "Direto" + "Sóbrio")*. Gera autoridade
 Frase curta, afirmativa, sem pedir licença e sem gritar. Nada de "podemos ajudar", nada de caps ou 🚀.
@@ -95,12 +95,12 @@ Mostra o "como" (agente, n8n, CRM) em português de dono de PME.
 |---|---|---|---|
 | **Método nomeado** | Entendemos → Estruturamos → Automatizamos → Evoluímos, cada etapa com entregável (abaixo) | Site, proposta | linha nova + 01-estrategia §5 |
 | **Prova por demo** | "Sistema rodando antes de fechar contrato"; demo com os dados do prospect na reunião | Todos | 01-estrategia §2, §5 |
-| **Números âncora** | Só os de marca.md: SDR ~R$ 3.800-4.200/mês · 10 leads perdidos = R$ 3.000-15.000/mês · 4h → 15 min · resposta em segundos / lead das 23h · garantia ≥30% | Todos | marca.md |
-| **Risco nosso** | Piloto 2-4 semanas, métrica combinada, garantia de 30% ou piloto de graça | Site, DM, proposta | Pilar 3 |
+| **Números âncora** | Só os de marca.md: SDR ~R$ 3.800-4.200/mês · 10 leads perdidos = R$ 3.000-15.000/mês · 4h → 15 min · resposta em segundos / lead das 23h | Todos | marca.md |
+| **Risco nosso** | Piloto 2-4 semanas com métrica combinada antes de começar | Site, DM, proposta | Pilar 3 |
 | **Honestidade explícita** | Rodapé de ilustração; escopo declarado; preço de entrada declarado (Piloto R$ 1.900) | Site, proposta | linha nova + business.json |
 | **Founder com nome** | Lucas escreve o código e responde; sem departamento comercial no meio | Instagram, DM | 01-estrategia §2, §4 |
 | **Walkthrough técnico** | Arquitetura mostrada: agente IA, n8n, MCPs, CRM | Instagram, proposta | Pilar 2 |
-| **Escassez real** | Programa Fundador: 3-5 vagas em troca de case. Explica por que ainda não há cases | DM, proposta, FAQ | marca.md |
+| **Escassez real** | Programa Fundador: 3-5 vagas em troca de case | DM, proposta, FAQ | marca.md |
 
 **Método com entregável (o que cada verbo promete, sem inventar prazo por etapa):**
 
@@ -121,7 +121,7 @@ Mostra o "como" (agente, n8n, CRM) em português de dono de PME.
 
 **Banidas: mantidas:** revolucionar, turbinar, o futuro chegou, funcionário digital que não dorme, disruptivo, sinergia, potencializar, ecossistema, game changer, "vale por N humanos".
 
-**Banidas: novas:** transformação digital, soluções inteligentes, jornada (do cliente), alavancar, excelência, inovador, de ponta, 360°, "referência"/"líder" (sem prova), "resultados comprovados" (sem case), "podemos ajudar", otimizar (sem número ao lado).
+**Banidas: novas:** transformação digital, soluções inteligentes, jornada (do cliente), alavancar, excelência, inovador, de ponta, 360°, "somos novos nisso" (e variações: "somos uma agência nova", "ainda estamos começando"), "referência"/"líder" (sem prova), "resultados comprovados" (sem case), "podemos ajudar", otimizar (sem número ao lado).
 
 **Regra para as 5 palavras da linha nova:**
 
@@ -149,7 +149,7 @@ Regra geral: **tríade de abstratos ("X, Y e Z") é proibida.** No máximo 1 abs
 
 - **Site:** "Crescer não deveria significar tornar seu negócio mais complexo. Um agente de IA lê cada mensagem, consulta o CRM e responde em segundos, e você acompanha tudo num só lugar."
 - **Instagram:** "Lead mandou mensagem às 23h. Respondido em segundos, qualificado e registrado no CRM. Te mostro esse fluxo rodando. Comenta MÉTODO."
-- **Proposta/DM:** "Pelo que você me passou, entram {{nº}} leads/semana no WhatsApp. Proposta: Piloto Vértice, 1 canal, 2-4 semanas. Métrica combinada: tempo de primeira resposta. Se não melhorar 30%, o piloto sai de graça. Fora do escopo: Instagram (entra na Operação Vértice)."
+- **Proposta/DM:** "Pelo que você me passou, entram {{nº}} leads/semana no WhatsApp. Proposta: Piloto Vértice, 1 canal, 2-4 semanas. Métrica combinada: tempo de primeira resposta, medida antes e depois. Fora do escopo: Instagram (entra na Operação Vértice)."
 
 ---
 
@@ -184,10 +184,10 @@ Regra geral: **tríade de abstratos ("X, Y e Z") é proibida.** No máximo 1 abs
 
 **Rodapé**
 - A: mantido como está.
-- B: "Ilustração conceitual com números de referência do nosso piloto padrão. Ainda não representa resultados de clientes. Os primeiros cases estão em construção pelo Programa Fundador."
+- B: "Ilustração conceitual com números de referência do nosso piloto padrão. Não representa resultados de clientes."
 - ⚠ Obrigatório na versão B: ela usa "4h → 15 min" e "lead das 23h", números âncora que **não** são resultado de cliente. Sem rodapé, viram alegação.
 
-**Aprovado (seção 9): sobretítulo original "NEOVERTIX · BUSINESS OPERATING SYSTEM" + headline A + sub B + itens B + rodapé B.** A headline conceitual dá o registro premium; a sub e os itens entregam o mecanismo dentro da primeira dobra (regra da seção 5).
+**Aprovado (seção 9): sobretítulo "NEOVERTIX" + headline A + sub B + itens B + rodapé B.** A headline conceitual dá o registro premium; a sub e os itens entregam o mecanismo dentro da primeira dobra (regra da seção 5).
 
 ---
 
@@ -197,7 +197,7 @@ Regra geral: **tríade de abstratos ("X, Y e Z") é proibida.** No máximo 1 abs
 2. **Abstrato com objeto:** toda "clareza / controle / estrutura" tem objeto concreto na mesma frase ou na seguinte? Existe alguma tríade de abstratos?
 3. **Lastro:** a peça tem pelo menos 1 número âncora (só de marca.md) ou 1 mecanismo nomeado?
 4. **Banidas:** alguma palavra da lista v2 (seção 4)?
-5. **Prova:** toda alegação forte tem prova nomeável (demo, número, walkthrough, garantia)? Zero "referência/líder/comprovado"?
+5. **Prova:** toda alegação forte tem prova nomeável (demo, número, walkthrough)? Zero "referência/líder/comprovado"?
 6. **Ilustração ≠ resultado:** se há número ou antes/depois, está sinalizado que não é case?
 7. **Escopo:** a peça promete algo fora das 3 ofertas (ex.: BI, dashboard, ERP)?
 8. **Canal e pilar:** o registro bate com o canal (seção 5) e a peça serve a pelo menos 1 pilar?
@@ -210,11 +210,11 @@ Regra geral: **tríade de abstratos ("X, Y e Z") é proibida.** No máximo 1 abs
 |---|---|---|
 | **Mantém** | Técnico sem jargão · sobriedade (sem caps/🚀) · número > adjetivo · léxico · 10 banidas · regras de escrita de post · "toda alegação forte precisa de prova nomeável" | Igual |
 | **Muda** | "Orientado a número" | **Específico**: número OU mecanismo OU objeto concreto (cobre o caso sem número real) |
-| **Muda** | "Honesto" com exemplo "Somos novos nisso" | **Transparente**: honestidade operacional (rodapé, escopo, garantia, preço) |
+| **Muda** | "Honesto" com exemplo "Somos novos nisso" | **Transparente**: honestidade operacional (rodapé, escopo, preço) |
 | **Muda** | "Direto" + "Sóbrio" separados | **Seguro**: fundidos |
 | **Entra** | — | **Metódico** + método de 4 etapas com entregável |
 | **Entra** | — | Registro por canal; regra para abstratos; 11 banidas novas; checklist |
-| **Sai** | "Somos novos nisso — e construímos junto com você" como exemplo-âncora | Vai pro contexto da objeção "agência nova sem case" (DM, FAQ), não pra vitrine. Pendência 2 |
+| **Sai** | "Somos novos nisso — e construímos junto com você" | Sai de todos os canais, inclusive DM e proposta (decisão 2) |
 
 Sem conflito com as taglines: "A gente constrói, não promete." continua a assinatura institucional (01-estrategia §7); os 4 verbos são a assinatura do **método**, não um slogan. Nenhum slogan rejeitado da rodada 3 (03-hooks §4) foi reaproveitado.
 
@@ -222,12 +222,16 @@ Sem conflito com as taglines: "A gente constrói, não promete." continua a assi
 
 ## 9. Decisões do Lucas (2026-11-01)
 
-1. **Categoria / sobretítulo: recomendação EXCLUÍDA pelo Lucas.** Fica **"NEOVERTIX · BUSINESS OPERATING SYSTEM"** como sobretítulo da marca. Isso prevalece sobre as críticas a BOS nas seções 1 e 6. A categoria em `business.json` não foi rediscutida e continua como está.
+> **Garantia de 30%: excluída pelo Lucas** de toda a comunicação desta proposta.
 
-2. **"Somos novos nisso": recomendação EXCLUÍDA pelo Lucas.** A frase continua onde já está: no atributo "Honesto" da Base e no tom de voz da trial-vertice. Isso prevalece sobre a linha "Sai" da seção 8 e sobre a nota da seção 2.3. O atributo "Transparente" soma a honestidade operacional (rodapé, escopo, garantia) a essa frase, sem substituí-la.
+1. **Sobretítulo: só "NEOVERTIX".** Sai "Business Operating System" e não entra "Operações com IA": a marca assina sozinha. A categoria em `business.json` continua como está.
+
+2. **"Somos novos nisso": retirado de todos os canais** (site, posts, DM, proposta, FAQ). Decisão do Lucas: não vale o risco para a autoridade. A frase e as variações entram nas banidas (seção 4).
+   - **Se o cliente perguntar "vocês têm case?":** responder com fato, sem falar de tempo de empresa. Ex.: "Te mostro o sistema rodando com os seus dados antes de você assinar." / "Temos vagas no Programa Fundador, em troca de case."
+   - **Atenção:** a Base atual (`tom-de-voz.md`, atributo "Honesto") e o tom de voz da trial-vertice ainda usam a frase. Saem na sincronização.
 
 3. **Assinatura do método: APROVADA.** "Evoluímos" no site, desde que a página mostre o entregável da etapa 4 (métrica combinada + manutenção/reunião mensal). Sem espaço para explicar, usar "Medimos".
 
-4. **Hero e antes/depois: APROVADA.** Sobretítulo BOS (decisão 1) + headline A + sub B + itens B + rodapé B (seção 6).
+4. **Hero e antes/depois: APROVADA.** Sobretítulo "NEOVERTIX" (decisão 1) + headline A + sub B + itens B + rodapé B (seção 6).
 
 **Próximo passo, pendente do OK do Lucas:** sincronizar `tom-de-voz.md` (Base), `marca.md`, `business.json` (`tone`, `brand_lexicon`, `banned_words`) e `~/.claude/instagram/voice.md` com esta versão.
