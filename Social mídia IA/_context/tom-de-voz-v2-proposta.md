@@ -220,16 +220,14 @@ Sem conflito com as taglines: "A gente constrói, não promete." continua a assi
 
 ---
 
-## 9. Decisões pendentes para o Lucas
+## 9. Decisões do Lucas (2026-11-01)
 
-1. **Categoria: "agência de operações com IA" vs. "Business Operating System".**
-   **Recomendação: manter "agência de operações com IA"** (Moore, business.json `category`). BOS em inglês sugere um software que não vendemos, tira "IA" da vitrine e soa como consultoria corporativa pra um ICP de PME BR. Se a ideia de "sistema operacional" for importante, ela vive no **método** de 4 etapas, não no nome da categoria. Sobretítulo sugerido: "NEOVERTIX · OPERAÇÕES COM IA".
+1. **Categoria / sobretítulo: recomendação EXCLUÍDA pelo Lucas.** Fica **"NEOVERTIX · BUSINESS OPERATING SYSTEM"** como sobretítulo da marca. Isso prevalece sobre as críticas a BOS nas seções 1 e 6. A categoria em `business.json` não foi rediscutida e continua como está.
 
-2. **"Somos novos nisso": manter ou substituir?**
-   **Recomendação: substituir na vitrine, manter na objeção.** Site e posts usam honestidade operacional ("sistema rodando antes do contrato", "30% ou o piloto sai de graça", rodapé de ilustração). A novidade declarada aparece onde a objeção "agência nova sem case" surge (DM, proposta, FAQ), em formato de vantagem: "Estamos montando os primeiros cases. Por isso o Programa Fundador existe."
+2. **"Somos novos nisso": recomendação EXCLUÍDA pelo Lucas.** A frase continua onde já está: no atributo "Honesto" da Base e no tom de voz da trial-vertice. Isso prevalece sobre a linha "Sai" da seção 8 e sobre a nota da seção 2.3. O atributo "Transparente" soma a honestidade operacional (rodapé, escopo, garantia) a essa frase, sem substituí-la.
 
-3. **Assinatura do método: "Evoluímos" ou "Medimos"?**
-   **Recomendação: "Evoluímos" no site** (mais premium, mantém o que você trouxe), **desde que a página mostre o entregável da etapa 4** (métrica combinada + manutenção/reunião mensal). Se a página não tiver espaço pra explicar, usar "Medimos".
+3. **Assinatura do método: APROVADA.** "Evoluímos" no site, desde que a página mostre o entregável da etapa 4 (métrica combinada + manutenção/reunião mensal). Sem espaço para explicar, usar "Medimos".
 
-4. **Versão da seção hero/antes-depois.**
-   **Recomendação: headline A + sub B + itens B + rodapé B** (seção 6). Se aprovada, a Tese sincroniza `tom-de-voz.md` (Base), `marca.md`, `business.json` (`tone`, `brand_lexicon`, `banned_words`) e `~/.claude/instagram/voice.md`.
+4. **Hero e antes/depois: APROVADA.** Sobretítulo BOS (decisão 1) + headline A + sub B + itens B + rodapé B (seção 6).
+
+**Próximo passo, pendente do OK do Lucas:** sincronizar `tom-de-voz.md` (Base), `marca.md`, `business.json` (`tone`, `brand_lexicon`, `banned_words`) e `~/.claude/instagram/voice.md` com esta versão.
