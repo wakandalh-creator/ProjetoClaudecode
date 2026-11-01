@@ -87,7 +87,7 @@ Perfil comum: **decisor único** — assina e conecta sozinho, sem comitê. **É
 
 **Recorte mais amplo que o da linha Vértice** (`01-estrategia.md` §3: serviços, e-commerce, clínicas, imobiliárias, educação): este produto inclui explicitamente **concessionárias e advocacia**, e lidera com "comércio local" em vez de "PME 5–50 funcionários". Mais uma razão para não forçar os dois ICPs no mesmo arquivo.
 
-**Hipótese criador/infoprodutor — descartada pelo Lucas.** Eu havia levantado que o Plano 2 (com Instagram) teria afinidade com criador/infoprodutor; o alvo definido é PME/comércio local. **Não construir a página para criador.**
+**Hipótese criador/infoprodutor — descartada pelo Lucas.** Eu havia levantado que o Plano Escala (com Instagram) teria afinidade com criador/infoprodutor; o alvo definido é PME/comércio local. **Não construir a página para criador.**
 
 **Fora do ICP desta página:** quem não tem volume de lead (não tem o que o agente atender) e quem não pode/não quer conectar o canal oficial da empresa (a oferta não funciona sem isso — não tentar convencer esse perfil na copy, é desperdício de página).
 
