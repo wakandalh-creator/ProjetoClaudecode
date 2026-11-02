@@ -17,7 +17,7 @@
   pelo WhatsApp e perdem oportunidade por demora, falta de acompanhamento ou processo desorganizado.
   Também quem quer usar IA mas não sabe aplicar na prática.
 - **What I sell:** Essencial (R$ 2.500 setup + R$ 500/mês: agente de IA + CRM) · Escala (R$ 3.200 setup +
-  R$ 700/mês: agente de IA + CRM + redes sociais). Teste grátis de 5 dias.
+  R$ 700/mês: agente de IA + CRM + redes sociais). Teste grátis de 7 dias.
   Nunca "revendedora de CRM", nunca "agência de marketing".
 
 ## What I sound like
@@ -63,7 +63,7 @@
   clientes, depoimentos, resultados ou urgência.
 - **Claims I am not allowed to make:** "referência", "líder", "o melhor do mercado", resultado de
   cliente, vendas automáticas, "100% automatizado", funcionalidade do agente não confirmada. Se
-  perguntarem por case: "Teste 5 dias grátis e veja o agente funcionando no seu WhatsApp."
+  perguntarem por case: "Teste 7 dias grátis e veja o agente funcionando no seu WhatsApp."
   Número de referência ou antes/depois → rodapé "Não representa resultados de clientes."
 
 ## Proof I can use
@@ -78,10 +78,10 @@ Estamos criando do zero. Fora disto → `{{seu número}}`.
 
 ## The ask
 
-- **CTA principal:** "Experimente gratuitamente por 5 dias". Alternativos: "Conheça os planos" e
+- **CTA principal:** "Experimente gratuitamente por 7 dias". Alternativos: "Conheça os planos" e
   "Fale com um especialista". Um por peça.
 - **My keyword CTA, if I use one:** {{a confirmar}} — se usar comentário com palavra, ela leva ao teste.
-- **Where my link goes:** página do teste gratuito de 5 dias ({{URL a confirmar}}).
+- **Where my link goes:** página do teste gratuito de 7 dias ({{URL a confirmar}}).
 
 ## Regras que valem acima das skills ig-*
 

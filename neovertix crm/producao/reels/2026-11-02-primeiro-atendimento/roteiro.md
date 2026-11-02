@@ -2,7 +2,7 @@
 projeto: neovertix crm
 formato: reel
 tema: primeiro atendimento automático no WhatsApp (abordagem 2 de 3)
-cta: Experimente gratuitamente por 5 dias (link na bio)
+cta: Experimente gratuitamente por 7 dias (link na bio)
 status: rascunho — não publicar sem aprovação do Lucas
 duracao_estimada: 33.5s a 165 ppm (cronometrar a leitura real)
 ---
@@ -31,7 +31,7 @@ Ele responde na hora e qualifica o lead:
 pergunta o que a pessoa precisa, do jeito que você definiu.
 Tudo fica salvo no CRM, com o histórico.
 De manhã, você vê quem está mais perto de comprar.
-E pode testar de graça por 5 dias.
+E pode testar de graça por 7 dias.
 Sem cartão de crédito. Sem compromisso.
 O próximo cliente das 23h não espera. Link na bio.
 ```
@@ -45,7 +45,7 @@ O próximo cliente das 23h não espera. Link na bio.
 | 0:11 | QUALIFICA O LEAD |
 | 0:18 | TUDO SALVO NO CRM |
 | 0:21 | QUEM ESTÁ PERTO DE COMPRAR |
-| 0:25 | 5 DIAS GRÁTIS |
+| 0:25 | 7 DIAS GRÁTIS |
 | 0:28 | SEM CARTÃO. SEM COMPROMISSO. |
 
 Área segura em 1080×1920: nada acima de y=230, abaixo de y=1440 nem nos 230 px da direita. Legendas queimadas na fala inteira.
@@ -58,13 +58,13 @@ O próximo cliente das 23h não espera. Link na bio.
 | 0:06–0:18 | **Captura de tela real** do agente respondendo e fazendo as perguntas de qualificação (trocar o quadro a cada frase). |
 | 0:18–0:25 | **Captura de tela real** do CRM: contato novo com histórico e etapa do funil. |
 | 0:25–0:30 | Tela do cadastro do teste mostrando que não pede cartão (**captura necessária**). |
-| 0:30–0:34 | Tela final com "5 dias grátis" e indicação do link na bio. |
+| 0:30–0:34 | Tela final com "7 dias grátis" e indicação do link na bio. |
 
 ## Pendências antes de gravar
 
 - **Capturas necessárias:** agente respondendo no WhatsApp e CRM com histórico. Usar contato fictício identificado como exemplo. Sem essas telas, os beats 3 a 7 não se sustentam.
 - **Confirmar no produto:** o agente faz perguntas configuráveis (qualificação) e salva a conversa no CRM (o briefing diz "conforme as funcionalidades disponíveis").
-- **Confirmado pelo Lucas (2026-11-02):** teste sem cartão de crédito. **A confirmar:** "sem compromisso" (nada é cobrado ao fim dos 5 dias se a pessoa não contratar?) e "responde na hora".
+- **Confirmado pelo Lucas (2026-11-02):** teste sem cartão de crédito. **A confirmar:** "sem compromisso" (nada é cobrado ao fim dos 7 dias se a pessoa não contratar?) e "responde na hora".
 - **Captura necessária:** tela de cadastro do teste sem campo de cartão.
 - **Link do teste gratuito** na bio: {{URL a confirmar}}.
 - **Ritmo real:** cronometrar a leitura e rodar `beats.py --wpm <número>`.
@@ -115,7 +115,7 @@ O próximo cliente do seu WhatsApp não fica sem resposta.
 - **Gancho:** "Fim do expediente. Cliente novo no seu WhatsApp, e ninguém responde." nota 80 (o original "Acabou o seu expediente. Um potencial cliente chama sua empresa no WhatsApp." fez 44: longo e sem tensão).
 - **Cortes:** "E não para por aí" (ponte sem conteúdo); "Mais organização para atender. Mais clareza para vender." (abstratos, regra do tom de voz); as duas frases "Não perca…" (promessa absoluta); "transforme já o seu negócio" (genérico, banido); "Cadastre-se" + "Acesse o link" viraram uma chamada só.
 - **"Responde imediatamente" virou "responde"** até confirmar no produto.
-- **CONFLITO:** o texto diz **7 dias**; o briefing, a marca e o v2 dizem **5 dias**. Decidir antes de gravar.
+- **Duração do teste: 7 dias** (decisão do Lucas, 2026-11-02; antes o briefing dizia 5).
 
 ## Histórico
 

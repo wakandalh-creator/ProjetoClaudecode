@@ -11,7 +11,7 @@
     "redes sociais conectadas ao atendimento"
   ],
   "target_audience": "Pequenos e médios empresários, empreendedores e profissionais autônomos que recebem contatos pelo WhatsApp e perdem oportunidades por demora, falta de acompanhamento ou processos desorganizados; inclui quem quer usar IA mas não sabe aplicar na prática.",
-  "content_goal": "Autoridade em negócios, processos e tecnologia (valor primeiro, tecnologia depois) + levar o visitante ao teste gratuito de 5 dias sem depender de vendedor.",
+  "content_goal": "Autoridade em negócios, processos e tecnologia (valor primeiro, tecnologia depois) + levar o visitante ao teste gratuito de 7 dias sem depender de vendedor.",
   "tone": "Específico ('O agente lê a mensagem, consulta o CRM e responde em segundos'), metódico (Entendemos. Estruturamos. Automatizamos. Evoluímos.), transparente ('Ilustração conceitual. Não representa resultados de clientes.'), seguro sem gritar ('Testamos antes de vender'; nada de caps/🚀), técnico sem jargão. Objetivo: autoridade, confiança e credibilidade via método e demonstração, nunca alegação. Base completa: 'neovertix crm/_context/tom-de-voz.md' (v2, 2026-11-01).",
   "brand_lexicon": [
     "vértice",
@@ -98,9 +98,9 @@
   "notes": "Atualizado em 2026-11-01 pelo briefing do Lucas: Neovertix = Agente de IA para WhatsApp + CRM + redes sociais (planos Essencial e Escala). branding/neovertix/ ainda descreve a oferta antiga. Tom de voz: 'neovertix crm/_context/tom-de-voz.md'.",
   "method": "Entendemos. Estruturamos. Automatizamos. Evoluímos.",
   "overline": "NEOVERTIX",
-  "trial": "5 dias grátis, cadastro feito pelo próprio cliente, sem cartão de crédito (confirmado pelo Lucas em 2026-11-02); a confirmar: 'sem compromisso', o que acontece ao fim do teste e quando o setup é cobrado",
+  "trial": "7 dias grátis, cadastro feito pelo próprio cliente, sem cartão de crédito (confirmado pelo Lucas em 2026-11-02); a confirmar: 'sem compromisso', o que acontece ao fim do teste e quando o setup é cobrado",
   "ctas": {
-    "principal": "Experimente gratuitamente por 5 dias",
+    "principal": "Experimente gratuitamente por 7 dias",
     "alternativos": [
       "Conheça os planos",
       "Fale com um especialista"

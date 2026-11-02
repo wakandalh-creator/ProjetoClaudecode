@@ -10,7 +10,7 @@ A Neovertix estrutura e evolui negócios com inteligência artificial, automaç�
 
 - **Categoria:** solução comercial com **Agente de IA para WhatsApp + CRM incluso** (+ redes sociais no plano Escala). Nunca "revendedora de CRM", nunca "agência de marketing".
 - **Promessa:** sair da operação fragmentada para uma estrutura conectada: atender, organizar e acompanhar oportunidades num só processo.
-- **Diferencial:** "Não começamos pela ferramenta. Começamos entendendo o seu negócio." O cliente testa 5 dias grátis e configura a própria estrutura antes de contratar.
+- **Diferencial:** "Não começamos pela ferramenta. Começamos entendendo o seu negócio." O cliente testa 7 dias grátis e configura a própria estrutura antes de contratar.
 - **Ordem da mensagem:** primeiro o valor (atender melhor, não perder oportunidade), depois a tecnologia.
 
 ## Público (pra quem cada conteúdo fala)
@@ -43,13 +43,13 @@ Muitas empresas investem em divulgação e atraem interessados, mas não têm es
 | **Essencial** | R$ 2.500 | R$ 500/mês | Agente de IA + CRM |
 | **Escala** | R$ 3.200 | R$ 700/mês | Agente de IA + CRM + redes sociais |
 
-Planos progressivos. **Teste gratuito de 5 dias**, com cadastro feito pelo próprio cliente na plataforma. **Sem cartão de crédito** (confirmado pelo Lucas, 2026-11-02). "Sem compromisso": a confirmar.
+Planos progressivos. **Teste gratuito de 7 dias**, com cadastro feito pelo próprio cliente na plataforma. **Sem cartão de crédito** (confirmado pelo Lucas, 2026-11-02). "Sem compromisso": a confirmar.
 
-**Jornada esperada (sem depender de vendedor):** entender o problema → ver como funciona → conhecer os planos → iniciar o teste grátis → cadastrar-se → configurar agente, CRM e recursos em 5 dias → escolher o plano.
+**Jornada esperada (sem depender de vendedor):** entender o problema → ver como funciona → conhecer os planos → iniciar o teste grátis → cadastrar-se → configurar agente, CRM e recursos em 7 dias → escolher o plano.
 
-**CTAs:** principal "Experimente gratuitamente por 5 dias" · alternativos "Conheça os planos" e "Fale com um especialista".
+**CTAs:** principal "Experimente gratuitamente por 7 dias" · alternativos "Conheça os planos" e "Fale com um especialista".
 
-**A confirmar:** o que acontece ao fim dos 5 dias (cobrança, bloqueio, migração); se o setup é cobrado depois do teste; o que muda entre os planos além das redes sociais.
+**A confirmar:** o que acontece ao fim dos 7 dias (cobrança, bloqueio, migração); se o setup é cobrado depois do teste; o que muda entre os planos além das redes sociais.
 
 ## Provas (estamos criando do zero)
 

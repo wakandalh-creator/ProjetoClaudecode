@@ -23,7 +23,7 @@ Objetivo: **autoridade, confiança e credibilidade sem depender de cases públic
 
 | Etapa | O que entrega |
 |---|---|
-| Entendemos | Como o negócio atende e vende hoje (no teste de 5 dias ou com um especialista) |
+| Entendemos | Como o negócio atende e vende hoje (no teste de 7 dias ou com um especialista) |
 | Estruturamos | CRM com contatos, etapas do funil e tarefas |
 | Automatizamos | Agente de IA respondendo, qualificando e encaminhando no WhatsApp |
 | Evoluímos | Acompanhamento na recorrência mensal + redes sociais no plano Escala ({{entregável a confirmar}}) |
@@ -42,7 +42,7 @@ Usar "Evoluímos" só onde a peça mostra o entregável da etapa 4. Sem espaço 
 - "inteligentes" e "estratégicos" como adjetivos: banidos. Trocar pelo verbo do fluxo ou pelo nome do indicador.
 - Tríade de abstratos ("X, Y e Z"): proibida. No máximo 1 abstrato por frase, explicado na seguinte.
 
-**Pergunta "vocês têm case?"** → responder com fato, sem falar do tempo de empresa e sem inventar cliente: "Teste 5 dias grátis e veja o agente funcionando no seu WhatsApp, com os seus contatos."
+**Pergunta "vocês têm case?"** → responder com fato, sem falar do tempo de empresa e sem inventar cliente: "Teste 7 dias grátis e veja o agente funcionando no seu WhatsApp, com os seus contatos."
 
 ## Expressões da marca (briefing do Lucas, ajustadas às regras)
 
@@ -76,7 +76,7 @@ Usar "Evoluímos" só onde a peça mostra o entregável da etapa 4. Sem espaço 
 - Linha 1 = gancho puro. Sem "Olá", sem apresentação.
 - Número concreto > adjetivo. Se não tem número real, mostra o mecanismo.
 - Emoji: no máximo pontual, nunca 🚀/🔥 em sequência. Caps lock: nunca.
-- CTA principal: "Experimente gratuitamente por 5 dias". Alternativos: "Conheça os planos" e "Fale com um especialista". Uma chamada por peça, sóbria, nunca "CORRE pro link!!!".
+- CTA principal: "Experimente gratuitamente por 7 dias". Alternativos: "Conheça os planos" e "Fale com um especialista". Uma chamada por peça, sóbria, nunca "CORRE pro link!!!".
 - Valor primeiro, tecnologia depois: abrir pelo problema do negócio, explicar o mecanismo em seguida.
 - Toda alegação forte precisa de prova nomeável (demo, número, walkthrough) — arquétipo Mágico com antídoto anti-fumaça.
 - Número de referência ou antes/depois em peça → rodapé "Não representa resultados de clientes."
@@ -105,3 +105,4 @@ _(aguardando volume mínimo de publicações com resultado marcado)_
 - 2026-08-05 — criação; base destilada do branding.
 - 2026-11-01 — Base v2 aprovada pelo Lucas: atributos Específico, Metódico, Transparente, Seguro e Técnico sem jargão; método de 4 etapas; sobretítulo "NEOVERTIX"; "somos novos nisso" e garantia de 30% retirados da comunicação; registro por canal e checklist.
 - 2026-11-01 — briefing "MEU NEGÓCIO": Neovertix = Agente de IA para WhatsApp + CRM + redes sociais (Essencial/Escala, teste de 5 dias); método, CTAs, banidas e expressões da marca ajustados.
+- 2026-11-02 — teste gratuito passa de 5 para 7 dias (decisão do Lucas).

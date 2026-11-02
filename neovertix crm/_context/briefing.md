@@ -1,6 +1,7 @@
 # Briefing — Neovertix (Agente de IA + CRM + redes sociais)
 
 > Texto do Lucas, 2026-11-01. Fonte original de `marca.md` e `tom-de-voz.md` deste projeto.
+> **Atualização 2026-11-02:** o teste gratuito passou de 5 para **7 dias** (decisão do Lucas). O texto abaixo é o original.
 > Modelo do bloco: guia "Skills no Claude para organizar seu Instagram" (Allessandra Sinisgalli).
 
 ## MEU NEGÓCIO

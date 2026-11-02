@@ -9,7 +9,7 @@ Usa o nome Neovertix, mas **não é** a marca principal do squad em `Social míd
 | Caminho | O que é |
 |---|---|
 | `_context/briefing.md` | Briefing "MEU NEGÓCIO / MINHA VOZ / PROVAS / REGRAS" do Lucas (2026-11-01) |
-| `_context/marca.md` | Cérebro de marca do projeto (planos Essencial e Escala, teste de 5 dias) |
+| `_context/marca.md` | Cérebro de marca do projeto (planos Essencial e Escala, teste de 7 dias) |
 | `_context/tom-de-voz.md` | Tom de voz (Base v2 + expressões do briefing ajustadas) |
 | `_context/business.json` | Versão estruturada da marca deste projeto |
 | `_context/tom-de-voz-v2-proposta.md` | Proposta da Tese que originou o tom de voz (histórico) |
