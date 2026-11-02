@@ -267,7 +267,7 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 ### Decisões fechadas em 2026-11-01 (fonte: Lucas, confirmado por pergunta de clarificação)
 
 12. ~~REVERTIDA pela decisão 13 (2026-11-02)~~ **Planos renomeados e recorrência reprecificada** (substitui os valores da decisão 2). **Plano Inteligente** = R$ 2.500 de entrada + **R$ 2.700/mês** (era R$ 500) — CRM + agente de IA, **teto de até 500 atendimentos/mês** (limite de uso novo, não existia antes). **Plano Escala** = R$ 3.200 de entrada + **R$ 3.500/mês** (era R$ 700) — tudo do Inteligente + Gestão de Redes Sociais (Instagram). Entrada (setup único) **inalterada e ainda cobrada à parte**. Liberado pra página. O que acontece acima do teto segue aberto como pendência nº 12.
-   *Nota da Tese para os módulos 26 (Convence) e 27:* com a nova recorrência, o Plano Escala (R$ 3.500/mês) fica perto da âncora SDR CLT júnior (~R$ 3.800–4.200/mês, `02-oferta.md` §3). A âncora continua verdadeira, mas a margem de comparação ficou estreita — usar como cálculo que o prospect faz, nunca como manchete de economia.
+   ~~*Nota da Tese para os módulos 26 (Convence) e 27:*~~ *(obsoleta com a decisão 13 — a recorrência voltou a R$ 500/R$ 700, longe da âncora SDR)* com a nova recorrência, o Plano Escala (R$ 3.500/mês) fica perto da âncora SDR CLT júnior (~R$ 3.800–4.200/mês, `02-oferta.md` §3). A âncora continua verdadeira, mas a margem de comparação ficou estreita — usar como cálculo que o prospect faz, nunca como manchete de economia.
 
 ### Decisões fechadas em 2026-11-02 (fonte: Lucas)
 
