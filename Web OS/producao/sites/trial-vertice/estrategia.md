@@ -55,6 +55,8 @@ Regra para toda a página e para todos os módulos a jusante: **o herói da ofer
 
 A entrada continua sendo cobrança à parte, única (decisão 13, §8: valores e nomes do briefing do Lucas; a decisão 12 foi revertida, sem teto de atendimentos).
 
+**Escopo confirmado (Lucas, 2026-11-02):** "Gestão de Redes Sociais (Instagram)" no Plano Escala é **serviço de gestão** (conteúdo/postagem), não apenas o agente respondendo DM do Instagram — ambiguidade levantada pela Tese, resolvida direto com o Lucas antes de liberar pro Convence (módulo 26).
+
 Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice (`02-oferta.md` §3: setup ancora a construção, mensalidade ancora manutenção e iteração) — coerência de empresa, não pertencimento à linha. **Preço liberado pra publicação na página.**
 
 **Item futuro (não é decisão, não bloqueia nada):** o Lucas vai avaliar depois um possível acréscimo/upsell pra quem já é cliente. Sem definição — não aparece na página.
