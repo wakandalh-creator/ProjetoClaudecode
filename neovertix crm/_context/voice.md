@@ -81,7 +81,9 @@ Estamos criando do zero. Fora disto → `{{seu número}}`.
 - **CTA principal:** "Experimente gratuitamente por 7 dias". Alternativos: "Conheça os planos" e
   "Fale com um especialista". Um por peça.
 - **My keyword CTA, if I use one:** {{a confirmar}} — se usar comentário com palavra, ela leva ao teste.
-- **Where my link goes:** página do teste gratuito de 7 dias ({{URL a confirmar}}).
+- **Where my link goes:** site, na seção do teste grátis ({{URL a confirmar}}), onde a pessoa escolhe Essencial ou Escala.
+- **Bio:** "Agente de IA no WhatsApp + CRM. Escolha seu plano e teste 7 dias grátis, sem cartão."
+- **Na legenda:** só "Link na bio". Sempre "7 dias", nunca "até 7" nem faixa de dias.
 
 ## Regras que valem acima das skills ig-*
 
