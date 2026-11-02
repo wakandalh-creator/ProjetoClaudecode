@@ -266,6 +266,11 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 10. **Pendência nº 10 CANCELADA** ("destino da Garantia Vértice"): nasceu da leitura errada de substituição. Este produto nunca teve essa garantia — nada pra aposentar. A garantia continua sendo da linha Vértice, intacta.
 11. **Modelo de venda reafirmado:** marketing leva o cliente a entrar → testa sem fidelidade → se gostar, compra. Já coberto em §1 e §4, sem mudança.
 
+### Decisões fechadas em 2026-11-01 (fonte: Lucas, confirmado por pergunta de clarificação)
+
+12. **Planos renomeados e recorrência reprecificada** (substitui os valores da decisão 2). **Plano Inteligente** = R$ 2.500 de entrada + **R$ 2.700/mês** (era R$ 500) — CRM + agente de IA, **teto de até 500 atendimentos/mês** (limite de uso novo, não existia antes). **Plano Escala** = R$ 3.200 de entrada + **R$ 3.500/mês** (era R$ 700) — tudo do Inteligente + Gestão de Redes Sociais (Instagram). Entrada (setup único) **inalterada e ainda cobrada à parte**. Liberado pra página. O que acontece acima do teto segue aberto como pendência nº 12.
+   *Nota da Tese para os módulos 26 (Convence) e 27:* com a nova recorrência, o Plano Escala (R$ 3.500/mês) fica perto da âncora SDR CLT júnior (~R$ 3.800–4.200/mês, `02-oferta.md` §3). A âncora continua verdadeira, mas a margem de comparação ficou estreita — usar como cálculo que o prospect faz, nunca como manchete de economia.
+
 ### Nenhuma fonte de marca foi alterada por este brief
 
 Nada em `config/business.json`, `Web OS/_context/icp-web.md`, `Social mídia IA/_context/marca.md`, `branding/neovertix/*` ou `tom-de-voz.md` muda por causa deste produto. Uma sincronia chegou a ser feita na 2ª rodada (quando a leitura era "substitui a Piloto Vértice") e **foi revertida** ao baseline. Se/quando o Lucas decidir agregar este produto à linha Vértice, a Tese faz o registro — não antes.
