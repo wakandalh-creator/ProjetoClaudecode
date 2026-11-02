@@ -1,0 +1,109 @@
+{
+  "version": 2,
+  "owner": "Lucas",
+  "brand": "Neovertix",
+  "positioning": "Para pequenos e médios empresários, autônomos e negócios que recebem oportunidades pelo WhatsApp e perdem venda por demora, falta de acompanhamento ou processo desorganizado, a Neovertix entrega um Agente de IA para WhatsApp com CRM incluso (e redes sociais no plano Escala): uma estrutura que atende, organiza e acompanha oportunidades num só processo. Não é revenda de CRM nem agência de marketing.",
+  "category": "Agente de IA para WhatsApp + CRM incluso (+ redes sociais)",
+  "promise": "Da operação fragmentada para uma estrutura conectada: atender, organizar e acompanhar oportunidades num só processo.",
+  "possible_niches": [
+    "agente de IA para WhatsApp com CRM",
+    "atendimento e organização comercial para PMEs",
+    "redes sociais conectadas ao atendimento"
+  ],
+  "target_audience": "Pequenos e médios empresários, empreendedores e profissionais autônomos que recebem contatos pelo WhatsApp e perdem oportunidades por demora, falta de acompanhamento ou processos desorganizados; inclui quem quer usar IA mas não sabe aplicar na prática.",
+  "content_goal": "Autoridade em negócios, processos e tecnologia (valor primeiro, tecnologia depois) + levar o visitante ao teste gratuito de 5 dias sem depender de vendedor.",
+  "tone": "Específico ('O agente lê a mensagem, consulta o CRM e responde em segundos'), metódico (Entendemos. Estruturamos. Automatizamos. Evoluímos.), transparente ('Ilustração conceitual. Não representa resultados de clientes.'), seguro sem gritar ('Testamos antes de vender'; nada de caps/🚀), técnico sem jargão. Objetivo: autoridade, confiança e credibilidade via método e demonstração, nunca alegação. Base completa: 'neovertix crm/_context/tom-de-voz.md' (v2, 2026-11-01).",
+  "brand_lexicon": [
+    "vértice",
+    "construímos",
+    "roda sozinho",
+    "responde em [tempo]",
+    "mecanismo",
+    "fluxo",
+    "testado — não prometido",
+    "entrega",
+    "estrutura/estruturar",
+    "operação",
+    "método",
+    "etapa",
+    "diagnóstico",
+    "centralizado (com objeto)",
+    "integrado (com objeto)",
+    "escopo",
+    "teste gratuito",
+    "funil",
+    "oportunidade",
+    "acompanhamento"
+  ],
+  "banned_words": [
+    "revolucionar",
+    "turbinar",
+    "o futuro chegou",
+    "funcionário digital que não dorme",
+    "disruptivo",
+    "sinergia",
+    "potencializar",
+    "ecossistema",
+    "game changer",
+    "vale por N humanos",
+    "transformação digital",
+    "soluções inteligentes",
+    "jornada (do cliente)",
+    "alavancar",
+    "excelência",
+    "inovador",
+    "de ponta",
+    "360°",
+    "referência/líder (sem prova)",
+    "resultados comprovados (sem case)",
+    "podemos ajudar",
+    "otimizar (sem número)",
+    "somos novos nisso",
+    "somos uma agência nova",
+    "ainda estamos começando",
+    "garantia de 30% (na comunicação)",
+    "revolucionário",
+    "milagroso",
+    "extraordinário",
+    "o melhor do mercado",
+    "100% automatizado (sem comprovação)",
+    "inteligência artificial que faz tudo"
+  ],
+  "taglines": {
+    "institucional": "A gente constrói, não promete.",
+    "comercial": "Estrutura antes da escala."
+  },
+  "offers": [
+    {
+      "name": "Essencial",
+      "type": "entrada",
+      "price": "R$ 2.500 setup + R$ 500/mês",
+      "scope": "Agente de IA para WhatsApp + CRM incluso"
+    },
+    {
+      "name": "Escala",
+      "type": "core",
+      "price": "R$ 3.200 setup + R$ 700/mês",
+      "scope": "Agente de IA para WhatsApp + CRM incluso + redes sociais"
+    }
+  ],
+  "avoid_topics": [
+    "garantia de resultados ou vendas automáticas",
+    "'100% automatizado' sem comprovação",
+    "'IA que faz tudo'",
+    "apresentar a Neovertix como revendedora de CRM ou agência de marketing",
+    "comparação 'vale por N humanos'",
+    "clientes, depoimentos, resultados ou urgência inventados"
+  ],
+  "notes": "Atualizado em 2026-11-01 pelo briefing do Lucas: Neovertix = Agente de IA para WhatsApp + CRM + redes sociais (planos Essencial e Escala). branding/neovertix/ ainda descreve a oferta antiga. Tom de voz: 'neovertix crm/_context/tom-de-voz.md'.",
+  "method": "Entendemos. Estruturamos. Automatizamos. Evoluímos.",
+  "overline": "NEOVERTIX",
+  "trial": "5 dias grátis, cadastro feito pelo próprio cliente; a confirmar: o que acontece ao fim do teste e quando o setup é cobrado",
+  "ctas": {
+    "principal": "Experimente gratuitamente por 5 dias",
+    "alternativos": [
+      "Conheça os planos",
+      "Fale com um especialista"
+    ]
+  }
+}
