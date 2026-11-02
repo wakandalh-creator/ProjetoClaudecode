@@ -30,7 +30,7 @@ Por que não é demo agendada (modelo que a linha Vértice usa): aqui a prova n�
 | Campo | Valor (fonte: entrevista Lucas 2026-10-12) |
 |---|---|
 | Formato | Teste grátis self-service: **sem reunião, sem agendamento, sem compromisso** |
-| Duração | **5 dias** (fechado) |
+| Duração | **7 dias** (fechado — revisto de 5 para 7 em 2026-11-02, decisão 15) |
 | Natureza do ambiente | **Módulo/instância própria**, criada para aquele cliente — não sandbox genérico com dados fictícios |
 | Ativação | O cliente **conecta o canal real dele**: nº de WhatsApp e/ou Instagram e/ou CRM. **Quem configura é o próprio cliente** (self-service de verdade), com o **agente de IA da Neovertix dando suporte durante a configuração** + material de ativação (documentação/tutorial) que o Lucas vai construir |
 | O que roda no trial | O agente de IA atende os **leads reais** do cliente durante o período |
