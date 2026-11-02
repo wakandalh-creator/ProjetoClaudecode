@@ -39,7 +39,7 @@ A revisão com o prompt-mestre trouxe uma cadência mais elaborada ("organizamos
 
 ## 6. Estrutura que a voz segue (ordem já testada, não reordenar sem motivo)
 
-Problema (dor real, com número) → Como funciona (passos honestos, inclui a etapa que dá trabalho) → Oferta (preço sempre com entrada + recorrência juntos, nunca só a entrada) → Diferencial (só o que o Radar validou de verdade contra concorrente real) → FAQ (responde objeção específica, nunca pergunta genérica de template) → CTA (ação específica: "Quero testar os meus 5 dias grátis", nunca "Saiba mais").
+Problema (dor real, com número) → Como funciona (passos honestos, inclui a etapa que dá trabalho) → Oferta (preço sempre com entrada + recorrência juntos, nunca só a entrada) → Diferencial (só o que o Radar validou de verdade contra concorrente real) → FAQ (responde objeção específica, nunca pergunta genérica de template) → CTA (ação específica: "Quero testar os meus 7 dias grátis", nunca "Saiba mais").
 
 ## 7. Três exemplos de antes/depois desta própria sessão
 
