@@ -80,6 +80,43 @@ O próximo cliente das 23h não espera. Link na bio.
 2. **Transformação (este reel):** primeiro atendimento automático no WhatsApp.
 3. Posicionamento: "Não basta atrair clientes. É preciso ter uma estrutura preparada para atender, organizar e converter oportunidades."
 
+## v3 — texto do Lucas, ajustado (42,9s)
+
+Original do Lucas em `lucas-v3.txt` (200 palavras, ~73s). Versão ajustada em `ajustado-v3.txt`:
+
+```
+Fim do expediente.
+Cliente novo no seu WhatsApp, e ninguém responde.
+Você está descansando. E ele pode estar conversando com outras empresas.
+Muitas vezes, a venda não se perde pelo preço.
+Se perde porque alguém respondeu primeiro.
+Com o Agente de IA da Neovertix,
+seu atendimento funciona 24 horas por dia.
+Ele responde, conversa com o interessado
+e qualifica o contato com as perguntas que você definiu.
+Tudo fica no CRM, com o histórico da conversa.
+Quando você começa o dia, não precisa procurar conversa perdida.
+Você já sabe quais oportunidades precisam de atenção.
+Teste grátis por 7 dias. Sem cartão de crédito. Sem compromisso.
+Link na bio.
+O próximo cliente do seu WhatsApp não fica sem resposta.
+```
+
+| Tempo | Cartão |
+|---|---|
+| 0:00 | FIM DO EXPEDIENTE. |
+| 0:04 | ALGUÉM RESPONDEU PRIMEIRO |
+| 0:13 | ATENDIMENTO 24 HORAS |
+| 0:18 | QUALIFICA O CONTATO |
+| 0:24 | TUDO NO CRM |
+| 0:31 | OPORTUNIDADES QUE PRECISAM DE ATENÇÃO |
+| 0:34 | 7 DIAS GRÁTIS. SEM CARTÃO. |
+
+- **Gancho:** "Fim do expediente. Cliente novo no seu WhatsApp, e ninguém responde." nota 80 (o original "Acabou o seu expediente. Um potencial cliente chama sua empresa no WhatsApp." fez 44: longo e sem tensão).
+- **Cortes:** "E não para por aí" (ponte sem conteúdo); "Mais organização para atender. Mais clareza para vender." (abstratos, regra do tom de voz); as duas frases "Não perca…" (promessa absoluta); "transforme já o seu negócio" (genérico, banido); "Cadastre-se" + "Acesse o link" viraram uma chamada só.
+- **"Responde imediatamente" virou "responde"** até confirmar no produto.
+- **CONFLITO:** o texto diz **7 dias**; o briefing, a marca e o v2 dizem **5 dias**. Decidir antes de gravar.
+
 ## Histórico
 
 - v1 (2026-11-02): primeiro atendimento às 23h.
