@@ -71,7 +71,7 @@ O próximo cliente das 23h não espera. Link na bio.
 
 ## Verificações
 
-- `beats.py`: 33,5s, nenhuma cena acima de 4s, gancho em 2,5s, loop fechado ("23h", "cliente"). O aviso "beats 2-4 sem nada concreto" é falso positivo: o script não reconhece "WhatsApp" nem "23h" como concretos.
+- `beats.py`: 33,5s, nenhuma cena acima de 4s, gancho em 2,5s, loop fechado ("23h", "cliente"). O aviso "beats 5-7 sem nada concreto" é em parte falso positivo: o script não reconhece "CRM" nem "lead" como concretos. As capturas de tela desses trechos é que dão a prova.
 - `ig-human`: 0 clichês, 0 travessões, 0 caracteres invisíveis. A "nota de humano" (40) não vale para este texto: um roteiro quebrado em falas curtas tem frases de tamanho parecido por definição, e o detector não reconhece "WhatsApp" e "CRM". O guia recomenda não usar essas notas para classificar texto em português.
 
 ## Série (as 3 abordagens do briefing)
