@@ -5,7 +5,7 @@
 ## 1. Os 5 atributos, nesta ordem de prioridade
 
 1. **Honesto sobre lacunas reais.** Nunca dizer "somos novos nisso" (banido na Base v2 da marca, 2026-11-01). Uma lacuna real (tempo de ativação, política de dados ainda sem detalhe) é escrita como lacuna — nunca preenchida com chute pra parecer mais pronto do que está.
-2. **Específico, nunca vago.** "Responde em segundos" bate mais forte que "responde rápido". Um número real (R$ 2.700/mês, 5 dias, 82% de urgência) sempre vence um adjetivo.
+2. **Específico, nunca vago.** "Responde em segundos" bate mais forte que "responde rápido". Um número real (R$ 500/mês, 5 dias, 82% de urgência) sempre vence um adjetivo.
 3. **Direto.** Frase objetiva. Sem rodeio antes do ponto. Título carrega a informação, não a decoração.
 4. **Sóbrio, nunca gritado.** Zero CAPS-LOCK de ênfase, zero emoji de impulso, zero urgência fabricada ("só hoje", "últimas vagas" — nada disso existe aqui).
 5. **Prova antes da promessa.** Sempre que der, mostrar em vez de afirmar: o log de conversa real, o diagrama do mecanismo, o passo a passo — não a adjetivação de como é bom.

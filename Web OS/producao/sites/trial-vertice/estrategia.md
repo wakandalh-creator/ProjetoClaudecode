@@ -50,10 +50,10 @@ Regra para toda a página e para todos os módulos a jusante: **o herói da ofer
 
 | Plano | Entrada (setup único) | Recorrência | Escopo |
 |---|---|---|---|
-| **Plano Inteligente** | **R$ 2.500** | **R$ 2.700/mês** | Agente de IA + CRM incluído (sem redes sociais) — **teto de até 500 atendimentos/mês** |
-| **Plano Escala** | **R$ 3.200** | **R$ 3.500/mês** | Tudo do Plano Inteligente + Gestão de Redes Sociais (Instagram) |
+| **Plano Essencial** | **R$ 2.500** | **R$ 500/mês** | Agente de IA + CRM incluído (sem redes sociais) |
+| **Plano Escala** | **R$ 3.200** | **R$ 700/mês** | Tudo do Plano Essencial + Gestão de Redes Sociais (Instagram) |
 
-A entrada continua sendo cobrança à parte, única; só a recorrência mudou de valor (decisão 12, §8). O que acontece acima de 500 atendimentos/mês **não foi definido** — pendência nº 12. Até lá, a página publica o teto como fato e não diz nada sobre excedente.
+A entrada continua sendo cobrança à parte, única (decisão 13, §8: valores e nomes do briefing do Lucas; a decisão 12 foi revertida, sem teto de atendimentos).
 
 Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice (`02-oferta.md` §3: setup ancora a construção, mensalidade ancora manutenção e iteração) — coerência de empresa, não pertencimento à linha. **Preço liberado pra publicação na página.**
 
@@ -216,7 +216,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 1. visitante → início da ativação (clique no CTA)
 2. **início → conexão concluída** (a taxa que mede a fricção técnica — provavelmente a mais importante do projeto)
 3. trial ativado → trial com uso real (leads atendidos > 0 ao longo do período)
-4. trial concluído → plano pago (Plano Inteligente ou Plano Escala)
+4. trial concluído → plano pago (Plano Essencial ou Plano Escala)
 
 **Não é métrica de sucesso:** tráfego, tempo na página, nº de cadastros, página estar bonita ou publicada (`identidade-web-os.md`, definição de sucesso).
 
@@ -224,8 +224,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 **Números permitidos na página — e só estes:**
 - **5 dias** (duração do trial, fechada)
-- **R$ 2.500 de entrada + R$ 2.700/mês** (Plano Inteligente) · **R$ 3.200 de entrada + R$ 3.500/mês** (Plano Escala) — sempre com setup e recorrência juntos no mesmo bloco; exibir a entrada sozinha esconde o custo real e queima a honestidade da marca
-- **até 500 atendimentos/mês** (teto do Plano Inteligente, declarado pelo Lucas em 2026-11-01). Publicar só o teto: **nada** sobre o que acontece acima dele (cobrança de excedente, bloqueio, upgrade) até a pendência nº 12 ser resolvida
+- **R$ 2.500 de entrada + R$ 500/mês** (Plano Essencial) · **R$ 3.200 de entrada + R$ 700/mês** (Plano Escala) — sempre com setup e recorrência juntos no mesmo bloco; exibir a entrada sozinha esconde o custo real e queima a honestidade da marca
 - **5 dias** e os nomes dos verticais do ICP (clínica, concessionária, imobiliária, advocacia, comércio local) — ditos pelo Lucas. **"5–50 funcionários" sai:** esse recorte é da linha Vértice, não deste produto, cujo alvo é "comércio local e pequenas empresas em geral" sem faixa de headcount declarada
 - Âncoras de `_context/marca.md`: SDR CLT júnior ~R$ 3.800–4.200/mês · 10 leads perdidos por demora = R$ 3.000–15.000/mês (ticket R$ 300–1.500) — como cálculo, não slogan
 - "responde em segundos" (formulação da fonte, `02-oferta.md` §4)
@@ -250,7 +249,7 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 | **7b** | **Tempo de ativação:** quanto leva da conexão até o agente responder o primeiro lead. **Sem número medido** (a parte "quem configura" foi resolvida — ver decisões) | **Lucas / primeira execução real** | Qualquer promessa de tempo na copy ("pronto em X minutos"). Até medir, a página descreve passos, não minutos |
 | **9** | *(herdada)* **Domínio/URL de destino** não confirmado (`01-estrategia.md` §8: neovertix.com/.com.br/.ai sem DNS, disponibilidade real não verificada) | **Lucas** | Deploy |
 | **11b** | **Validação do ICP em campanha real.** O alvo está definido pelo Lucas (§3), mas **nenhuma conversão testou esse recorte** — nem qual vertical responde melhor (clínica? concessionária? advocacia?) | **Mede, módulos 33–36, após o 1º ciclo** | Priorizar vertical na copy e no tráfego da V2. Não bloqueia a V1 |
-| **12** | **Política acima do teto de 500 atendimentos/mês** (aberta em 2026-11-01). Não declarado: (a) o que acontece ao passar de 500 — cobra excedente (quanto?), bloqueia, ou sobe pro Plano Escala?; (b) o que conta como "1 atendimento" — conversa, lead único, ou mensagem?; (c) o Plano Escala herda o mesmo teto ou tem outro?; (d) o teto vale durante os 5 dias de trial? Regra de veracidade (`Web OS/producao/sites/trial-vertice/tom-de-voz.md` §2, "nunca inventar política que não foi decidida") | **Lucas** | FAQ e bloco de preços: sem isso, a página publica o teto e **cala** sobre o excedente. Bloqueia qualquer frase do tipo "sem surpresa na fatura", porque não sabemos se é verdade |
+| **12** | ~~CANCELADA em 2026-11-02 (decisão 13: sem teto de atendimentos)~~ **Política acima do teto de 500 atendimentos/mês** (aberta em 2026-11-01). Não declarado: (a) o que acontece ao passar de 500 — cobra excedente (quanto?), bloqueia, ou sobe pro Plano Escala?; (b) o que conta como "1 atendimento" — conversa, lead único, ou mensagem?; (c) o Plano Escala herda o mesmo teto ou tem outro?; (d) o teto vale durante os 5 dias de trial? Regra de veracidade (`Web OS/producao/sites/trial-vertice/tom-de-voz.md` §2, "nunca inventar política que não foi decidida") | **Lucas** | FAQ e bloco de preços: sem isso, a página publica o teto e **cala** sobre o excedente. Bloqueia qualquer frase do tipo "sem surpresa na fatura", porque não sabemos se é verdade |
 
 ### Decisões fechadas em 2026-10-12 (fonte: Lucas)
 
@@ -268,8 +267,12 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 
 ### Decisões fechadas em 2026-11-01 (fonte: Lucas, confirmado por pergunta de clarificação)
 
-12. **Planos renomeados e recorrência reprecificada** (substitui os valores da decisão 2). **Plano Inteligente** = R$ 2.500 de entrada + **R$ 2.700/mês** (era R$ 500) — CRM + agente de IA, **teto de até 500 atendimentos/mês** (limite de uso novo, não existia antes). **Plano Escala** = R$ 3.200 de entrada + **R$ 3.500/mês** (era R$ 700) — tudo do Inteligente + Gestão de Redes Sociais (Instagram). Entrada (setup único) **inalterada e ainda cobrada à parte**. Liberado pra página. O que acontece acima do teto segue aberto como pendência nº 12.
+12. ~~REVERTIDA pela decisão 13 (2026-11-02)~~ **Planos renomeados e recorrência reprecificada** (substitui os valores da decisão 2). **Plano Inteligente** = R$ 2.500 de entrada + **R$ 2.700/mês** (era R$ 500) — CRM + agente de IA, **teto de até 500 atendimentos/mês** (limite de uso novo, não existia antes). **Plano Escala** = R$ 3.200 de entrada + **R$ 3.500/mês** (era R$ 700) — tudo do Inteligente + Gestão de Redes Sociais (Instagram). Entrada (setup único) **inalterada e ainda cobrada à parte**. Liberado pra página. O que acontece acima do teto segue aberto como pendência nº 12.
    *Nota da Tese para os módulos 26 (Convence) e 27:* com a nova recorrência, o Plano Escala (R$ 3.500/mês) fica perto da âncora SDR CLT júnior (~R$ 3.800–4.200/mês, `02-oferta.md` §3). A âncora continua verdadeira, mas a margem de comparação ficou estreita — usar como cálculo que o prospect faz, nunca como manchete de economia.
+
+### Decisões fechadas em 2026-11-02 (fonte: Lucas)
+
+13. **Planos voltam aos nomes e valores do briefing** (substitui a decisão 12). **Plano Essencial** = R$ 2.500 de entrada + **R$ 500/mês** — Agente de IA + CRM. **Plano Escala** = R$ 3.200 de entrada + **R$ 700/mês** — tudo do Essencial + Gestão de Redes Sociais (Instagram). **Sem teto de atendimentos**; pendência nº 12 cancelada. Fonte: `neovertix crm/_context/briefing.md`.
 
 ### Nenhuma fonte de marca foi alterada por este brief
 
