@@ -240,7 +240,7 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 ## 8. Pendências (não estimar, não decidir por conta própria)
 
-Numeração preservada das versões anteriores do brief, pra quem já leu. Resolvidas: 1, 3, 4, 6, 8 e a maior parte de 7 e 11. Cancelada: 10. **Só o que está na tabela abaixo ainda bloqueia trabalho.**
+Numeração preservada das versões anteriores do brief, pra quem já leu. Resolvidas: 1, 3, 4, 6, 8 e a maior parte de 7 e 11. Canceladas: 10 e 12. **Só o que está na tabela abaixo ainda bloqueia trabalho.**
 
 | # | Pendência | Dono | O que bloqueia |
 |---|---|---|---|
