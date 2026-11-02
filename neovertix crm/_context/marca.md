@@ -43,7 +43,7 @@ Muitas empresas investem em divulgação e atraem interessados, mas não têm es
 | **Essencial** | R$ 2.500 | R$ 500/mês | Agente de IA + CRM |
 | **Escala** | R$ 3.200 | R$ 700/mês | Agente de IA + CRM + redes sociais |
 
-Planos progressivos. **Teste gratuito de 5 dias**, com cadastro feito pelo próprio cliente na plataforma.
+Planos progressivos. **Teste gratuito de 5 dias**, com cadastro feito pelo próprio cliente na plataforma. **Sem cartão de crédito** (confirmado pelo Lucas, 2026-11-02). "Sem compromisso": a confirmar.
 
 **Jornada esperada (sem depender de vendedor):** entender o problema → ver como funciona → conhecer os planos → iniciar o teste grátis → cadastrar-se → configurar agente, CRM e recursos em 5 dias → escolher o plano.
 
