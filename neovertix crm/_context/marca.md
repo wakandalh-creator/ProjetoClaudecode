@@ -47,7 +47,7 @@ Planos progressivos. **Teste gratuito de 7 dias**, com cadastro feito pelo próp
 
 **Jornada esperada (sem depender de vendedor):** entender o problema → ver como funciona → conhecer os planos → iniciar o teste grátis → cadastrar-se → configurar agente, CRM e recursos em 7 dias → escolher o plano.
 
-**Bio do Instagram:** "Agente de IA no WhatsApp + CRM. Escolha seu plano e teste 7 dias grátis, sem cartão." + link do site, apontando para a seção do teste ({{URL a confirmar}}). Teste vale para os dois planos, sempre "7 dias" (número fechado, nunca "até" ou faixa). A legenda dos posts só diz "Link na bio".
+**Bio do Instagram:** "A estrutura que transforma processos em resultados. / Atendimento 24h. Gestão organizada. Oportunidades acompanhadas. / ↓ Experimente grátis por 7 dias." (texto do Lucas, 2026-11-02; "24h" a confirmar) + link do site, apontando para a seção do teste ({{URL a confirmar}}). Teste vale para os dois planos, sempre "7 dias" (número fechado, nunca "até" ou faixa). A legenda dos posts só diz "Link na bio".
 
 **CTAs:** principal "Experimente gratuitamente por 7 dias" · alternativos "Conheça os planos" e "Fale com um especialista".
 
