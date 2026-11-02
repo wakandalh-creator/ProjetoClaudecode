@@ -275,6 +275,7 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 
 13. **Planos voltam aos nomes e valores do briefing** (supera e reverte a decisão 12 em três pontos: nome **Inteligente → Essencial**; mensalidade **R$ 2.700 → R$ 500** e **R$ 3.500 → R$ 700**; **teto de 500 atendimentos/mês removido**). **Plano Essencial** = R$ 2.500 de entrada + **R$ 500/mês** — Agente de IA + CRM. **Plano Escala** = R$ 3.200 de entrada + **R$ 700/mês** — Agente de IA + CRM + redes sociais (Instagram). Entrada inalterada. Fonte: tabela final enviada pelo Lucas em 2026-11-02 (coincide com `neovertix crm/_context/briefing.md`). A tabela é completa sobre o que cada plano inclui e não cita teto — leitura registrada: o mecanismo de limite de uso saiu do modelo.
 14. **Pendência nº 12 CANCELADA** ("política acima do teto de 500 atendimentos/mês", aberta em 2026-11-01): nasceu de um teto que não existe mais nesta versão da oferta (decisão 13). Nada pra definir sobre excedente, contagem de atendimento ou teto no trial. Se um limite de uso voltar ao modelo, abre-se pendência nova.
+15. **Duração do trial: 5 → 7 dias** (substitui a decisão 1). Fonte: Lucas, direto no chat, 2026-11-02. Atualizado em §2 (tabela), §3 (objeções 3 e 5), §4, §6 (Moore e pilar "Rápido de verdade"), §7 (números permitidos) e decisão 4. Nenhum argumento muda de natureza: "prazo fechado" e "acaba sozinho" seguem válidos com 7; continua sem métrica de sucesso atrelada à duração. `tom-de-voz.md` do projeto já atualizado pelo Lucas.
 
 ### Nenhuma fonte de marca foi alterada por este brief
 
