@@ -12,7 +12,7 @@
 | **@** | `@neovertix` (o mesmo em todas as redes) |
 | **Nome (30 caracteres, indexado na busca)** | Opção A: `Neovertix \| Agente IA WhatsApp` (30) · B: `Neovertix \| IA + CRM WhatsApp` (29) · C: `Neovertix \| Atendimento + CRM` (29). Recomendado: **A** (termo que o dono pesquisa). |
 | **Foto** | Logo/monograma Neovertix em off-black sobre off-white (ou inverso), legível a 40px. Sem robô, sem gradiente. |
-| **Bio** | `Agente de IA no WhatsApp + CRM. Escolha seu plano e teste 7 dias grátis, sem cartão.` (decisão do Lucas, 2026-11-02) |
+| **Bio** | `A estrutura que transforma processos em resultados.` / `Atendimento 24h. Gestão organizada. Oportunidades acompanhadas.` / `↓ Experimente grátis por 7 dias.` (texto do Lucas, 2026-11-02; ~148 caracteres com quebra simples, limite 150. "24h" a confirmar no produto; a versão anterior tinha "sem cartão") |
 | **Link** | Um só: site, seção do teste grátis ({{URL a confirmar}}). Sem link tree. |
 | **Conta** | Profissional (Empresa). Categoria: **Software** (alternativa: Serviço de TI). Botão de contato: WhatsApp da Neovertix, atendido pelo próprio agente ({{número a confirmar}}). |
 
