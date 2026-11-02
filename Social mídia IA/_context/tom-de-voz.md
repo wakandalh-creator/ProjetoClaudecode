@@ -32,7 +32,7 @@ Usar "Evoluímos" só onde a peça mostra o entregável da etapa 4. Sem espaço 
 
 **Sobretítulo da marca:** "NEOVERTIX" (sozinho, sem complemento).
 
-**Léxico:** vértice, construímos, roda sozinho, responde em [tempo], mecanismo, fluxo, testado — não prometido, entrega, estrutura/estruturar, operação, método, etapa, diagnóstico, centralizado (com objeto: "no CRM"), integrado (com objeto: "WhatsApp e CRM"), piloto, métrica combinada, escopo.
+**Léxico:** vértice, construímos, roda sozinho, responde em [tempo], mecanismo, fluxo, testado — não prometido, entrega, estrutura/estruturar, operação, método, etapa, diagnóstico, centralizado (com objeto: "no CRM"), integrado (com objeto: "WhatsApp e CRM"), teste gratuito, funil, oportunidade, acompanhamento, escopo.
 
 **Banidas:** revolucionar, turbinar, o futuro chegou, funcionário digital que não dorme, disruptivo, sinergia, potencializar, ecossistema, game changer, "vale por N humanos", transformação digital, soluções inteligentes, jornada (do cliente), alavancar, excelência, inovador, de ponta, 360°, "referência"/"líder" (sem prova), "resultados comprovados" (sem case), "podemos ajudar", otimizar (sem número ao lado), **"somos novos nisso"** (e variações: "somos uma agência nova", "ainda estamos começando"), **garantia de 30%** (fora da comunicação por decisão do Lucas), revolucionário, milagroso, extraordinário, "o melhor do mercado", garantia de resultados ou de vendas automáticas, "100% automatizado" (sem comprovação), "IA que faz tudo", "revendedora de CRM" / "agência de marketing" (como descrição da Neovertix), linguagem informal demais ou apelativa.
 
