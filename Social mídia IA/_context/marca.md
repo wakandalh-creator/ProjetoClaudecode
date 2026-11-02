@@ -1,60 +1,71 @@
 # Marca — Neovertix (cérebro de marca p/ produção de conteúdo)
 
-> Destilado de `branding/neovertix/` em 2026-08-05. Fonte de verdade completa: `branding/neovertix/01-estrategia.md`, `02-oferta.md`, `03-hooks-slogans.md`. Este arquivo é o resumo operacional que todo agente do squad lê antes de produzir.
+> Atualizado em 2026-11-01 a partir do briefing "MEU NEGÓCIO / MINHA VOZ" do Lucas. **A Neovertix hoje é apenas: Agente de IA para WhatsApp + CRM incluso + redes sociais.** As ofertas antigas (Piloto, Operação e Vértice Full; Programa Fundador) saíram. Fonte histórica: `branding/neovertix/` (ainda descreve a oferta antiga). Este arquivo é o resumo operacional que todo agente do squad lê antes de produzir.
 
 ## Essência em 1 parágrafo
 
-Neovertix = Neo (novo) + vértice (ápice). O vértice é o ponto onde atendimento, vendas e operação se cruzam — hoje sustentado por malabarismo manual. A Neovertix coloca IA no centro da operação, **como estrutura, não enfeite**. Construímos o novo vértice pra quem cansou de operar do jeito antigo.
+A Neovertix estrutura e evolui negócios com inteligência artificial, automação, integração de sistemas e organização de processos. O produto principal é um **Agente de IA para WhatsApp com CRM incluso**, com soluções complementares para redes sociais. Não somos revenda de CRM nem fornecedor de ferramenta: entregamos a estrutura que faz atendimento, oportunidades e acompanhamento de clientes funcionarem juntos.
 
 ## Posicionamento (usar como filtro de todo conteúdo)
 
-- **Categoria:** agência de **operações com IA** (nunca "marketing digital")
-- **Promessa:** "Colocamos IA para atender e vender por você — rápido, sem parecer robô."
-- **Diferencial:** sistema rodando antes de fechar contrato; o fundador escreve o código — sem departamento comercial no meio
-- **Prazo:** semanas, não trimestres
+- **Categoria:** solução comercial com **Agente de IA para WhatsApp + CRM incluso** (+ redes sociais no plano Escala). Nunca "revendedora de CRM", nunca "agência de marketing".
+- **Promessa:** sair da operação fragmentada para uma estrutura conectada: atender, organizar e acompanhar oportunidades num só processo.
+- **Diferencial:** "Não começamos pela ferramenta. Começamos entendendo o seu negócio." O cliente testa 5 dias grátis e configura a própria estrutura antes de contratar.
+- **Ordem da mensagem:** primeiro o valor (atender melhor, não perder oportunidade), depois a tecnologia.
 
 ## Público (pra quem cada conteúdo fala)
 
-- **ICP primário:** dono de PME BR (5-50 func.) — serviços, e-commerce, clínica, imobiliária, educação. Dor: lead esfriando no WhatsApp/Instagram por demora. Objeções: "IA soa robótica" / "agência nova sem case" / "quanto tempo" / "se quebrar, quem conserta".
-- **ICP secundário:** criadores/infoprodutores (SDR IA pra DMs de lançamento); pequenas agências (white-label).
+- Pequenos e médios empresários; empreendedores e profissionais autônomos.
+- Empresas que recebem contatos e oportunidades pelo WhatsApp.
+- Negócios que perdem oportunidade por demora na resposta, falta de acompanhamento ou processo desorganizado.
+- Quem quer usar IA mas não sabe aplicar na prática.
 
-## Arquétipos (como o conteúdo se comporta)
+## Problema que resolvemos
 
-- **Mágico:** o momento da transformação é o gancho — demo ao vivo, nunca só slide. Toda alegação vem com demonstração real.
-- **Cara Comum:** founder acessível, linguagem simples. "Eu que construo, eu que respondo."
+Muitas empresas investem em divulgação e atraem interessados, mas não têm estrutura para atender, organizar e converter. Resultado:
+
+- leads sem atendimento ou com resposta demorada;
+- conversas e informações desorganizadas no WhatsApp;
+- oportunidades perdidas e interessados sem acompanhamento;
+- processos manuais e repetitivos;
+- nenhuma visibilidade do funil de vendas.
 
 ## Pilares de mensagem (todo conteúdo serve a pelo menos 1)
 
-1. **Rápido de verdade** — semanas, não trimestres; prova: demo com dados reais do prospect
-2. **Engenharia, não slide** — stack de verdade (agentes IA, n8n, MCPs); prova: walkthrough técnico transparente
-3. **Você não paga pra descobrir se funciona** — sistema rodando com os seus dados antes do contrato; piloto 2-4 semanas com métrica combinada antes de começar
+1. **Agente de IA** — atendimento automatizado no WhatsApp: responde, qualifica, coleta informações e encaminha oportunidades (**conforme as funcionalidades disponíveis**: confirmar a lista exata antes de prometer).
+2. **CRM incluso** — contatos, histórico de conversas, oportunidades, tarefas e acompanhamento do processo comercial.
+3. **Redes sociais** — estratégia de presença, conteúdo e gestão para atrair oportunidades e direcioná-las ao atendimento (plano Escala).
 
-## Números âncora (usar em hooks/provas — sempre estes, nunca inventar)
+## Ofertas
 
-- SDR CLT júnior custa ~R$ 3.800-4.200/mês (salário + encargos ~80%)
-- 10 leads perdidos por demora = R$ 3.000-15.000/mês em receita não realizada (ticket R$ 300-1.500)
-- De 4h de triagem manual pra 15 minutos
-- Resposta em segundos, não em horas; lead às 23h atendido na hora
+| Plano | Setup | Recorrência | Inclui |
+|---|---|---|---|
+| **Essencial** | R$ 2.500 | R$ 500/mês | Agente de IA + CRM |
+| **Escala** | R$ 3.200 | R$ 700/mês | Agente de IA + CRM + redes sociais |
 
-## Ofertas (CTAs de conteúdo apontam pra cá)
+Planos progressivos. **Teste gratuito de 5 dias**, com cadastro feito pelo próprio cliente na plataforma.
 
-> A garantia de 30% segue no escopo comercial do Piloto, mas **não aparece na comunicação** (decisão do Lucas, 2026-11-01 — ver `tom-de-voz.md`).
+**Jornada esperada (sem depender de vendedor):** entender o problema → ver como funciona → conhecer os planos → iniciar o teste grátis → cadastrar-se → configurar agente, CRM e recursos em 5 dias → escolher o plano.
 
-| Oferta | Preço | Escopo |
-|---|---|---|
-| Piloto Vértice | R$ 1.900 (Fundador: R$ 900) | 1 canal, atendimento OU SDR IA + CRM, 2-4 sem., garantia 30% |
-| Operação Vértice | R$ 4.500 + R$ 1.200/mês | 2 canais, atendimento + SDR, CRM, manutenção |
-| Vértice Full | R$ 9.000+ + R$ 2.800+/mês | stack completo + reunião mensal |
+**CTAs:** principal "Experimente gratuitamente por 5 dias" · alternativos "Conheça os planos" e "Fale com um especialista".
 
-**Programa Fundador:** 3-5 vagas, piloto a R$ 900 em troca de case com nome/logo + depoimento em vídeo. Vaga limitada, não desconto permanente.
+**A confirmar:** o que acontece ao fim dos 5 dias (cobrança, bloqueio, migração); se o setup é cobrado depois do teste; o que muda entre os planos além das redes sociais.
+
+## Provas (estamos criando do zero)
+
+- **Resultados com fonte:** _(nenhum ainda — não usar resultado de cliente)_
+- **Telas ou demonstrações que podemos mostrar:** _(a definir — ex.: agente respondendo no WhatsApp, CRM com histórico)_
+- **Estimativas de mercado (podem ser usadas, sempre como estimativa, fonte a registrar):**
+  - SDR CLT júnior custa ~R$ 3.800–4.200/mês (salário + encargos ~80%)
+  - 10 leads perdidos por demora = R$ 3.000–15.000/mês de receita não realizada (ticket R$ 300–1.500)
+- **Fatos que precisam ser confirmados antes de usar:**
+  - "De 4h de triagem manual pra 15 minutos": não há medição com fonte
+  - "Resposta em segundos, lead das 23h atendido na hora": confirmar no produto
+  - Lista de funcionalidades do agente
 
 ## Voz e método (v2 — 2026-11-01)
 
-Sobretítulo: **NEOVERTIX** · Método: **Entendemos. Estruturamos. Automatizamos. Evoluímos.** · Regras completas em `tom-de-voz.md` (Base v2). Nunca dizer "somos novos nisso".
-
-## Estratégia de conteúdo do novo entrante
-
-Build in public · demo customizada como conteúdo · primeiros 3-5 clientes como cases fundacionais · Lucas como rosto técnico da marca.
+Sobretítulo: **NEOVERTIX** · Método: **Entendemos. Estruturamos. Automatizamos. Evoluímos.** · Regras completas em `tom-de-voz.md`. Não inventar clientes, depoimentos, resultados ou urgência. Nunca dizer "somos novos nisso".
 
 ## Identidade visual (pra criativos — ver tokens em `branding/neovertix/tokens.json`)
 
