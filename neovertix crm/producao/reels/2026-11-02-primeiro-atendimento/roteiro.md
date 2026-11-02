@@ -80,7 +80,7 @@ O próximo cliente das 23h não espera. Link na bio.
 2. **Transformação (este reel):** primeiro atendimento automático no WhatsApp.
 3. Posicionamento: "Não basta atrair clientes. É preciso ter uma estrutura preparada para atender, organizar e converter oportunidades."
 
-## v3 — texto do Lucas, ajustado (42,9s)
+## v3 — texto do Lucas, ajustado (43,6s)
 
 Original do Lucas em `lucas-v3.txt` (200 palavras, ~73s). Versão ajustada em `ajustado-v3.txt`:
 
@@ -99,7 +99,8 @@ Quando você começa o dia, não precisa procurar conversa perdida.
 Você já sabe quais oportunidades precisam de atenção.
 Teste grátis por 7 dias. Sem cartão de crédito. Sem compromisso.
 Link na bio.
-O próximo cliente do seu WhatsApp não fica sem resposta.
+Não perca mais nenhuma oportunidade
+no seu WhatsApp por falta de atendimento.
 ```
 
 | Tempo | Cartão |
@@ -113,7 +114,8 @@ O próximo cliente do seu WhatsApp não fica sem resposta.
 | 0:34 | 7 DIAS GRÁTIS. SEM CARTÃO. |
 
 - **Gancho:** "Fim do expediente. Cliente novo no seu WhatsApp, e ninguém responde." nota 80 (o original "Acabou o seu expediente. Um potencial cliente chama sua empresa no WhatsApp." fez 44: longo e sem tensão).
-- **Cortes:** "E não para por aí" (ponte sem conteúdo); "Mais organização para atender. Mais clareza para vender." (abstratos, regra do tom de voz); as duas frases "Não perca…" (promessa absoluta); "transforme já o seu negócio" (genérico, banido); "Cadastre-se" + "Acesse o link" viraram uma chamada só.
+- **Cortes:** "E não para por aí" (ponte sem conteúdo); "Mais organização para atender. Mais clareza para vender." (abstratos, regra do tom de voz); "Não perca clientes porque sua empresa não conseguiu responder a tempo" (repetia a ideia); "transforme já o seu negócio" (genérico, banido); "Cadastre-se" + "Acesse o link" viraram uma chamada só.
+- **"Não perca mais nenhuma oportunidade… por falta de atendimento" mantida no fim** (decisão do Lucas, 2026-11-02): o agente existe para nenhum contato ficar sem resposta; o "por falta de atendimento" deixa claro que a promessa é sobre responder, não sobre vender.
 - **"Responde imediatamente" virou "responde"** até confirmar no produto.
 - **Duração do teste: 7 dias** (decisão do Lucas, 2026-11-02; antes o briefing dizia 5).
 
