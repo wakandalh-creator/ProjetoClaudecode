@@ -170,7 +170,7 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 
 > Skill aplicada: `positioning-workshop` → formato Geoffrey Moore, derivado do posicionamento-mãe (`01-estrategia.md` §2) e especializado pra esta página.
 
-**Para** donos de PME brasileira (5–50 funcionários) com volume de lead no WhatsApp e no Instagram
+**Para** donos de comércio local e pequenas empresas brasileiras com volume de lead no WhatsApp e no Instagram
 **que precisam** parar de perder venda por demora de resposta sem contratar mais gente,
 **[nome pendente — ver pendência nº 2]**
 **é um** teste grátis de 7 dias em que o agente de IA da Neovertix é configurado no canal real do negócio
