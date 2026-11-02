@@ -100,7 +100,7 @@ Perfil comum: **decisor único** — assina e conecta sozinho, sem comitê. **É
 Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-oferta.md` §5) — válidas aqui porque a dor de origem é a mesma:
 1. **"IA soa robótica"** → no trial não é demo: é o seu lead real conversando. Você lê as conversas que o agente resolveu.
 2. **"Agência nova, sem case"** → o trial é a prova. Você não paga pra descobrir — nem com cartão, nem com reunião.
-3. **"Quanto tempo até funcionar"** → prazo fechado de 5 dias.
+3. **"Quanto tempo até funcionar"** → prazo fechado de 7 dias.
 4. **"Se quebrar, quem conserta"** → quem escreve o código é quem responde (Cara Comum, `01-estrategia.md` §4).
 
 **Novas, criadas pelo próprio mecanismo desta oferta** (derivadas do fato "ativação exige conectar WhatsApp/Instagram/CRM", não inventadas):
