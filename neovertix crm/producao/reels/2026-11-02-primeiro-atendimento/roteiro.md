@@ -119,6 +119,29 @@ no seu WhatsApp por falta de atendimento.
 - **"Responde imediatamente" virou "responde"** até confirmar no produto.
 - **Duração do teste: 7 dias** (decisão do Lucas, 2026-11-02; antes o briefing dizia 5).
 
+## Legenda (v3, /ig-caption)
+
+Tipo A: o vídeo já carrega o gancho; a legenda faz a chamada e traz os termos de busca.
+
+```
+Teste o Agente de IA da Neovertix por 7 dias grátis, sem cartão de crédito. Link na bio.
+
+Fim do expediente não precisa ser fim do atendimento. Com um agente de IA, o seu atendimento no WhatsApp continua fora do horário comercial, e cada contato recebe resposta.
+
+Ele conversa com o interessado e qualifica o lead com as perguntas que você define.
+
+As informações ficam no CRM, com o histórico da conversa e as oportunidades organizadas.
+
+De manhã, você já sabe quem precisa de atenção. Quem decide o próximo passo é você.
+
+#atendimentowhatsapp #agentedeia #crm #pequenasempresas
+```
+
+- Linter (`caption.py`): **READY**. 1ª linha com 88 caracteres, inteira antes do "... mais"; 1 chamada; 4 hashtags; 0 emoji.
+- Termos de busca: "agente de IA" (1ª linha), "atendimento no WhatsApp" (2º parágrafo), "CRM" (4º parágrafo).
+- Humanizador: nada para limpar.
+- Link do teste vai na bio, não na legenda: {{URL a confirmar}}.
+
 ## Histórico
 
 - v1 (2026-11-02): primeiro atendimento às 23h.
