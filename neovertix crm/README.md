@@ -13,6 +13,7 @@ Usa o nome Neovertix, mas **não é** a marca principal do squad em `Social míd
 | `_context/tom-de-voz.md` | Tom de voz (Base v2 + expressões do briefing ajustadas) |
 | `_context/business.json` | Versão estruturada da marca deste projeto |
 | `_context/tom-de-voz-v2-proposta.md` | Proposta da Tese que originou o tom de voz (histórico) |
+| `_context/instagram.md` | Estrutura do perfil @neovertix: topo, destaques, fixados, pilares, grade inicial, cadência |
 | `_context/voice.md` | Cópia de `~/.claude/instagram/voice.md`, lido pelas skills `ig-*` |
 | `conversas/` | Transcrições das conversas que montaram este projeto |
 | `producao/` | Conteúdos produzidos (roteiros, legendas, carrosséis) |
