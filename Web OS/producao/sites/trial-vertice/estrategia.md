@@ -254,7 +254,7 @@ Numeração preservada das versões anteriores do brief, pra quem já leu. Resol
 
 ### Decisões fechadas em 2026-10-12 (fonte: Lucas)
 
-1. **Duração: 5 dias** (era "4 ou 7"). A página publica 5, não uma faixa.
+1. ~~**Duração: 5 dias** (era "4 ou 7"). A página publica 5, não uma faixa.~~ — **substituída pela decisão 15 (2026-11-02): duração passa a 7 dias.** A regra "a página publica um número fechado, não uma faixa" continua valendo.
 2. **Preço: entrada + recorrência.** ~~R$ 2.500 + R$ 500/mês · R$ 3.200 + R$ 700/mês~~ — **valores de recorrência substituídos pela decisão 12 (2026-11-01) e restaurados pela decisão 13 (2026-11-02): R$ 500/mês e R$ 700/mês voltam a valer.** O modelo entrada + recorrência continua valendo.
 3. **Linha de produto: independente** (corrige a leitura anterior de "substitui a Piloto Vértice"). Mesma empresa — Neovertix —, produtos diferentes: linha Vértice (implementação sob medida), Web OS (criação automática de sites/landing pages) e **este produto** (agente de IA + CRM + redes sociais, via Bolten). **Não substitui, não se funde, não herda a Garantia Vértice.**
 4. **Dados e descarte (era pendência nº 6):** instância própria por cliente durante os 5 dias; **se não comprar, a instância é descartada** — sem acesso residual, sem dado além do período. É só isso que a página pode afirmar (ver §3, objeção 5).
