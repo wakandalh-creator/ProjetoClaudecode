@@ -61,6 +61,26 @@ Mesmo padrão setup + mensalidade que a Neovertix já pratica na linha Vértice 
 
 **Item futuro (não é decisão, não bloqueia nada):** o Lucas vai avaliar depois um possível acréscimo/upsell pra quem já é cliente. Sem definição — não aparece na página.
 
+### Funcionalidades reais da plataforma (fonte: screenshots do dashboard Bolten, Lucas, 2026-11-03)
+
+**Isto é inventário de funcionalidade REAL e verificado** — os 5 módulos abaixo são o que a plataforma Bolten de fato entrega, transcritos dos 5 screenshots do dashboard que o Lucas enviou em 2026-11-03. Diferente de alegação de marketing, é fato operacional (mesma natureza da linha "Infraestrutura" na tabela do §2, não uma decisão numerada do Lucas). **Pode ser usado na copy sem violar a regra de veracidade do `tom-de-voz.md`** — desde que respeitadas as "Regras de veracidade específicas desta página" logo abaixo (white-label: marca Neovertix na frente; nunca atribuir trial à plataforma).
+
+Abas do dashboard (cabeçalho comum aos 5): **CRM de Vendas · Agente de Atendimento IA · Conversões · Redes Sociais · Central de Atendimento.**
+
+| Módulo | Descrição (transcrita) | Funcionalidades reais (checklist transcrito) |
+|---|---|---|
+| **CRM de Vendas** | "Gerencie leads, acompanhe negociações e maximize suas conversões." | Gestão de Leads e Contatos · Funil Kanban Personalizável · Integração com WhatsApp · Conversão Meta Ads · Tarefas e Responsáveis · Relatórios · Preenchimento automático com IA · Webhooks e API |
+| **Agente de Atendimento IA** | "Comunicação multicanal eficiente feito com Agente de IA para respostas rápidas e personalizadas." | Conectado direto ao WhatsApp · Base de conhecimento personalizada · Escalonamento humano · Possibilidade para intervenção humana · Transcrição e entendimento de áudios · Responsáveis e fila de atendimento |
+| **Conversões** | "Rastreie seus leads e automatize seu funil de vendas." | Rastreio de origem dos leads · Atualização em tempo real · Integração com o CRM · Conversão com o Meta ADS · Relatórios · Análise em recortes de tempos · Atualize o CRM automaticamente |
+| **Redes Sociais** | "Economize horas de trabalho com fluxos de aprovação ágeis e relatórios automáticos." | Agendamento de Posts e Stories · Fluxos de aprovação com cliente · Relatórios completos do perfil · Analytics de publicações · Multicontas em um único acesso |
+| **Central de Atendimento** | "Organize o atendimento ao cliente com gestão de tickets, Whatsapp e Agente de IA." | Gerencie tickets · Tarefas e Responsáveis · Integração com WhatsApp · Agente de atendimento IA · Escalonamento humano · Histórico de interação |
+
+**Resolve a lacuna da aba "Redes Sociais" do protótipo.** No protótipo HTML anterior, a aba "Redes Sociais" foi **removida** porque continha alegação falsa (que o agente responde DM do Instagram — o Lucas confirmou que não é verdade). Agora há conteúdo real e honesto para essa aba: **agendamento de posts e stories, fluxo de aprovação com o cliente, relatórios completos e analytics do perfil, multicontas em um único acesso.** A aba pode voltar na copy **com esse escopo** — o de uma ferramenta de gestão/publicação de conteúdo. **Não é automação de DM.** Isso casa com o "Escopo confirmado (Lucas, 2026-11-02)" acima, que já definiu "Gestão de Redes Sociais (Instagram)" como serviço de gestão (conteúdo/postagem), não o agente respondendo DM.
+
+**"Central de Atendimento" é módulo novo — não aparecia no brief nem no protótipo.** Registrado aqui como **funcionalidade real existente** da plataforma (gestão de tickets + WhatsApp + agente de IA, com escalonamento humano e histórico). **PONTO EM ABERTO (não decidido):** a qual plano este módulo pertence (Essencial? Escala? ambos?) e se é diferencial do Escala **não está definido** — os screenshots mostram que a funcionalidade existe, não a qual pacote comercial ela é atribuída. Não assumir. Pendência pro Lucas esclarecer antes de a copy vincular "Central de Atendimento" a um plano específico.
+
+**Limites do uso desta tabela na copy:** (1) continua valendo "white-label = marca Neovertix na frente" — a página não cita Bolten como fornecedor; (2) descrever funcionalidade ≠ prometer resultado/número — nada aqui gera métrica medida (ver §7, números proibidos); (3) nenhum destes itens muda preço, nome de plano, duração do trial ou ICP já fechados no §8; (4) qualquer alegação de segurança/LGPD derivada destes módulos ainda passa pelo Blinda (módulos 37–38).
+
 ### Regras de veracidade específicas desta página (`identidade-web-os.md`)
 
 - **Sobre a Bolten:** a documentação da Bolten **não menciona trial nativo**. O período grátis é decisão comercial da Neovertix por cima da ferramenta. A página **nunca** pode sugerir que o trial é recurso da plataforma, nem afirmar qualquer capacidade da Bolten além de: CRM white-label, agente de IA treinável, WhatsApp (QR Code ou Cloud API oficial), Meta/Instagram (Conversions API).
