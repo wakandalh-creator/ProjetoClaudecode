@@ -201,7 +201,31 @@ Herdadas do público já mapeado pela Neovertix (`01-estrategia.md` §3 + `02-of
 **esta oferta**
 **entrega** o mecanismo rodando nos leads reais do cliente **antes de qualquer pagamento e sem uma única reunião** — configurado e suportado pela mesma pessoa que escreve o código.
 
-⚠️ **Contra-ângulo ainda NÃO autorizado pra copy:** a hipótese de que as ferramentas de IA concorrentes entregam "um painel vazio pro cliente configurar sozinho" (o que faria do nosso "a gente configura pra você" o diferencial mais afiado) é **hipótese da Tese, sem dado**. `01-estrategia.md` §8 só documenta que a concorrência BR compete em "custa menos que humano", com visual gradiente azul-roxo e ícone de robô. **Validar com o Radar (módulo 28) antes de virar headline comparativa** — pendência nº 5.
+✅ **Contra-ângulo validado pelo Radar (módulo 28, pendência nº 5 — resolvida em 2026-11-03):** a hipótese original ("painel vazio pro cliente configurar sozinho") **não se confirmou como estava formulada** — nenhum concorrente analisado se anuncia como "você se vira sozinho". O dado real é diferente e mais forte:
+
+- **3 dos 5 concorrentes BR de "agente de IA" analisados (Bluelephant, Intelecta, MelhorAgência.ai) nem oferecem trial self-service** — todos exigem reunião/diagnóstico com vendas antes de qualquer acesso ao produto. É o oposto do "painel vazio": é **nenhum painel até passar por um vendedor**.
+- Os outros 2 com trial self-service (Toolzz, Essent.IA) **anunciam onboarding guiado/assistido** (checklist passo a passo com apoio do time, na Toolzz; wizard conversacional de 15 min pra treinar o agente, na Essent.IA) — nenhum dos dois se apresenta como "configure sozinho".
+- Dos dois CRMs com trial próprio: a **RD Station** tem onboarding estruturado documentado (planejamento de primeiros passos, comunidade, treinamentos) — refuta a hipótese. Já a **Kommo** tem reclamações reais e específicas no Reclame Aqui sobre dificuldade de configuração e suporte "só por link" durante o setup — **sustenta parcialmente** a hipótese, mas só pra Kommo, não generalizável à categoria.
+
+**Autorizado pra copy, citando a fonte (tabela abaixo):** liderar o contra-ângulo com **"nenhuma reunião antes do acesso"**, não com "painel vazio" — esse é o diferencial mais forte e verificado: a maioria da concorrência direta de "agente de IA" no Brasil pede uma call de vendas antes de o cliente ver o produto rodando; aqui o cliente entra e testa sozinho, sem conversar com ninguém, nos próprios leads.
+
+**NÃO autorizado:** generalizar "concorrente entrega painel vazio" como manchete — o dado real mostra o contrário pra Toolzz, Essent.IA e RD Station (todos anunciam onboarding assistido). A fricção de configuração da Kommo só pode ser usada se citada nominalmente (não como "a concorrência" genérica).
+
+**Visual (gradiente azul-roxo + ícone de robô) confirmado só em parte:** confirmado na **Toolzz**; não confirmado (ou diferente) em RD Station, Kommo, Bluelephant, MelhorAgência.ai e Intelecta. A direção visual da Neovertix (zero gradiente, zero robô, `01-estrategia.md` §8) continua diferenciada, mas não por oposição a "todo mundo usa isso" — só parte do grupo usa.
+
+#### Resumo da pesquisa de concorrência (Radar, 2026-11-03)
+
+| Concorrente | Trial? | Self-service ou exige reunião? | Preço | Ângulo de venda | Visual |
+|---|---|---|---|---|---|
+| **RD Station** | Sim (Free permanente + planos pagos) | Self-service, sem cartão — mas com onboarding guiado ativo (treinamentos, comunidade, planejamento de 1º passos) | Só mensalidade por usuário (Free · Basic ~R$60-66 · Pro ~R$108-119 · Advanced sob consulta). Sem setup | Lidera com "CRM", mas forte presença de IA (Copiloto IA, priorização inteligente) | Azul/gradiente, ícones de chat — roxo não confirmado |
+| **Kommo** | Sim, 14 dias | Self-service, sem cartão — onboarding é checklist auto-guiado; reclamações reais no Reclame Aqui de dificuldade de configuração e suporte "só por link" | Só mensalidade por usuário (US$20-45 ou BRL via parceiro, contrato mín. 6 meses no BR). Sem setup | Lidera com "CRM com IA" | Gradiente vibrante com efeito brilho; azul-roxo não confirmado especificamente |
+| **Bluelephant** | Não tem | Exige "falar com especialista" antes de qualquer acesso — 100% consultivo | Sob consulta, sem preço público | Lidera com "agentes de IA"/consultoria sob medida | Azul claro, sóbrio, sem ícone de robô |
+| **Toolzz** | Sim, 15 dias | Self-service via checkout — mas com onboarding guiado ("missões", checklist passo a passo, time ajuda a alinhar base de conhecimento) | Só mensalidade por agente (Mini R$399 · Starter R$990 · Enterprise a partir de R$3.900/mês). Sem setup mencionado | Lidera com "Agentes de IA" | **Gradiente azul-roxo + ícone de robô — confirma a observação do brief original (`01-estrategia.md` §8), só pra este concorrente** |
+| **Essent.IA** | Trial sem cartão citado em busca (fonte única, não confirmado em 1ª mão — site é SPA, não renderizou texto completo via fetch) | Onboarding citado como wizard conversacional guiado ("O GUIA", 15 min) — não é painel vazio | Planos "Starter"/"Flex" por volume de respostas da IA; valor exato **não encontrado** | Lidera com "Sistema Operacional de IA" (agente + CRM AI-first + Revenue Intelligence) | **Não verificado** — site não renderizou visual via fetch |
+| **MelhorAgência.ai** | Não tem trial self-service | "Consultoria grátis" via WhatsApp + garantia de reembolso de 7 dias pós-compra (não é trial pré-pagamento) | Sob consulta; comparam a "10% do salário de um humano" | Lidera com **"funcionários AI"** — termo que a própria Neovertix bane na copy (§6, banidas) | Emojis de robô/chave/foguete; gradiente azul-roxo **não confirmado** |
+| **Intelecta** | Não tem | Exige "Reunião de Diagnóstico" (30-40 min) antes de qualquer proposta — 100% consultivo | Não divulgado; projetos de 15-45 dias + contratos de 12+ meses | Lidera com consultoria + CRM próprio ("G360") | Azul/ciano, ícones genéricos (SVGs não carregaram no fetch) |
+
+*Nota de método: dado coletado via busca web e fetch de páginas públicas em 2026-11-03. Onde a página não renderizou (SPA/JS) ou a fonte foi única e genérica, está marcado "não verificado" — não extrapolar na copy.*
 
 **Os 3 pilares traduzidos pra hierarquia desta página** (`01-estrategia.md` §5):
 
