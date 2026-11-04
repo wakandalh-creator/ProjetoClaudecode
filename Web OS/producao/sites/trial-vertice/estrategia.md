@@ -286,12 +286,11 @@ Definição de ativado, inegociável: **canal conectado e o agente respondendo p
 
 ## 8. Pendências (não estimar, não decidir por conta própria)
 
-Numeração preservada das versões anteriores do brief, pra quem já leu. Resolvidas: 1, 3, 4, 6, 8 e a maior parte de 7 e 11. Canceladas: 10 e 12. **Só o que está na tabela abaixo ainda bloqueia trabalho.**
+Numeração preservada das versões anteriores do brief, pra quem já leu. Resolvidas: 1, 3, 4, 5, 6, 8 e a maior parte de 7 e 11. Canceladas: 10 e 12. **Só o que está na tabela abaixo ainda bloqueia trabalho.**
 
 | # | Pendência | Dono | O que bloqueia |
 |---|---|---|---|
 | **2** | **Nome e slug definitivos** do produto e do projeto. Lucas: "depois a gente pensa no nome do projeto". Slug `trial-vertice` segue provisório; a copy usa `[nome pendente]`. **O nome não precisa usar "vértice"** (não é produto da linha Vértice — ver §6) | **Lucas** | Pasta do projeto, URL, tracking, `memory.md`, hero da página. **Decidir antes do módulo 22** — renomear depois do build é retrabalho em cadeia |
-| **5** | **Dado de concorrência.** Alvos: **RD Station** e **Kommo** (CRM/automação, adicionados pelo Lucas em 2026-10-12) + Bluelephant, Toolzz, Essent.IA, MelhorAgencia.ai, Intelecta (`01-estrategia.md` §8). Nenhuma dessas páginas foi analisada ainda. Interessa: como estruturam **trial**, oferta e preço. **Inclui validar a hipótese do "painel vazio"** (§6) | **Radar, módulo 28 (Sprint 3)** | Contra-ângulo, bloco de comparação e qualquer headline comparativa. *Nota: RD Station e Kommo são players de CRM/automação com trial próprio — comparar trial-contra-trial é mais relevante aqui do que comparar com agências* |
 | **7b** | **Tempo de ativação:** quanto leva da conexão até o agente responder o primeiro lead. **Sem número medido** (a parte "quem configura" foi resolvida — ver decisões) | **Lucas / primeira execução real** | Qualquer promessa de tempo na copy ("pronto em X minutos"). Até medir, a página descreve passos, não minutos |
 | **9** | *(herdada)* **Domínio/URL de destino** não confirmado (`01-estrategia.md` §8: neovertix.com/.com.br/.ai sem DNS, disponibilidade real não verificada) | **Lucas** | Deploy |
 | **11b** | **Validação do ICP em campanha real.** O alvo está definido pelo Lucas (§3), mas **nenhuma conversão testou esse recorte** — nem qual vertical responde melhor (clínica? concessionária? advocacia?) | **Mede, módulos 33–36, após o 1º ciclo** | Priorizar vertical na copy e no tráfego da V2. Não bloqueia a V1 |
